@@ -209,7 +209,43 @@ html.dark .eb-modal {
   border-color: var(--eb-border-dark);
 }
 
-/* Navigation Layout */
+/* ─────────────────────────────────────────────────────────────────
+   Shared Header Component
+   ─────────────────────────────────────────────────────────────────
+   State classes:
+     .eb-header--logged-out  (default, no extra class needed — auth JS
+                              shows/hides individual auth links)
+     .eb-header--logged-in   (added by auth JS when user is signed in)
+   ───────────────────────────────────────────────────────────────── */
+
+/* Outer fixed bar — sits above the Nepal stripe offset */
+.eb-header {
+  position: fixed;
+  top: 4px; /* below .nepal-stripe */
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+
+/* Max-width centred wrapper */
+.eb-header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* The visible pill/bar */
+.eb-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+/* ── Logo ── */
 .eb-nav-logo {
   display: inline-flex;
   align-items: center;
@@ -217,12 +253,256 @@ html.dark .eb-modal {
   font-weight: 700;
   font-family: var(--font-serif);
   color: var(--eb-navy);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   text-decoration: none;
+  flex-shrink: 0;
+}
+
+.eb-nav-logo img {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 html.dark .eb-nav-logo {
   color: #FFFFFF;
+}
+
+/* ── Desktop nav link row (hidden on mobile) ── */
+.eb-nav-links {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--eb-body-light);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+html.dark .eb-nav-links {
+  color: var(--eb-body-dark);
+}
+
+/* ── Individual nav link ── */
+.eb-nav-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.eb-nav-link:hover {
+  color: var(--eb-navy);
+}
+
+html.dark .eb-nav-link:hover {
+  color: #F8FAFC;
+}
+
+/* Active page indicator */
+.eb-nav-link.active {
+  color: var(--eb-crimson);
+  font-weight: 600;
+}
+
+html.dark .eb-nav-link.active {
+  color: #fb923c;
+}
+
+/* ── Right-side button group ── */
+.eb-nav-cta {
+  display: none;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+/* Ghost / secondary nav button (e.g. "Log in") */
+.eb-nav-ghost {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--eb-body-light);
+  padding: 0.5rem 0.875rem;
+  border-radius: 0.875rem;
+  border: 1px solid var(--eb-border-light);
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: color 0.2s ease, border-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.eb-nav-ghost:hover {
+  color: var(--eb-navy);
+  border-color: var(--eb-navy);
+}
+
+html.dark .eb-nav-ghost {
+  color: var(--eb-body-dark);
+  border-color: var(--eb-border-dark);
+}
+
+html.dark .eb-nav-ghost:hover {
+  color: #F8FAFC;
+  border-color: #F8FAFC;
+}
+
+/* ── Hamburger area (visible on mobile only) ── */
+.eb-nav-mob {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.eb-hbg {
+  padding: 0.45rem;
+  border-radius: 0.75rem;
+  color: var(--eb-body-light);
+  transition: color 0.2s ease;
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.eb-hbg:hover {
+  color: var(--eb-navy);
+}
+
+html.dark .eb-hbg {
+  color: var(--eb-body-dark);
+}
+
+html.dark .eb-hbg:hover {
+  color: #F8FAFC;
+}
+
+/* ── Mobile dropdown menu ── */
+.eb-mobile-menu {
+  display: none;
+  border-radius: 1.25rem;
+  margin-top: 0.3rem;
+  overflow: hidden;
+}
+
+.eb-mobile-menu.open {
+  display: block;
+  animation: eb-slideDown 0.2s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes eb-slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.eb-mob-links {
+  padding: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.eb-mob-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.875rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--eb-body-light);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+  min-height: 48px;
+}
+
+.eb-mob-link:hover,
+.eb-mob-link.active {
+  color: var(--eb-navy);
+  background: rgba(15, 28, 63, 0.05);
+}
+
+.eb-mob-link.active {
+  color: var(--eb-crimson);
+  font-weight: 600;
+}
+
+html.dark .eb-mob-link {
+  color: var(--eb-body-dark);
+}
+
+html.dark .eb-mob-link:hover {
+  color: #F8FAFC;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+html.dark .eb-mob-link.active {
+  color: #fb923c;
+}
+
+.eb-mob-divider {
+  border-top: 1px solid var(--eb-border-light);
+  margin: 0.5rem 0;
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+html.dark .eb-mob-divider {
+  border-top-color: var(--eb-border-dark);
+}
+
+.eb-mob-cta {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.875rem;
+  text-decoration: none;
+}
+
+.eb-mob-theme-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.75rem;
+  color: var(--eb-body-light);
+}
+
+html.dark .eb-mob-theme-row {
+  color: var(--eb-body-dark);
+}
+
+/* ── Desktop breakpoint: reveal links + CTA, hide hamburger ── */
+@media (min-width: 768px) {
+  .eb-nav-links {
+    display: flex;
+  }
+
+  .eb-nav-cta {
+    display: flex;
+  }
+
+  .eb-nav-mob {
+    display: none;
+  }
+
+  .eb-header-bar {
+    padding: 0.6rem 1.5rem;
+  }
 }
 
 /* Badges */

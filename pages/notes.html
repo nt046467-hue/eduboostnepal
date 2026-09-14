@@ -48,6 +48,37 @@
       body.auth-ready {
         visibility: visible;
       }
+      /* shared header glass surface */
+      .glass {
+        background: rgba(17,24,39,0.92);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--eb-border-dark);
+      }
+      html.light .glass {
+        background: rgba(255,255,255,0.92);
+        border-color: var(--eb-border-light);
+      }
+      /* nepal stripe — fixed so eb-header sits at top:4px beneath it */
+      .nepal-stripe {
+        background: linear-gradient(90deg, #003893 50%, #dc143c 50%);
+        height: 3px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 51;
+      }
+      /* btn-primary for nav CTA */
+      .btn-primary {
+        background: linear-gradient(135deg, #f97316, #dc2626);
+        color: #fff;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+      }
       .filter-btn {
         transition: all 0.2s;
       }
@@ -65,60 +96,59 @@
     ></script>
   </head>
   <body class="bg-[#F8FAFC] dark:bg-[#0B1220] text-slate-700 dark:text-slate-300 min-h-screen">
-    <!-- Header/Nav -->
-    <nav class="bg-white dark:bg-[#111827] border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 transition-colors">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <!-- Logo -->
-          <a href="../index.html" class="eb-nav-logo">
-            <img width="32" height="32" src="../public/favicon.png" alt="EduBoost Nepal" class="w-8 h-8 rounded-lg" />
-            <span class="font-bold text-base tracking-tight">EduBoost <span class="text-red-600">Nepal</span></span>
+    <div class="nepal-stripe" aria-hidden="true"></div>
+
+    <!-- NAVBAR -->
+    <nav class="eb-header" aria-label="Main navigation">
+      <div class="eb-header-inner">
+        <div class="eb-header-bar glass">
+          <a href="../index.html" class="eb-nav-logo" aria-label="EduBoost Nepal home">
+            <img src="../public/favicon.png" alt="EduBoost Nepal" width="34" height="34" loading="eager" />
+            <span>EduBoost <span style="color:#B91C2C">Nepal</span></span>
           </a>
-
-          <!-- Desktop links -->
-          <div class="hidden md:flex items-center gap-6 text-sm font-medium">
-            <a href="notes.html" class="text-red-600 dark:text-red-500 font-semibold">Notes</a>
-            <a href="downloads.html" class="text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-500 transition-colors">Downloads</a>
-            <a href="ai-tutor.html" class="text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-500 transition-colors flex items-center"><i data-lucide="bot" class="w-4 h-4 mr-1"></i> AI Tutor</a>
-            <a href="blog.html" class="text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-500 transition-colors">Blog</a>
-            <a href="about.html" class="text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-500 transition-colors">About</a>
-            <a href="contact.html" class="text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-500 transition-colors">Contact</a>
+          <div class="eb-nav-links">
+            <a href="notes.html" class="eb-nav-link active">Notes</a>
+            <a href="downloads.html" class="eb-nav-link">Downloads</a>
+            <a href="ai-tutor.html" class="eb-nav-link">🤖 AI Tutor</a>
+            <a href="blog.html" class="eb-nav-link">Blog</a>
+            <a href="about.html" class="eb-nav-link">About</a>
+            <a href="contact.html" class="eb-nav-link">Contact</a>
           </div>
-
-          <!-- Right controls -->
-          <div class="flex items-center gap-2">
-            <!-- Theme Toggle -->
-            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-500 dark:text-slate-400 border-none bg-transparent cursor-pointer mr-1" aria-label="Toggle Theme">
-              <span id="themeIcon">🌙</span>
-            </button>
-
-            <!-- Auth status toggles -->
-            <a id="nav-login-link" href="login.html" class="hidden sm:inline-block text-xs font-semibold px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Login</a>
-            <a id="nav-signup-link" href="signup.html" class="hidden sm:inline-block text-xs font-semibold px-3 py-2 rounded-lg bg-red-700 hover:bg-red-800 text-white transition-all">Sign Up</a>
-            <a id="nav-dashboard-link" href="dashboard.html" style="display:none" class="hidden sm:inline-block text-xs font-semibold px-3 py-2 rounded-lg bg-red-700 hover:bg-red-800 text-white transition-all">Dashboard</a>
-
-            <!-- Mobile menu trigger -->
-            <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border-none bg-transparent cursor-pointer" aria-label="Open menu">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <div class="eb-nav-cta">
+            <a href="login.html" id="nav-login-link" class="eb-nav-ghost">Log in</a>
+            <a href="signup.html" id="nav-signup-link" class="btn-primary" style="font-size:0.8rem;padding:0.5rem 1.1rem;border-radius:0.875rem;">Get Started →</a>
+            <a href="dashboard.html" id="nav-dashboard-link" class="btn-primary" style="font-size:0.8rem;padding:0.5rem 1.1rem;border-radius:0.875rem;display:none;">Dashboard</a>
+          </div>
+          <div class="eb-nav-mob">
+            <button id="hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false" class="eb-hbg">
+              <svg id="ham-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <svg id="close-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display:none">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
           </div>
         </div>
-      </div>
-
-      <!-- Mobile Menu Dropdown -->
-      <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827] px-4 py-3 flex flex-col gap-2">
-        <a href="notes.html" class="text-red-600 dark:text-red-500 font-semibold py-1">Notes</a>
-        <a href="downloads.html" class="text-slate-600 dark:text-slate-400 py-1">Downloads</a>
-        <a href="ai-tutor.html" class="text-slate-600 dark:text-slate-400 py-1 flex items-center"><i data-lucide="bot" class="w-4 h-4 mr-1.5"></i> AI Tutor</a>
-        <a href="blog.html" class="text-slate-600 dark:text-slate-400 py-1">Blog</a>
-        <a href="about.html" class="text-slate-600 dark:text-slate-400 py-1">About</a>
-        <a href="contact.html" class="text-slate-600 dark:text-slate-400 py-1">Contact</a>
-        <hr class="border-slate-200 dark:border-slate-800 my-1" />
-        <a id="mob-login-link" href="login.html" class="text-slate-600 dark:text-slate-400 py-1 font-medium">Login</a>
-        <a id="mob-signup-link" href="signup.html" class="text-red-600 dark:text-red-500 py-1 font-semibold">Sign Up</a>
-        <a id="mob-dashboard-link" href="dashboard.html" style="display:none" class="text-red-600 dark:text-red-500 py-1 font-semibold">Dashboard</a>
+        <div id="mobile-menu" class="eb-mobile-menu glass">
+          <div class="eb-mob-links">
+            <a href="notes.html" class="eb-mob-link active">📚 Notes</a>
+            <a href="downloads.html" class="eb-mob-link">📥 Downloads</a>
+            <a href="ai-tutor.html" class="eb-mob-link">🤖 AI Tutor</a>
+            <a href="blog.html" class="eb-mob-link">✍️ Blog</a>
+            <a href="about.html" class="eb-mob-link">ℹ️ About Us</a>
+            <a href="contact.html" class="eb-mob-link">📬 Contact</a>
+            <div class="eb-mob-divider">
+              <a href="login.html" id="mob-login-link" onclick="toggleMenu()" class="eb-mob-link">🔑 Log in</a>
+              <a href="signup.html" id="mob-signup-link" class="eb-mob-cta btn-primary" style="border-radius:0.875rem;">Get Started Free →</a>
+              <a href="dashboard.html" id="mob-dashboard-link" onclick="toggleMenu()" class="eb-mob-cta btn-primary" style="border-radius:0.875rem;display:none;text-align:center;">📊 Dashboard</a>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
+    <!-- layout spacer: accounts for the fixed nav height -->
+    <div style="height:76px" aria-hidden="true"></div>
 
     <!-- Main Container -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -521,10 +551,17 @@
         }
       };
 
-      // Mobile Menu Toggle
-      window.toggleMobileMenu = function() {
-        const menu = document.getElementById("mobileMenu");
-        if (menu) menu.classList.toggle("hidden");
+      // Mobile Menu Toggle — also aliased as toggleMobileMenu for backwards compat
+      window.toggleMenu = window.toggleMobileMenu = function() {
+        const menu = document.getElementById("mobile-menu");
+        const hamburger = document.getElementById("hamburger");
+        const hamIcon = document.getElementById("ham-icon");
+        const closeIcon = document.getElementById("close-icon");
+        if (!menu) return;
+        const isOpen = menu.classList.toggle("open");
+        if (hamburger) hamburger.setAttribute("aria-expanded", isOpen);
+        if (hamIcon) hamIcon.style.display = isOpen ? "none" : "block";
+        if (closeIcon) closeIcon.style.display = isOpen ? "block" : "none";
       };
     </script>
   </body>
