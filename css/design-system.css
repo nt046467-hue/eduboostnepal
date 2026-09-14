@@ -4,6 +4,10 @@
 :root {
   --eb-navy: #0F1C3F;
   --eb-crimson: #B91C2C;
+  --eb-crimson-hover: #991B1B;
+  --eb-crimson-light: #DC2626;
+  --eb-crimson-soft: rgba(185, 28, 44, 0.1);
+  --eb-crimson-glow: rgba(185, 28, 44, 0.2);
   --eb-bg-light: #F8FAFC;
   --eb-body-light: #334155;
   --eb-border-light: #E2E8F0;
