@@ -120,11 +120,11 @@
       <!-- Stats -->
       <div class="grid grid-cols-3 gap-3 mb-10">
         <div class="eb-card px-2 py-4 text-center bg-white dark:bg-[#111827]">
-          <div class="text-2xl sm:text-3xl font-bold text-[#B91C2C] dark:text-red-500 leading-tight">10+</div>
+          <div class="text-2xl sm:text-3xl font-bold text-[#B91C2C] dark:text-red-500 leading-tight" id="statResourcesTotal">—</div>
           <div class="text-slate-500 dark:text-slate-400 text-xs sm:text-sm mt-1 leading-tight">Study Resources</div>
         </div>
         <div class="eb-card px-2 py-4 text-center bg-white dark:bg-[#111827]">
-          <div class="text-2xl sm:text-3xl font-bold text-[#B91C2C] dark:text-red-500 leading-tight">3</div>
+          <div class="text-2xl sm:text-3xl font-bold text-[#B91C2C] dark:text-red-500 leading-tight" id="statSubjectsTotal">—</div>
           <div class="text-slate-500 dark:text-slate-400 text-xs sm:text-sm mt-1 leading-tight">Subjects</div>
         </div>
         <div class="eb-card px-2 py-4 text-center bg-white dark:bg-[#111827]">
@@ -298,8 +298,11 @@
       // Reveal page immediately — no auth gate
       document.body.classList.add("auth-ready");
 
-      // Fetch downloads publicly
+      // Fetch downloads publicly and compute real stats
       function fetchAndRenderDownloads() {
+        const statResEl = document.getElementById("statResourcesTotal");
+        const statSubEl = document.getElementById("statSubjectsTotal");
+
         db.collection("downloadsData")
           .orderBy("subject")
           .get()
@@ -309,14 +312,38 @@
                 id: doc.id,
                 ...doc.data(),
               }));
+              if (statResEl) statResEl.textContent = snap.size;
+              const subjects = new Set();
+              snap.docs.forEach((doc) => {
+                const s = doc.data()?.subject;
+                if (s && typeof s === "string" && s.trim()) {
+                  subjects.add(s.trim().toLowerCase());
+                }
+              });
+              if (statSubEl) statSubEl.textContent = subjects.size;
             } else {
               allDownloads = staticDownloads;
+              if (statResEl) statResEl.textContent = staticDownloads.length;
+              const subjects = new Set(
+                staticDownloads
+                  .map((d) => (d.subject || "").trim().toLowerCase())
+                  .filter(Boolean),
+              );
+              if (statSubEl) statSubEl.textContent = subjects.size;
             }
             renderDownloads(allDownloads);
           })
-          .catch(() => {
+          .catch((err) => {
+            console.warn("Firestore downloads fetch error:", err);
             allDownloads = staticDownloads;
             renderDownloads(allDownloads);
+            if (statResEl) statResEl.textContent = staticDownloads.length || "—";
+            const subjects = new Set(
+              staticDownloads
+                .map((d) => (d.subject || "").trim().toLowerCase())
+                .filter(Boolean),
+            );
+            if (statSubEl) statSubEl.textContent = subjects.size || "—";
           });
       }
 

@@ -1365,7 +1365,7 @@
               <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-red-50 dark:bg-red-950/30 text-[#B91C2C] dark:text-red-500 mb-2">
                 <i data-lucide="book-open" class="w-4 h-4"></i>
               </div>
-              <div class="text-lg sm:text-2xl font-bold text-slate-800 dark:text-slate-100">9+</div>
+              <div class="text-lg sm:text-2xl font-bold text-slate-800 dark:text-slate-100" id="statNotesTotal">—</div>
               <div class="text-slate-500 dark:text-slate-400 text-xs mt-1">Notes</div>
             </div>
             <div
@@ -3202,9 +3202,22 @@ FORMAT: ${formatInstruction}`;
         loadSavedContent();
       }
 
-      function loadStats() {
-        document.getElementById("statQuestions").textContent =
-          localStorage.getItem("questionCount") || "0";
+      async function loadStats() {
+        const statQuestions = document.getElementById("statQuestions");
+        if (statQuestions) {
+          statQuestions.textContent =
+            localStorage.getItem("questionCount") || "0";
+        }
+        const statNotesTotal = document.getElementById("statNotesTotal");
+        if (statNotesTotal) {
+          try {
+            const snap = await db.collection("notesData").get();
+            statNotesTotal.textContent = snap.size;
+          } catch (e) {
+            console.warn("Failed to load notes stat:", e);
+            statNotesTotal.textContent = "—";
+          }
+        }
       }
 
       // ── Navigation helpers ────────────────────────────────────────
