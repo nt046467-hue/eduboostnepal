@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.gstatic.com" />
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Login to EduBoost Nepal — your free AI-powered NEB exam preparation platform."
+    />
+    <title>Login — EduBoost Nepal</title>
+    <link rel="icon" href="../public/favicon.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Sora", "sans-serif"],
+              serif: ["DM Serif Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- ================================================================
+         🔥 FIREBASE CONFIG — paste your values here
+    ================================================================ -->
+    <script>
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCbVzplSn0UL2KRB3B45SCByJSm2FXPByw",
+        authDomain: "eduboost-f611f.firebaseapp.com",
+        projectId: "eduboost-f611f",
+        storageBucket: "eduboost-f611f.firebasestorage.app",
+        messagingSenderId: "121788124993",
+        appId: "1:121788124993:web:4df0ec72b1e187e76c1bc0",
+        measurementId: "G-1SDQZYXSKS",
+      };
+    </script>
+
+    <!-- Inline theme (no external file needed on Netlify) -->
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        if (saved === "light" || (!saved && !prefersDark)) {
+          document.documentElement.classList.remove("dark");
+          document.documentElement.classList.add("light");
+        } else {
+          document.documentElement.classList.remove("light");
+          document.documentElement.classList.add("dark");
+        }
+      })();
+
+      // toggleDarkMode() provided by theme.js
+    </script>
+
+    <style>*,*::before,*::after{box-sizing:border-box}body{margin:0;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}.glass{background:rgba(255,255,255,0.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1)}.gradient-text{background:linear-gradient(135deg,#fb923c,#f97316,#dc2626);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.btn-primary{background:linear-gradient(135deg,#f97316,#dc2626);cursor:pointer;border:none;-webkit-appearance:none;appearance:none}.btn-primary:hover{opacity:0.9;transform:translateY(-1px)}.btn-primary:active{transform:translateY(0);opacity:0.85}.btn-primary:disabled{opacity:0.6;cursor:not-allowed;transform:none}.input-field{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);transition:all 0.3s;-webkit-appearance:none;appearance:none;font-size:16px!important}.input-field:focus{border-color:#f97316;outline:none;box-shadow:0 0 0 3px rgba(249,115,22,0.1)}.nepal-stripe{background:linear-gradient(90deg,#003893 50%,#dc143c 50%);height:4px;width:100%}#authCheckOverlay{position:fixed;inset:0;background:#020617;z-index:9999}html.light #authCheckOverlay{background:#f1f5f9}html.light #authCheckOverlay p{color:#64748b!important}#authCheckOverlay{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;transition:opacity 0.3s}#authCheckOverlay .spinner{width:36px;height:36px;border:3px solid rgba(249,115,22,0.2);border-top-color:#f97316;border-radius:50%;animation:spin 0.8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.eb-theme-toggle{display:inline-flex;align-items:center;gap:8px;cursor:pointer;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:5px 12px 5px 7px;transition:border-color 0.2s,background 0.2s;user-select:none;vertical-align:middle;position:absolute;top:14px;right:16px;z-index:10}.eb-theme-toggle-track{width:34px;height:19px;background:rgba(255,255,255,0.18);border-radius:100px;position:relative;transition:background 0.3s;flex-shrink:0}.eb-theme-toggle-thumb{position:absolute;top:2px;left:2px;width:15px;height:15px;background:#fff;border-radius:50%;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 1px 4px rgba(0,0,0,0.25)}.eb-theme-toggle-icon{font-size:12px;line-height:1}.eb-theme-toggle-lbl{font-size:0.7rem;color:rgba(255,255,255,0.55);letter-spacing:0.03em;white-space:nowrap}.page-wrapper{min-height:100vh;display:flex;flex-direction:column;position:relative}.form-area{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 16px 32px}.form-card{width:100%;max-width:440px}.card-inner{padding:32px 28px}@media (max-width:400px){.card-inner{padding:24px 18px}}.logo-section{text-align:center;margin-bottom:28px}.logo-section a{display:inline-flex;align-items:center;gap:12px;margin-bottom:16px;text-decoration:none}.logo-section h1{font-size:1.5rem;font-weight:700;margin:0 0 6px}.logo-section p{font-size:0.85rem;margin:0}@media (max-width:360px){.logo-section h1{font-size:1.25rem}.logo-brand{font-size:1.1rem!important}}.form-space{display:flex;flex-direction:column;gap:18px}.form-label{display:block;font-size:0.85rem;font-weight:500;margin-bottom:8px}.input-wrap{position:relative}.pw-toggle{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;padding:4px;line-height:1;font-size:18px;color:#94a3b8}.pw-toggle:hover{color:#fff}.remember-row{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.remember-label{display:flex;align-items:center;gap:8px;font-size:0.82rem;cursor:pointer}.forgot-btn{background:none;border:none;color:#fb923c;font-size:0.82rem;cursor:pointer;padding:0;font-family:inherit}.forgot-btn:hover{color:#fdba74}.divider{display:flex;align-items:center;gap:12px;margin:20px 0}.divider-line{flex:1;height:1px;background:#334155}.divider-text{font-size:0.72rem;color:#64748b;white-space:nowrap}.google-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:12px;padding:13px 16px;border-radius:12px;border:1px solid #334155;background:transparent;cursor:pointer;font-size:0.875rem;font-weight:500;font-family:inherit;transition:all 0.2s;color:inherit}.google-btn:hover{border-color:#64748b;background:rgba(255,255,255,0.04)}.google-btn:active{background:rgba(255,255,255,0.08)}.bottom-link{text-align:center;font-size:0.85rem;margin-top:20px}input[type="checkbox"]{width:16px;height:16px;accent-color:#f97316;cursor:pointer;flex-shrink:0}html.light body{background-color:#f1f5f9;color:#0f172a}html.light .glass{background:rgba(255,255,255,0.8);border-color:rgba(0,0,0,0.08)}html.light .text-white,html.light .logo-section h1{color:#0f172a}html.light .text-slate-300,.form-label{color:#334155}html.light .text-slate-400,.logo-section p,.bottom-link,.remember-label,.divider-text{color:#64748b}html.light .border-slate-700{border-color:#cbd5e1}html.light .google-btn{border-color:#cbd5e1;color:#0f172a}html.light .google-btn:hover{background:rgba(0,0,0,0.04)}html.light .input-field{background:#fff!important;color:#0f172a!important;border-color:#cbd5e1!important}html.light .input-field::placeholder{color:#94a3b8}html.light .eb-theme-toggle{background:rgba(0,0,0,0.04);border-color:rgba(0,0,0,0.12)}html.light .eb-theme-toggle-track{background:#6366f1}html.light .eb-theme-toggle-thumb{transform:translateX(15px)}html.light .eb-theme-toggle-lbl{color:rgba(0,0,0,0.45)}html.light .pw-toggle{color:#64748b}html.light .pw-toggle:hover{color:#0f172a}html.light .divider-line{background:#cbd5e1}#authMessage{display:none;margin-bottom:16px;padding:12px 16px;border-radius:12px;font-size:0.85rem;text-align:center;font-weight:500}#authMessage.show-error{display:block;background:rgba(239,68,68,0.12);color:#fca5a5;border:1px solid rgba(239,68,68,0.3)}#authMessage.show-ok{display:block;background:rgba(34,197,94,0.12);color:#86efac;border:1px solid rgba(34,197,94,0.3)}</style>
+    <script src="../js/theme.js"></script>
+    <!-- Google AdSense Auto Ads -->
+    <meta name="google-adsense-account" content="ca-pub-3896962422851508" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3896962422851508"
+      crossorigin="anonymous"
+    ></script>
+    <style>*,*::before,*::after{box-sizing:border-box}html,body{overflow-x:hidden;max-width:100%}img,video,iframe,embed,object{max-width:100%;height:auto}table{width:100%;overflow-x:auto;display:block}pre,code{overflow-x:auto;white-space:pre-wrap;word-break:break-word}@media (max-width:640px){h1{font-size:clamp(1.5rem,5vw,2.5rem)!important}h2{font-size:clamp(1.1rem,4vw,1.8rem)!important}.text-4xl{font-size:clamp(1.5rem,6vw,2.25rem)!important}.text-5xl{font-size:clamp(1.8rem,7vw,3rem)!important}.text-6xl{font-size:clamp(2rem,8vw,3.75rem)!important}}</style>
+<link rel="stylesheet" href="/css/design-system.css" />
+</head>
+
+  <body
+    class="bg-slate-950 text-white font-sans"
+  >
+    <!-- Auth check overlay -->
+    <div id="authCheckOverlay">
+      <div class="spinner"></div>
+      <p style="color: #64748b; font-size: 0.85rem; font-family: sans-serif">
+        Checking session…
+      </p>
+    </div>
+
+    <div class="page-wrapper">
+      <div class="nepal-stripe"></div>
+
+      <!-- Theme toggle -->
+
+      <div class="form-area">
+        <div class="form-card">
+          <!-- Logo -->
+          <div class="logo-section">
+            <a href="../index.html">
+              <img
+                loading="lazy"
+                src="../public/favicon.png"
+                alt="EduBoost Nepal"
+                style="
+                  width: 48px;
+                  height: 48px;
+                  border-radius: 14px;
+                  object-fit: cover;
+                "
+                onerror="this.style.display = 'none'"
+              />
+              <span
+                class="logo-brand"
+                style="font-size: 1.35rem; font-weight: 700"
+                >EduBoost <span style="color:#B91C2C">Nepal</span></span
+              >
+            </a>
+            <h1 class="text-white">Welcome back!</h1>
+            <p class="text-slate-400">
+              Login to continue your exam prep journey
+            </p>
+          </div>
+
+          <!-- Login Card -->
+          <div class="eb-card" style="border-radius:24px">
+            <div class="card-inner">
+              <div id="authMessage"></div>
+
+              <form
+                id="loginForm"
+                class="form-space"
+                onsubmit="handleLogin(event)"
+              >
+                <div>
+                  <label class="form-label text-slate-300">Email Address</label>
+                  <input
+                    id="loginEmail"
+                    type="email"
+                    required
+                    placeholder="your@email.com"
+                    autocomplete="email"
+                    class="input-field text-white"
+                    style="
+                      width: 100%;
+                      padding: 14px 16px;
+                      border-radius: 12px;
+                      color: inherit;
+                    "
+                  />
+                </div>
+
+                <div>
+                  <label class="form-label text-slate-300">Password</label>
+                  <div class="input-wrap">
+                    <input
+                      id="loginPassword"
+                      type="password"
+                      required
+                      placeholder="••••••••"
+                      autocomplete="current-password"
+                      class="input-field text-white"
+                      style="
+                        width: 100%;
+                        padding: 14px 48px 14px 16px;
+                        border-radius: 12px;
+                        color: inherit;
+                      "
+                    />
+                    <button
+                      type="button"
+                      id="loginPasswordToggle"
+                      onclick="togglePasswordVisibility('loginPassword','loginPasswordToggle')"
+                      class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-orange-400 transition-colors p-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400/30"
+                      aria-label="Toggle password visibility"
+                    >
+                      <svg id="loginPasswordToggle-eye-open" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                      <svg id="loginPasswordToggle-eye-closed" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="remember-row">
+                  <label class="remember-label text-slate-400">
+                    <input type="checkbox" id="rememberMe" />
+                    Remember me
+                  </label>
+                  <button
+                    type="button"
+                    class="forgot-btn"
+                    onclick="handleForgotPassword()"
+                  >
+                    Forgot password?
+                  </button>
+                </div>
+
+                <button
+                  type="submit"
+                  id="loginBtn"
+                  class="btn-primary text-white"
+                  style="
+                    width: 100%;
+                    padding: 15px;
+                    border-radius: 12px;
+                    font-weight: 700;
+                    font-size: 0.95rem;
+                    font-family: inherit;
+                    transition: all 0.2s;
+                  "
+                >
+                  Sign In →
+                </button>
+              </form>
+
+              <div class="divider">
+                <div class="divider-line"></div>
+                <span class="divider-text">OR</span>
+                <div class="divider-line"></div>
+              </div>
+
+              <!-- Google Sign In -->
+              <button class="google-btn text-white" onclick="handleGoogleLogin()">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  style="flex-shrink: 0"
+                >
+                  <path
+                    fill="#4285F4"
+                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                  />
+                  <path
+                    fill="#34A853"
+                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                  />
+                  <path
+                    fill="#FBBC05"
+                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                  />
+                  <path
+                    fill="#EA4335"
+                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                  />
+                </svg>
+                Continue with Google
+              </button>
+
+              <p class="bottom-link text-slate-400">
+                Don't have an account?
+                <a
+                  href="signup.html"
+                  style="
+                    color: #fb923c;
+                    font-weight: 600;
+                    text-decoration: none;
+                    margin-left: 4px;
+                  "
+                  >Sign up free →</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ── Firebase init ─────────────────────────────────────────────
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+      db.settings({ experimentalForceLongPolling: false, merge: true });
+      db.enableNetwork().catch(() => {});
+
+      // Ensure session persists across page refreshes (up to browser session)
+      auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(() => {});
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const returnUrl = urlParams.get("returnUrl");
+      const REDIRECT_AFTER_LOGIN = returnUrl
+        ? decodeURIComponent(returnUrl)
+        : "dashboard.html";
+
+      // ── THE FIX ───────────────────────────────────────────────────
+      // Firebase calls onAuthStateChanged once immediately when it
+      // knows the auth state. We wait for that single call:
+      //   • If user IS logged in  → redirect to dashboard (they shouldn't be here)
+      //   • If user is NOT logged in → hide the overlay and show the form
+      //
+      // The key is `authResolved` flag so we never redirect twice, and
+      // we never redirect during the form submission flow either.
+      let authResolved = false;
+      let isRedirecting = false;
+
+      // Check if we're mid-redirect from Google (don't flash the form)
+      const isReturningFromRedirect =
+        document.referrer.includes("accounts.google.com") ||
+        window.location.hash.includes("state=") ||
+        sessionStorage.getItem("googleRedirectPending") === "1";
+
+      const unsubscribe = auth.onAuthStateChanged((user) => {
+        if (authResolved) return;
+        authResolved = true;
+        unsubscribe();
+
+        if (user && !isRedirecting) {
+          // Already logged in — go straight to dashboard
+          isRedirecting = true;
+          window.location.replace(REDIRECT_AFTER_LOGIN);
+        } else if (!isRedirecting) {
+          // Not logged in — show the form (but only if we're not mid-redirect)
+          document.getElementById("authCheckOverlay").style.display = "none";
+        }
+      });
+
+      // Safety fallback: if Firebase takes >6s, hide overlay anyway
+      setTimeout(() => {
+        const overlay = document.getElementById("authCheckOverlay");
+        if (overlay && overlay.style.display !== "none" && !isRedirecting) {
+          overlay.style.display = "none";
+        }
+      }, 6000);
+
+      // ── Login with email/password ─────────────────────────────────
+      async function handleLogin(e) {
+        e.preventDefault();
+        if (isRedirecting) return;
+
+        const email = document.getElementById("loginEmail").value.trim();
+        const password = document.getElementById("loginPassword").value;
+
+        setLoading(true);
+        try {
+          await auth.signInWithEmailAndPassword(email, password);
+          showMessage("Login successful! Redirecting…");
+          isRedirecting = true;
+          setTimeout(() => window.location.replace(REDIRECT_AFTER_LOGIN), 800);
+        } catch (err) {
+          const msgs = {
+            "auth/user-not-found": "No account found with this email.",
+            "auth/wrong-password": "Incorrect password. Please try again.",
+            "auth/invalid-email": "Please enter a valid email address.",
+            "auth/invalid-credential": "Email or password is incorrect.",
+            "auth/too-many-requests":
+              "Too many attempts. Please try again later.",
+          };
+          showMessage(msgs[err.code] || err.message, true);
+          setLoading(false);
+        }
+      }
+
+      // ── Google Sign In ────────────────────────────────────────────
+      // Called on page load to catch any redirect result (fallback path when popup was blocked)
+      auth
+        .getRedirectResult()
+        .then(async (result) => {
+          sessionStorage.removeItem("googleRedirectPending");
+          if (!result || !result.user) return;
+          showMessage("Google sign-in successful! Redirecting…");
+          await saveGoogleUserProfile(result.user);
+          isRedirecting = true;
+          window.location.replace(REDIRECT_AFTER_LOGIN);
+        })
+        .catch((err) => {
+          sessionStorage.removeItem("googleRedirectPending");
+          if (err.code && err.code !== "auth/credential-already-in-use") {
+            document.getElementById("authCheckOverlay").style.display = "none";
+            showMessage("Google sign-in failed: " + err.message, true);
+          }
+        });
+
+      async function saveGoogleUserProfile(user) {
+        try {
+          await db.enableNetwork().catch(() => {});
+          let retries = 3;
+          while (retries > 0) {
+            try {
+              const userRef = db.collection("users").doc(user.uid);
+              const doc = await userRef.get();
+              if (!doc.exists) {
+                await userRef.set({
+                  name: user.displayName || "",
+                  email: user.email || "",
+                  role: "student",
+                  photoURL: user.photoURL || "",
+                  createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                  savedContent: [],
+                  activityCount: 0,
+                });
+              }
+              break;
+            } catch (fsErr) {
+              retries--;
+              if (retries === 0) {
+                console.warn("Firestore profile save failed:", fsErr.message);
+              } else {
+                await new Promise((r) => setTimeout(r, 800));
+              }
+            }
+          }
+        } catch (e) {
+          console.warn("saveGoogleUserProfile error:", e.message);
+        }
+      }
+
+      async function handleGoogleLogin() {
+        if (isRedirecting) return;
+        const provider = new firebase.auth.GoogleAuthProvider();
+        provider.addScope("email");
+        provider.addScope("profile");
+        provider.setCustomParameters({ prompt: "select_account" });
+
+        // Use popup for ALL devices — redirect flow breaks on Netlify
+        // because Firebase redirect requires authDomain to match the hosting domain.
+        try {
+          showMessage("Opening Google sign-in…");
+          const result = await auth.signInWithPopup(provider);
+          showMessage("Google sign-in successful! Redirecting…");
+          await saveGoogleUserProfile(result.user);
+          isRedirecting = true;
+          window.location.replace(REDIRECT_AFTER_LOGIN);
+        } catch (err) {
+          if (err.code === "auth/popup-blocked") {
+            // Popup was blocked — fall back to redirect
+            try {
+              showMessage("Popup blocked, trying redirect…");
+              sessionStorage.setItem("googleRedirectPending", "1");
+              await auth.signInWithRedirect(provider);
+            } catch (redirectErr) {
+              showMessage(
+                "Google sign-in failed: " + redirectErr.message,
+                true,
+              );
+            }
+          } else if (
+            err.code !== "auth/popup-closed-by-user" &&
+            err.code !== "auth/cancelled-popup-request"
+          ) {
+            showMessage("Google sign-in failed: " + err.message, true);
+          }
+        }
+      }
+
+      // ── Forgot password ───────────────────────────────────────────
+      async function handleForgotPassword() {
+        const email = document.getElementById("loginEmail").value.trim();
+        if (!email) {
+          showMessage("Please enter your email address first.", true);
+          return;
+        }
+        try {
+          await auth.sendPasswordResetEmail(email);
+          showMessage("Password reset email sent! Check your inbox.");
+        } catch (err) {
+          showMessage("Failed to send reset email: " + err.message, true);
+        }
+      }
+
+      // ── Helpers ───────────────────────────────────────────────────
+      function showMessage(msg, isError = false) {
+        const el = document.getElementById("authMessage");
+        el.textContent = msg;
+        el.className = isError ? "show-error" : "show-ok";
+      }
+
+      function setLoading(loading) {
+        const btn = document.getElementById("loginBtn");
+        btn.disabled = loading;
+        btn.textContent = loading ? "Signing in…" : "Sign In →";
+        btn.style.opacity = loading ? "0.7" : "1";
+      }
+
+      function togglePasswordVisibility(inputId, btnId) {
+        const input = document.getElementById(inputId);
+        const isHidden = input.type === "password";
+        input.type = isHidden ? "text" : "password";
+        if (btnId) {
+          const openEye = document.getElementById(btnId + "-eye-open");
+          const closedEye = document.getElementById(btnId + "-eye-closed");
+          if (openEye) openEye.classList.toggle("hidden", isHidden);
+          if (closedEye) closedEye.classList.toggle("hidden", !isHidden);
+        }
+      }
+    </script>
+  </body>
+</html>

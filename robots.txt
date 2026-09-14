@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+Allow: /pages/blog/
+Allow: /pages/blog.html
+Allow: /pages/about.html
+Allow: /pages/contact.html
+Allow: /pages/ai-tutor.html
+Allow: /pages/downloads.html
+Allow: /pages/blog-reader.html
+Allow: /pages/notes.html
+Allow: /pages/viewer.html
+
+# Block private/auth pages from crawlers
+Disallow: /pages/dashboard.html
+Disallow: /pages/login.html
+Disallow: /pages/signup.html
+Disallow: /pages/admin.html
+
+# Allow Google AdSense crawler specifically
+User-agent: Mediapartners-Google
+Allow: /
+
+# Allow Google AdsBot
+User-agent: AdsBot-Google
+Allow: /
+
+Sitemap: https://eduboostnepal.nabint.com.np/sitemap.xml

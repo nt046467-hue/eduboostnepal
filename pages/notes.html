@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <link rel="icon" href="../public/favicon.png" type="image/png" />
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.gstatic.com" />
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Free NEB study notes for Class 11 & 12 — Physics, Chemistry, Biology, Maths, Computer Science and more." />
+    <title>Notes — EduBoost Nepal</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/static-notes.js"></script>
+    <link rel="stylesheet" href="/css/design-system.css" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              ebNavy: "#0F1C3F",
+              ebCrimson: "#B91C2C"
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+              serif: ["Lora", "Georgia", "serif"]
+            }
+          }
+        },
+      };
+    </script>
+    <script src="../js/theme.js"></script>
+    <style>
+      body {
+        visibility: hidden;
+      }
+      body.auth-ready {
+        visibility: visible;
+      }
+      .filter-btn {
+        transition: all 0.2s;
+      }
+      .filter-btn.active {
+        background-color: var(--eb-crimson);
+        color: white !important;
+        border-color: var(--eb-crimson);
+      }
+    </style>
+    <!-- Google AdSense Auto Ads -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3896962422851508"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-[#F8FAFC] dark:bg-[#0B1220] text-slate-700 dark:text-slate-300 min-h-screen">
+    <!-- Header/Nav -->
+    <nav class="bg-white dark:bg-[#111827] border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 transition-colors">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href="../index.html" class="eb-nav-logo">
+            <img width="32" height="32" src="../public/favicon.png" alt="EduBoost Nepal" class="w-8 h-8 rounded-lg" />
+            <span class="font-bold text-base tracking-tight">EduBoost <span class="text-red-600">Nepal</span></span>
+          </a>
+
+          <!-- Desktop links -->
+          <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="notes.html" class="text-red-600 dark:text-red-500 font-semibold">Notes</a>
+            <a href="downloads.html" class="text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-500 transition-colors">Downloads</a>
+            <a href="ai-tutor.html" class="text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-500 transition-colors flex items-center"><i data-lucide="bot" class="w-4 h-4 mr-1"></i> AI Tutor</a>
+            <a href="blog.html" class="text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-500 transition-colors">Blog</a>
+            <a href="about.html" class="text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-500 transition-colors">About</a>
+            <a href="contact.html" class="text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-500 transition-colors">Contact</a>
+          </div>
+
+          <!-- Right controls -->
+          <div class="flex items-center gap-2">
+            <!-- Theme Toggle -->
+            <button onclick="toggleTheme()" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-500 dark:text-slate-400 border-none bg-transparent cursor-pointer mr-1" aria-label="Toggle Theme">
+              <span id="themeIcon">🌙</span>
+            </button>
+
+            <!-- Auth status toggles -->
+            <a id="nav-login-link" href="login.html" class="hidden sm:inline-block text-xs font-semibold px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">Login</a>
+            <a id="nav-signup-link" href="signup.html" class="hidden sm:inline-block text-xs font-semibold px-3 py-2 rounded-lg bg-red-700 hover:bg-red-800 text-white transition-all">Sign Up</a>
+            <a id="nav-dashboard-link" href="dashboard.html" style="display:none" class="hidden sm:inline-block text-xs font-semibold px-3 py-2 rounded-lg bg-red-700 hover:bg-red-800 text-white transition-all">Dashboard</a>
+
+            <!-- Mobile menu trigger -->
+            <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border-none bg-transparent cursor-pointer" aria-label="Open menu">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827] px-4 py-3 flex flex-col gap-2">
+        <a href="notes.html" class="text-red-600 dark:text-red-500 font-semibold py-1">Notes</a>
+        <a href="downloads.html" class="text-slate-600 dark:text-slate-400 py-1">Downloads</a>
+        <a href="ai-tutor.html" class="text-slate-600 dark:text-slate-400 py-1 flex items-center"><i data-lucide="bot" class="w-4 h-4 mr-1.5"></i> AI Tutor</a>
+        <a href="blog.html" class="text-slate-600 dark:text-slate-400 py-1">Blog</a>
+        <a href="about.html" class="text-slate-600 dark:text-slate-400 py-1">About</a>
+        <a href="contact.html" class="text-slate-600 dark:text-slate-400 py-1">Contact</a>
+        <hr class="border-slate-200 dark:border-slate-800 my-1" />
+        <a id="mob-login-link" href="login.html" class="text-slate-600 dark:text-slate-400 py-1 font-medium">Login</a>
+        <a id="mob-signup-link" href="signup.html" class="text-red-600 dark:text-red-500 py-1 font-semibold">Sign Up</a>
+        <a id="mob-dashboard-link" href="dashboard.html" style="display:none" class="text-red-600 dark:text-red-500 py-1 font-semibold">Dashboard</a>
+      </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      
+      <!-- Breadcrumbs -->
+      <div class="eb-breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <span class="text-slate-400 dark:text-slate-600">Notes</span>
+      </div>
+
+      <!-- Hero Header -->
+      <div class="mb-8">
+        <h1 class="text-3xl sm:text-4xl font-extrabold font-serif text-[#0F1C3F] dark:text-[#F8FAFC] tracking-tight mb-2">NEB Class 11/12 Exam Notes</h1>
+        <p class="text-slate-500 dark:text-slate-400 text-sm sm:text-base max-w-2xl">
+          Comprehensive, board-aligned notes for Physics, Chemistry, Biology, Mathematics, and Computer Science. Free and updated for the latest syllabus.
+        </p>
+      </div>
+
+      <!-- Search & Filters Container -->
+      <div class="eb-card p-4 sm:p-5 mb-8 flex flex-col md:flex-row gap-4 items-center justify-between">
+        <!-- Search bar -->
+        <div class="relative w-full md:w-80">
+          <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400 pointer-events-none">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </span>
+          <input
+            id="searchNotes"
+            type="text"
+            placeholder="Search notes by title, topic..."
+            class="bg-slate-100 dark:bg-slate-800 border border-transparent dark:border-transparent rounded-lg pl-9 pr-4 py-2.5 text-xs sm:text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-red-600 dark:focus:ring-red-500 w-full"
+            oninput="applyFilters()"
+          />
+        </div>
+
+        <!-- Filters Wrapper -->
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-4 w-full md:w-auto">
+          <!-- Class Filter -->
+          <div class="flex gap-2">
+            <button
+              onclick="setClassFilter('all')"
+              id="classAll"
+              class="filter-btn active text-xs font-semibold px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-transparent text-slate-700 dark:text-slate-300"
+            >
+              All Classes
+            </button>
+            <button
+              onclick="setClassFilter('11')"
+              id="class11"
+              class="filter-btn text-xs font-semibold px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-transparent text-slate-700 dark:text-slate-300"
+            >
+              Class 11
+            </button>
+            <button
+              onclick="setClassFilter('12')"
+              id="class12"
+              class="filter-btn text-xs font-semibold px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-transparent text-slate-700 dark:text-slate-300"
+            >
+              Class 12
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subject Horizontal Filter Scroll -->
+      <div class="mb-6">
+        <div class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-3">Filter by Subject</div>
+        <div
+          class="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1"
+          id="subjectFilters"
+          style="scrollbar-width: none"
+        >
+          <button
+            onclick="setSubjectFilter('all', this)"
+            id="subjAll"
+            class="filter-btn active text-xs font-semibold px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-transparent text-slate-700 dark:text-slate-300 whitespace-nowrap flex-shrink-0"
+          >
+            All Subjects
+          </button>
+          <button
+            onclick="setSubjectFilter('Physics', this)"
+            class="filter-btn text-xs font-semibold px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-transparent text-slate-700 dark:text-slate-300 whitespace-nowrap flex-shrink-0 flex items-center gap-1.5"
+          >
+            <i data-lucide="atom" class="w-3.5 h-3.5 text-blue-500"></i> Physics
+          </button>
+          <button
+            onclick="setSubjectFilter('Chemistry', this)"
+            class="filter-btn text-xs font-semibold px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-transparent text-slate-700 dark:text-slate-300 whitespace-nowrap flex-shrink-0 flex items-center gap-1.5"
+          >
+            <i data-lucide="flask-conical" class="w-3.5 h-3.5 text-purple-500"></i> Chemistry
+          </button>
+          <button
+            onclick="setSubjectFilter('Biology', this)"
+            class="filter-btn text-xs font-semibold px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-transparent text-slate-700 dark:text-slate-300 whitespace-nowrap flex-shrink-0 flex items-center gap-1.5"
+          >
+            <i data-lucide="dna" class="w-3.5 h-3.5 text-green-500"></i> Biology
+          </button>
+          <button
+            onclick="setSubjectFilter('Mathematics', this)"
+            class="filter-btn text-xs font-semibold px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-transparent text-slate-700 dark:text-slate-300 whitespace-nowrap flex-shrink-0 flex items-center gap-1.5"
+          >
+            <i data-lucide="calculator" class="w-3.5 h-3.5 text-yellow-500"></i> Math
+          </button>
+          <button
+            onclick="setSubjectFilter('Computer Science', this)"
+            class="filter-btn text-xs font-semibold px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-transparent text-slate-700 dark:text-slate-300 whitespace-nowrap flex-shrink-0 flex items-center gap-1.5"
+          >
+            <i data-lucide="cpu" class="w-3.5 h-3.5 text-cyan-500"></i> Computer Science
+          </button>
+        </div>
+      </div>
+
+      <!-- Notes Grid -->
+      <div
+        id="notesGrid"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
+      ></div>
+
+      <!-- Empty state -->
+      <div id="emptyState" class="hidden text-center py-16">
+        <div class="text-slate-400 mb-4 flex justify-center">
+          <i data-lucide="search" class="w-12 h-12 text-slate-300 dark:text-slate-700"></i>
+        </div>
+        <div class="text-slate-400">No notes found matching your filters.</div>
+      </div>
+    </div>
+
+    <script>
+      // ── FIREBASE INIT ───────────────────────────────────────────────
+      // FIREBASE_CONFIG and initializeApp are handled by utils.js (loaded above).
+      if (!firebase.apps.length) firebase.initializeApp(FIREBASE_CONFIG);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+
+      let currentUser = null;
+      let bookmarkedIds = [];
+      let bookmarksDocMap = {};
+
+      // Reveal page immediately and fetch notes
+      document.body.classList.add("auth-ready");
+
+      function fetchAndRenderNotes() {
+        db.collection("notesData")
+          .orderBy("subject")
+          .get()
+          .then((snap) => {
+            if (!snap.empty) {
+              allNotes = snap.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+              }));
+            } else {
+              allNotes = staticNotes;
+            }
+            renderNotes(allNotes);
+          })
+          .catch((e) => {
+            console.warn("Firestore fetch error, using static fallback:", e);
+            allNotes = staticNotes;
+            renderNotes(allNotes);
+          });
+      }
+
+      // Check auth state
+      auth.onAuthStateChanged(function (user) {
+        currentUser = user;
+        updateNavAndActions();
+        loadBookmarks();
+      });
+
+      function updateNavAndActions() {
+        const navLogin = document.getElementById("nav-login-link");
+        const navSignup = document.getElementById("nav-signup-link");
+        const navDashboard = document.getElementById("nav-dashboard-link");
+        const mobLogin = document.getElementById("mob-login-link");
+        const mobSignup = document.getElementById("mob-signup-link");
+        const mobDashboard = document.getElementById("mob-dashboard-link");
+
+        if (currentUser) {
+          if (navLogin) navLogin.style.display = "none";
+          if (navSignup) navSignup.style.display = "none";
+          if (navDashboard) navDashboard.style.display = "inline-block";
+          if (mobLogin) mobLogin.style.display = "none";
+          if (mobSignup) mobSignup.style.display = "none";
+          if (mobDashboard) mobDashboard.style.display = "block";
+        } else {
+          if (navLogin) navLogin.style.display = "inline-block";
+          if (navSignup) navSignup.style.display = "inline-block";
+          if (navDashboard) navDashboard.style.display = "none";
+          if (mobLogin) mobLogin.style.display = "block";
+          if (mobSignup) mobSignup.style.display = "block";
+          if (mobDashboard) mobDashboard.style.display = "none";
+        }
+      }
+
+      function loadBookmarks() {
+        if (!currentUser) {
+          bookmarkedIds = [];
+          bookmarksDocMap = {};
+          renderNotes(allNotes);
+          return;
+        }
+        db.collection("savedContent")
+          .where("userId", "==", currentUser.uid)
+          .where("type", "==", "note")
+          .get()
+          .then((snap) => {
+            bookmarkedIds = [];
+            bookmarksDocMap = {};
+            snap.forEach((doc) => {
+              const noteId = doc.data().content;
+              bookmarkedIds.push(noteId);
+              bookmarksDocMap[noteId] = doc.id;
+            });
+            renderNotes(allNotes);
+          })
+          .catch((e) => {
+            console.warn("Error loading bookmarks:", e);
+            renderNotes(allNotes);
+          });
+      }
+
+      // Initialize
+      fetchAndRenderNotes();
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+
+      // ── DATA ─────────────────────────────────────────────────────────────
+      const staticNotes = window.staticNotes;
+
+      // ── STATE ─────────────────────────────────────────────────────────────
+      let allNotes = [];
+      let activeClassFilter = "all";
+      let activeSubjectFilter = "all";
+
+      // ── RENDER ────────────────────────────────────────────────────────────
+      const subjectIconMap = {
+        "Physics": "atom",
+        "Chemistry": "flask-conical",
+        "Biology": "dna",
+        "Mathematics": "sigma",
+        "Computer Science": "cpu"
+      };
+      function getSubjectIcon(subject) {
+        return subjectIconMap[subject] || "book-text";
+      }
+
+      function renderNotes(notes) {
+        const grid = document.getElementById("notesGrid");
+        const empty = document.getElementById("emptyState");
+        if (notes.length === 0) {
+          grid.innerHTML = "";
+          empty.classList.remove("hidden");
+          return;
+        }
+        empty.classList.add("hidden");
+        
+        grid.innerHTML = notes
+          .map((note) => {
+            const isSaved = bookmarkedIds.includes(note.id);
+            const activeBookmarkClass = isSaved ? "fill-red-700 text-red-700 dark:fill-red-500 dark:text-red-500" : "text-slate-400 dark:text-slate-600 hover:text-red-700";
+            return `
+            <div class="eb-card flex flex-col justify-between p-5" onclick="openNote('${note.id}')" tabindex="0" role="button" onkeydown="if(event.key==='Enter')openNote('${note.id}')">
+              <div>
+                <div class="flex items-start justify-between mb-4">
+                  <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-red-50 dark:bg-red-950/30 text-[#B91C2C] dark:text-red-500">
+                    <i data-lucide="${getSubjectIcon(note.subject)}" class="w-5 h-5"></i>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-[10px] font-bold uppercase tracking-wider bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 px-2 py-1 rounded">Class ${note.class}</span>
+                    <button onclick="event.stopPropagation(); toggleBookmark('${note.id}')" class="p-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center justify-center border-none bg-transparent cursor-pointer" title="Bookmark Note">
+                      <svg class="w-4 h-4 ${activeBookmarkClass}" fill="${isSaved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1.5">${note.subject} • ${note.chapter}</div>
+                <h3 class="text-lg font-bold font-serif text-[#0F1C3F] dark:text-[#F8FAFC] mb-2 leading-snug hover:text-red-700 transition-colors">${note.title}</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-4" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">${note.summary}</p>
+              </div>
+              <div class="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-red-700 dark:text-red-500 font-bold uppercase tracking-wider">
+                <span>Read Notes →</span>
+                <span class="text-[10px] text-slate-400 font-normal normal-case">5 min read</span>
+              </div>
+            </div>
+            `;
+          })
+          .join("");
+
+        if (window.lucide) {
+          window.lucide.createIcons();
+        }
+      }
+
+      // ── FILTERS ───────────────────────────────────────────────────────────
+      function setClassFilter(cls) {
+        activeClassFilter = cls;
+        document
+          .querySelectorAll('[id^="class"]')
+          .forEach((b) => {
+            b.classList.remove("active", "bg-red-700", "text-white");
+            b.classList.add("text-slate-700", "dark:text-slate-300");
+          });
+        document
+          .getElementById(`class${cls === "all" ? "All" : cls}`)
+          .classList.add("active");
+        applyFilters();
+      }
+
+      function setSubjectFilter(subject, btn) {
+        activeSubjectFilter = subject;
+        document.querySelectorAll("#subjectFilters button").forEach((b) => {
+          b.classList.remove("active");
+          b.classList.add("text-slate-700", "dark:text-slate-300");
+        });
+        btn.classList.add("active");
+        applyFilters();
+      }
+
+      function applyFilters() {
+        const search = document
+          .getElementById("searchNotes")
+          .value.toLowerCase()
+          .trim();
+        const filtered = allNotes.filter((note) => {
+          const matchClass =
+            activeClassFilter === "all" ||
+            String(note.class) === String(activeClassFilter);
+          const matchSubject =
+            activeSubjectFilter === "all" ||
+            (note.subject || "").toLowerCase() ===
+              activeSubjectFilter.toLowerCase();
+          const matchSearch =
+            !search ||
+            note.title.toLowerCase().includes(search) ||
+            note.summary.toLowerCase().includes(search) ||
+            note.subject.toLowerCase().includes(search) ||
+            note.chapter.toLowerCase().includes(search) ||
+            (note.tags || []).some((t) => t.toLowerCase().includes(search));
+          return matchClass && matchSubject && matchSearch;
+        });
+        renderNotes(filtered);
+      }
+
+      // ── MODAL & ACTIONS ───────────────────────────────────────────────────
+      function openNote(id) {
+        const note = allNotes.find((n) => n.id === id);
+        if (!note) return;
+        localStorage.setItem("currentNote", JSON.stringify(note));
+        window.location.href = `viewer.html?id=${id}`;
+      }
+
+      window.toggleBookmark = function(noteId) {
+        if (!currentUser) {
+          showAuthModal("Save to Bookmarks", "Log in to bookmark this note and save it to your personal learning dashboard.");
+          return;
+        }
+        
+        const isBookmarked = bookmarkedIds.includes(noteId);
+        const note = allNotes.find((n) => n.id === noteId);
+        if (!note) return;
+
+        if (isBookmarked) {
+          const docId = bookmarksDocMap[noteId];
+          if (docId) {
+            db.collection("savedContent").doc(docId).delete()
+              .then(() => {
+                showToast("Bookmark removed!");
+                bookmarkedIds = bookmarkedIds.filter(id => id !== noteId);
+                delete bookmarksDocMap[noteId];
+                renderNotes(allNotes);
+              })
+              .catch((e) => {
+                showToast("Error removing bookmark", "error");
+              });
+          }
+        } else {
+          db.collection("savedContent").add({
+            userId: currentUser.uid,
+            uid: currentUser.uid,
+            type: "note",
+            content: noteId,
+            metadata: {
+              title: note.title,
+              subject: note.subject,
+              class: note.class,
+              savedAt: Date.now()
+            },
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+          })
+          .then((docRef) => {
+            showToast("Note bookmarked successfully!");
+            bookmarkedIds.push(noteId);
+            bookmarksDocMap[noteId] = docRef.id;
+            renderNotes(allNotes);
+          })
+          .catch((e) => {
+            showToast("Error saving bookmark", "error");
+          });
+        }
+      };
+
+      // Mobile Menu Toggle
+      window.toggleMobileMenu = function() {
+        const menu = document.getElementById("mobileMenu");
+        if (menu) menu.classList.toggle("hidden");
+      };
+    </script>
+  </body>
+</html>

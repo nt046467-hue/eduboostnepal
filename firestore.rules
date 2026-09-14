@@ -1,0 +1,62 @@
+﻿rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── PUBLIC READ COLLECTIONS ────────────────────────────────────────────
+    // Notes, downloads, and blog content are publicly readable (SEO + no-gate)
+    // Only admin users may write to these collections
+    match /notesData/{docId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.admin == true;
+    }
+
+    match /downloadsData/{docId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.admin == true;
+    }
+
+    match /blogPosts/{docId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.admin == true;
+    }
+
+    // ── USER-OWNED DATA ───────────────────────────────────────────────────
+    // Users can only read/write their own saved content bookmarks
+    match /savedContent/{docId} {
+      allow read, delete: if request.auth != null &&
+        resource.data.userId == request.auth.uid;
+      allow create: if request.auth != null &&
+        request.resource.data.userId == request.auth.uid;
+      allow update: if request.auth != null &&
+        resource.data.userId == request.auth.uid &&
+        request.resource.data.userId == request.auth.uid;
+    }
+
+    // Users can read and update their own profile document
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // ── CONTACT / SUBSCRIBE ───────────────────────────────────────────────
+    // Anyone may create a contact or subscription form entry (no read back)
+    match /contacts/{docId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null &&
+        request.auth.token.admin == true;
+    }
+
+    match /subscribers/{docId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null &&
+        request.auth.token.admin == true;
+    }
+
+    // ── ADMIN-ONLY ────────────────────────────────────────────────────────
+    // Anything else defaults to admin-only access
+    match /{document=**} {
+      allow read, write: if request.auth != null &&
+        request.auth.token.admin == true;
+    }
+  }
+}

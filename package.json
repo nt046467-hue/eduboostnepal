@@ -1,0 +1,22 @@
+{
+  "name": "eduboost-final",
+  "version": "1.0.0",
+  "description": "A complete, production-ready educational web app for NEB Nepal students and teachers — featuring AI question/answer generation, notes, blog, downloads, and an admin panel.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "nodemailer": "^6.9.9"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.9",
+    "tailwindcss": "^4.2.2"
+  }
+}

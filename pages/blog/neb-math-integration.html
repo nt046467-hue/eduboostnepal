@@ -1,0 +1,1374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A step-by-step 2-week study plan to master Integration for NEB Class 12 Mathematics, covering core techniques, common traps, and board-style practice." />
+    <title>
+      NEB Mathematics: Master Integration in 2 Weeks | EduBoost Nepal
+    </title>
+    <link rel="icon" href="../../public/favicon.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>:root{--bg:#0a0c10;--bg2:#0f1117;--bg3:#13161e;--surface:#181c27;--surface2:#1e2333;--border:#252b3b;--border2:#2e3550;--text:#e8eaf0;--text2:#9aa3bd;--text3:#6b7494;--accent:#4f7cff;--accent2:#6e95ff;--accent-glow:rgba(79,124,255,0.18);--green:#22c97a;--green-bg:rgba(34,201,122,0.1);--red:#ff4f6a;--red-bg:rgba(255,79,106,0.1);--gold:#f5b942;--gold-bg:rgba(245,185,66,0.1);--purple:#a855f7;--purple-bg:rgba(168,85,247,0.1);--cyan:#22d3ee;--cyan-bg:rgba(34,211,238,0.1);--font:"Sora",sans-serif;--mono:"JetBrains Mono",monospace;--serif:"Lora",serif;--radius:14px;--radius-sm:8px;--shadow:0 4px 32px rgba(0,0,0,0.5);--shadow-accent:0 4px 32px rgba(79,124,255,0.15);--nav-bg:rgba(10,12,16,0.92)}html.light{--bg:#f5f7ff;--bg2:#eef1fb;--bg3:#e6eaf8;--surface:#ffffff;--surface2:#f0f3fc;--border:#d4daf2;--border2:#c0c8e8;--text:#0d1226;--text2:#4a5580;--text3:#8e99c0;--accent:#3a5fd9;--accent2:#2d4fc9;--accent-glow:rgba(58,95,217,0.12);--green:#15a060;--green-bg:rgba(21,160,96,0.1);--red:#d93a52;--red-bg:rgba(217,58,82,0.1);--gold:#c9900a;--gold-bg:rgba(201,144,10,0.1);--purple:#6d28d9;--purple-bg:rgba(109,40,217,0.1);--cyan:#0891b2;--cyan-bg:rgba(8,145,178,0.1);--shadow:0 4px 32px rgba(0,0,0,0.08);--shadow-accent:0 4px 32px rgba(58,95,217,0.12);--nav-bg:rgba(245,247,255,0.95)}.theme-toggle{display:flex;align-items:center;gap:8px;cursor:pointer;background:var(--surface);border:1px solid var(--border2);border-radius:100px;padding:6px 14px 6px 8px;transition:all 0.2s ease;user-select:none}.theme-toggle:hover{border-color:var(--accent);background:var(--accent-glow)}.theme-toggle-track{width:36px;height:20px;background:var(--border2);border-radius:100px;position:relative;transition:background 0.3s ease;flex-shrink:0}html.light .theme-toggle-track{background:var(--accent)}.theme-toggle-thumb{position:absolute;top:2px;left:2px;width:16px;height:16px;background:white;border-radius:50%;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 1px 4px rgba(0,0,0,0.25)}html.light .theme-toggle-thumb{transform:translateX(16px)}.theme-toggle-icon{font-size:13px;line-height:1}.theme-toggle-label{font-size:11px;font-family:var(--mono);color:var(--text3);letter-spacing:0.03em;white-space:nowrap}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;transition:background 0.3s ease,color 0.3s ease}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}.watermark{position:fixed;bottom:20px;right:20px;z-index:999;background:var(--surface);border:1px solid var(--border2);border-radius:30px;padding:7px 16px;font-size:11px;font-family:var(--mono);color:var(--accent);letter-spacing:0.5px;box-shadow:var(--shadow-accent);pointer-events:none}nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 max(24px,calc((100% - 1100px) / 2));display:flex;align-items:center;justify-content:space-between;height:60px;transition:background 0.3s ease}.nav-brand{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:0.5px}.nav-badge{background:var(--accent-glow);border:1px solid var(--accent);color:var(--accent2);border-radius:20px;padding:4px 14px;font-size:11px;font-family:var(--mono);letter-spacing:0.5px}.container{max-width:1100px;margin:0 auto;padding:0 24px}.hero{position:relative;padding:100px 24px 80px;text-align:center;overflow:hidden;max-width:1100px;margin:0 auto}.hero::before{content:"";position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse at center,rgba(79,124,255,0.12) 0%,transparent 70%);pointer-events:none}.hero-tag{display:inline-block;background:var(--accent-glow);border:1px solid rgba(79,124,255,0.4);color:var(--accent2);border-radius:30px;padding:6px 20px;font-size:12px;font-family:var(--mono);letter-spacing:1px;margin-bottom:28px;text-transform:uppercase}.hero h1{font-size:clamp(36px,6vw,68px);font-weight:800;line-height:1.1;letter-spacing:-1.5px;margin-bottom:22px;background:linear-gradient(135deg,#fff 0%,#a0b4ff 60%,#4f7cff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.hero-sub{font-size:17px;color:var(--text2);max-width:600px;margin:0 auto 44px;line-height:1.7}.hero-stats{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}.stat-card{background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius);padding:20px 28px;text-align:center;min-width:140px;transition:border-color 0.3s,transform 0.3s}.stat-card:hover{border-color:var(--accent);transform:translateY(-2px)}.stat-val{font-size:28px;font-weight:800;color:var(--accent2);font-family:var(--mono);display:block}.stat-label{font-size:12px;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;margin-top:4px}section{padding:80px 24px;max-width:1100px;margin:0 auto}section + section{padding-top:0}.section-label{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}.section-title{font-size:clamp(24px,4vw,36px);font-weight:700;letter-spacing:-0.5px;margin-bottom:12px}.section-desc{color:var(--text2);font-size:15px;max-width:680px;margin-bottom:40px}.divider{border:none;border-top:1px solid var(--border);max-width:1100px;margin:0 auto}.quick-nav-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 32px}.quick-nav-title{font-size:12px;font-family:var(--mono);color:var(--text3);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:18px}.quick-nav-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px}.quick-nav-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:var(--radius-sm);color:var(--text2);text-decoration:none;font-size:13.5px;transition:background 0.2s,color 0.2s}.quick-nav-item:hover{background:var(--surface2);color:var(--accent2)}.quick-nav-item .nav-num{font-family:var(--mono);font-size:11px;color:var(--accent);min-width:22px}.highlight{border-radius:var(--radius);padding:20px 24px;margin-bottom:16px;border-left:3px solid}.highlight-red{background:var(--red-bg);border-color:var(--red)}.highlight-green{background:var(--green-bg);border-color:var(--green)}.highlight-blue{background:var(--accent-glow);border-color:var(--accent)}.highlight-gold{background:var(--gold-bg);border-color:var(--gold)}.highlight-purple{background:var(--purple-bg);border-color:var(--purple)}.highlight-cyan{background:var(--cyan-bg);border-color:var(--cyan)}.highlight-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;font-family:var(--mono)}.highlight-red .highlight-title{color:var(--red)}.highlight-green .highlight-title{color:var(--green)}.highlight-blue .highlight-title{color:var(--accent2)}.highlight-gold .highlight-title{color:var(--gold)}.highlight-purple .highlight-title{color:var(--purple)}.highlight-cyan .highlight-title{color:var(--cyan)}.highlight p,.highlight li{font-size:14.5px;color:var(--text2)}.highlight ul{padding-left:18px}.highlight li{margin-bottom:4px}.fail-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}.fail-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:border-color 0.3s,transform 0.3s;position:relative;overflow:hidden}.fail-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--red)}.fail-card:hover{border-color:var(--red);transform:translateY(-2px)}.fail-num{font-family:var(--mono);font-size:11px;color:var(--red);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}.fail-card h4{font-size:15px;font-weight:700;margin-bottom:8px}.fail-card p{font-size:13.5px;color:var(--text2);line-height:1.6}.concept-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}.concept-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:border-color 0.3s,transform 0.3s}.concept-card:hover{border-color:var(--accent);transform:translateY(-2px)}.concept-icon{font-size:22px;margin-bottom:12px}.concept-card h4{font-size:15px;font-weight:700;margin-bottom:8px}.concept-card p{font-size:13.5px;color:var(--text2);line-height:1.6}.formula-block{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 16px;margin-top:12px;font-family:var(--mono);font-size:13px;color:var(--cyan)}.type-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}.type-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:all 0.3s;position:relative;overflow:hidden}.type-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-accent)}.type-badge{display:inline-block;border-radius:20px;padding:3px 12px;font-size:10px;font-family:var(--mono);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}.type-card:nth-child(1){border-top:2px solid var(--accent)}.type-card:nth-child(2){border-top:2px solid var(--green)}.type-card:nth-child(3){border-top:2px solid var(--gold)}.type-card:nth-child(4){border-top:2px solid var(--purple)}.type-card:nth-child(5){border-top:2px solid var(--cyan)}.type-card:nth-child(6){border-top:2px solid var(--red)}.type-card:nth-child(1) .type-badge{background:var(--accent-glow);color:var(--accent2)}.type-card:nth-child(2) .type-badge{background:var(--green-bg);color:var(--green)}.type-card:nth-child(3) .type-badge{background:var(--gold-bg);color:var(--gold)}.type-card:nth-child(4) .type-badge{background:var(--purple-bg);color:var(--purple)}.type-card:nth-child(5) .type-badge{background:var(--cyan-bg);color:var(--cyan)}.type-card:nth-child(6) .type-badge{background:var(--red-bg);color:var(--red)}.type-card h4{font-size:17px;font-weight:700;margin-bottom:14px}.type-row{display:flex;flex-direction:column;gap:8px;font-size:13.5px}.type-row-item{display:flex;gap:10px}.type-row-label{font-family:var(--mono);font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;min-width:90px;padding-top:1px}.type-row-val{color:var(--text2)}.method-wrap{display:flex;flex-direction:column;gap:14px}.method-step{display:flex;gap:20px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;transition:border-color 0.3s}.method-step:hover{border-color:var(--accent)}.method-letter{width:48px;height:48px;border-radius:12px;background:var(--accent-glow);border:1px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:20px;font-weight:700;color:var(--accent2);flex-shrink:0}.method-content h4{font-size:16px;font-weight:700;margin-bottom:4px}.method-content p{font-size:13.5px;color:var(--text2)}.method-acronym{text-align:center;font-family:var(--mono);font-size:28px;font-weight:700;color:var(--accent2);letter-spacing:12px;padding:16px;background:var(--accent-glow);border:1px solid rgba(79,124,255,0.3);border-radius:var(--radius);margin-bottom:24px}.plan-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}.plan-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform 0.3s,border-color 0.3s}.plan-card:hover{transform:translateY(-2px)}.plan-header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between}.plan-card:nth-child(1) .plan-header{background:rgba(79,124,255,0.12);border-bottom:1px solid rgba(79,124,255,0.2)}.plan-card:nth-child(2) .plan-header{background:rgba(34,201,122,0.1);border-bottom:1px solid rgba(34,201,122,0.2)}.plan-card:nth-child(3) .plan-header{background:rgba(245,185,66,0.1);border-bottom:1px solid rgba(245,185,66,0.2)}.plan-card:nth-child(4) .plan-header{background:rgba(34,211,238,0.1);border-bottom:1px solid rgba(34,211,238,0.2)}.plan-card:nth-child(5) .plan-header{background:rgba(168,85,247,0.1);border-bottom:1px solid rgba(168,85,247,0.2)}.plan-card:nth-child(6) .plan-header{background:rgba(255,79,106,0.1);border-bottom:1px solid rgba(255,79,106,0.2)}.plan-card:nth-child(1){border-top:2px solid var(--accent)}.plan-card:nth-child(2){border-top:2px solid var(--green)}.plan-card:nth-child(3){border-top:2px solid var(--gold)}.plan-card:nth-child(4){border-top:2px solid var(--cyan)}.plan-card:nth-child(5){border-top:2px solid var(--purple)}.plan-card:nth-child(6){border-top:2px solid var(--red)}.plan-days{font-family:var(--mono);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}.plan-card:nth-child(1) .plan-days{color:var(--accent2)}.plan-card:nth-child(2) .plan-days{color:var(--green)}.plan-card:nth-child(3) .plan-days{color:var(--gold)}.plan-card:nth-child(4) .plan-days{color:var(--cyan)}.plan-card:nth-child(5) .plan-days{color:var(--purple)}.plan-card:nth-child(6) .plan-days{color:var(--red)}.plan-phase{font-size:10px;font-family:var(--mono);color:var(--text3);text-transform:uppercase;letter-spacing:1px;border-radius:10px;padding:2px 10px;border:1px solid var(--border2)}.plan-body{padding:18px 20px}.plan-body h4{font-size:15px;font-weight:700;margin-bottom:10px}.plan-tasks{list-style:none;display:flex;flex-direction:column;gap:6px}.plan-tasks li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text2)}.plan-tasks li::before{content:"→";font-family:var(--mono);color:var(--accent);flex-shrink:0}.plan-target{margin-top:12px;padding:8px 12px;background:var(--bg3);border-radius:var(--radius-sm);font-size:12px;font-family:var(--mono);color:var(--text3);display:flex;align-items:center;gap:8px}.plan-target span{color:var(--gold);font-weight:700}.practice-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}@media (max-width:700px){.practice-grid{grid-template-columns:1fr}}.practice-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px}.practice-block h4{font-size:15px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}.practice-block h4 .dot{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block}.practice-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:13.5px;color:var(--text2)}.practice-item:last-child{border-bottom:none}.practice-val{font-family:var(--mono);font-size:13px;color:var(--green);font-weight:600}.pastq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}.pastq-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;transition:border-color 0.3s,transform 0.3s}.pastq-card:hover{border-color:var(--gold);transform:translateY(-2px)}.pastq-card h4{font-size:14px;font-weight:700;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:8px}.pastq-card p,.pastq-card li{font-size:13.5px;color:var(--text2);line-height:1.6}.pastq-card ul{padding-left:16px}.pastq-card li{margin-bottom:4px}.mistake-list{display:flex;flex-direction:column;gap:12px}.mistake-item{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;transition:border-color 0.3s}.mistake-item:hover{border-color:var(--red)}.mistake-icon{width:36px;height:36px;border-radius:8px;background:var(--red-bg);border:1px solid var(--red);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}.mistake-text h4{font-size:14px;font-weight:700;margin-bottom:4px}.mistake-text p{font-size:13px;color:var(--text2)}.exam-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}.exam-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:border-color 0.3s}.exam-card:hover{border-color:var(--accent)}.exam-card .num{font-family:var(--mono);font-size:28px;font-weight:800;color:var(--accent);line-height:1;margin-bottom:6px}.exam-card h4{font-size:14px;font-weight:700;margin-bottom:8px}.exam-card p{font-size:13px;color:var(--text2)}.checklist-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}.checklist-header{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}.checklist-header h3{font-size:16px;font-weight:700}.progress-wrap{display:flex;align-items:center;gap:12px;min-width:200px}.progress-bar-bg{flex:1;height:6px;background:var(--bg3);border-radius:3px;overflow:hidden}.progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--green));border-radius:3px;transition:width 0.4s ease;width:0%}.progress-text{font-family:var(--mono);font-size:12px;color:var(--text2);white-space:nowrap}.checklist-body{display:grid;grid-template-columns:1fr 1fr;gap:0}@media (max-width:600px){.checklist-body{grid-template-columns:1fr}}.check-item{display:flex;align-items:flex-start;gap:12px;padding:14px 24px;border-bottom:1px solid var(--border);cursor:pointer;transition:background 0.2s}.check-item:hover{background:var(--surface2)}.check-item:nth-child(odd){border-right:1px solid var(--border)}.check-box{width:20px;height:20px;border-radius:5px;border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;transition:all 0.2s}.check-item.checked .check-box{background:var(--green);border-color:var(--green)}.check-tick{display:none;color:#fff;font-size:12px;font-weight:700}.check-item.checked .check-tick{display:block}.check-text{font-size:13.5px;color:var(--text2);line-height:1.5;transition:color 0.2s}.check-item.checked .check-text{color:var(--text3);text-decoration:line-through}.check-cat{font-family:var(--mono);font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;display:block;margin-bottom:2px}.formula-table{width:100%;border-collapse:collapse;font-size:13.5px}.formula-table th{background:var(--surface);padding:10px 16px;text-align:left;font-size:11px;font-family:var(--mono);color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;border-bottom:1px solid var(--border)}.formula-table td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--text2)}.formula-table td:first-child{color:var(--text);font-weight:500}.formula-table td code{font-family:var(--mono);font-size:13px;color:var(--cyan);background:var(--bg3);padding:2px 8px;border-radius:4px}.formula-table tr:hover td{background:var(--surface2)}.table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;color:var(--text3);font-size:13px;max-width:1100px;margin:0 auto}footer span{color:var(--accent2)}@media (max-width:768px){.fail-grid,.type-grid,.plan-grid,.pastq-grid,.exam-grid,.concept-grid{grid-template-columns:1fr}.quick-nav-grid{grid-template-columns:1fr 1fr}.checklist-body{grid-template-columns:1fr}.check-item:nth-child(odd){border-right:none}nav{padding:0 16px}section{padding:60px 16px}.hero{padding:70px 16px 60px}}@media (max-width:480px){.quick-nav-grid{grid-template-columns:1fr}.hero-stats{flex-direction:column;align-items:center}.stat-card{width:100%;max-width:240px}}.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease}.fade-in.visible{opacity:1;transform:translateY(0)}.eb-theme-toggle{display:inline-flex;align-items:center;gap:8px;cursor:pointer;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:5px 12px 5px 7px;transition:border-color 0.2s,background 0.2s;user-select:none;vertical-align:middle}html.light .eb-theme-toggle{background:rgba(0,0,0,0.04);border-color:rgba(0,0,0,0.12)}.eb-theme-toggle:hover{border-color:#6366f1;background:rgba(99,102,241,0.1)}.eb-theme-toggle-track{width:34px;height:19px;background:rgba(255,255,255,0.18);border-radius:100px;position:relative;transition:background 0.3s;flex-shrink:0}html.light .eb-theme-toggle-track{background:#6366f1}.eb-theme-toggle-thumb{position:absolute;top:2px;left:2px;width:15px;height:15px;background:#fff;border-radius:50%;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 1px 4px rgba(0,0,0,0.25)}html.light .eb-theme-toggle-thumb{transform:translateX(15px)}.eb-theme-toggle-icon{font-size:12px;line-height:1}.eb-theme-toggle-lbl{font-size:0.7rem;color:rgba(255,255,255,0.55);letter-spacing:0.03em;white-space:nowrap}html.light .eb-theme-toggle-lbl{color:rgba(0,0,0,0.45)}</style>
+    <script src="../../js/theme.js"></script>
+    <!-- Google AdSense Auto Ads -->
+    <meta name="google-adsense-account" content="ca-pub-3896962422851508" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3896962422851508"
+      crossorigin="anonymous"
+    ></script>
+    <!-- SEO: Open Graph + JSON-LD Article schema -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="NEB Mathematics: Master Integration in 2 Weeks | EduBoost Nepal"
+    />
+    <meta
+      property="og:description"
+      content="Step-by-step guide to mastering integration for NEB Class 12 Mathematics in just 2 weeks."
+    />
+    <meta
+      property="og:url"
+      content="https://eduboostnepal.nabint.com.np/pages/blog/neb-math-integration.html"
+    />
+    <meta property="og:image" content="https://i.imgur.com/SK5OCoF.jpeg" />
+    <meta property="og:site_name" content="EduBoost Nepal" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="NEB Mathematics: Master Integration in 2 Weeks | EduBoost Nepal"
+    />
+    <meta
+      name="twitter:description"
+      content="Step-by-step guide to mastering integration for NEB Class 12 Mathematics in just 2 weeks."
+    />
+    <meta name="twitter:image" content="https://i.imgur.com/SK5OCoF.jpeg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "NEB Mathematics: Master Integration in 2 Weeks | EduBoost Nepal",
+        "description": "Step-by-step guide to mastering integration for NEB Class 12 Mathematics in just 2 weeks.",
+        "url": "https://eduboostnepal.nabint.com.np/pages/blog/neb-math-integration.html",
+        "image": "https://i.imgur.com/SK5OCoF.jpeg",
+        "publisher": {
+          "@type": "Organization",
+          "name": "EduBoost Nepal",
+          "url": "https://eduboostnepal.nabint.com.np"
+        },
+        "inLanguage": "en-NP"
+      }
+    </script>
+    <style>*,*::before,*::after{box-sizing:border-box}html,body{overflow-x:hidden;max-width:100%}img,video,iframe,embed,object{max-width:100%;height:auto}table{width:100%;overflow-x:auto;display:block}pre,code{overflow-x:auto;white-space:pre-wrap;word-break:break-word}@media (max-width:640px){h1{font-size:clamp(1.5rem,5vw,2.5rem)!important}h2{font-size:clamp(1.1rem,4vw,1.8rem)!important}.text-4xl{font-size:clamp(1.5rem,6vw,2.25rem)!important}.text-5xl{font-size:clamp(1.8rem,7vw,3rem)!important}.text-6xl{font-size:clamp(2rem,8vw,3.75rem)!important}}</style>
+    <link rel="canonical" href="https://eduboostnepal.nabint.com.np/pages/blog/neb-math-integration.html" />
+  </head>
+  <body>
+    <!-- WATERMARK -->
+    <div class="watermark">⚡ EduBoost-Nepal</div>
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav-brand">EduBoost-Nepal</div>
+      <div class="nav-badge">📘 NEB · Class 12 · Math</div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-tag">📘 NEB Mathematics · Class 12 · Nepal</div>
+      <h1>NEB Mathematics: Master Integration<br />in 2 Weeks</h1>
+      <p class="hero-sub">
+        No vague advice. No inspiration. Just a structured system that takes you
+        from formula confusion to exam-ready execution — in 14 days flat.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-val">14</span>
+          <span class="stat-label">Day Plan</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-val">90+</span>
+          <span class="stat-label">Score Target</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-val">6</span>
+          <span class="stat-label">Methods Covered</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-val">HIGH</span>
+          <span class="stat-label">Weight Chapter</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- QUICK NAV -->
+    <section id="nav">
+      <div class="section-label">Contents</div>
+      <div class="section-title">Quick Navigation</div>
+      <div class="quick-nav-wrap fade-in">
+        <div class="quick-nav-title">Jump to any section</div>
+        <div class="quick-nav-grid">
+          <a href="#why-fail" class="quick-nav-item"
+            ><span class="nav-num">01</span> Why Students Fail Integration</a
+          >
+          <a href="#core" class="quick-nav-item"
+            ><span class="nav-num">02</span> Core Concepts You Must Know</a
+          >
+          <a href="#types" class="quick-nav-item"
+            ><span class="nav-num">03</span> Types of Integration</a
+          >
+          <a href="#method" class="quick-nav-item"
+            ><span class="nav-num">04</span> Problem Solving Strategy</a
+          >
+          <a href="#plan" class="quick-nav-item"
+            ><span class="nav-num">05</span> 2-Week Study Plan</a
+          >
+          <a href="#daily" class="quick-nav-item"
+            ><span class="nav-num">06</span> Daily Practice System</a
+          >
+          <a href="#pastq" class="quick-nav-item"
+            ><span class="nav-num">07</span> Past Question Strategy</a
+          >
+          <a href="#mistakes" class="quick-nav-item"
+            ><span class="nav-num">08</span> Common Mistakes</a
+          >
+          <a href="#exam" class="quick-nav-item"
+            ><span class="nav-num">09</span> Exam Hall Strategy</a
+          >
+          <a href="#checklist" class="quick-nav-item"
+            ><span class="nav-num">10</span> Final Checklist</a
+          >
+        </div>
+      </div>
+    </section>
+    <hr class="divider" />
+
+    <!-- WHY FAIL -->
+    <section id="why-fail">
+      <div class="section-label">Failure Analysis</div>
+      <div class="section-title">Why Students Fail Integration</div>
+      <p class="section-desc">
+        Stop blaming the chapter. These are the exact reasons students score 0
+        in integration questions — and every single one is fixable.
+      </p>
+
+      <div class="highlight highlight-red fade-in" style="margin-bottom: 32px">
+        <div class="highlight-title">⚠ Hard Truth</div>
+        <p>
+          Integration is not hard. It is <strong>unfamiliar</strong>. Most
+          students never practice enough to make the methods automatic. The exam
+          rewards students who have solved 200+ problems, not those who read the
+          chapter twice.
+        </p>
+      </div>
+
+      <div class="fail-grid">
+        <div class="fail-card fade-in">
+          <div class="fail-num">Reason 01</div>
+          <h4>Memorizing Without Understanding</h4>
+          <p>
+            You memorized ∫xⁿ dx = xⁿ⁺¹/(n+1) + C but have no idea why. When the
+            question is twisted slightly, you freeze. Understanding the
+            derivation makes formulas stick and adapt.
+          </p>
+        </div>
+        <div class="fail-card fade-in">
+          <div class="fail-num">Reason 02</div>
+          <h4>Not Practicing Enough Problems</h4>
+          <p>
+            Reading solved examples is not practice. Solving 5 problems per day
+            for 2 weeks is 70+ problems. Anything below 100 solved problems
+            means you are not exam-ready for this chapter.
+          </p>
+        </div>
+        <div class="fail-card fade-in">
+          <div class="fail-num">Reason 03</div>
+          <h4>Skipping Substitution and By Parts</h4>
+          <p>
+            These two methods alone cover 60–70% of NEB integration questions.
+            Students who skip them because they look "complex" leave massive
+            marks on the table every single year.
+          </p>
+        </div>
+        <div class="fail-card fade-in">
+          <div class="fail-num">Reason 04</div>
+          <h4>Fear of Long Questions</h4>
+          <p>
+            Integration by parts problems can take 10–15 steps. Students panic
+            when they don't see the answer immediately. Long problems are not
+            hard — they just require patience and a clear method.
+          </p>
+        </div>
+        <div class="fail-card fade-in">
+          <div class="fail-num">Reason 05</div>
+          <h4>No Pattern Recognition</h4>
+          <p>
+            NEB repeats the same question patterns year after year. Students who
+            haven't analyzed past questions walk in blind. Students who have
+            solved 10 years of papers recognize the question in 5 seconds.
+          </p>
+        </div>
+        <div class="fail-card fade-in">
+          <div class="fail-num">Reason 06</div>
+          <h4>Algebra Errors Killing Correct Methods</h4>
+          <p>
+            You chose the right method, set up the integral correctly, then made
+            an arithmetic error. Practice algebraic manipulation alongside
+            integration — weak algebra ruins strong integration skills.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- CORE CONCEPTS -->
+    <section id="core">
+      <div class="section-label">Foundations</div>
+      <div class="section-title">Core Concepts You Must Know</div>
+      <p class="section-desc">
+        These are the building blocks. If any one of these is shaky, your entire
+        integration performance collapses.
+      </p>
+
+      <div class="concept-grid">
+        <div class="concept-card fade-in">
+          <div class="concept-icon">∫</div>
+          <h4>What Integration Actually Is</h4>
+          <p>
+            Integration is the reverse of differentiation. If d/dx [F(x)] =
+            f(x), then ∫f(x)dx = F(x) + C. Master this fundamental link before
+            touching any formula.
+          </p>
+          <div class="formula-block">∫f(x)dx = F(x) + C</div>
+        </div>
+        <div class="concept-card fade-in">
+          <div class="concept-icon">📋</div>
+          <h4>Standard Integration Formulas</h4>
+          <p>
+            These are non-negotiable. You must know all power, trigonometric,
+            exponential and logarithmic results from memory — not from looking
+            them up.
+          </p>
+          <div class="formula-block">∫xⁿdx = xⁿ⁺¹/(n+1) + C (n ≠ -1)</div>
+        </div>
+        <div class="concept-card fade-in">
+          <div class="concept-icon">🔢</div>
+          <h4>Definite vs Indefinite Integration</h4>
+          <p>
+            Indefinite integration gives a family of functions (always includes
+            +C). Definite integration gives a specific numerical value between
+            two limits — no +C in the final answer.
+          </p>
+          <div class="formula-block">∫ₐᵇ f(x)dx = [F(x)]ₐᵇ = F(b) - F(a)</div>
+        </div>
+        <div class="concept-card fade-in">
+          <div class="concept-icon">➕</div>
+          <h4>The Constant of Integration (+C)</h4>
+          <p>
+            Never omit +C in indefinite integration. In NEB exams, missing +C
+            can cost you marks even if everything else is correct. Make it a
+            non-negotiable habit.
+          </p>
+          <div class="formula-block">∫2x dx = x² + C (not just x²)</div>
+        </div>
+        <div class="concept-card fade-in">
+          <div class="concept-icon">📐</div>
+          <h4>Area Under the Curve Concept</h4>
+          <p>
+            Definite integration = area bounded by a curve, x-axis, and vertical
+            lines x = a and x = b. This geometric interpretation explains why
+            limits exist and what you're actually computing.
+          </p>
+          <div class="formula-block">Area = ∫ₐᵇ |f(x)| dx</div>
+        </div>
+        <div class="concept-card fade-in">
+          <div class="concept-icon">⚖️</div>
+          <h4>Properties of Definite Integrals</h4>
+          <p>
+            Swapping limits changes sign. Splitting the interval at any point is
+            valid. Even/odd function symmetry properties save enormous time in
+            NEB questions.
+          </p>
+          <div class="formula-block">∫ₐᵇ f(x)dx = -∫ᵦₐ f(x)dx</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 28px" class="table-wrap fade-in">
+        <table class="formula-table">
+          <thead>
+            <tr>
+              <th>Function</th>
+              <th>Standard Result</th>
+              <th>Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>xⁿ</td>
+              <td><code>xⁿ⁺¹/(n+1) + C</code></td>
+              <td>n ≠ -1</td>
+            </tr>
+            <tr>
+              <td>1/x</td>
+              <td><code>ln|x| + C</code></td>
+              <td>Always use absolute value</td>
+            </tr>
+            <tr>
+              <td>eˣ</td>
+              <td><code>eˣ + C</code></td>
+              <td>Derivative = itself</td>
+            </tr>
+            <tr>
+              <td>aˣ</td>
+              <td><code>aˣ/ln(a) + C</code></td>
+              <td>a &gt; 0, a ≠ 1</td>
+            </tr>
+            <tr>
+              <td>sin x</td>
+              <td><code>-cos x + C</code></td>
+              <td>Note the negative sign</td>
+            </tr>
+            <tr>
+              <td>cos x</td>
+              <td><code>sin x + C</code></td>
+              <td>Most commonly tested</td>
+            </tr>
+            <tr>
+              <td>sec²x</td>
+              <td><code>tan x + C</code></td>
+              <td>Direct derivative of tan x</td>
+            </tr>
+            <tr>
+              <td>cosec²x</td>
+              <td><code>-cot x + C</code></td>
+              <td>Note the negative sign</td>
+            </tr>
+            <tr>
+              <td>sec x tan x</td>
+              <td><code>sec x + C</code></td>
+              <td>Memorize this directly</td>
+            </tr>
+            <tr>
+              <td>1/√(1-x²)</td>
+              <td><code>sin⁻¹x + C</code></td>
+              <td>Inverse trig result</td>
+            </tr>
+            <tr>
+              <td>1/(1+x²)</td>
+              <td><code>tan⁻¹x + C</code></td>
+              <td>Very common in NEB</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- TYPES OF INTEGRATION -->
+    <section id="types">
+      <div class="section-label">Methods</div>
+      <div class="section-title">Types of Integration</div>
+      <p class="section-desc">
+        Six methods. Learn each independently. Then learn when to switch between
+        them. This is where exam marks are actually decided.
+      </p>
+
+      <div class="type-grid">
+        <div class="type-card fade-in">
+          <div class="type-badge">Method 01</div>
+          <h4>Basic / Direct Integration</h4>
+          <div class="type-row">
+            <div class="type-row-item">
+              <span class="type-row-label">When to use</span>
+              <span class="type-row-val"
+                >The integral matches a standard formula directly or after
+                simple simplification</span
+              >
+            </div>
+            <div class="type-row-item">
+              <span class="type-row-label">Key idea</span>
+              <span class="type-row-val"
+                >Apply the standard result immediately. No transformation
+                needed.</span
+              >
+            </div>
+            <div class="type-row-item">
+              <span class="type-row-label">NEB pattern</span>
+              <span class="type-row-val"
+                >∫(3x² + 2x - 5)dx, ∫(sin x + eˣ)dx, ∫x³ dx</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="type-card fade-in">
+          <div class="type-badge">Method 02</div>
+          <h4>Substitution Method</h4>
+          <div class="type-row">
+            <div class="type-row-item">
+              <span class="type-row-label">When to use</span>
+              <span class="type-row-val"
+                >A composite function where one part is the derivative of
+                another part</span
+              >
+            </div>
+            <div class="type-row-item">
+              <span class="type-row-label">Key idea</span>
+              <span class="type-row-val"
+                >Let u = inner function, compute du, substitute, integrate,
+                back-substitute</span
+              >
+            </div>
+            <div class="type-row-item">
+              <span class="type-row-label">NEB pattern</span>
+              <span class="type-row-val"
+                >∫2x·sin(x²)dx, ∫cos(3x+1)dx, ∫eˢⁱⁿˣ·cos x dx</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="type-card fade-in">
+          <div class="type-badge">Method 03</div>
+          <h4>Integration by Parts</h4>
+          <div class="type-row">
+            <div class="type-row-item">
+              <span class="type-row-label">When to use</span>
+              <span class="type-row-val"
+                >Product of two different types of functions (ILATE order)</span
+              >
+            </div>
+            <div class="type-row-item">
+              <span class="type-row-label">Key idea</span>
+              <span class="type-row-val"
+                >∫u·dv = u·v - ∫v·du. Choose u by ILATE: Inverse, Log,
+                Algebraic, Trig, Exponential</span
+              >
+            </div>
+            <div class="type-row-item">
+              <span class="type-row-label">NEB pattern</span>
+              <span class="type-row-val"
+                >∫x·eˣdx, ∫x·cos x dx, ∫ln x dx, ∫x²·sin x dx</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="type-card fade-in">
+          <div class="type-badge">Method 04</div>
+          <h4>Partial Fractions</h4>
+          <div class="type-row">
+            <div class="type-row-item">
+              <span class="type-row-label">When to use</span>
+              <span class="type-row-val"
+                >Rational function (polynomial ÷ polynomial) where denominator
+                can be factored</span
+              >
+            </div>
+            <div class="type-row-item">
+              <span class="type-row-label">Key idea</span>
+              <span class="type-row-val"
+                >Decompose into simpler fractions, integrate each separately
+                using ln results</span
+              >
+            </div>
+            <div class="type-row-item">
+              <span class="type-row-label">NEB pattern</span>
+              <span class="type-row-val"
+                >∫1/[(x+1)(x+2)]dx, ∫(2x+3)/[(x²-1)]dx</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="type-card fade-in">
+          <div class="type-badge">Method 05</div>
+          <h4>Trigonometric Integrals</h4>
+          <div class="type-row">
+            <div class="type-row-item">
+              <span class="type-row-label">When to use</span>
+              <span class="type-row-val"
+                >Powers or products of trig functions that don't integrate
+                directly</span
+              >
+            </div>
+            <div class="type-row-item">
+              <span class="type-row-label">Key idea</span>
+              <span class="type-row-val"
+                >Use identities: sin²x = (1-cos2x)/2, cos²x = (1+cos2x)/2,
+                double angle formulas</span
+              >
+            </div>
+            <div class="type-row-item">
+              <span class="type-row-label">NEB pattern</span>
+              <span class="type-row-val"
+                >∫sin²x dx, ∫cos³x dx, ∫sin x·cos x dx, ∫tan²x dx</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="type-card fade-in">
+          <div class="type-badge">Method 06</div>
+          <h4>Definite Integration</h4>
+          <div class="type-row">
+            <div class="type-row-item">
+              <span class="type-row-label">When to use</span>
+              <span class="type-row-val"
+                >When limits are given. Apply any method above, then substitute
+                limits.</span
+              >
+            </div>
+            <div class="type-row-item">
+              <span class="type-row-label">Key idea</span>
+              <span class="type-row-val"
+                >F(b) - F(a). No +C. Don't forget to change limits when
+                substituting.</span
+              >
+            </div>
+            <div class="type-row-item">
+              <span class="type-row-label">NEB pattern</span>
+              <span class="type-row-val"
+                >∫₀¹ x·eˣdx, ∫₀^(π/2) sin²x dx, ∫₁² (2x+1)dx</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- METHOD / DUFSA EQUIVALENT -->
+    <section id="method">
+      <div class="section-label">Problem Solving</div>
+      <div class="section-title">The ICSVA Method</div>
+      <p class="section-desc">
+        A repeatable 5-step framework. Apply it to every integration problem
+        without exception. This eliminates panic and method confusion.
+      </p>
+
+      <div class="method-acronym fade-in">
+        I &nbsp; C &nbsp; S &nbsp; V &nbsp; A
+      </div>
+
+      <div class="method-wrap">
+        <div class="method-step fade-in">
+          <div class="method-letter">I</div>
+          <div class="method-content">
+            <h4>Identify — What type of integral is this?</h4>
+            <p>
+              Scan the integrand. Is it a polynomial? A product of two
+              functions? A rational function? A composite function? You must
+              name the type before you do anything else. Writing blindly leads
+              to wasted time and wrong methods.
+            </p>
+          </div>
+        </div>
+        <div class="method-step fade-in">
+          <div class="method-letter">C</div>
+          <div class="method-content">
+            <h4>Choose — Select the correct method</h4>
+            <p>
+              Based on identification: direct → basic formula. Composite →
+              substitution. Product of different types → integration by parts
+              (ILATE). Rational fraction → partial fractions. Trig powers →
+              identities first. Never guess. Choose deliberately.
+            </p>
+          </div>
+        </div>
+        <div class="method-step fade-in">
+          <div class="method-letter">S</div>
+          <div class="method-content">
+            <h4>Simplify — Before applying any formula</h4>
+            <p>
+              Expand brackets. Split fractions. Apply trig identities. Factor
+              out constants. Many students apply formulas to unsimplified
+              expressions and get wrong answers. Simplify first, every time.
+            </p>
+          </div>
+        </div>
+        <div class="method-step fade-in">
+          <div class="method-letter">V</div>
+          <div class="method-content">
+            <h4>Verify — Check your answer by differentiating</h4>
+            <p>
+              Differentiate your answer. If you get back the original integrand,
+              your answer is correct. This takes 30 seconds and catches 80% of
+              errors before you submit. Use it on every question in the exam if
+              time permits.
+            </p>
+          </div>
+        </div>
+        <div class="method-step fade-in">
+          <div class="method-letter">A</div>
+          <div class="method-content">
+            <h4>Answer — Write clean, complete final answer</h4>
+            <p>
+              For indefinite: include +C. For definite: substitute limits and
+              compute F(b) − F(a), show each step clearly. NEB awards marks for
+              method steps — show all working even if you're unsure of the final
+              value.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px">
+        <div class="highlight highlight-gold fade-in">
+          <div class="highlight-title">⚡ Quick Method Selector</div>
+          <p>
+            <strong>Composite function f(g(x))·g'(x)?</strong> → Substitution
+            &nbsp;|&nbsp; <strong>Product of two function types?</strong> → By
+            Parts (ILATE) &nbsp;|&nbsp;
+            <strong>Polynomial ÷ Polynomial?</strong> → Partial Fractions
+            &nbsp;|&nbsp; <strong>sin²/cos²/tan²?</strong> → Trig Identity
+            &nbsp;|&nbsp; <strong>Everything else?</strong> → Direct Formula
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- 2 WEEK PLAN -->
+    <section id="plan">
+      <div class="section-label">Master Plan</div>
+      <div class="section-title">2-Week Study Plan</div>
+      <p class="section-desc">
+        14 days. Each phase builds on the last. Do not jump ahead. Do not skip
+        phases. This sequence is intentional.
+      </p>
+
+      <div class="highlight highlight-blue fade-in" style="margin-bottom: 28px">
+        <div class="highlight-title">📌 Plan Rules</div>
+        <p>
+          Minimum 2 hours per day on integration only. Do not mix other chapters
+          during this period. Complete every listed task before moving to the
+          next phase. If you miss a day, add the tasks to the next day — do not
+          skip.
+        </p>
+      </div>
+
+      <div class="plan-grid">
+        <div class="plan-card fade-in">
+          <div class="plan-header">
+            <span class="plan-days">Day 1 – 3</span>
+            <span class="plan-phase">Phase 1</span>
+          </div>
+          <div class="plan-body">
+            <h4>Basics + All Standard Formulas</h4>
+            <ul class="plan-tasks">
+              <li>Write and memorize all 15+ standard formulas</li>
+              <li>Solve 10 direct integration problems each day</li>
+              <li>Practice polynomial integration (expand first)</li>
+              <li>Cover ∫eˣ, ∫sin x, ∫cos x, ∫1/x problems</li>
+              <li>Quiz yourself on formulas without notes</li>
+            </ul>
+            <div class="plan-target">
+              Target: <span>30+ problems</span> · All formulas memorized
+            </div>
+          </div>
+        </div>
+        <div class="plan-card fade-in">
+          <div class="plan-header">
+            <span class="plan-days">Day 4 – 6</span>
+            <span class="plan-phase">Phase 2</span>
+          </div>
+          <div class="plan-body">
+            <h4>Substitution Method</h4>
+            <ul class="plan-tasks">
+              <li>Learn substitution rules: u = inner function</li>
+              <li>Practice identifying which part to substitute</li>
+              <li>Solve 10 substitution problems daily</li>
+              <li>
+                Handle definite integrals with substitution + limit change
+              </li>
+              <li>Time yourself: target 4–6 min per problem</li>
+            </ul>
+            <div class="plan-target">
+              Target: <span>30+ problems</span> · Method automatic
+            </div>
+          </div>
+        </div>
+        <div class="plan-card fade-in">
+          <div class="plan-header">
+            <span class="plan-days">Day 7 – 9</span>
+            <span class="plan-phase">Phase 3</span>
+          </div>
+          <div class="plan-body">
+            <h4>By Parts + Partial Fractions</h4>
+            <ul class="plan-tasks">
+              <li>Memorize ILATE priority rule</li>
+              <li>Solve ∫x·eˣ, ∫x·sin x, ∫ln x type problems</li>
+              <li>Practice decomposing fractions (linear factors)</li>
+              <li>Handle repeated and non-repeated factors</li>
+              <li>Combine both methods in mixed exercises</li>
+            </ul>
+            <div class="plan-target">
+              Target: <span>25+ problems</span> · ILATE mastered
+            </div>
+          </div>
+        </div>
+        <div class="plan-card fade-in">
+          <div class="plan-header">
+            <span class="plan-days">Day 10 – 11</span>
+            <span class="plan-phase">Phase 4</span>
+          </div>
+          <div class="plan-body">
+            <h4>Definite Integration</h4>
+            <ul class="plan-tasks">
+              <li>Practice F(b) - F(a) with all 6 methods</li>
+              <li>Apply trig identities for definite trig integrals</li>
+              <li>Use symmetry properties to simplify</li>
+              <li>Solve area-under-curve problems</li>
+              <li>Mix with definite substitution (change limits)</li>
+            </ul>
+            <div class="plan-target">
+              Target: <span>20+ problems</span> · Zero +C errors
+            </div>
+          </div>
+        </div>
+        <div class="plan-card fade-in">
+          <div class="plan-header">
+            <span class="plan-days">Day 12 – 13</span>
+            <span class="plan-phase">Phase 5</span>
+          </div>
+          <div class="plan-body">
+            <h4>Past NEB Questions — Targeted Practice</h4>
+            <ul class="plan-tasks">
+              <li>Solve integration questions from last 10 NEB papers</li>
+              <li>Identify which method each question uses</li>
+              <li>Note which question types appear most often</li>
+              <li>Solve under timed conditions (2–3 hrs per paper)</li>
+              <li>Review mistakes immediately after each paper</li>
+            </ul>
+            <div class="plan-target">
+              Target: <span>30+ past questions</span> · Pattern identified
+            </div>
+          </div>
+        </div>
+        <div class="plan-card fade-in">
+          <div class="plan-header">
+            <span class="plan-days">Day 14</span>
+            <span class="plan-phase">Phase 6</span>
+          </div>
+          <div class="plan-body">
+            <h4>Full Revision + Mock Test</h4>
+            <ul class="plan-tasks">
+              <li>Re-solve one problem from each method type</li>
+              <li>Write all formulas from memory — no notes</li>
+              <li>Take a 3-hour mock test covering all methods</li>
+              <li>Review ICSVA method one final time</li>
+              <li>Sleep early. No new content on Day 14 evening.</li>
+            </ul>
+            <div class="plan-target">
+              Target: <span>Mock score 35+/40</span> · Exam ready
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- DAILY PRACTICE -->
+    <section id="daily">
+      <div class="section-label">Practice System</div>
+      <div class="section-title">Daily Practice System</div>
+      <p class="section-desc">
+        Volume alone is not enough. The type of practice matters as much as the
+        quantity. Follow this system exactly.
+      </p>
+
+      <div class="practice-grid">
+        <div class="practice-block fade-in">
+          <h4><span class="dot"></span> Daily Problem Targets</h4>
+          <div class="practice-item">
+            <span>Warm-up (direct formulas)</span>
+            <span class="practice-val">5 problems</span>
+          </div>
+          <div class="practice-item">
+            <span>Current method focus</span>
+            <span class="practice-val">8–10 problems</span>
+          </div>
+          <div class="practice-item">
+            <span>Mixed method review</span>
+            <span class="practice-val">3–5 problems</span>
+          </div>
+          <div class="practice-item">
+            <span>One exam-level problem</span>
+            <span class="practice-val">1 problem (timed)</span>
+          </div>
+          <div class="practice-item">
+            <span>Daily minimum total</span>
+            <span class="practice-val">15–20 problems</span>
+          </div>
+          <div class="practice-item">
+            <span>14-day total target</span>
+            <span class="practice-val">200+ problems</span>
+          </div>
+        </div>
+        <div class="practice-block fade-in">
+          <h4>
+            <span class="dot" style="background: var(--gold)"></span> Repetition
+            Strategy
+          </h4>
+          <div class="practice-item">
+            <span>Problems you got wrong</span>
+            <span class="practice-val">Redo next day</span>
+          </div>
+          <div class="practice-item">
+            <span>Problems that took 10+ min</span>
+            <span class="practice-val">Redo till &lt;5 min</span>
+          </div>
+          <div class="practice-item">
+            <span>Methods covered in Week 1</span>
+            <span class="practice-val">Review in Week 2</span>
+          </div>
+          <div class="practice-item">
+            <span>Formula recall quiz</span>
+            <span class="practice-val">Every 2 days</span>
+          </div>
+          <div class="practice-item">
+            <span>Mistake log review</span>
+            <span class="practice-val">Every day</span>
+          </div>
+          <div class="practice-item">
+            <span>Full mock test</span>
+            <span class="practice-val">Day 14 only</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 20px">
+        <div class="highlight highlight-green fade-in">
+          <div class="highlight-title">✅ Mistake Correction Loop</div>
+          <p>
+            Keep a dedicated mistake notebook. For every wrong answer: (1)
+            identify the exact error — formula, method choice, or algebra. (2)
+            Rewrite the correct solution. (3) Solve a similar problem within 24
+            hours. This loop is more valuable than solving 20 new problems.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- PAST Q STRATEGY -->
+    <section id="pastq">
+      <div class="section-label">NEB Exam Intelligence</div>
+      <div class="section-title">Past Question Strategy</div>
+      <p class="section-desc">
+        NEB is predictable. Students who ignore this fact work 3x harder than
+        students who exploit it.
+      </p>
+
+      <div class="pastq-grid">
+        <div class="pastq-card fade-in">
+          <h4>📅 Solve Last 10 Years</h4>
+          <ul>
+            <li>NEB integration patterns repeat every 2–3 years</li>
+            <li>
+              Certain question types (substitution, by parts) appear every year
+            </li>
+            <li>
+              10 years × ~4 integration questions = 40+ practice problems with
+              real exam context
+            </li>
+            <li>This alone is 30% of your preparation</li>
+          </ul>
+        </div>
+        <div class="pastq-card fade-in">
+          <h4>🔍 Identify Question Patterns</h4>
+          <ul>
+            <li>Mark which method each past question uses</li>
+            <li>
+              Note which function types appear (trig, exponential, rational)
+            </li>
+            <li>Spot which formulas are tested most frequently</li>
+            <li>Create your own "high probability" question list</li>
+          </ul>
+        </div>
+        <div class="pastq-card fade-in">
+          <h4>⏱ Practice Under Time Pressure</h4>
+          <ul>
+            <li>Each integration question: max 8–10 minutes in exam</li>
+            <li>Time yourself from Day 12 onwards</li>
+            <li>
+              If a question takes 15+ minutes in practice, find a faster
+              approach
+            </li>
+            <li>Speed comes from repetition, not intelligence</li>
+          </ul>
+        </div>
+        <div class="pastq-card fade-in">
+          <h4>📊 Mark Distribution</h4>
+          <ul>
+            <li>Integration typically carries 16–24 marks in NEB Math</li>
+            <li>Long questions (8 marks) often involve by parts or definite</li>
+            <li>
+              Short questions (4 marks) often involve substitution or basic
+            </li>
+            <li>Answering all integration questions = 20–25% of total paper</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top: 20px">
+        <div class="highlight highlight-cyan fade-in">
+          <div class="highlight-title">🔁 NEB Repeat Patterns</div>
+          <p>
+            Integration by parts with ∫xeˣdx or ∫x sin x dx appears almost every
+            year. ∫sin²x dx using the half-angle identity is a recurring 4-mark
+            question. ∫1/[(x+a)(x+b)]dx using partial fractions is a predictable
+            long question. These three alone could secure 12+ marks.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- COMMON MISTAKES -->
+    <section id="mistakes">
+      <div class="section-label">Error Prevention</div>
+      <div class="section-title">Common Mistakes That Kill Marks</div>
+      <p class="section-desc">
+        These mistakes appear in the answer sheets of thousands of students
+        every year. Most are completely avoidable.
+      </p>
+
+      <div class="mistake-list">
+        <div class="mistake-item fade-in">
+          <div class="mistake-icon">∁</div>
+          <div class="mistake-text">
+            <h4>Forgetting +C in Indefinite Integration</h4>
+            <p>
+              This is the most common mark-losing error in NEB. The constant of
+              integration is mandatory in every indefinite integral. Make it a
+              physical habit — write +C immediately after the antiderivative,
+              every single time, before doing anything else.
+            </p>
+          </div>
+        </div>
+        <div class="mistake-item fade-in">
+          <div class="mistake-icon">⛔</div>
+          <div class="mistake-text">
+            <h4>Not Changing Limits in Definite Substitution</h4>
+            <p>
+              When you use substitution in a definite integral, you must change
+              the limits from x-values to u-values. Failing to do this and
+              substituting back at the end wastes time and introduces errors.
+              Always change limits at the point of substitution.
+            </p>
+          </div>
+        </div>
+        <div class="mistake-item fade-in">
+          <div class="mistake-icon">❌</div>
+          <div class="mistake-text">
+            <h4>Choosing the Wrong Method</h4>
+            <p>
+              Trying to use substitution on a product of unrelated functions
+              wastes 5+ minutes. Trying direct integration on a composite
+              function gives the wrong answer. Use the ICSVA method — identify
+              before you start. Wrong method selection is a thinking error, not
+              a knowledge error.
+            </p>
+          </div>
+        </div>
+        <div class="mistake-item fade-in">
+          <div class="mistake-icon">🔣</div>
+          <div class="mistake-text">
+            <h4>Sign Errors in Trigonometric Results</h4>
+            <p>
+              ∫sin x dx = −cos x + C (negative sign). ∫cosec²x dx = −cot x + C
+              (negative sign). These negative signs are missed in 40% of student
+              answers. Write trig results from memory only after confirming the
+              sign by differentiating once.
+            </p>
+          </div>
+        </div>
+        <div class="mistake-item fade-in">
+          <div class="mistake-icon">➗</div>
+          <div class="mistake-text">
+            <h4>Algebra Mistakes Inside Integrals</h4>
+            <p>
+              Expanding (x+1)² as x² + 1 instead of x² + 2x + 1. Splitting
+              fractions incorrectly. Canceling terms that cannot be canceled.
+              These algebra errors corrupt an otherwise correct integration
+              approach. Slow down at the simplification step.
+            </p>
+          </div>
+        </div>
+        <div class="mistake-item fade-in">
+          <div class="mistake-icon">🔃</div>
+          <div class="mistake-text">
+            <h4>Skipping Steps to Save Time</h4>
+            <p>
+              NEB awards marks for each correct step. A student who writes all
+              steps correctly but makes an arithmetic error in the final answer
+              can still score 5/8. A student who skips steps and gets the wrong
+              answer scores 0/8. Show every step, always.
+            </p>
+          </div>
+        </div>
+        <div class="mistake-item fade-in">
+          <div class="mistake-icon">🔡</div>
+          <div class="mistake-text">
+            <h4>Wrong ILATE Order in Integration by Parts</h4>
+            <p>
+              ILATE: Inverse trig → Logarithm → Algebraic → Trigonometric →
+              Exponential. Always choose u as the function that appears earlier
+              in ILATE. Choosing u = eˣ when x is also present leads to a more
+              complex integral, not a simpler one.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- EXAM STRATEGY -->
+    <section id="exam">
+      <div class="section-label">Exam Hall</div>
+      <div class="section-title">Exam Hall Strategy</div>
+      <p class="section-desc">
+        Your performance in the exam depends as much on execution strategy as it
+        does on preparation. These rules apply on exam day.
+      </p>
+
+      <div class="exam-grid">
+        <div class="exam-card fade-in">
+          <div class="num">01</div>
+          <h4>Attempt Sequence</h4>
+          <p>
+            Start with direct/basic integration questions first. Build
+            confidence and secure easy marks. Attempt substitution next. Save by
+            parts and partial fractions for after you've secured the simpler
+            marks. Never start with the hardest question.
+          </p>
+        </div>
+        <div class="exam-card fade-in">
+          <div class="num">02</div>
+          <h4>Time Per Question</h4>
+          <p>
+            4-mark integration question: maximum 8 minutes. 8-mark integration
+            question: maximum 15 minutes. If you exceed these limits, move on
+            and return later. One question should never consume 30 minutes of
+            exam time.
+          </p>
+        </div>
+        <div class="exam-card fade-in">
+          <div class="num">03</div>
+          <h4>Handling Long Questions</h4>
+          <p>
+            Break the problem into visible steps. Write the method you're using
+            at the top: "Using Integration by Parts." This reminds you and
+            signals to the examiner. If you get stuck midway, continue with what
+            you know — partial credit is real.
+          </p>
+        </div>
+        <div class="exam-card fade-in">
+          <div class="num">04</div>
+          <h4>Partial Marking Strategy</h4>
+          <p>
+            If you cannot complete a question, write what you know: identify the
+            type, write the relevant formula, begin the method. Examiners award
+            marks for correct setup, correct method choice, and correct first
+            steps — even if the final answer is wrong.
+          </p>
+        </div>
+        <div class="exam-card fade-in">
+          <div class="num">05</div>
+          <h4>Verification Protocol</h4>
+          <p>
+            After completing each integration answer, differentiate it mentally.
+            If it returns the original integrand, it's correct. This 20-second
+            check eliminates errors before they cost marks. Do this for every
+            answer where time permits.
+          </p>
+        </div>
+        <div class="exam-card fade-in">
+          <div class="num">06</div>
+          <h4>What Not To Do</h4>
+          <p>
+            Do not spend 5 minutes deciding which method to use — use ICSVA. Do
+            not attempt to invent a new method under exam pressure. Do not leave
+            a question blank without attempting at least the setup. Blank
+            answers score zero; attempts score something.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- FINAL CHECKLIST -->
+    <section id="checklist">
+      <div class="section-label">Readiness Assessment</div>
+      <div class="section-title">Final Exam Readiness Checklist</div>
+      <p class="section-desc">
+        Tick each item only when it is genuinely complete. This is your real
+        benchmark — not how many chapters you've "covered."
+      </p>
+
+      <div class="checklist-wrap fade-in">
+        <div class="checklist-header">
+          <h3>Integration Mastery Checklist</h3>
+          <div class="progress-wrap">
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" id="progressBar"></div>
+            </div>
+            <span class="progress-text" id="progressText">0 / 20</span>
+          </div>
+        </div>
+        <div class="checklist-body" id="checklistBody">
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Formulas</span>All 15+ standard
+              integration formulas memorized without notes
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Formulas</span>All trig integration
+              results including sign directions confirmed
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Formulas</span>∫1/x = ln|x| + C and
+              inverse trig results memorized
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Method</span>Can identify the correct
+              method within 30 seconds for any NEB question
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Method</span>Substitution method applied
+              correctly with limit changes in definite integrals
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Method</span>ILATE rule for integration by
+              parts applied automatically without thinking
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Method</span>Partial fractions
+              decomposition for linear and repeated factors completed
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Method</span>Trigonometric integrals using
+              half-angle and product-to-sum identities solved
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Practice</span>100+ integration problems
+              solved across all 6 methods
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Practice</span>Mixed method problems
+              solved without knowing the method in advance
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Practice</span>All problems timed at 8
+              minutes or less for 4-mark questions
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Past Papers</span>Integration questions
+              from last 10 NEB exams solved and reviewed
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Past Papers</span>Top 5 most-repeated NEB
+              question patterns identified and memorized
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Past Papers</span>One complete mock test
+              taken under timed conditions and reviewed
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Errors</span>Mistake notebook reviewed —
+              all errors identified and corrected
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Errors</span>+C habit confirmed: never
+              omitted in any practice problem
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Exam</span>ICSVA method steps memorized
+              and applied in practice sessions
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Exam</span>Verification habit confirmed:
+              differentiate the answer after every problem
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Exam</span>Time allocation strategy
+              practiced — 8 min/4-mark, 15 min/8-mark
+            </div>
+          </div>
+          <div class="check-item" onclick="toggle(this)">
+            <div class="check-box"><span class="check-tick">✓</span></div>
+            <div class="check-text">
+              <span class="check-cat">Readiness</span>Can score 35+/40 on
+              integration section in mock test conditions
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 20px">
+        <div class="highlight highlight-green fade-in">
+          <div class="highlight-title">✅ When You're Ready</div>
+          <p>
+            If you can check 18 or more items on this list honestly — you are
+            prepared. If you have fewer than 14 checked 2 days before the exam —
+            do not start new topics. Go back to past questions and your mistake
+            notebook. Consolidation beats new content at this stage.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    
+<style>.related-articles{max-width:860px;margin:0 auto;padding:48px 20px 0;border-top:1px solid var(--border,#e2e8f0)}.related-articles h2{font-size:1.1rem;font-weight:700;margin-bottom:16px;color:var(--text,#0f172a)}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}@media(max-width:640px){.related-grid{grid-template-columns:1fr}}.related-card{display:block;padding:16px 18px;border-radius:10px;background:var(--surface,#fff);border:1px solid var(--border,#e2e8f0);text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s}.related-card:hover{transform:translateY(-2px);border-color:rgba(185,28,44,.4);box-shadow:0 8px 16px -4px rgba(15,28,63,.1)}.related-card-title{display:block;font-size:.84rem;font-weight:600;color:var(--text,#0f172a);line-height:1.5}.related-card:hover .related-card-title{color:#B91C2C}</style>
+<section class="related-articles">
+  <h2>Related Articles</h2>
+  <div class="related-grid">
+    <a href="neb-question-pattern-breakdown.html" class="related-card"><span class="related-card-title">NEB Exam Question Pattern: Full Breakdown</span></a>
+    <a href="neb_best_books_resources_guide.html" class="related-card"><span class="related-card-title">Best Books and Resources for NEB Class 11 and 12</span></a>
+    <a href="neb-answer-writing-blog.html" class="related-card"><span class="related-card-title">How to Write NEB Board Exam Answers That Score Full Marks</span></a>
+  </div>
+</section>
+<!-- FOOTER -->
+    <footer>
+      <p>
+        Made for NEB Class 12 students in Nepal · <span>EduBoost-Nepal</span>
+      </p>
+      <p style="margin-top: 6px; color: var(--text3)">
+        This guide was built on execution, not inspiration. Now go solve
+        problems.
+      </p>
+      <p style="margin-top: 10px; font-size: 12px; opacity: 0.7">
+        <a href="../../index.html" style="color: inherit; margin: 0 6px"
+          >Home</a
+        >
+        |
+        <a href="../about.html" style="color: inherit; margin: 0 6px">About</a>
+        |
+        <a href="../contact.html" style="color: inherit; margin: 0 6px"
+          >Contact</a
+        >
+        |
+        <a href="../privacy.html" style="color: inherit; margin: 0 6px"
+          >Privacy Policy</a
+        >
+        |
+        <a href="../terms.html" style="color: inherit; margin: 0 6px"
+          >Terms of Service</a
+        >
+      </p>
+    </footer>
+
+    <script>
+      // Theme toggle
+      // toggleTheme() provided by theme.js
+      (function () {
+        const saved = localStorage.getItem("theme");
+        if (saved === "light") {
+          document.documentElement.classList.add("light");
+        }
+      })();
+
+      // CHECKLIST
+      function toggle(el) {
+        el.classList.toggle("checked");
+        updateProgress();
+      }
+
+      function updateProgress() {
+        const items = document.querySelectorAll(".check-item");
+        const checked = document.querySelectorAll(".check-item.checked").length;
+        const total = items.length;
+        const pct = Math.round((checked / total) * 100);
+        document.getElementById("progressBar").style.width = pct + "%";
+        document.getElementById("progressText").textContent =
+          checked + " / " + total;
+      }
+
+      // FADE IN ON SCROLL
+      const fadeEls = document.querySelectorAll(".fade-in");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.08 },
+      );
+
+      fadeEls.forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

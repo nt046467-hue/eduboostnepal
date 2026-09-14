@@ -1,0 +1,1580 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://www.gstatic.com" />
+    <link rel="dns-prefetch" href="https://www.gstatic.com" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="theme-color"
+      content="#0f172a"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#f1f5f9"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <title>EduBoost Nepal — NEB Exam Prep Platform</title>
+    <meta
+      name="description"
+      content="AI-powered exam preparation for NEB Class 11-12 students and teachers in Nepal."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/png" href="public/favicon.png" />
+    <link rel="apple-touch-icon" href="public/favicon.png" />
+
+    <!-- Preconnect early -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Non-blocking font load -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap&font-display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript
+      ><link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap&font-display=swap"
+        rel="stylesheet"
+    /></noscript>
+
+    <meta name="google-adsense-account" content="ca-pub-3896962422851508" />
+
+    <style>@font-face{font-family:'Sora';font-style:normal;font-weight:400 800;font-display:swap;src:local('Sora')}@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:local('DM Serif Display')}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;-webkit-text-size-adjust:100%;scroll-behavior:smooth}body{font-family:"Sora",system-ui,sans-serif;background:#0c1120;color:#f1f5f9;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{cursor:pointer;border:none;background:none;font-family:inherit}input,button{font-family:inherit;font-size:16px}select,textarea{font-size:16px}:root{--glass:rgba(255,255,255,0.055);--glass-b:rgba(255,255,255,0.1);--blur:blur(12px);--c-bg:#0c1120;--c-bg2:#111827;--c-text:#f1f5f9;--c-muted:#94a3b8;--c-orange:#f97316;--c-green:#4ade80}html.light{--glass:rgba(255,255,255,0.8);--glass-b:rgba(0,0,0,0.1);--c-bg:#f1f5f9;--c-bg2:#e2e8f0;--c-text:#0f172a;--c-muted:#64748b}html.light body{background:var(--c-bg);color:var(--c-text)}html.light .hero-bg{background:linear-gradient(135deg,#e0e7ff 0%,#dbeafe 40%,#ede9fe 70%,#f0f9ff 100%)}html.light .mcq-body{background:rgba(0,0,0,0.04)}html.light .q-text{color:#1e293b}html.light .qtag{color:#ea580c}html.light .qtext{color:#1e293b}html.light .qopt{color:#1e293b;border-color:rgba(0,0,0,0.12);background:rgba(0,0,0,0.03)}html.light .qopt:hover{background:rgba(249,115,22,0.08);border-color:rgba(249,115,22,0.35)}html.light .ql{color:#ea580c}html.light .qans{color:#15803d;background:rgba(74,222,128,0.1)}.glass{background:var(--glass);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border:1px solid var(--glass-b)}.nepal-stripe{background:linear-gradient(90deg,#003893 50%,#dc143c 50%);height:4px;position:fixed;top:0;left:0;right:0;z-index:60}@supports (padding:max(0px)){.nepal-stripe{padding-top:env(safe-area-inset-top,0px);height:calc(4px+env(safe-area-inset-top,0px))}nav{top:calc(4px+env(safe-area-inset-top,0px))}#toast{bottom:calc(1.5rem+env(safe-area-inset-bottom,0px))}.hero-bg{padding-top:max(7rem,calc(5rem+env(safe-area-inset-top,0px)))}}.gt{background:linear-gradient(135deg,#fb923c,#f97316,#dc2626);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.btn-p{background:linear-gradient(135deg,#f97316,#dc2626);color:#fff;font-weight:700;border-radius:1.25rem;display:inline-block;transition:transform 0.25s ease,box-shadow 0.25s ease;will-change:transform}.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(249,115,22,0.35)}.btn-p:active{transform:translateY(0)}.btn-p:active,.qgen-btn:active{transform:scale(0.97);opacity:0.9}.chat-send:active{transform:scale(0.93)}.chat-quick-btn:active{transform:scale(0.95);background:rgba(249,115,22,0.2)}.qgen-q:active{background:rgba(249,115,22,0.12);border-color:rgba(249,115,22,0.5)}.mob-lk:active{background:rgba(255,255,255,0.08)!important}.scard:active{transform:scale(0.97)}.feat-c.ch:active{transform:translateY(-2px)}.ch{transition:transform 0.25s ease,box-shadow 0.25s ease;will-change:transform}.ch:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(249,115,22,0.12)}@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}@keyframes slideDown{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}.fu{animation:fadeUp 0.55s ease forwards}.af{animation:float 3.5s ease-in-out infinite}.ap{animation:pulse 2s ease-in-out infinite}.s1{animation-delay:0.08s}.s2{animation-delay:0.18s}.s3{animation-delay:0.28s}.s4{animation-delay:0.38s}.anim{opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease}.anim.show{opacity:1;transform:none}nav{position:fixed;top:4px;left:0;right:0;z-index:50}.nav-i{max-width:1280px;margin:0 auto;padding:0 1rem}.nav-bar{display:flex;align-items:center;justify-content:space-between;gap:0.5rem;padding:0.6rem 1rem;border-radius:1.25rem;margin-top:0.5rem}.nav-logo{display:flex;align-items:center;gap:0.6rem;flex-shrink:0;font-weight:700;font-size:1rem}.nav-logo img{width:36px;height:36px;border-radius:10px;object-fit:cover}.nav-links{display:none;gap:1.5rem;font-size:0.875rem;font-weight:500;color:var(--c-muted)}.nav-links a:hover{color:var(--c-text)}.nav-cta{display:none;align-items:center;gap:0.75rem}.nav-login{font-size:0.875rem;font-weight:500;color:var(--c-muted);padding:0.5rem 0.75rem}.nav-login:hover{color:var(--c-text)}.nav-mob{display:flex;align-items:center;gap:0.5rem}.hbg{padding:0.5rem;border-radius:1rem;color:var(--c-muted);transition:color 0.25s ease}.hbg:hover{color:var(--c-text)}#mobile-menu{display:none;border-radius:1.25rem;margin-top:0.25rem;overflow:hidden}#mobile-menu.open{display:block;animation:slideDown 0.2s ease;box-shadow:0 20px 60px rgba(0,0,0,0.4)}.mob-links{padding:1rem;display:flex;flex-direction:column;gap:0.15rem}.mob-lk{display:flex;align-items:center;gap:0.75rem;padding:0.75rem;border-radius:1rem;font-size:0.875rem;color:var(--c-muted);transition:background 0.25s,color 0.25s}.mob-lk:hover{color:var(--c-text);background:rgba(255,255,255,0.05)}.mob-div{border-top:1px solid rgba(255,255,255,0.06);margin:0.5rem 0;padding-top:0.5rem;display:flex;flex-direction:column;gap:0.4rem}.mob-su{display:block;text-align:center;font-weight:700;font-size:0.875rem;padding:0.75rem 1rem;border-radius:1rem}.mob-tr{display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0.75rem}@media (min-width:768px){.nav-links{display:flex}.nav-cta{display:flex}.nav-mob{display:none}.nav-bar{padding:0.6rem 1.5rem}}.tgl{display:inline-flex;align-items:center;gap:8px;cursor:pointer;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:4px 10px 4px 6px;transition:border-color 0.25s,background 0.25s;user-select:none}html.light .tgl{background:rgba(0,0,0,0.04);border-color:rgba(0,0,0,0.12)}.tgl:hover{border-color:#6366f1;background:rgba(99,102,241,0.1)}.tgl-track{width:32px;height:18px;background:rgba(255,255,255,0.18);border-radius:100px;position:relative;transition:background 0.3s;flex-shrink:0}html.light .tgl-track{background:#6366f1}.tgl-thumb{position:absolute;top:2px;left:2px;width:14px;height:14px;background:#fff;border-radius:50%;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 1px 4px rgba(0,0,0,0.25)}html.light .tgl-thumb{transform:translateX(14px)}.tgl-icon{font-size:11px;line-height:1}.tgl-lbl{font-size:0.68rem;color:rgba(255,255,255,0.5);letter-spacing:0.03em;white-space:nowrap}html.light .tgl-lbl{color:rgba(0,0,0,0.45)}.hero-bg{background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 40%,#0c1b4d 70%,#0f172a 100%);min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:7rem;padding-bottom:4rem}.orb{position:absolute;border-radius:50%;pointer-events:none;contain:strict}.orb1{top:10%;right:-5%;width:min(22rem,55vw);height:min(22rem,55vw);background:radial-gradient(circle,rgba(249,115,22,0.12),transparent 70%)}.orb2{bottom:5%;left:-5%;width:min(16rem,40vw);height:min(16rem,40vw);background:radial-gradient(circle,rgba(37,99,235,0.1),transparent 70%)}.hero-grid{max-width:1280px;margin:0 auto;padding:0 1rem;display:grid;gap:2.5rem;width:100%}@media (min-width:1024px){.hero-grid{grid-template-columns:1fr 1fr;align-items:center;gap:4rem}}.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;padding:0.4rem 1rem;border-radius:999px;font-size:0.8rem;color:#fdba74;margin-bottom:1.5rem}.hero-title{font-family:"DM Serif Display",Georgia,serif;font-size:clamp(2.2rem,8vw,4.5rem);line-height:1.08;margin-bottom:1.25rem}.hero-desc{color:var(--c-muted);font-size:clamp(0.95rem,3vw,1.12rem);line-height:1.7;margin-bottom:2rem}.hero-btns{display:flex;flex-direction:column;gap:0.75rem}.hero-btns a{text-align:center;font-weight:700;padding:1rem 1.75rem;font-size:1rem;border-radius:1.25rem}.btn-g{transition:background 0.25s}.btn-g:hover{background:rgba(255,255,255,0.1)}.hero-trust{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.5rem;font-size:0.8rem;color:var(--c-muted)}.hero-trust span{display:flex;align-items:center;gap:0.3rem}.ck{color:#4ade80}@media (min-width:480px){.hero-btns{flex-direction:row}}.mcq-wrap{position:relative}.mcq-badge{position:absolute;top:-1rem;right:-1rem;padding:0.35rem 0.9rem;border-radius:999px;font-size:0.72rem;font-weight:600;color:#86efac;border:1px solid rgba(74,222,128,0.3);z-index:5}.mcq-cnt{position:absolute;bottom:-1rem;left:-1rem;padding:0.35rem 0.9rem;border-radius:999px;font-size:0.72rem;font-weight:600;color:#fdba74;border:1px solid rgba(249,115,22,0.3);z-index:5}.mcq-card{border-radius:1.5rem;padding:1.25rem}@media (min-width:1024px){.mcq-card{transform:rotate(2deg);transition:transform 0.5s}.mcq-card:hover{transform:rotate(0)}}.mcq-hdr{display:flex;align-items:center;justify-content:space-between;gap:0.75rem;margin-bottom:1rem}.mcq-subj{display:flex;align-items:center;gap:0.75rem}.si{width:40px;height:40px;border-radius:1rem;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}.sn{font-weight:600;font-size:0.875rem}.sl{color:var(--c-muted);font-size:0.72rem}.pdots{display:flex;gap:4px}.pd{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.2);transition:all 0.3s}.pd.active{width:12px;background:#f97316;border-radius:3px}.pd.done{background:#4ade80}.mcq-body{background:rgba(15,23,42,0.6);border-radius:1rem;padding:1rem;margin-bottom:0.75rem}.qtag{color:#fdba74;font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem}.qtext{color:#e2e8f0;font-size:0.84rem;line-height:1.55;margin-bottom:0.75rem}.qopts{display:flex;flex-direction:column;gap:6px}.qopt{display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:#cbd5e1;padding:0.5rem 0.75rem;border-radius:0.625rem;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);cursor:pointer;transition:background 0.2s,border-color 0.2s;user-select:none;-webkit-user-select:none}.qopt:hover{background:rgba(249,115,22,0.08);border-color:rgba(249,115,22,0.25)}.ql{font-weight:700;color:#fb923c;min-width:14px}.qopt.correct{background:rgba(74,222,128,0.08)!important;border-color:rgba(74,222,128,0.3)!important;color:#86efac!important;pointer-events:none}.qopt.correct .ql{color:#4ade80!important}.qopt.wrong{background:rgba(248,113,113,0.08)!important;border-color:rgba(248,113,113,0.3)!important;color:#fca5a5!important;pointer-events:none}.qopt.wrong .ql{color:#f87171!important}.qopt.disabled{pointer-events:none}.qans{display:none;margin-top:0.75rem;padding:0.6rem 0.75rem;background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.2);border-radius:0.625rem;font-size:0.75rem;color:#86efac;line-height:1.5}.qans.vis{display:block}.score-row{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem}.score-lbl{font-size:0.72rem;color:var(--c-muted)}.score-bw{flex:1;background:rgba(255,255,255,0.06);border-radius:999px;height:6px;overflow:hidden}.score-b{height:100%;background:linear-gradient(90deg,#fb923c,#4ade80);border-radius:999px;transition:width 0.4s ease;width:0%}.score-t{font-size:0.72rem;color:var(--c-muted)}.mcq-acts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem}.mab{padding:0.5rem;font-size:0.72rem;border-radius:0.625rem;border:1px solid rgba(255,255,255,0.08);text-align:center;background:rgba(255,255,255,0.03);transition:background 0.2s}.mab.g{color:#86efac;border-color:rgba(74,222,128,0.2)}.mab.g:hover{background:rgba(74,222,128,0.08)}.mab.b{color:#93c5fd;border-color:rgba(96,165,250,0.2)}.mab.b:hover{background:rgba(96,165,250,0.08)}.mab.p{color:#c4b5fd;border-color:rgba(167,139,250,0.2)}.mab.p:hover{background:rgba(167,139,250,0.08)}@media (max-width:400px){.mcq-badge,.mcq-cnt{display:none}}.stats{border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(17,24,39,0.6)}.stats-g{max-width:1280px;margin:0 auto;padding:2rem 1rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;text-align:center}@media (min-width:768px){.stats-g{grid-template-columns:repeat(4,1fr)}}.stat-n{font-size:1.75rem;font-weight:800}.stat-l{color:var(--c-muted);font-size:0.8rem;margin-top:0.2rem}.sec{padding:5rem 1rem}.con{max-width:1280px;margin:0 auto}.sec-hdr{text-align:center;margin-bottom:3rem}.sec-eye{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#fb923c;margin-bottom:0.75rem}.sec-title{font-family:"DM Serif Display",Georgia,serif;font-size:clamp(1.75rem,5vw,3rem);line-height:1.15;margin-bottom:1rem}.sec-sub{color:var(--c-muted);font-size:0.95rem;max-width:36rem;margin:0 auto}.feat-g{display:grid;gap:1.25rem}@media (min-width:640px){.feat-g{grid-template-columns:repeat(2,1fr)}}@media (min-width:1024px){.feat-g{grid-template-columns:repeat(3,1fr)}}.feat-c{padding:1.5rem;border-radius:1.25rem}.feat-ico{width:48px;height:48px;border-radius:1rem;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.25rem}.feat-t{font-weight:700;font-size:1rem;margin-bottom:0.5rem}.feat-d{color:var(--c-muted);font-size:0.875rem;line-height:1.6}.feat-lk{display:inline-flex;align-items:center;gap:0.25rem;font-size:0.875rem;font-weight:600;margin-top:1rem;transition:gap 0.25s}.feat-lk:hover{gap:0.5rem}.subj-g{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem}@media (min-width:480px){.subj-g{grid-template-columns:repeat(3,1fr)}}@media (min-width:768px){.subj-g{grid-template-columns:repeat(4,1fr)}}@media (min-width:1024px){.subj-g{grid-template-columns:repeat(5,1fr)}}.scard{padding:1.1rem 0.75rem;border-radius:1.25rem;text-align:center;cursor:pointer;display:block}.semoji{font-size:1.75rem;margin-bottom:0.5rem}.snm{font-weight:600;font-size:0.8rem}.scls{color:var(--c-muted);font-size:0.72rem;margin-top:0.2rem}.cta-box{border-radius:1.5rem;padding:2.5rem 1.5rem;text-align:center;position:relative;overflow:hidden}@media (min-width:640px){.cta-box{padding:3.5rem 2.5rem}}.cta-bg-g{position:absolute;inset:0;background:linear-gradient(135deg,rgba(249,115,22,0.1),rgba(220,38,38,0.1))}.cta-in{position:relative;z-index:1}.cta-flag{font-size:clamp(2.5rem,8vw,3.5rem);margin-bottom:1rem}.cta-title{font-family:"DM Serif Display",Georgia,serif;font-size:clamp(1.75rem,5vw,3rem);margin-bottom:1rem;line-height:1.2}.cta-sub{color:#cbd5e1;font-size:0.95rem;margin-bottom:2rem;max-width:32rem;margin-left:auto;margin-right:auto}html.light .cta-sub{color:#475569}.ad-unit{width:100%;min-height:90px;border-radius:1rem;overflow:hidden;margin:1.5rem 0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.03);border:1px dashed rgba(255,255,255,0.08)}html.light .ad-unit{background:rgba(0,0,0,0.02);border-color:rgba(0,0,0,0.08)}.ad-unit ins{display:block;width:100%}footer{background:#080e1c;border-top:1px solid rgba(255,255,255,0.06)}html.light footer{background:#1e293b}.ft{max-width:1280px;margin:0 auto;padding:3.5rem 1rem 2rem;display:grid;grid-template-columns:1fr;gap:2.5rem}@media (min-width:768px){.ft{grid-template-columns:2fr 1fr 1fr 1fr}}.fb{display:flex;align-items:center;gap:0.75rem;font-weight:700;font-size:1rem;margin-bottom:1rem}.fb img{width:36px;height:36px;border-radius:10px;object-fit:cover}.ftag{color:var(--c-muted);font-size:0.875rem;line-height:1.6;margin-bottom:1.25rem}.socials{display:flex;gap:0.5rem}.soc{width:36px;height:36px;border-radius:0.625rem;display:flex;align-items:center;justify-content:center;color:var(--c-muted);transition:color 0.25s,background 0.25s}.soc:hover{color:#fff}.fct{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#fff;margin-bottom:1rem}.flks{display:flex;flex-direction:column;gap:0.6rem}.flks a{font-size:0.875rem;color:var(--c-muted);display:flex;align-items:center;gap:0.4rem;transition:color 0.25s}.flks a:hover{color:#fb923c}.fn{max-width:1280px;margin:0 auto 1.5rem;padding:0 1rem}.fn-box{border-radius:1.25rem;padding:1.25rem 1.5rem}.fn-in{display:flex;flex-direction:column;gap:1rem}@media (min-width:640px){.fn-in{flex-direction:row;align-items:center;justify-content:space-between}}.fn-t{font-size:0.875rem;font-weight:600;margin-bottom:0.2rem}.fn-s{font-size:0.78rem;color:var(--c-muted)}.fn-form{display:flex;gap:0.5rem;width:100%}@media (min-width:640px){.fn-form{width:auto}}.fn-inp{flex:1;min-width:0;background:rgba(15,23,42,0.8);border:1px solid rgba(255,255,255,0.12);border-radius:1rem;padding:0.6rem 1rem;font-size:0.875rem;color:#fff;outline:none;transition:border-color 0.25s,box-shadow 0.25s}html.light .fn-inp{background:#fff;color:#0f172a;border-color:#cbd5e1}.fn-inp::placeholder{color:var(--c-muted)}.fn-inp:focus{border-color:#f97316;box-shadow:0 0 0 3px rgba(249,115,22,0.12)}.fn-btn{font-size:0.875rem;font-weight:600;padding:0.6rem 1.25rem;border-radius:1rem;flex-shrink:0;white-space:nowrap}.fbot{max-width:1280px;margin:0 auto;padding:1.25rem 1rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;gap:0.75rem;align-items:center;text-align:center;font-size:0.8rem;color:var(--c-muted)}@media (min-width:640px){.fbot{flex-direction:row;justify-content:space-between;text-align:left}}.fbot-lks{display:flex;gap:1.25rem;flex-wrap:wrap;justify-content:center}.fbot-lks a:hover{color:#fb923c}.status-dot{display:flex;align-items:center;gap:0.4rem;color:#4ade80;font-size:0.75rem}.status-dot::before{content:"";width:6px;height:6px;background:currentColor;border-radius:50%;animation:pulse 2s ease-in-out infinite}#toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(16px);opacity:0;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);z-index:9999;pointer-events:none;white-space:nowrap;border-radius:1.25rem;padding:0.75rem 1.25rem;font-size:0.875rem;font-weight:600;display:flex;align-items:center;gap:0.5rem}#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}html.light #toast{background:#1e293b;color:#f8fafc}.bg-d{background:var(--c-bg)}.bg-d2{background:var(--c-bg2)}html.light .bg-d{background:#f8fafc}html.light .bg-d2{background:#f1f5f9}.org{background:linear-gradient(135deg,#fb923c,#f97316)}.blp{background:linear-gradient(135deg,#60a5fa,#a855f7)}.grt{background:linear-gradient(135deg,#4ade80,#2dd4bf)}.ylo{background:linear-gradient(135deg,#facc15,#f97316)}.pnk{background:linear-gradient(135deg,#f472b6,#fb7185)}.ibl{background:linear-gradient(135deg,#818cf8,#3b82f6)}.t-o{color:#fb923c}.t-b{color:#60a5fa}.t-g{color:#4ade80}.t-y{color:#facc15}.t-p{color:#f472b6}.t-i{color:#818cf8}:focus-visible{outline:2px solid #f97316;outline-offset:3px;border-radius:4px}::selection{background:rgba(249,115,22,0.25);color:#fff}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0c1120}::-webkit-scrollbar-thumb{background:rgba(249,115,22,0.4);border-radius:3px}@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}@media (max-width:480px){.glass{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(15,23,42,0.92)}html.light .glass{background:rgba(241,245,249,0.96)}.af{animation:none}.ch:hover{transform:none}.mcq-card{transform:none!important}}button,a,.qopt,.qgen-q,.mob-lk,.chat-quick-btn,.chat-tab{min-height:44px;touch-action:manipulation}.qopt{min-height:44px;padding:0.65rem 0.75rem}.mob-lk{min-height:48px}.chat-tab{min-height:44px;display:flex;align-items:center;justify-content:center}.chat-quick-btn{min-height:36px;padding:0.5rem 1rem}@media (hover:none){.ch:hover{transform:none;box-shadow:none}.btn-p:hover{transform:none;box-shadow:none}.feat-lk:hover{gap:0.25rem}.qgen-btn:hover{transform:none;box-shadow:none}.chat-send:hover{transform:none}}@media (max-width:639px){.hero-bg{padding-top:5.5rem;padding-bottom:3rem;min-height:auto}.hero-title{font-size:clamp(1.9rem,9vw,2.8rem);line-height:1.1}.hero-desc{font-size:0.92rem;margin-bottom:1.5rem}.hero-btns a{padding:0.875rem 1.5rem;font-size:0.9rem}.hero-trust{gap:0.6rem;font-size:0.75rem}.orb1,.orb2{opacity:0.5}}@media (max-width:767px){.nav-bar{padding:0.5rem 0.875rem}.nav-logo span{font-size:0.92rem}#mobile-menu{max-height:85vh;overflow-y:auto;-webkit-overflow-scrolling:touch}.mob-links{padding:0.75rem}}@media (max-width:479px){.stats-g{grid-template-columns:repeat(2,1fr);gap:1rem;padding:1.5rem 1rem}.stat-n{font-size:1.5rem}}@media (max-width:639px){.sec{padding:3rem 0.875rem}.sec-hdr{margin-bottom:2rem}.sec-title{font-size:clamp(1.5rem,6vw,2.2rem)}.sec-sub{font-size:0.875rem}}@media (max-width:479px){.feat-g{grid-template-columns:1fr;gap:1rem}.feat-c{padding:1.25rem}.feat-ico{width:42px;height:42px;font-size:1.2rem;margin-bottom:1rem}}@media (max-width:359px){.subj-g{grid-template-columns:repeat(2,1fr);gap:0.5rem}.semoji{font-size:1.5rem}.snm{font-size:0.75rem}}@media (max-width:639px){.scard{padding:0.875rem 0.5rem;border-radius:1rem}}@media (max-width:639px){.mcq-card{padding:1rem}.qtext{font-size:0.82rem}.qopt{font-size:0.76rem;padding:0.55rem 0.65rem}.mcq-acts{gap:0.35rem}.mab{padding:0.45rem 0.35rem;font-size:0.68rem}}@media (max-width:639px){.chat-section{padding:3rem 0.875rem}.chat-tabs{gap:0.35rem;padding:0.3rem}.chat-tab{font-size:0.78rem;padding:0.55rem 0.5rem;border-radius:0.625rem;min-height:40px}.chat-msgs{height:300px;padding:1rem}.msg{max-width:94%}.msg-bubble{font-size:0.8rem;padding:0.6rem 0.875rem}.msg-avatar{width:26px;height:26px;font-size:0.75rem}.chat-input-row{padding:0.75rem}.chat-inp{font-size:16px!important;padding:0.625rem 0.875rem;border-radius:0.75rem}.chat-send{width:38px;height:38px;border-radius:0.75rem}.chat-quick{gap:0.4rem}.chat-quick-btn{font-size:0.72rem;padding:0.4rem 0.75rem}.qgen-row{grid-template-columns:1fr}.qgen-sel{font-size:16px!important;padding:0.65rem 0.875rem}.qgen-btn{padding:0.8rem;font-size:0.9rem}.qgen-questions{padding:1rem;gap:0.625rem}.qgen-q{padding:0.65rem 0.875rem;font-size:0.8rem}.ad-unit{min-height:60px}}@media (max-width:639px){.ft{padding:2.5rem 0.875rem 1.5rem;gap:1.75rem}.fn-box{padding:1rem 1.25rem}.fn-form{flex-direction:column}.fn-btn{width:100%;text-align:center}.fbot{gap:0.5rem;font-size:0.75rem}.fbot-lks{gap:0.875rem}.socials{gap:0.4rem}}@media (max-width:639px){.cta-box{padding:2rem 1.25rem;border-radius:1.25rem}.cta-title{font-size:clamp(1.5rem,6vw,2.2rem)}.cta-sub{font-size:0.875rem;margin-bottom:1.5rem}}*{word-break:break-word}h1,h2,h3{overflow-wrap:break-word;word-wrap:break-word}input,select,textarea,[contenteditable]{-webkit-appearance:none;border-radius:0.875rem}html{scroll-padding-top:80px}@media (max-width:767px){html{scroll-padding-top:70px}}</style>
+
+    <!-- Firebase Auth for nav state -->
+    <script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script>
+      window.addEventListener("load", function() {
+      (function () {
+        var cfg = {
+          apiKey: "AIzaSyCbVzplSn0UL2KRB3B45SCByJSm2FXPByw",
+          authDomain: "eduboost-f611f.firebaseapp.com",
+          projectId: "eduboost-f611f",
+          storageBucket: "eduboost-f611f.firebasestorage.app",
+          messagingSenderId: "121788124993",
+          appId: "1:121788124993:web:4df0ec72b1e187e76c1bc0",
+        };
+        try {
+          if (!firebase.apps.length) firebase.initializeApp(cfg);
+        } catch (e) {}
+        firebase.auth().onAuthStateChanged(function (user) {
+          var navLogin = document.getElementById("nav-login-link");
+          var navSignup = document.getElementById("nav-signup-link");
+          var mobLogin = document.getElementById("mob-login-link");
+          var mobSignup = document.getElementById("mob-signup-link");
+          var navLogout = document.getElementById("nav-logout-btn");
+          var mobLogout = document.getElementById("mob-logout-btn");
+          if (user) {
+            // Logged-in users visiting the landing page → redirect to dashboard
+            window.location.replace("pages/dashboard.html");
+            return;
+          } else {
+            if (navLogin) navLogin.style.display = "";
+            if (navSignup) navSignup.style.display = "";
+            if (mobLogin) mobLogin.style.display = "";
+            if (mobSignup) mobSignup.style.display = "";
+            if (navLogout) navLogout.style.display = "none";
+            if (mobLogout) mobLogout.style.display = "none";
+          }
+        });
+        window.doLogout = function () {
+          firebase
+            .auth()
+            .signOut()
+            .then(function () {
+              window.location.reload();
+            });
+        };
+      })();
+      }); // end load
+    </script>
+    <script defer src="js/theme.js"></script>
+    <style>.lazy-section{content-visibility:auto;contain-intrinsic-size:0 500px}*,*::before,*::after{box-sizing:border-box}html,body{overflow-x:hidden;max-width:100%}img,video,iframe,embed,object{max-width:100%;height:auto}table{width:100%;overflow-x:auto;display:block}pre,code{overflow-x:auto;white-space:pre-wrap;word-break:break-word}@media (max-width:640px){h1{font-size:clamp(1.5rem,5vw,2.5rem)!important}h2{font-size:clamp(1.1rem,4vw,1.8rem)!important}.text-4xl{font-size:clamp(1.5rem,6vw,2.25rem)!important}.text-5xl{font-size:clamp(1.8rem,7vw,3rem)!important}.text-6xl{font-size:clamp(2rem,8vw,3.75rem)!important}}</style>
+    <link rel="canonical" href="https://eduboostnepal.nabint.com.np/index.html" />
+  <link rel="stylesheet" href="/css/design-system.css" />
+</head>
+  <body>
+    <div id="toast" class="glass"></div>
+    <div class="nepal-stripe" aria-hidden="true"></div>
+
+    <!-- NAVBAR -->
+    <nav aria-label="Main navigation">
+      <div class="nav-i">
+        <div class="nav-bar glass">
+          <a
+            href="index.html"
+            class="nav-logo"
+            aria-label="EduBoost Nepal home"
+          >
+            <img
+              src="public/favicon.png"
+              alt="EduBoost Nepal"
+              width="36"
+              height="36"
+              loading="eager"
+            />
+            <span>EduBoost <span class="gt">Nepal</span></span>
+          </a>
+          <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#subjects">Subjects</a>
+            <a
+              href="pages/ai-tutor.html"
+              style="color: #fb923c; font-weight: 600"
+              >🤖 AI Tutor</a
+            >
+            <a href="pages/blog.html">Blog</a>
+            <a href="pages/downloads.html">Downloads</a>
+            <a href="pages/about.html">About</a>
+            <a href="pages/contact.html">Contact</a>
+          </div>
+          <div class="nav-cta">
+            <a href="pages/login.html" id="nav-login-link" class="nav-login"
+              >Log in</a
+            >
+            <a
+              href="pages/signup.html"
+              id="nav-signup-link"
+              class="btn-p"
+              style="
+                font-size: 0.875rem;
+                padding: 0.6rem 1.25rem;
+                border-radius: 1rem;
+              "
+              >Get Started →</a
+            >
+            <button
+              id="nav-logout-btn"
+              onclick="doLogout()"
+              class="nav-login"
+              style="
+                display: none;
+                background: none;
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                border-radius: 0.875rem;
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+                font-weight: 600;
+                color: var(--c-muted);
+                cursor: pointer;
+              "
+            >
+              Sign Out
+            </button>
+          </div>
+          <div class="nav-mob">
+            <button
+              id="hamburger"
+              onclick="toggleMenu()"
+              aria-label="Open menu"
+              aria-expanded="false"
+              class="hbg glass"
+            >
+              <svg
+                id="ham-icon"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+              <svg
+                id="close-icon"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                style="display: none"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="mobile-menu" class="glass">
+          <div class="mob-links">
+            <a href="#features" onclick="toggleMenu()" class="mob-lk"
+              >✨ Features</a
+            >
+            <a href="#subjects" onclick="toggleMenu()" class="mob-lk"
+              >📚 Subjects</a
+            >
+            <a
+              href="pages/ai-tutor.html"
+              class="mob-lk"
+              style="color: #fb923c; font-weight: 600"
+              >🤖 AI Tutor</a
+            >
+            <a href="pages/blog.html" class="mob-lk">✍️ Blog</a>
+            <a href="pages/downloads.html" class="mob-lk">📥 Downloads</a>
+            <a href="pages/about.html" class="mob-lk">ℹ️ About Us</a>
+            <a href="pages/contact.html" class="mob-lk">📬 Contact</a>
+            <div class="mob-div">
+              <a
+                href="pages/login.html"
+                id="mob-login-link"
+                onclick="toggleMenu()"
+                class="mob-lk"
+                >🔑 Log in</a
+              >
+              <a
+                href="pages/signup.html"
+                id="mob-signup-link"
+                class="mob-su btn-p"
+                >Get Started Free →</a
+              >
+              <button
+                id="mob-logout-btn"
+                onclick="doLogout()"
+                class="mob-su"
+                style="
+                  display: none;
+                  background: rgba(255, 255, 255, 0.07);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                  color: var(--c-muted);
+                  border-radius: 1rem;
+                  padding: 0.75rem 1rem;
+                  font-size: 0.875rem;
+                  font-weight: 600;
+                  cursor: pointer;
+                  text-align: center;
+                "
+              >
+                Sign Out
+              </button>
+              <div class="mob-tr">
+                <span style="font-size: 0.75rem; color: var(--c-muted)"
+                  >Theme</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-bg" aria-label="Hero">
+      <div class="orb orb1" aria-hidden="true"></div>
+      <div class="orb orb2" aria-hidden="true"></div>
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge glass fu">
+            <span
+              style="
+                width: 8px;
+                height: 8px;
+                background: #4ade80;
+                border-radius: 50%;
+                flex-shrink: 0;
+              "
+              class="ap"
+            ></span>
+            🇳🇵 Built for NEB Students in Nepal
+          </div>
+          <h1 class="hero-title fu s1">
+            Ace Your <span class="gt">NEB Exams</span> with AI Power
+          </h1>
+          <p class="hero-desc fu s2">
+            AI-generated questions, board-style answers, smart notes, and
+            complete study tools — designed for Class 11 &amp; 12 students and
+            teachers in Nepal.
+          </p>
+          <div class="hero-btns fu s3">
+            <a href="pages/signup.html" class="btn-p">Start for Free →</a>
+            <a
+              href="#features"
+              class="glass btn-g"
+              style="
+                font-weight: 600;
+                padding: 1rem 1.75rem;
+                font-size: 1rem;
+                border-radius: 1.25rem;
+                text-align: center;
+              "
+              >See Features</a
+            >
+          </div>
+          <div class="hero-trust fu s4">
+            <span><span class="ck">✓</span> Free to start</span>
+            <span><span class="ck">✓</span> NEB syllabus aligned</span>
+            <span><span class="ck">✓</span> AI-powered</span>
+          </div>
+        </div>
+
+        <div class="mcq-wrap fu s2">
+          <div class="mcq-badge glass">🎯 NEB Style</div>
+          <div id="hero-q-counter" class="mcq-cnt glass">⚡ Q 1 / 43</div>
+          <div class="mcq-card glass">
+            <div class="mcq-hdr">
+              <div class="mcq-subj">
+                <div id="hsi" class="si org">⚛️</div>
+                <div>
+                  <div class="sn">NEB MCQ Bank</div>
+                  <div id="hsl" class="sl">Physics • Class 11–12</div>
+                </div>
+              </div>
+              <div class="pdots" id="hdots"></div>
+            </div>
+            <div class="mcq-body">
+              <div id="hqt" class="qtag">Generated Question</div>
+              <p id="hq" class="qtext"></p>
+              <div class="qopts" id="hopts"></div>
+              <div id="hans" class="qans"></div>
+            </div>
+            <div class="score-row">
+              <span class="score-lbl">Score:</span>
+              <div class="score-bw"><div class="score-b" id="hsb"></div></div>
+              <span class="score-t" id="hst">0/0</span>
+            </div>
+            <div class="mcq-acts">
+              <button class="mab g" onclick="heroToggleAnswer()">
+                ✓ Answer
+              </button>
+              <button class="mab b" onclick="heroNextQ()">⏭ Next Q</button>
+              <button class="mab p" onclick="heroSave(this)">📋 Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stats-g">
+        <div class="anim">
+          <div class="stat-n gt">10+</div>
+          <div class="stat-l">Subjects</div>
+        </div>
+        <div class="anim">
+          <div class="stat-n gt">∞</div>
+          <div class="stat-l">AI Questions</div>
+        </div>
+        <div class="anim">
+          <div class="stat-n gt">11–12</div>
+          <div class="stat-l">NEB Classes</div>
+        </div>
+        <div class="anim">
+          <div class="stat-n gt">Free</div>
+          <div class="stat-l">To Start</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURES -->
+    <section id="features" class="sec bg-d" style="content-visibility:auto;contain-intrinsic-size:0 600px" aria-labelledby="fh">
+      <div class="con">
+        <div class="sec-hdr anim">
+          <div class="sec-eye">Everything You Need</div>
+          <h2 class="sec-title" id="fh">
+            Powerful Tools for <span class="gt">Every Student</span>
+          </h2>
+          <p class="sec-sub">
+            From AI question generation to structured notes — built specifically
+            for the NEB curriculum.
+          </p>
+        </div>
+        <div class="feat-g">
+          <div class="feat-c glass ch anim">
+            <div class="feat-ico org">🤖</div>
+            <div class="feat-t">AI Question Generator</div>
+            <p class="feat-d">
+              Generate NEB-style MCQ, short, and long questions for any subject
+              and chapter in seconds.
+            </p>
+            <a href="pages/dashboard.html" class="feat-lk t-o">Try it →</a>
+          </div>
+          <div class="feat-c glass ch anim">
+            <div class="feat-ico blp">📝</div>
+            <div class="feat-t">AI Answer Generator</div>
+            <p class="feat-d">
+              Get structured, board-exam style answers with proper formatting
+              and key points.
+            </p>
+            <a href="pages/dashboard.html" class="feat-lk t-b">Try it →</a>
+          </div>
+          <div class="feat-c glass ch anim">
+            <div class="feat-ico grt">📚</div>
+            <div class="feat-t">Smart Notes</div>
+            <p class="feat-d">
+              Organized notes by Class, Subject, and Chapter. Curated for the
+              NEB syllabus.
+            </p>
+            <a href="pages/notes.html" class="feat-lk t-g">Explore →</a>
+          </div>
+          <div class="feat-c glass ch anim">
+            <div class="feat-ico ylo">📥</div>
+            <div class="feat-t">PDF Downloads</div>
+            <p class="feat-d">
+              Download past papers, summary notes, and revision guides as
+              printable PDFs.
+            </p>
+            <a href="pages/downloads.html" class="feat-lk t-y">Download →</a>
+          </div>
+          <div class="feat-c glass ch anim">
+            <div class="feat-ico pnk">✍️</div>
+            <div class="feat-t">Blog &amp; Study Guides</div>
+            <p class="feat-d">
+              Exam strategy, subject guides, and tips from toppers and teachers.
+            </p>
+            <a href="pages/blog.html" class="feat-lk t-p">Read →</a>
+          </div>
+          <div class="feat-c glass ch anim">
+            <div class="feat-ico ibl">📋</div>
+            <div class="feat-t">Past Papers &amp; Models</div>
+            <p class="feat-d">
+              Curated NEB question collections and model solutions to prepare for actual board exams.
+            </p>
+            <a href="pages/downloads.html" class="feat-lk t-i">Browse →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBJECTS -->
+    <section id="subjects" class="sec bg-d2" style="content-visibility:auto;contain-intrinsic-size:0 500px" aria-labelledby="sh">
+      <div class="con">
+        <div class="sec-hdr anim">
+          <h2 class="sec-title" id="sh">
+            NEB <span class="gt">Subjects Covered</span>
+          </h2>
+          <p class="sec-sub">
+            All major Class 11 &amp; 12 subjects with chapter-wise content
+          </p>
+        </div>
+        <div class="subj-g">
+          <a href="pages/notes.html" class="scard glass ch anim"
+            ><div class="semoji">⚛️</div>
+            <div class="snm">Physics</div>
+            <div class="scls">Class 11 &amp; 12</div></a
+          >
+          <a href="pages/notes.html" class="scard glass ch anim"
+            ><div class="semoji">🧪</div>
+            <div class="snm">Chemistry</div>
+            <div class="scls">Class 11 &amp; 12</div></a
+          >
+          <a href="pages/notes.html" class="scard glass ch anim"
+            ><div class="semoji">🧬</div>
+            <div class="snm">Biology</div>
+            <div class="scls">Class 11 &amp; 12</div></a
+          >
+          <a href="pages/notes.html" class="scard glass ch anim"
+            ><div class="semoji">📐</div>
+            <div class="snm">Mathematics</div>
+            <div class="scls">Class 11 &amp; 12</div></a
+          >
+          <a href="pages/notes.html" class="scard glass ch anim"
+            ><div class="semoji">💻</div>
+            <div class="snm">Computer Sc.</div>
+            <div class="scls">Class 11 &amp; 12</div></a
+          >
+          <a href="pages/notes.html" class="scard glass ch anim"
+            ><div class="semoji">📖</div>
+            <div class="snm">English</div>
+            <div class="scls">Class 11 &amp; 12</div></a
+          >
+          <a href="pages/notes.html" class="scard glass ch anim"
+            ><div class="semoji">🏛️</div>
+            <div class="snm">Nepali</div>
+            <div class="scls">Class 11 &amp; 12</div></a
+          >
+          <a href="pages/notes.html" class="scard glass ch anim"
+            ><div class="semoji">💰</div>
+            <div class="snm">Economics</div>
+            <div class="scls">Class 11 &amp; 12</div></a
+          >
+          <a href="pages/notes.html" class="scard glass ch anim"
+            ><div class="semoji">🌏</div>
+            <div class="snm">Social Studies</div>
+            <div class="scls">Class 11 &amp; 12</div></a
+          >
+          <a href="pages/notes.html" class="scard glass ch anim"
+            ><div class="semoji">📊</div>
+            <div class="snm">Accountancy</div>
+            <div class="scls">Class 11 &amp; 12</div></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- AI TUTOR PROMO -->
+    <section class="sec bg-d" aria-labelledby="ai-promo-heading">
+      <div class="con" style="max-width: 860px">
+        <div class="cta-box glass anim">
+          <div class="cta-bg-g"></div>
+          <div class="cta-in">
+            <div style="font-size: 3rem; margin-bottom: 1rem">🤖</div>
+            <div class="sec-eye">Powered by EduBoost Nepal</div>
+            <h2
+              class="sec-title"
+              id="ai-promo-heading"
+              style="margin-bottom: 0.75rem"
+            >
+              Meet Your <span class="gt">AI Tutor</span>
+            </h2>
+            <p class="sec-sub" style="margin-bottom: 1.75rem">
+              Chat with AI, generate NEB exam questions, get board-style
+              answers, and practice MCQs — all in one powerful tool built for
+              Class 11 &amp; 12.
+            </p>
+            <div
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.625rem;
+                justify-content: center;
+                margin-bottom: 2rem;
+              "
+            >
+              <span
+                style="
+                  padding: 0.35rem 0.9rem;
+                  border-radius: 999px;
+                  font-size: 0.75rem;
+                  font-weight: 600;
+                  background: rgba(249, 115, 22, 0.1);
+                  border: 1px solid rgba(249, 115, 22, 0.3);
+                  color: #fb923c;
+                "
+                >💬 AI Chat</span
+              >
+              <span
+                style="
+                  padding: 0.35rem 0.9rem;
+                  border-radius: 999px;
+                  font-size: 0.75rem;
+                  font-weight: 600;
+                  background: rgba(74, 222, 128, 0.08);
+                  border: 1px solid rgba(74, 222, 128, 0.25);
+                  color: #4ade80;
+                "
+                >⚡ Question Generator</span
+              >
+              <span
+                style="
+                  padding: 0.35rem 0.9rem;
+                  border-radius: 999px;
+                  font-size: 0.75rem;
+                  font-weight: 600;
+                  background: rgba(96, 165, 250, 0.08);
+                  border: 1px solid rgba(96, 165, 250, 0.25);
+                  color: #60a5fa;
+                "
+                >📝 Answer Writer</span
+              >
+              <span
+                style="
+                  padding: 0.35rem 0.9rem;
+                  border-radius: 999px;
+                  font-size: 0.75rem;
+                  font-weight: 600;
+                  background: rgba(167, 139, 250, 0.08);
+                  border: 1px solid rgba(167, 139, 250, 0.25);
+                  color: #c4b5fd;
+                "
+                >🎯 MCQ Practice</span
+              >
+            </div>
+            <a
+              href="pages/ai-tutor.html"
+              class="btn-p"
+              style="font-size: 1.05rem; padding: 1rem 2.25rem"
+              >Open AI Tutor →</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="sec bg-d">
+      <div class="con" style="max-width: 56rem">
+        <div class="cta-box glass anim">
+          <div class="cta-bg-g"></div>
+          <div class="cta-in">
+            <div class="cta-flag" aria-hidden="true">🇳🇵</div>
+            <h2 class="cta-title">
+              Ready to Boost Your <span class="gt">NEB Score?</span>
+            </h2>
+            <p class="cta-sub">
+              Start preparing smarter for your NEB exams today with AI-powered tools
+              built for Nepal's education system.
+            </p>
+            <a
+              href="pages/signup.html"
+              class="btn-p"
+              style="font-size: 1.05rem; padding: 1rem 2.25rem"
+              >Create Free Account →</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    
+    <!-- Editorial content section - improves content quality for AdSense -->
+    <section style="padding:4rem 1rem;background:var(--c-bg2);border-top:1px solid rgba(255,255,255,0.06);">
+      <div style="max-width:900px;margin:0 auto;">
+        <div style="text-align:center;margin-bottom:2.5rem;">
+          <div style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#fb923c;margin-bottom:0.75rem;">About EduBoost Nepal</div>
+          <h2 style="font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.75rem,5vw,2.5rem);line-height:1.15;margin-bottom:1rem;">Nepal's First AI-Powered NEB Exam Prep Platform</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr;gap:1.5rem;">
+          <div style="background:var(--glass);border:1px solid var(--glass-b);border-radius:1.25rem;padding:1.75rem;">
+            <h3 style="font-weight:700;font-size:1.05rem;margin-bottom:0.75rem;color:var(--c-text);">Why EduBoost Nepal Exists</h3>
+            <p style="color:var(--c-muted);font-size:0.9rem;line-height:1.8;margin-bottom:0.875rem;">
+              Preparing for the NEB board exam has always been difficult for students outside of Kathmandu's top private schools. Expensive tuition centres, photocopied notes with unclear sources, and a lack of structured guidance on what the examiners actually want — these are problems that affect hundreds of thousands of students across Nepal every year.
+            </p>
+            <p style="color:var(--c-muted);font-size:0.9rem;line-height:1.8;">
+              EduBoost Nepal was built to address this gap. Using Google Gemini AI, the platform generates NEB-style questions, structured board-exam answers, and chapter-wise explanations aligned specifically with the National Examinations Board syllabus for Class 11 and Class 12. Every feature is designed around one question: what does an NEB student actually need to score higher on their board exam?
+            </p>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div style="background:var(--glass);border:1px solid var(--glass-b);border-radius:1.25rem;padding:1.5rem;">
+              <h3 style="font-weight:700;font-size:0.95rem;margin-bottom:0.625rem;color:var(--c-text);">📐 How the AI Question Generator Works</h3>
+              <p style="color:var(--c-muted);font-size:0.82rem;line-height:1.75;">
+                Select your subject, chapter, and question type (MCQ, short answer, or long answer). The AI generates questions at the correct difficulty level and format for NEB board exams — including common numerical problems for Physics and Math that mirror past paper patterns.
+              </p>
+            </div>
+            <div style="background:var(--glass);border:1px solid var(--glass-b);border-radius:1.25rem;padding:1.5rem;">
+              <h3 style="font-weight:700;font-size:0.95rem;margin-bottom:0.625rem;color:var(--c-text);">📝 Board-Style Answer Writing</h3>
+              <p style="color:var(--c-muted);font-size:0.82rem;line-height:1.75;">
+                One of the most common reasons students lose marks is poor answer structure. The AI tutor on EduBoost Nepal is specifically prompted to write answers the way NEB examiners expect — with proper headings, point-format explanations, and diagrams where relevant.
+              </p>
+            </div>
+            <div style="background:var(--glass);border:1px solid var(--glass-b);border-radius:1.25rem;padding:1.5rem;">
+              <h3 style="font-weight:700;font-size:0.95rem;margin-bottom:0.625rem;color:var(--c-text);">📚 NEB Subjects Covered</h3>
+              <p style="color:var(--c-muted);font-size:0.82rem;line-height:1.75;">
+                Physics, Chemistry, Biology, Mathematics, Computer Science, English, Nepali, Economics, Accountancy, and Social Studies — all for NEB Class 11 and Class 12. Content is organised by class, subject, and chapter for easy navigation.
+              </p>
+            </div>
+            <div style="background:var(--glass);border:1px solid var(--glass-b);border-radius:1.25rem;padding:1.5rem;">
+              <h3 style="font-weight:700;font-size:0.95rem;margin-bottom:0.625rem;color:var(--c-text);">🇳🇵 Built for Nepal</h3>
+              <p style="color:var(--c-muted);font-size:0.82rem;line-height:1.75;">
+                EduBoost Nepal is not a generic study app with a Nepali flag added. Every piece of content — from blog articles to AI tutor prompts — is specifically calibrated to the NEB curriculum, recent exam patterns, and the Nepali education context.
+              </p>
+            </div>
+          </div>
+          <div style="background:var(--glass);border:1px solid var(--glass-b);border-radius:1.25rem;padding:1.75rem;">
+            <h3 style="font-weight:700;font-size:1.05rem;margin-bottom:0.75rem;color:var(--c-text);">Study Smarter, Not Harder — What That Actually Means for NEB Students</h3>
+            <p style="color:var(--c-muted);font-size:0.9rem;line-height:1.8;margin-bottom:0.875rem;">
+              The NEB board exam tests your ability to recall, apply, and explain concepts clearly. Most students spend their study time passively re-reading notes, which is one of the least effective ways to prepare. Active recall — testing yourself with questions, writing practice answers, and identifying gaps — is far more effective for long-term retention.
+            </p>
+            <p style="color:var(--c-muted);font-size:0.9rem;line-height:1.8;">
+              EduBoost Nepal's tools are designed around active recall. Use the AI Question Generator to test yourself, the AI Tutor to check your understanding, and the downloadable notes as a reference when you need to fill gaps — not as your primary source of study. Combine this with our blog guides on exam strategy, and you have a complete, structured approach to NEB preparation that actually works.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<footer>
+      <div class="ft">
+        <div>
+          <div class="fb">
+            <img
+              src="public/favicon.png"
+              alt="EduBoost Nepal"
+              width="36"
+              height="36"
+              loading="eager"
+              fetchpriority="high"
+            />
+            <span>EduBoost <span class="gt">Nepal</span></span>
+          </div>
+          <p class="ftag">
+            Nepal's first AI-powered exam preparation platform built
+            specifically for NEB Class 11 &amp; 12 students and teachers. Study
+            smarter, score higher.
+          </p>
+          <div class="socials">
+            <a href="#" class="soc glass" aria-label="Facebook"
+              ><svg
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"
+                /></svg
+            ></a>
+            <a href="#" class="soc glass" aria-label="Instagram"
+              ><svg
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" /></svg
+            ></a>
+            <a href="#" class="soc glass" aria-label="YouTube"
+              ><svg
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                /></svg
+            ></a>
+            <a href="#" class="soc glass" aria-label="Telegram"
+              ><svg
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-17.5 7.363a2.224 2.224 0 0 0 .064 4.127l3.997 1.378 1.316 4.007a1.113 1.113 0 0 0 1.898.371l2.03-2.03 3.996 2.94a2.236 2.236 0 0 0 3.467-1.461l2.532-15.5a2.244 2.244 0 0 0-2.778-2.41zm-11.1 12.32-.826 3.095-1.003-3.054 8.425-7.17-6.596 7.129z"
+                /></svg
+            ></a>
+          </div>
+        </div>
+        <div>
+          <div class="fct">Platform</div>
+          <div class="flks">
+            <a href="pages/dashboard.html"><span>🏠</span> Dashboard</a>
+            <a href="pages/ai-tutor.html"><span>🤖</span> AI Tutor</a>
+            <a href="pages/notes.html"><span>📚</span> Notes</a>
+            <a href="pages/blog.html"><span>✍️</span> Blog</a>
+            <a href="pages/downloads.html"><span>📥</span> Downloads</a>
+          </div>
+        </div>
+        <div>
+          <div class="fct">Subjects</div>
+          <div class="flks">
+            <a href="pages/notes.html">⚛️ Physics</a>
+            <a href="pages/notes.html">🧪 Chemistry</a>
+            <a href="pages/notes.html">🧬 Biology</a>
+            <a href="pages/notes.html">📐 Mathematics</a>
+            <a href="pages/notes.html">💻 Computer Sc.</a>
+          </div>
+        </div>
+        <div>
+          <div class="fct">Account</div>
+          <div class="flks" style="margin-bottom: 1.5rem">
+            <a href="pages/login.html">Login</a>
+            <a href="pages/signup.html">Sign Up — Free</a>
+          </div>
+          <div class="fct">Legal</div>
+          <div class="flks">
+            <a href="pages/terms.html">Terms of Service</a>
+            <a href="pages/privacy.html">Privacy Policy</a>
+            <a href="pages/about.html">About Us</a>
+            <a href="pages/contact.html">Contact Us</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="fn">
+        <div class="fn-box glass">
+          <div class="fn-in">
+            <div>
+              <div class="fn-t">
+                📬 Stay updated with study tips &amp; exam news
+              </div>
+              <div class="fn-s">Free NEB exam prep resources. No spam, ever.</div>
+            </div>
+            <div class="fn-form">
+              <input
+                id="nl-name"
+                type="text"
+                placeholder="Your name"
+                class="fn-inp"
+                autocomplete="name"
+              />
+              <input
+                id="nl-email"
+                type="email"
+                placeholder="your@email.com"
+                class="fn-inp"
+                autocomplete="email"
+              />
+              <button
+                id="nl-btn"
+                onclick="handleSubscribe()"
+                class="fn-btn btn-p"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fbot">
+        <div>
+          © 2026 EduBoost Nepal. All rights reserved. 🇳🇵 Made with ❤️ in Nepal
+        </div>
+        <div class="fbot-lks">
+          <a href="pages/terms.html">Terms</a>
+          <a href="pages/privacy.html">Privacy</a>
+          <a href="pages/about.html">About</a>
+          <a href="pages/contact.html">Contact</a>
+          <span class="status-dot">All systems operational</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SCRIPTS (all deferred after HTML parse) -->
+    <script>
+      function toggleMenu() {
+        var m = document.getElementById("mobile-menu"),
+          h = document.getElementById("ham-icon"),
+          c = document.getElementById("close-icon"),
+          b = document.getElementById("hamburger");
+        var o = m.classList.toggle("open");
+        h.style.display = o ? "none" : "";
+        c.style.display = o ? "" : "none";
+        b.setAttribute("aria-expanded", o);
+        // Prevent body scroll when menu open on mobile
+        document.body.style.overflow = o ? "hidden" : "";
+      }
+      document.addEventListener("click", function (e) {
+        var b = document.getElementById("hamburger"),
+          m = document.getElementById("mobile-menu");
+        if (
+          m.classList.contains("open") &&
+          !b.contains(e.target) &&
+          !m.contains(e.target)
+        ) {
+          toggleMenu();
+        }
+      });
+      // Close menu on any anchor click inside it
+      document
+        .getElementById("mobile-menu")
+        .addEventListener("click", function (e) {
+          if (e.target.tagName === "A")
+            setTimeout(function () {
+              if (
+                document
+                  .getElementById("mobile-menu")
+                  .classList.contains("open")
+              )
+                toggleMenu();
+            }, 50);
+        });
+      function showToast(msg, emoji) {
+        var t = document.getElementById("toast");
+        t.innerHTML = "<span>" + emoji + "</span><span>" + msg + "</span>";
+        t.classList.add("show");
+        setTimeout(function () {
+          t.classList.remove("show");
+        }, 3800);
+      }
+      var SHEET_URL = "/.netlify/functions/subscribe";
+
+      function getDeviceType() {
+        var ua = navigator.userAgent;
+        if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua))
+          return "Tablet";
+        if (
+          /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+            ua,
+          )
+        )
+          return "Mobile";
+        return "Desktop";
+      }
+
+      function getBrowser() {
+        var ua = navigator.userAgent;
+        if (
+          ua.indexOf("Chrome") > -1 &&
+          ua.indexOf("Edg") === -1 &&
+          ua.indexOf("OPR") === -1
+        )
+          return "Chrome";
+        if (ua.indexOf("Safari") > -1 && ua.indexOf("Chrome") === -1)
+          return "Safari";
+        if (ua.indexOf("Firefox") > -1) return "Firefox";
+        if (ua.indexOf("Edg") > -1) return "Edge";
+        if (ua.indexOf("OPR") > -1 || ua.indexOf("Opera") > -1) return "Opera";
+        return "Other";
+      }
+
+      function getOS() {
+        var ua = navigator.userAgent;
+        if (ua.indexOf("Win") > -1) return "Windows";
+        if (ua.indexOf("Mac") > -1) return "MacOS";
+        if (ua.indexOf("Android") > -1) return "Android";
+        if (ua.indexOf("iPhone") || ua.indexOf("iPad") > -1) return "iOS";
+        if (ua.indexOf("Linux") > -1) return "Linux";
+        return "Other";
+      }
+
+      function handleSubscribe() {
+        var n = document.getElementById("nl-name"),
+          i = document.getElementById("nl-email"),
+          b = document.getElementById("nl-btn");
+        var name = n.value.trim(),
+          e = i.value.trim(),
+          r = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!name) {
+          showToast("Please enter your name.", "⚠️");
+          n.focus();
+          return;
+        }
+        if (!e) {
+          showToast("Please enter your email.", "⚠️");
+          i.focus();
+          return;
+        }
+        if (!r.test(e)) {
+          showToast("Enter a valid email.", "⚠️");
+          i.focus();
+          return;
+        }
+
+        b.disabled = true;
+        b.textContent = "Checking...";
+
+        function doSubscribePost() {
+          b.textContent = "Subscribing...";
+          fetch(SHEET_URL, {
+            method: "POST",
+            headers: { "Content-Type": "text/plain" },
+            body: JSON.stringify({
+              name: name,
+              email: e,
+              date: new Date().toLocaleString("en-NP", { timeZone: "Asia/Kathmandu" }),
+              device: getDeviceType(),
+              browser: getBrowser(),
+              os: getOS(),
+            }),
+          })
+            .then(function () {
+              n.value = "";
+              i.value = "";
+              b.textContent = "✓ Subscribed!";
+              showToast("Welcome " + name + "! You are subscribed 🎉", "📬");
+              setTimeout(function () {
+                b.disabled = false;
+                b.textContent = "Subscribe";
+              }, 4000);
+            })
+            .catch(function () {
+              b.disabled = false;
+              b.textContent = "Subscribe";
+              showToast("Something went wrong. Try again!", "⚠️");
+            });
+        }
+
+        // Step 1: Check duplicate via Netlify proxy
+        fetch(SHEET_URL + "?email=" + encodeURIComponent(e))
+          .then(function (r) {
+            return r.text();
+          })
+          .then(function (txt) {
+            var res = {};
+            try { res = JSON.parse(txt); } catch (x) {}
+            if (res.status === "duplicate") {
+              b.disabled = false;
+              b.textContent = "Subscribe";
+              showToast("This email is already subscribed! 😊", "✅");
+              return;
+            }
+            doSubscribePost();
+          })
+          .catch(function () {
+            // If check fails just try posting anyway
+            doSubscribePost();
+          });
+      }
+      document
+        .getElementById("nl-email")
+        .addEventListener("keydown", function (e) {
+          if (e.key === "Enter") handleSubscribe();
+        });
+
+      // Scroll reveal — use passive for perf
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (en, i) {
+              if (en.isIntersecting) {
+                setTimeout(function () {
+                  en.target.classList.add("show");
+                }, i * 70);
+                io.unobserve(en.target);
+              }
+            });
+          },
+          { threshold: 0.07, rootMargin: "0px 0px -20px 0px" },
+        );
+        document.querySelectorAll(".anim").forEach(function (el) {
+          io.observe(el);
+        });
+      } else {
+        document.querySelectorAll(".anim").forEach(function (el) {
+          el.classList.add("show");
+        });
+      }
+    </script>
+
+    <script>
+      (function () {
+        var Q = [
+          {
+            s: "Physics",
+            i: "⚛️",
+            g: "org",
+            q: "Which correctly describes Newton's 2nd Law in terms of momentum?",
+            o: ["F = ma", "F = dp/dt", "F = mv", "F = m/t"],
+            a: 1,
+            e: "Force equals rate of change of momentum. F=ma is the special case when mass is constant.",
+          },
+          {
+            s: "Physics",
+            i: "⚛️",
+            g: "org",
+            q: "Dimensional formula of gravitational constant G:",
+            o: ["M⁻¹L³T⁻²", "M⁻¹L²T⁻²", "ML³T⁻²", "M⁻¹L³T⁻³"],
+            a: 0,
+            e: "G has dimensions [M⁻¹L³T⁻²], derived from F = Gm₁m₂/r².",
+          },
+          {
+            s: "Physics",
+            i: "⚛️",
+            g: "org",
+            q: "In projectile motion, which velocity component stays constant?",
+            o: ["Vertical", "Horizontal", "Both", "Neither"],
+            a: 1,
+            e: "Horizontal velocity is constant (no air resistance).",
+          },
+          {
+            s: "Physics",
+            i: "⚛️",
+            g: "org",
+            q: "Angle for maximum projectile range:",
+            o: ["30°", "45°", "60°", "90°"],
+            a: 1,
+            e: "Maximum range at 45° — sin(90°) = 1.",
+          },
+          {
+            s: "Physics",
+            i: "⚛️",
+            g: "org",
+            q: "Work done by a force is zero when angle between F and d is:",
+            o: ["0°", "45°", "90°", "180°"],
+            a: 2,
+            e: "W = Fd cosθ. cos90° = 0.",
+          },
+          {
+            s: "Physics",
+            i: "⚛️",
+            g: "org",
+            q: "SI unit of electric potential:",
+            o: ["Coulomb", "Ampere", "Volt", "Watt"],
+            a: 2,
+            e: "1 V = 1 J/C.",
+          },
+          {
+            s: "Physics",
+            i: "⚛️",
+            g: "org",
+            q: "Which wave requires a medium?",
+            o: ["Electromagnetic", "Light", "Mechanical", "Radio"],
+            a: 2,
+            e: "Mechanical waves need a medium; EM waves travel in vacuum.",
+          },
+          {
+            s: "Physics",
+            i: "⚛️",
+            g: "org",
+            q: "Bending of light around obstacles is called:",
+            o: ["Reflection", "Refraction", "Diffraction", "Dispersion"],
+            a: 2,
+            e: "Diffraction = bending of waves around edges.",
+          },
+          {
+            s: "Chemistry",
+            i: "🧪",
+            g: "grt",
+            q: "Which has the highest electronegativity?",
+            o: ["Oxygen", "Nitrogen", "Chlorine", "Fluorine"],
+            a: 3,
+            e: "Fluorine (3.98 Pauling) is most electronegative.",
+          },
+          {
+            s: "Chemistry",
+            i: "🧪",
+            g: "grt",
+            q: "Moles in 44g of CO₂ (MW=44):",
+            o: ["0.5", "1", "2", "4"],
+            a: 1,
+            e: "n = 44/44 = 1 mol.",
+          },
+          {
+            s: "Chemistry",
+            i: "🧪",
+            g: "grt",
+            q: "Gas from Zn + dilute H₂SO₄:",
+            o: ["Oxygen", "SO₂", "Hydrogen", "CO₂"],
+            a: 2,
+            e: "Zn + H₂SO₄ → ZnSO₄ + H₂↑",
+          },
+          {
+            s: "Chemistry",
+            i: "🧪",
+            g: "grt",
+            q: "pH of neutral solution at 25°C:",
+            o: ["0", "7", "14", "1"],
+            a: 1,
+            e: "Neutral [H⁺] = 10⁻⁷ → pH = 7.",
+          },
+          {
+            s: "Chemistry",
+            i: "🧪",
+            g: "grt",
+            q: "Which is NOT a greenhouse gas?",
+            o: ["CO₂", "CH₄", "N₂O", "O₂"],
+            a: 3,
+            e: "O₂ does not trap heat.",
+          },
+          {
+            s: "Chemistry",
+            i: "🧪",
+            g: "grt",
+            q: "IUPAC name of CH₃–CH₂–OH:",
+            o: ["Methanol", "Ethanol", "Propanol", "Butanol"],
+            a: 1,
+            e: "2 carbons + OH = Ethanol.",
+          },
+          {
+            s: "Chemistry",
+            i: "🧪",
+            g: "grt",
+            q: "Avogadro's number = particles in:",
+            o: ["1 gram", "1 mole", "1 litre", "1 kg"],
+            a: 1,
+            e: "6.022×10²³ per mole.",
+          },
+          {
+            s: "Biology",
+            i: "🧬",
+            g: "pnk",
+            q: "Powerhouse of the cell:",
+            o: ["Nucleus", "Ribosome", "Mitochondria", "Chloroplast"],
+            a: 2,
+            e: "Mitochondria produce ATP via cellular respiration.",
+          },
+          {
+            s: "Biology",
+            i: "🧬",
+            g: "pnk",
+            q: "Universal blood donor:",
+            o: ["A", "B", "AB", "O"],
+            a: 3,
+            e: "O⁻ has no antigens.",
+          },
+          {
+            s: "Biology",
+            i: "🧬",
+            g: "pnk",
+            q: "Plants make food from sunlight by:",
+            o: [
+              "Respiration",
+              "Transpiration",
+              "Photosynthesis",
+              "Fermentation",
+            ],
+            a: 2,
+            e: "6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂.",
+          },
+          {
+            s: "Biology",
+            i: "🧬",
+            g: "pnk",
+            q: "DNA stands for:",
+            o: [
+              "Deoxyribonucleic Acid",
+              "Diribonucleic Acid",
+              "Deoxyribonitric Acid",
+              "Dinitric Acid",
+            ],
+            a: 0,
+            e: "Deoxyribonucleic Acid carries genetic information.",
+          },
+          {
+            s: "Biology",
+            i: "🧬",
+            g: "pnk",
+            q: "Vitamin produced by skin via sunlight:",
+            o: ["Vitamin A", "B12", "C", "D"],
+            a: 3,
+            e: "UV-B → Vitamin D synthesis.",
+          },
+          {
+            s: "Biology",
+            i: "🧬",
+            g: "pnk",
+            q: "Brain region controlling balance:",
+            o: ["Cerebrum", "Cerebellum", "Medulla", "Hypothalamus"],
+            a: 1,
+            e: "Cerebellum = balance and coordination.",
+          },
+          {
+            s: "Biology",
+            i: "🧬",
+            g: "pnk",
+            q: "Mendel's Law of Segregation:",
+            o: [
+              "Genes are linked",
+              "Alleles separate in gametes",
+              "Traits blend",
+              "All offspring identical",
+            ],
+            a: 1,
+            e: "Two alleles separate during meiosis.",
+          },
+          {
+            s: "Mathematics",
+            i: "📐",
+            g: "blp",
+            q: "d/dx [sin x] =",
+            o: ["cos x", "-cos x", "sin x", "-sin x"],
+            a: 0,
+            e: "Fundamental derivative result.",
+          },
+          {
+            s: "Mathematics",
+            i: "📐",
+            g: "blp",
+            q: "∫₀¹ x dx =",
+            o: ["0", "1/4", "1/2", "1"],
+            a: 2,
+            e: "[x²/2]₀¹ = 1/2.",
+          },
+          {
+            s: "Mathematics",
+            i: "📐",
+            g: "blp",
+            q: "If det(A)=5 for 3×3 A, det(2A) =",
+            o: ["10", "25", "40", "80"],
+            a: 2,
+            e: "det(kA)=kⁿ det(A) → 8×5=40.",
+          },
+          {
+            s: "Mathematics",
+            i: "📐",
+            g: "blp",
+            q: "Slope of 3x + 4y = 12:",
+            o: ["3/4", "-3/4", "4/3", "-4/3"],
+            a: 1,
+            e: "y = -3x/4 + 3 → slope = -3/4.",
+          },
+          {
+            s: "Mathematics",
+            i: "📐",
+            g: "blp",
+            q: "sin²θ + cos²θ always equals:",
+            o: ["0", "2", "1", "sinθcosθ"],
+            a: 2,
+            e: "Pythagorean identity = 1.",
+          },
+          {
+            s: "Mathematics",
+            i: "📐",
+            g: "blp",
+            q: "lim(x→0) sin(x)/x =",
+            o: ["0", "∞", "1", "undefined"],
+            a: 2,
+            e: "Fundamental trigonometric limit = 1.",
+          },
+          {
+            s: "Computer Science",
+            i: "💻",
+            g: "ibl",
+            q: "LIFO data structure:",
+            o: ["Queue", "Stack", "Linked List", "Tree"],
+            a: 1,
+            e: "Stack = Last In First Out.",
+          },
+          {
+            s: "Computer Science",
+            i: "💻",
+            g: "ibl",
+            q: "HTML stands for:",
+            o: [
+              "HyperText Markup Language",
+              "High Text Markup Language",
+              "HyperText Machine Language",
+              "HyperText Managing Language",
+            ],
+            a: 0,
+            e: "Standard language for web pages.",
+          },
+          {
+            s: "Computer Science",
+            i: "💻",
+            g: "ibl",
+            q: "Binary of decimal 10:",
+            o: ["1000", "1010", "1100", "1001"],
+            a: 1,
+            e: "8+2 = 1010₂.",
+          },
+          {
+            s: "Computer Science",
+            i: "💻",
+            g: "ibl",
+            q: "Which generation used transistors?",
+            o: ["First", "Second", "Third", "Fourth"],
+            a: 1,
+            e: "2nd gen (1956–1963) used transistors.",
+          },
+          {
+            s: "Computer Science",
+            i: "💻",
+            g: "ibl",
+            q: "Which is primary memory?",
+            o: ["Hard Disk", "CD-ROM", "RAM", "USB"],
+            a: 2,
+            e: "RAM is directly accessed by CPU.",
+          },
+          {
+            s: "Computer Science",
+            i: "💻",
+            g: "ibl",
+            q: "CPU stands for:",
+            o: [
+              "Central Processing Unit",
+              "Computer Processing Unit",
+              "Central Program Utility",
+              "Core Processing Unit",
+            ],
+            a: 0,
+            e: '"Brain" of the computer.',
+          },
+          {
+            s: "Computer Science",
+            i: "💻",
+            g: "ibl",
+            q: "Protocol for sending email:",
+            o: ["FTP", "HTTP", "SMTP", "POP3"],
+            a: 2,
+            e: "SMTP = Simple Mail Transfer Protocol.",
+          },
+          {
+            s: "Computer Science",
+            i: "💻",
+            g: "ibl",
+            q: "Hexadecimal of 255:",
+            o: ["EE", "FE", "FF", "FA"],
+            a: 2,
+            e: "F=15 → FF.",
+          },
+          {
+            s: "English",
+            i: "📝",
+            g: "ylo",
+            q: 'Correct passive of "She writes a letter every day."',
+            o: [
+              "A letter is being written every day by her.",
+              "A letter was written every day by her.",
+              "A letter is written every day by her.",
+              "A letter has been written every day by her.",
+            ],
+            a: 2,
+            e: "Simple present passive.",
+          },
+          {
+            s: "English",
+            i: "📝",
+            g: "ylo",
+            q: 'Figure of speech in "The stars danced in the sky":',
+            o: ["Simile", "Metaphor", "Personification", "Alliteration"],
+            a: 2,
+            e: "Stars given human quality (dancing).",
+          },
+          {
+            s: "English",
+            i: "📝",
+            g: "ylo",
+            q: 'Synonym of "benevolent":',
+            o: ["Cruel", "Kind", "Angry", "Selfish"],
+            a: 1,
+            e: "Benevolent = kind.",
+          },
+          {
+            s: "English",
+            i: "📝",
+            g: "ylo",
+            q: 'Reported speech: He said, "I am happy."',
+            o: [
+              "He said that he is happy.",
+              "He said that he was happy.",
+              "He said that I was happy.",
+              "He said that he has been happy.",
+            ],
+            a: 1,
+            e: "am → was in reported speech.",
+          },
+          {
+            s: "English",
+            i: "📝",
+            g: "ylo",
+            q: "Correctly spelled word:",
+            o: ["Accomodate", "Accommodate", "Acomodate", "Acommodate"],
+            a: 1,
+            e: "Double c, double m.",
+          },
+        ];
+        var shuf = [],
+          cur = 0,
+          ans = false,
+          vis = false,
+          ok = 0,
+          all = 0;
+        var L = ["A", "B", "C", "D"];
+        function sh(a) {
+          var b = a.slice();
+          for (var i = b.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var t = b[i];
+            b[i] = b[j];
+            b[j] = t;
+          }
+          return b;
+        }
+        function dots() {
+          var el = document.getElementById("hdots");
+          el.innerHTML = "";
+          var n = Math.min(shuf.length, 8);
+          for (var i = 0; i < n; i++) {
+            var d = document.createElement("div");
+            d.className =
+              "pd" + (i < cur ? " done" : i === cur ? " active" : "");
+            el.appendChild(d);
+          }
+        }
+        function render() {
+          var q = shuf[cur];
+          ans = false;
+          vis = false;
+          var ic = document.getElementById("hsi");
+          ic.className = "si " + q.g;
+          ic.textContent = q.i;
+          document.getElementById("hsl").textContent = q.s + " • Class 11–12";
+          document.getElementById("hqt").textContent = q.s + " MCQ";
+          document.getElementById("hero-q-counter").textContent =
+            "⚡ Q " + (cur + 1) + " / " + shuf.length;
+          document.getElementById("hq").textContent = q.q;
+          var opts = document.getElementById("hopts");
+          opts.innerHTML = "";
+          q.o.forEach(function (o, i) {
+            var d = document.createElement("div");
+            d.className = "qopt";
+            d.innerHTML = '<span class="ql">' + L[i] + ".</span>" + o;
+            d.addEventListener(
+              "click",
+              (function (idx, isok) {
+                return function () {
+                  heroSel(this, idx, isok);
+                };
+              })(i, i === q.a),
+            );
+            opts.appendChild(d);
+          });
+          var a = document.getElementById("hans");
+          a.innerHTML =
+            "<strong>✅ " + L[q.a] + " — " + q.o[q.a] + "</strong><br>" + q.e;
+          a.classList.remove("vis");
+          upScore();
+          dots();
+        }
+        function upScore() {
+          var pct = all > 0 ? Math.round((ok / all) * 100) : 0;
+          document.getElementById("hsb").style.width = pct + "%";
+          document.getElementById("hst").textContent = ok + "/" + all;
+        }
+        window.heroSel = function (el, idx, isok) {
+          if (ans) return;
+          ans = true;
+          all++;
+          if (isok) ok++;
+          document.querySelectorAll(".qopt").forEach(function (o) {
+            o.classList.add("disabled");
+          });
+          el.classList.add(isok ? "correct" : "wrong");
+          if (!isok) {
+            var os = document.querySelectorAll(".qopt");
+            if (os[shuf[cur].a]) os[shuf[cur].a].classList.add("correct");
+          }
+          document.getElementById("hans").classList.add("vis");
+          vis = true;
+          upScore();
+        };
+        window.heroToggleAnswer = function () {
+          vis = !vis;
+          document.getElementById("hans").classList.toggle("vis", vis);
+        };
+        window.heroNextQ = function () {
+          cur = (cur + 1) % shuf.length;
+          render();
+        };
+        window.heroSave = function (btn) {
+          var q = shuf[cur],
+            txt = "Subject: " + q.s + "\nQ: " + q.q + "\n";
+          L.forEach(function (l, i) {
+            txt += l + ". " + q.o[i] + "\n";
+          });
+          txt += "Answer: " + L[q.a] + " — " + q.o[q.a] + "\n" + q.e;
+          if (navigator.clipboard) navigator.clipboard.writeText(txt);
+          var og = btn.textContent;
+          btn.textContent = "✓ Copied!";
+          setTimeout(function () {
+            btn.textContent = og;
+          }, 2000);
+        };
+        shuf = sh(Q);
+        render();
+        setInterval(function () {
+          if (!ans) {
+            cur = (cur + 1) % shuf.length;
+            render();
+          }
+        }, 12000);
+      })();
+    </script>
+    <!-- Google AdSense Auto Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3896962422851508" crossorigin="anonymous"></script>
+  </body>
+</html>
