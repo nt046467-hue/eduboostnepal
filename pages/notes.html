@@ -295,19 +295,23 @@
           .orderBy("subject")
           .get()
           .then((snap) => {
+            let firestoreNotes = [];
             if (!snap.empty) {
-              allNotes = snap.docs.map((doc) => ({
+              firestoreNotes = snap.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
               }));
-            } else {
-              allNotes = staticNotes;
             }
+            // Merge: always include all staticNotes that aren't already in Firestore
+            const firestoreIds = new Set(firestoreNotes.map((n) => n.id));
+            const localOnly = (staticNotes || []).filter((n) => !firestoreIds.has(n.id));
+            allNotes = [...firestoreNotes, ...localOnly];
+            if (allNotes.length === 0) allNotes = staticNotes || [];
             renderNotes(allNotes);
           })
           .catch((e) => {
             console.warn("Firestore fetch error, using static fallback:", e);
-            allNotes = staticNotes;
+            allNotes = staticNotes || [];
             renderNotes(allNotes);
           });
       }
@@ -497,8 +501,12 @@
       function openNote(id) {
         const note = allNotes.find((n) => n.id === id);
         if (!note) return;
-        localStorage.setItem("currentNote", JSON.stringify(note));
-        window.location.href = `viewer.html?id=${id}`;
+        try {
+          localStorage.setItem("currentNote", JSON.stringify(note));
+        } catch (e) {}
+        const isFile = window.location.protocol === "file:";
+        const target = isFile ? `viewer.html?id=${encodeURIComponent(id)}` : `viewer?id=${encodeURIComponent(id)}`;
+        window.location.href = target;
       }
 
       window.toggleBookmark = function(noteId) {

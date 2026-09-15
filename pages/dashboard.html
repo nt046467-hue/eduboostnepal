@@ -79,7 +79,7 @@
           mcqCount: options.mcqCount || 10,
         };
        const idToken = await auth.currentUser?.getIdToken(false) || "";
-        const response = await fetch("/.netlify/functions/gemini", {
+        const response = await fetch("/api/gemini", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -1,0 +1,32 @@
+# Vercel — files to exclude from deployment
+
+# Netlify-specific
+netlify.toml
+netlify/
+
+# Dev tooling & scripts
+node_modules/
+optimize.js
+package-lock.json
+
+# Python dev/scratch scripts (content generation tools)
+*.py
+scratch/
+
+# Internal documentation
+docs/
+
+# Source PDF textbooks (not needed for web)
+resources/
+
+# Firebase (not used on Vercel)
+firebase.json
+firestore.rules
+
+# Git
+.git/
+.gitignore
+
+# OS junk
+.DS_Store
+Thumbs.db

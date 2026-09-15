@@ -272,27 +272,29 @@
             <div>
               <label
                 class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2"
-                >Note URL (Google Drive / Supabase / direct link) *</label
+                >Note URL <span class="text-slate-500 font-normal normal-case">(optional if you add inline content below)</span></label
               >
               <input
                 id="noteUrl"
-                required
                 type="url"
                 placeholder="https://drive.google.com/file/d/... or https://your-storage.com/note.html"
                 class="input-field w-full px-4 py-3 rounded-xl text-sm text-white placeholder-slate-500"
+                oninput="updateNoteRequirement()"
               />
-              <p class="text-xs text-slate-500 mt-1.5">Paste the direct URL to the note file (Google Drive share link, Supabase public URL, etc.)</p>
+              <p class="text-xs text-slate-500 mt-1.5">Paste a Google Drive / Supabase URL — <strong class="text-slate-400">or</strong> leave blank and write the content directly below.</p>
             </div>
             <div>
               <label
                 class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2"
-                >Fallback Content <span class="text-slate-500 font-normal normal-case">(optional — shown if URL fails to load)</span></label
+                >Inline Content <span class="text-slate-500 font-normal normal-case">(required if no URL — supports HTML)</span></label
               >
               <textarea
                 id="noteContent"
-                placeholder="Optional short HTML description shown as fallback.&#10;Example: &lt;p&gt;Click the link above to view the full note on Google Drive.&lt;/p&gt;"
-                class="input-field w-full px-4 py-3 rounded-xl text-sm text-white placeholder-slate-500 resize-none h-24 font-mono"
+                placeholder="Write the note content here if you don't have a URL.&#10;Supports HTML: &lt;h2&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;strong&gt;, &lt;code&gt;, etc."
+                class="input-field w-full px-4 py-3 rounded-xl text-sm text-white placeholder-slate-500 resize-none h-36 font-mono"
+                oninput="updateNoteRequirement()"
               ></textarea>
+              <p id="noteRequirementHint" class="text-xs mt-1.5 text-amber-400 hidden">⚠️ Either a URL or inline content is required.</p>
             </div>
             <div class="flex flex-col sm:flex-row gap-3 items-center sm:items-start">
               <button
@@ -303,6 +305,7 @@
               </button>
               <button
                 type="reset"
+                onclick="document.getElementById('noteRequirementHint')?.classList.add('hidden'); delete document.getElementById('noteForm').dataset.editId; const b = document.getElementById('noteForm').querySelector('[type=\'submit\']'); if(b) { b.innerHTML='<i data-lucide=\'plus\' class=\'w-4 h-4\'></i> Publish Note'; b.classList.add('from-orange-500','to-red-500'); b.classList.remove('from-blue-500','to-blue-600'); if (window.lucide) lucide.createIcons(); }"
                 class="eb-btn-secondary px-5 py-3.5 rounded-xl text-sm font-medium w-full sm:w-auto text-center"
               >
                 Reset
@@ -669,11 +672,32 @@
         document.getElementById("totalDownloads").textContent = downloads;
       }
 
+      function updateNoteRequirement() {
+        const url = document.getElementById("noteUrl")?.value.trim() || "";
+        const content = document.getElementById("noteContent")?.value.trim() || "";
+        const hint = document.getElementById("noteRequirementHint");
+        if ((url || content) && hint) {
+          hint.classList.add("hidden");
+        }
+      }
+
       // ── Submit Note ───────────────────────────────────────────────
       async function submitNote(e) {
         e.preventDefault();
         const btn = e.target.querySelector('[type="submit"]');
         const originalHTML = btn.innerHTML;
+
+        // ── Validate: must have URL or inline content ──────────────
+        const noteUrl     = document.getElementById("noteUrl").value.trim();
+        const noteContent = document.getElementById("noteContent").value.trim();
+        if (!noteUrl && !noteContent) {
+          document.getElementById("noteRequirementHint").classList.remove("hidden");
+          document.getElementById("noteContent").focus();
+          showToast("Please add a URL or write the note content directly.", "error");
+          return;
+        }
+        document.getElementById("noteRequirementHint").classList.add("hidden");
+
         btn.disabled = true;
         btn.innerHTML = "⏳ Publishing...";
 
@@ -690,8 +714,8 @@
           icon:        document.getElementById("noteIcon").value || "📖",
           summary:     document.getElementById("noteSummary").value,
           tags,
-          externalUrl: document.getElementById("noteUrl").value,
-          content:     document.getElementById("noteContent").value || "<p>Click the link to study this note.</p>",
+          externalUrl: noteUrl,
+          content:     noteContent || (noteUrl ? "<p>Click the link to study this note.</p>" : ""),
         };
         try {
           if (editId) {
@@ -883,6 +907,7 @@
                   <div class="text-slate-400 text-xs mt-0.5">${escapeHtml(d.subject || "—")} • Class ${escapeHtml(d.class || "—")} • ${escapeHtml(d.chapter || "—")}</div>
                 </div>
                 <div class="flex gap-2 flex-shrink-0">
+                  <a href="viewer?id=${doc.id}" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition-colors text-xs px-2 sm:px-3 py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 whitespace-nowrap inline-flex items-center gap-1">👁 View</a>
                   <button onclick="editNote('${doc.id}')" class="text-blue-400 hover:text-blue-300 transition-colors text-xs px-2 sm:px-3 py-1.5 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 whitespace-nowrap">✏️ Edit</button>
                   <button onclick="deleteDoc('notesData', '${doc.id}')" class="text-red-400 hover:text-red-300 transition-colors text-xs px-2 sm:px-3 py-1.5 rounded-lg bg-red-500/10 hover:bg-red-500/20 whitespace-nowrap">🗑 Delete</button>
                 </div>

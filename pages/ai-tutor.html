@@ -2752,7 +2752,7 @@
               ? firebase.auth().currentUser.getIdToken(false)
               : Promise.resolve(""),
           ).then(function (idToken) {
-            return fetch("/.netlify/functions/gemini", {
+            return fetch("/api/gemini", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

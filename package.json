@@ -4,6 +4,7 @@
   "description": "A complete, production-ready educational web app for NEB Nepal students and teachers — featuring AI question/answer generation, notes, blog, downloads, and an admin panel.",
   "main": "index.js",
   "scripts": {
+    "dev": "npx serve . -p 3000 --no-clipboard",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
