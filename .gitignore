@@ -38,3 +38,6 @@ pnpm-debug.log*
 *.rar
 *.tar.gz
 *.7z
+scratch/
+Resources/
+resources/

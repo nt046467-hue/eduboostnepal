@@ -214,114 +214,6 @@ window.staticNotes = [
           `,
         },
         {
-          id: "math12-combination-permutation",
-          class: "12",
-          subject: "Mathematics",
-          chapter: "Combination & Permutation",
-          title: "Combination & Permutation — Class 12 Math",
-          icon: "📐",
-          summary:
-            "NEB Class 12 Mathematics notes on combinations and permutations with formulas and solved examples.",
-          tags: ["Combination", "Permutation", "Mathematics", "Class 12"],
-          externalUrl:
-            "https://drive.google.com/file/d/1TGAyUJlh1peVapV5VK12AImwL4pVag4E/view?usp=sharing",
-          content: `
-            <h2>Combination & Permutation</h2>
-            <p>This note opens the NEB Class 12 Mathematics Combination and Permutation PDF from Google Drive.</p>
-            <p>Use the embedded viewer or click the link to open the PDF in Drive.</p>
-          `,
-        },
-        {
-          id: "math12-binomial-theorem",
-          class: "12",
-          subject: "Mathematics",
-          chapter: "Binomial Theorem",
-          title: "Binomial Theorem — Class 12 Math",
-          icon: "🔢",
-          summary:
-            "Class 12 Mathematics Binomial Theorem notes with expansion, properties, and solved examples.",
-          tags: ["Binomial Theorem", "Mathematics", "Class 12", "Algebra"],
-          externalUrl:
-            "https://drive.google.com/file/d/1rOvPFta9Qy79jrar0ZPpuM-yWJiGd5O0/view?usp=sharing",
-          content: `
-            <h2>Binomial Theorem</h2>
-            <p>This note opens the NEB Class 12 Mathematics Binomial Theorem PDF from Google Drive.</p>
-            <p>Use the embedded viewer or click the link to open the PDF in Drive.</p>
-          `,
-        },
-        {
-          id: "math12-complex-number",
-          class: "12",
-          subject: "Mathematics",
-          chapter: "Complex Number",
-          title: "Complex Number — Class 12 Math",
-          icon: "🧮",
-          summary:
-            "Class 12 Mathematics Complex Number notes with algebraic forms, polar form, and De Moivre's theorem.",
-          tags: ["Complex Number", "Mathematics", "Class 12", "Algebra"],
-          externalUrl:
-            "https://drive.google.com/file/d/1EfkkdPSxUu4mHlsAq_ImimELx25zpp6a/view?usp=sharing",
-          content: `
-            <h2>Complex Number</h2>
-            <p>This note opens the NEB Class 12 Mathematics Complex Number PDF from Google Drive.</p>
-            <p>Use the embedded viewer or click the link to open the PDF in Drive.</p>
-          `,
-        },
-        {
-          id: "math12-sequence-series",
-          class: "12",
-          subject: "Mathematics",
-          chapter: "Sequence and Series",
-          title: "Sequence & Series — Class 12 Math",
-          icon: "➗",
-          summary:
-            "Class 12 Mathematics Sequence and Series notes with arithmetic, geometric progressions, and convergence tests.",
-          tags: ["Sequence", "Series", "Mathematics", "Class 12"],
-          externalUrl:
-            "https://drive.google.com/file/d/1EbHF3WBqK8nfUmmTd-ewAlJg1mOgziPS/view?usp=sharing",
-          content: `
-            <h2>Sequence and Series</h2>
-            <p>This note opens the NEB Class 12 Mathematics Sequence and Series PDF from Google Drive.</p>
-            <p>Use the embedded viewer or click the link to open the PDF in Drive.</p>
-          `,
-        },
-        {
-          id: "math12-matrix-sle",
-          class: "12",
-          subject: "Mathematics",
-          chapter: "Matrix-based System of Linear Equations",
-          title: "Matrix-Based SLE — Class 12 Math",
-          icon: "🧱",
-          summary:
-            "Class 12 Mathematics notes for solving linear equations using matrices and determinants.",
-          tags: ["Matrices", "Linear Equations", "Mathematics", "Class 12"],
-          externalUrl:
-            "https://drive.google.com/file/d/1EtTypgHR47x3GjYsjbSiW1md9sm2sGVK/view?usp=sharing",
-          content: `
-            <h2>Matrix-Based System of Linear Equations</h2>
-            <p>This note opens the NEB Class 12 Mathematics matrix-based system of linear equations PDF from Google Drive.</p>
-            <p>Use the embedded viewer or click the link to open the PDF in Drive.</p>
-          `,
-        },
-        {
-          id: "math12-properties-of-triangle",
-          class: "12",
-          subject: "Mathematics",
-          chapter: "Properties of Triangle",
-          title: "Properties of Triangle — class 12 mathematics",
-          icon: "📐",
-          summary:
-            "NEB Class 12 Mathematics note on triangle properties, congruence, similarity, angle relations, medians, altitudes, and exam-ready proofs.",
-          tags: ["Triangle", "Mathematics", "Class 12", "Geometry"],
-          externalUrl:
-            "https://drive.google.com/file/d/1EBc4jKK6SI_Mi778QtW2R9Jf6YrONxif/view",
-          content: `
-            <h2>Properties of Triangle</h2>
-            <p>This note opens the NEB Class 12 Mathematics Properties of Triangle resource from Google Drive.</p>
-            <p>Includes congruence, similarity, angle properties, medians, altitudes, and important exam-proof examples.</p>
-          `,
-        },
-        {
           id: "phys12-mechanical-wave",
           class: "12",
           subject: "Physics",
@@ -2060,7 +1952,7 @@ window.staticNotes = [
       &bull; <strong>R<sub>max</sub> = 4H<sub>max</sub></strong> only at &theta; = 45&deg;. Don't apply this to arbitrary angles.
     </div>
   `,
-},,,
+},
   {
     id: "phys11-dynamics",
     class: "11",
@@ -2172,7 +2064,7 @@ window.staticNotes = [
     </div>
 
     <div class="diagram-box">
-      <img src="/images/notes/physics/ch4/fig-4-1-collision.webp" alt="One dimensional collision between two bodies" loading="lazy" />
+      <img src="../public/images/notes/physics/ch4/fig-4-1-collision.webp" alt="One dimensional collision between two bodies" loading="lazy" />
       <div class="diagram-caption">
         <span class="tag">Textbook Fig 4.1</span>
         One-dimensional collision: Demonstrating interaction forces F₁ and F₂ over time interval &Delta;t during momentum exchange.
@@ -2312,7 +2204,7 @@ window.staticNotes = [
     </div>
 
     <div class="diagram-box">
-      <img src="/images/notes/physics/ch4/fig-4-2-third-law.webp" alt="Newton's Third Law" loading="lazy" />
+      <img src="../public/images/notes/physics/ch4/fig-4-2-third-law.webp" alt="Newton's Third Law" loading="lazy" />
       <div class="diagram-caption">
         <span class="tag">Textbook Fig 4.2</span>
         Showing the Third Law: Mutual interaction pairs between contacting bodies. Action and reaction are equal in magnitude and opposite in direction.
@@ -2328,7 +2220,7 @@ window.staticNotes = [
     <p>A classic NEB board question asks: <em>"If the horse pulls the cart forward with force T and the cart pulls the horse backward with equal force T, why does the system accelerate forward?"</em></p>
 
     <div class="diagram-box">
-      <img src="/images/notes/physics/ch4/fig-4-3-horse-cart.webp" alt="Horse-Cart System Illustration" loading="lazy" />
+      <img src="../public/images/notes/physics/ch4/fig-4-3-horse-cart.webp" alt="Horse-Cart System Illustration" loading="lazy" />
       <div class="diagram-caption">
         <span class="tag">Textbook Fig 4.3</span>
         An Illustration of the 2nd Law (Horse–Cart System): Analysis of forward ground reaction H on horse hooves vs opposing ground friction f on cart wheels.
@@ -2446,7 +2338,7 @@ window.staticNotes = [
     <p>When a person of mass m stands on a weighing machine on the floor of a moving lift, the machine measures the <strong>reaction force (R)</strong> exerted by the floor upon the person.</p>
 
     <div class="diagram-box">
-      <img src="/images/notes/physics/ch4/fig-4-5-lift-motion.webp" alt="Motion in the Lift - Apparent Loss in Weight" loading="lazy" />
+      <img src="../public/images/notes/physics/ch4/fig-4-5-lift-motion.webp" alt="Motion in the Lift - Apparent Loss in Weight" loading="lazy" />
       <div class="diagram-caption">
         <span class="tag">Textbook Fig 4.5</span>
         Motion in the Lift: Resolving upward normal reaction R against downward gravitational weight Mg during upward, downward, and free-fall accelerations.
@@ -2576,7 +2468,7 @@ window.staticNotes = [
     </div>
 
     <div class="diagram-box">
-      <img src="/images/notes/physics/ch4/fig-4-8-work-couple.webp" alt="Work Done by a Couple" loading="lazy" />
+      <img src="../public/images/notes/physics/ch4/fig-4-8-work-couple.webp" alt="Work Done by a Couple" loading="lazy" />
       <div class="diagram-caption">
         <span class="tag">Textbook Fig 4.8</span>
         Work Done by a Couple: Rotating a disc through angular displacement &theta; by tangential forces F and F.
@@ -2620,7 +2512,7 @@ window.staticNotes = [
     <p>In the laboratory, the laws of friction are verified using a wooden block connected by a light cord over a pulley to a scale pan with slotted weights.</p>
 
     <div class="diagram-box">
-      <img src="/images/notes/physics/ch4/fig-4-9-friction-experiment.webp" alt="Experimental Setup for Friction Laws" loading="lazy" />
+      <img src="../public/images/notes/physics/ch4/fig-4-9-friction-experiment.webp" alt="Experimental Setup for Friction Laws" loading="lazy" />
       <div class="diagram-caption">
         <span class="tag">Textbook Fig 4.9</span>
         Experimental Setup: Verifying that limiting friction fL is proportional to normal reaction R and independent of contact surface area.
@@ -2875,7 +2767,7 @@ window.staticNotes = [
       <p><strong>Problem:</strong> An applied force vs. time graph of an object is given below. Find the total impulse on the object between 0 to 10 seconds, and the acceleration gained at t = 2 s and t = 6 s if its mass is 2.0 kg.</p>
       
       <div class="diagram-box">
-        <img src="/images/notes/physics/ch4/fig-4-15-impulse-exercise.webp" alt="Exercise 28 Force-Time Graph" loading="lazy" />
+        <img src="../public/images/notes/physics/ch4/fig-4-15-impulse-exercise.webp" alt="Exercise 28 Force-Time Graph" loading="lazy" />
         <div class="diagram-caption">
           <span class="tag">Textbook Fig 4.15</span>
           Applied force vs. time graph: Trapezoidal area representing total impulse J = &int; F dt.
@@ -3027,5 +2919,838 @@ window.staticNotes = [
     </div>
 
     `,
+  },
+  {
+    id: "phys11-work-energy-power",
+    class: "11",
+    subject: "Physics",
+    chapter: "Work, Energy & Power",
+    title: "Work, Energy and Power — Class 11 Physics",
+    icon: "⚡",
+    summary: "Comprehensive NEB Class 11 Physics notes: Work done by constant & variable forces, Power & Efficiency, Work-Energy Theorem, Kinetic & Potential Energy (Gravitational & Elastic), Conservation of Mechanical Energy (Freely Falling Body & Vertical Circle), Conservative vs Non-Conservative Forces, Elastic & Inelastic 1D Collisions (velocity derivation & kinetic energy loss), and 8 high-yield NEB solved numericals & past board derivations.",
+    tags: ["Work", "Energy", "Power", "Work-Energy Theorem", "Conservation of Energy", "Elastic Collision", "Inelastic Collision", "Conservative Force", "Potential Energy", "Class 11", "Physics", "NEB"],
+    content: `
+    <!-- Bento Grid Overview -->
+    <div class="bento-grid">
+      <div class="bento-card">
+        <div class="bento-header">
+          <div class="bento-icon">⚙️</div>
+          <div>
+            <div class="bento-title">Work &amp; Variable Forces</div>
+            <div class="bento-subtitle">W = F&middot;s&middot;cos&theta; &bull; &int;F(x)dx</div>
+          </div>
+        </div>
+        <p>Work is scalar energy transfer quantified by force along displacement. For variable forces and elastic springs, work equals the mathematical area beneath the Force&ndash;Displacement curve (W = &frac12;kx&sup2;).</p>
+      </div>
+
+      <div class="bento-card">
+        <div class="bento-header">
+          <div class="bento-icon">⚡</div>
+          <div>
+            <div class="bento-title">Work-Energy Theorem</div>
+            <div class="bento-subtitle">W_net = &Delta;KE = &frac12;mv&sup2; &minus; &frac12;mu&sup2;</div>
+          </div>
+        </div>
+        <p>The net work done by all acting forces equals the exact change in kinetic energy. Connects translational dynamics directly to linear momentum via E_k = p&sup2; / (2m).</p>
+      </div>
+
+      <div class="bento-card">
+        <div class="bento-header">
+          <div class="bento-icon">🔄</div>
+          <div>
+            <div class="bento-title">Energy Conservation</div>
+            <div class="bento-subtitle">E = KE + PE = Constant</div>
+          </div>
+        </div>
+        <p>Total mechanical energy remains rigorously invariant under conservative forces. Proven analytically for free fall and vertical circular loops (v_bottom = &radic;5gr, &Delta;T = 6mg).</p>
+      </div>
+
+      <div class="bento-card">
+        <div class="bento-header">
+          <div class="bento-icon">💥</div>
+          <div>
+            <div class="bento-title">Collisions &amp; Restitution</div>
+            <div class="bento-subtitle">Elastic (e=1) vs Inelastic (0 &le; e &lt; 1)</div>
+          </div>
+        </div>
+        <p>1D elastic collisions conserve momentum and kinetic energy, leading to velocity exchange for equal masses. Inelastic impacts dissipate mechanical energy into heat and deformation (&Delta;E_loss).</p>
+      </div>
+    </div>
+
+    <h2>1. Foundations of Work: Constant and Variable Forces</h2>
+    <p>In everyday language, "work" denotes any physical or mental exertion. In physics, however, <strong>work</strong> is strictly defined as an energy transfer process that occurs when an applied force causes a material displacement along the line of action of that force.</p>
+
+    <h3>1.1 Mathematical Definition &amp; Scalar Product</h3>
+    <p>When a constant force &vec;F acts on a particle resulting in a displacement &vec;s, the work done (W) is the scalar (dot) product of the force and displacement vectors:</p>
+
+    <div class="formula-box">
+      <span class="formula-label">Work Done by a Constant Force</span>
+      W = &vec;F &middot; &vec;s = |&vec;F| |&vec;s| cos&theta; = F &middot; s &middot; cos&theta;
+    </div>
+
+    <p>Where <strong>&theta;</strong> represents the angle between the directional line of the force &vec;F and the direction of displacement &vec;s.</p>
+
+    <div class="diagram-box">
+      <img src="../public/images/notes/physics/ch5/fig-5-1-concept-work.webp" alt="Concept of Work Done: Force resolved along displacement" loading="lazy" />
+      <div class="diagram-caption">
+        <span class="tag">Textbook Fig 5.1</span>
+        Concept of Work: Effective component of force in the direction of motion is F cos&theta;, doing work W = (F cos&theta;) &middot; s.
+      </div>
+    </div>
+
+    <h3>1.2 Physical Characterization of Work</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Angular Condition</th>
+          <th>Mathematical Sign</th>
+          <th>Physical Mechanism &amp; NEB Exam Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Positive Work</strong></td>
+          <td>0&deg; &le; &theta; &lt; 90&deg; (cos&theta; &gt; 0)</td>
+          <td><code>W &gt; 0</code></td>
+          <td>Force has a component supporting motion. <em>Examples:</em> A falling apple pulled down by gravity (&theta;=0&deg;); a horse pulling a cart forwards; stretching a spring.</td>
+        </tr>
+        <tr>
+          <td><strong>Negative Work</strong></td>
+          <td>90&deg; &lt; &theta; &le; 180&deg; (cos&theta; &lt; 0)</td>
+          <td><code>W &lt; 0</code></td>
+          <td>Force opposes displacement, extracting mechanical energy. <em>Examples:</em> Kinetic friction acting on a sliding crate (&theta;=180&deg;); gravity acting on a vertically projected stone.</td>
+        </tr>
+        <tr>
+          <td><strong>Zero Work</strong></td>
+          <td>&theta; = 90&deg; (cos&theta; = 0) OR s = 0</td>
+          <td><code>W = 0</code></td>
+          <td>Force is perpendicular to displacement or no motion occurs. <em>Examples:</em> A porter carrying luggage on a horizontal platform (&theta;=90&deg; against gravity); centripetal force in circular orbits; pushing against a rigid wall.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note-box">
+      <strong>NEB Board Conceptual Focus:</strong> Why is the work done by centripetal force always zero? Because centripetal force acts radially towards the center, whereas instantaneous displacement is directed tangentially (&theta; = 90&deg;). Thus, <code>W = F &middot; s &middot; cos 90&deg; = 0</code>, meaning centripetal force alters direction of motion without changing kinetic energy or speed!
+    </div>
+
+    <h3>1.3 Units and Dimensions of Work</h3>
+    <div class="formula-box">
+      <span class="formula-label">Units &amp; Dimensional Identity</span>
+      <strong>SI Unit:</strong> Joule (J) = 1 N &middot; m = 1 kg&middot;m&sup2;&middot;s<sup>&minus;2</sup><br/>
+      <strong>CGS Unit:</strong> Erg = 1 dyne &middot; cm = 1 g&middot;cm&sup2;&middot;s<sup>&minus;2</sup><br/>
+      <strong>Conversion:</strong> <code>1 J = 10<sup>5</sup> dyne &times; 10<sup>2</sup> cm = 10<sup>7</sup> erg</code><br/>
+      <strong>Dimensional Formula:</strong> <code>[W] = [M L<sup>2</sup> T<sup>&minus;2</sup>]</code>
+    </div>
+
+    <h3>1.4 Work Done by a Variable Force</h3>
+    <p>In real mechanical systems, forces rarely remain constant throughout displacement. For example, spring forces vary with elongation (F = kx), and gravitational forces vary inversely with the square of distance.</p>
+
+    <p>To evaluate work done by a variable force F(x), we divide the total displacement from x<sub>1</sub> to x<sub>2</sub> into an infinite number of infinitesimal segments dx over which F is approximately uniform. The total work is the definite integral:</p>
+
+    <div class="formula-box">
+      <span class="formula-label">Calculus Definition of Variable Work</span>
+      W = &int;<sub>x<sub>1</sub></sub><sup>x<sub>2</sub></sup> F(x) dx = &int;<sub>x<sub>1</sub></sub><sup>x<sub>2</sub></sup> (F cos&theta;) dx
+    </div>
+
+    <div class="diagram-box">
+      <img src="../public/images/notes/physics/ch5/fig-5-2a-variable-work.webp" alt="Work Done by Variable Force - Analytical Strip Integration" loading="lazy" />
+      <div class="diagram-caption">
+        <span class="tag">Textbook Fig 5.2a</span>
+        Analytical evaluation of work done by variable force as summation of infinitesimal rectangular strips: W = &Sigma; F_i &Delta;x_i &rarr; &int; F dx.
+      </div>
+    </div>
+
+    <div class="key-stmt">
+      <strong>Fundamental Graphical Rule:</strong> The total work done by any force (constant or variable) during a rectilinear displacement from x<sub>1</sub> to x<sub>2</sub> is geometrically equal to the <strong>net area under the Force&ndash;Displacement (F&ndash;x) curve</strong> bounded by the displacement axis.
+    </div>
+
+    <!-- Interactive-feel Modern SVG: Force vs Displacement Area -->
+    <div class="diagram-box">
+      <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" class="diagram">
+        <defs>
+          <linearGradient id="workAreaGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f97316" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#dc2626" stop-opacity="0.08"/>
+          </linearGradient>
+          <marker id="ch5-arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/>
+          </marker>
+        </defs>
+        <rect width="700" height="260" rx="12" fill="#090d16" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        
+        <!-- Axes -->
+        <line x1="80" y1="220" x2="640" y2="220" stroke="#64748b" stroke-width="2" marker-end="url(#ch5-arr)"/>
+        <line x1="80" y1="220" x2="80" y2="30" stroke="#64748b" stroke-width="2" marker-end="url(#ch5-arr)"/>
+        <text x="645" y="225" fill="#94a3b8" font-size="13" font-weight="600">Displacement x (m)</text>
+        <text x="35" y="35" fill="#94a3b8" font-size="13" font-weight="600">Force F(x) [N]</text>
+
+        <!-- Shaded Area Under Curve -->
+        <path d="M 140,220 L 140,160 Q 260,60 420,100 T 560,70 L 560,220 Z" fill="url(#workAreaGrad)" stroke="none"/>
+        <path d="M 140,160 Q 260,60 420,100 T 560,70" fill="none" stroke="#f97316" stroke-width="3.5" stroke-linecap="round"/>
+
+        <!-- Boundaries -->
+        <line x1="140" y1="220" x2="140" y2="160" stroke="#fb923c" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <line x1="560" y1="220" x2="560" y2="70" stroke="#fb923c" stroke-width="1.5" stroke-dasharray="4,4"/>
+        
+        <!-- Labels -->
+        <text x="132" y="240" fill="#cbd5e1" font-size="12" font-weight="bold">x₁ (Initial)</text>
+        <text x="545" y="240" fill="#cbd5e1" font-size="12" font-weight="bold">x₂ (Final)</text>
+        
+        <rect x="260" y="140" width="220" height="38" rx="8" fill="rgba(15,23,42,0.85)" stroke="#f97316" stroke-width="1"/>
+        <text x="275" y="164" fill="#fb923c" font-size="13" font-weight="bold">Work = &int; F(x) dx = Area</text>
+      </svg>
+      <div class="diagram-caption">
+        <span class="tag">Visual Calculus</span>
+        Work Done by Variable Force: The shaded area bounded by F(x), the x-axis, and limits x₁ to x₂ represents the total work done.
+      </div>
+    </div>
+
+    <h3>1.5 Work Done in Stretching a Helical Spring</h3>
+    <p>According to <strong>Hooke's Law</strong>, the restoring force exerted by a spring displaced by distance x from its natural equilibrium is directly proportional to displacement: <code>F<sub>s</sub> = &minus;kx</code>, where k is the <strong>spring constant</strong> (force per unit extension, measured in N/m).</p>
+
+    <div class="step-box">
+      <div class="step-title">Derivation of Spring Work &amp; Elastic Energy</div>
+      <div class="step">
+        <span><strong>External Force Required:</strong> To overcome the spring's restoring force without acceleration, an applied external force F<sub>ext</sub> = +kx must be supplied.</span>
+      </div>
+      <div class="step">
+        <span><strong>Work on Element dx:</strong> The infinitesimal work done in stretching the spring by an extra distance dx is <code>dW = F<sub>ext</sub> dx = kx dx</code>.</span>
+      </div>
+      <div class="step">
+        <span><strong>Integration over Extension 0 to x:</strong>
+        <br/><code>W = &int;<sub>0</sub><sup>x</sup> kx dx = k [&frac12; x&sup2;]<sub>0</sub><sup>x</sup> = &frac12; k x&sup2;</code></span>
+      </div>
+    </div>
+
+    <div class="formula-box">
+      <span class="formula-label">Elastic Work &amp; Spring Potential Energy</span>
+      W = &frac12; k (x<sub>f</sub>&sup2; &minus; x<sub>i</sub>&sup2;) &emsp; [From rest to extension x: <strong>W = &frac12; k x&sup2;</strong>]
+    </div>
+
+    <h2>2. Power, Energy &amp; System Efficiency</h2>
+    <h3>2.1 Power: Instantaneous and Average</h3>
+    <p><strong>Power</strong> is defined as the time rate at which work is performed or mechanical energy is transferred.</p>
+
+    <div class="formula-box">
+      <span class="formula-label">Power Formulations</span>
+      <strong>Average Power:</strong> P<sub>avg</sub> = &Delta;W / &Delta;t<br/>
+      <strong>Instantaneous Power:</strong> P = dW / dt = d(&vec;F &middot; &vec;s) / dt = <strong>&vec;F &middot; &vec;v = F &middot; v &middot; cos&theta;</strong>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Unit of Power / Energy</th>
+          <th>Symbol</th>
+          <th>Standard Equivalence in SI</th>
+          <th>Domain of Usage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Watt (SI)</strong></td>
+          <td>W</td>
+          <td>1 W = 1 J/s = 1 N&middot;m/s = 1 kg&middot;m&sup2;&middot;s<sup>&minus;3</sup></td>
+          <td>Standard scientific &amp; electrical rating</td>
+        </tr>
+        <tr>
+          <td><strong>Kilowatt / Megawatt</strong></td>
+          <td>kW / MW</td>
+          <td>1 kW = 10<sup>3</sup> W &bull; 1 MW = 10<sup>6</sup> W</td>
+          <td>Hydropower plants &amp; electric grids in Nepal</td>
+        </tr>
+        <tr>
+          <td><strong>Horsepower (Imperial)</strong></td>
+          <td>hp</td>
+          <td><strong>1 hp = 746 Watts</strong> = 0.746 kW</td>
+          <td>Automobile engines &amp; water pump motors</td>
+        </tr>
+        <tr>
+          <td><strong>Kilowatt-hour (Commercial)</strong></td>
+          <td>kWh (Unit)</td>
+          <td><strong>1 kWh = 1000 W &times; 3600 s = 3.6 &times; 10<sup>6</sup> J = 3.6 MJ</strong></td>
+          <td>Nepal Electricity Authority (NEA) billing</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2.2 Mechanical Efficiency of a Machine</h3>
+    <div class="formula-box">
+      <span class="formula-label">Efficiency Formula</span>
+      &eta; = (Useful Output Work / Total Input Work) &times; 100% = (Output Power / Input Power) &times; 100%
+    </div>
+    <p>Due to unavoidable resistive dissipations (friction, viscous drag, sound, thermal generation), real machine efficiency is always strictly &eta; &lt; 100%.</p>
+
+    <h2>3. Kinetic Energy and the Work-Energy Theorem</h2>
+    <p><strong>Energy</strong> is the capacity of a physical system to perform work. It is a scalar quantity possessing the identical dimension <code>[M L<sup>2</sup> T<sup>&minus;2</sup>]</code> and SI unit (Joule) as work.</p>
+
+    <h3>3.1 Kinetic Energy (E<sub>k</sub>)</h3>
+    <p><strong>Kinetic energy</strong> is the mechanical energy possessed by a body by virtue of its translational, rotational, or vibrational motion. For a body of mass m moving with rectilinear velocity v, translational kinetic energy is <code>E<sub>k</sub> = &frac12; mv&sup2;</code>.</p>
+
+    <div class="diagram-box">
+      <img src="../public/images/notes/physics/ch5/fig-5-3-kinetic-energy-gain.webp" alt="Body gaining kinetic energy under applied force" loading="lazy" />
+      <div class="diagram-caption">
+        <span class="tag">Textbook Fig 5.3</span>
+        Body of mass m initially at rest accelerating under force F through displacement s, acquiring final velocity v and kinetic energy &frac12; mv&sup2;.
+      </div>
+    </div>
+
+    <h3>3.2 Calculus Derivation of the Work-Energy Theorem</h3>
+    <div class="step-box">
+      <div class="step-title">Rigorous Derivation: Work-Energy Theorem for Variable Force</div>
+      <div class="step">
+        <span><strong>Newton's Second Law Relation:</strong> For a body of mass m moving along the x-axis, F = ma = m(dv/dt). Using chain rule: <code>F = m (dv/dx) &middot; (dx/dt) = m v (dv/dx)</code>.</span>
+      </div>
+      <div class="step">
+        <span><strong>Work Done on Elemental Displacement dx:</strong>
+        <br/><code>dW = F dx = [m v (dv/dx)] dx = m v dv</code></span>
+      </div>
+      <div class="step">
+        <span><strong>Definite Integration from Initial Speed u to Final Speed v:</strong>
+        <br/><code>W = &int;<sub>u</sub><sup>v</sup> m v dv = m [&frac12; v&sup2;]<sub>u</sub><sup>v</sup> = &frac12; m v&sup2; &minus; &frac12; m u&sup2;</code></span>
+      </div>
+      <div class="step">
+        <span><strong>Conclusion:</strong>
+        <br/><code>W<sub>net</sub> = E<sub>k, final</sub> &minus; E<sub>k, initial</sub> = &Delta;E<sub>k</sub></code></span>
+      </div>
+    </div>
+
+    <div class="key-stmt">
+      <strong>Work-Energy Theorem Statement:</strong> The total net work performed by all conservative and non-conservative forces acting upon a body is identically equal to the net change in its kinetic energy: <code>W<sub>net</sub> = &Delta;KE</code>.
+    </div>
+
+    <h3>3.3 Interrelation Between Kinetic Energy (E<sub>k</sub>) and Linear Momentum (p)</h3>
+    <p>Consider a body of mass m with velocity v. Its linear momentum is <code>p = mv</code> and its kinetic energy is <code>E<sub>k</sub> = &frac12; mv&sup2;</code>.</p>
+
+    <div class="formula-box">
+      <span class="formula-label">Momentum-Kinetic Energy Relationships</span>
+      E<sub>k</sub> = &frac12; m v&sup2; = (m&sup2; v&sup2;) / (2m) = <strong>p&sup2; / (2m)</strong><br/>
+      <strong>p = &radic;(2m E<sub>k</sub>)</strong>
+    </div>
+
+    <div class="note-box">
+      <strong>High-Yield NEB Ratio Insights:</strong>
+      <ul>
+        <li><strong>If momentum p is constant:</strong> <code>E<sub>k</sub> &prop; 1/m</code>. A lighter body possesses <em>more</em> kinetic energy than a heavier body when both have identical momentum (e.g. bullet vs recoiling gun).</li>
+        <li><strong>If kinetic energy E<sub>k</sub> is constant:</strong> <code>p &prop; &radic;m</code>. A heavier body carries <em>greater</em> momentum than a lighter body when both have equal kinetic energy.</li>
+        <li><strong>Percentage Change Rule:</strong> If momentum increases by n%, new momentum p' = p(1 + n/100). New KE is E<sub>k</sub>' = E<sub>k</sub>(1 + n/100)&sup2;. For a 50% increase in momentum, KE increases by <strong>125%</strong>!</li>
+      </ul>
+    </div>
+
+    <h2>4. Potential Energy &amp; Equilibrium States</h2>
+    <p><strong>Potential energy</strong> (U or E<sub>p</sub>) is the energy stored within a system by virtue of the relative position, configuration, or spatial arrangement of its constituent parts against a conservative field force.</p>
+
+    <h3>4.1 Gravitational Potential Energy</h3>
+    <p>Near the surface of the Earth where gravitational acceleration g is approximately uniform, the work done against gravity to elevate an object of mass m to height h is:</p>
+    <div class="formula-box">
+      <span class="formula-label">Gravitational Potential Energy</span>
+      U<sub>g</sub> = m &middot; g &middot; h &emsp; [Relative to reference datum h = 0 where U<sub>g</sub> = 0]
+    </div>
+
+    <h3>4.2 Force as the Negative Gradient of Potential Energy</h3>
+    <p>For any conservative force field, the force acting on a particle is mathematically related to potential energy by the spatial derivative:</p>
+    <div class="formula-box">
+      <span class="formula-label">Potential Gradient Relationship</span>
+      F(x) = &minus; (dU / dx) &emsp; [In 3D: &vec;F = &minus;&nabla;U = &minus;(&part;U/&part;x &icirc; + &part;U/&part;y &jmath; + &part;U/&part;z k&#770;)]
+    </div>
+
+    <h3>4.3 Characterization of Mechanical Equilibrium</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Equilibrium Type</th>
+          <th>1st Derivative (Net Force)</th>
+          <th>2nd Derivative (Curvature)</th>
+          <th>Potential Energy Behavior</th>
+          <th>Physical Analogy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Stable Equilibrium</strong></td>
+          <td><code>dU/dx = 0</code> (F = 0)</td>
+          <td><code>d&sup2;U/dx&sup2; &gt; 0</code> (Positive)</td>
+          <td>Potential energy is at a <strong>local minimum</strong></td>
+          <td>Marble at the bottom of a spherical bowl</td>
+        </tr>
+        <tr>
+          <td><strong>Unstable Equilibrium</strong></td>
+          <td><code>dU/dx = 0</code> (F = 0)</td>
+          <td><code>d&sup2;U/dx&sup2; &lt; 0</code> (Negative)</td>
+          <td>Potential energy is at a <strong>local maximum</strong></td>
+          <td>Marble balanced precariously on top of an inverted bowl</td>
+        </tr>
+        <tr>
+          <td><strong>Neutral Equilibrium</strong></td>
+          <td><code>dU/dx = 0</code> (F = 0)</td>
+          <td><code>d&sup2;U/dx&sup2; = 0</code> (Zero)</td>
+          <td>Potential energy is <strong>constant</strong></td>
+          <td>Marble resting on a horizontal frictionless surface</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>5. Principle of Conservation of Mechanical Energy</h2>
+    <div class="key-stmt">
+      <strong>Law of Conservation of Mechanical Energy:</strong> In an isolated mechanical system where only conservative forces perform work, the total mechanical energy (sum of kinetic and potential energy) remains invariant over time: <code>E = E<sub>k</sub> + E<sub>p</sub> = Constant</code>.
+    </div>
+
+    <div class="diagram-box">
+      <img src="../public/images/notes/physics/ch5/fig-5-6a-conservation-energy.webp" alt="Total energy remains constant as body falls" loading="lazy" />
+      <div class="diagram-caption">
+        <span class="tag">Textbook Fig 5.6a</span>
+        Conservation of Mechanical Energy: Continuous interchange between potential energy (PE = mgh) and kinetic energy (KE = &frac12;mv&sup2;) throughout vertical trajectory.
+      </div>
+    </div>
+
+    <h3>5.1 Analytical Proof for a Freely Falling Body (Classic NEB Long Question)</h3>
+    <p>Consider a body of mass m released from rest at point A situated at height h above the ground. Let point B be an intermediate position after falling through vertical distance x, and point C be the position just prior to impact at the ground.</p>
+
+    <div class="diagram-box">
+      <img src="../public/images/notes/physics/ch5/fig-5-6b-free-fall-conservation.webp" alt="Analytical Positions A, B, C of Freely Falling Body" loading="lazy" />
+      <div class="diagram-caption">
+        <span class="tag">Textbook Fig 5.6b</span>
+        Evaluation points for free fall: Point A (top, h), Point B (intermediate, h&minus;x), Point C (ground level, 0).
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-title">Complete Mathematical Proof of Free-Fall Energy Conservation</div>
+      <div class="step">
+        <span><strong>At Position A (Initial Top, Height = h):</strong><br/>
+        Initial velocity u = 0 &rArr; Kinetic Energy: <code>E<sub>kA</sub> = &frac12; m (0)&sup2; = 0</code><br/>
+        Potential Energy: <code>E<sub>pA</sub> = mgh</code><br/>
+        <strong>Total Energy E<sub>A</sub> = E<sub>kA</sub> + E<sub>pA</sub> = 0 + mgh = mgh</strong> &emsp; &mdash; (Equation 1)</span>
+      </div>
+      <div class="step">
+        <span><strong>At Position B (Intermediate Point, Fallen Distance = x, Height = h &minus; x):</strong><br/>
+        Using kinematic equation v<sub>B</sub>&sup2; = u&sup2; + 2gx = 0 + 2gx = 2gx.<br/>
+        Kinetic Energy: <code>E<sub>kB</sub> = &frac12; m v<sub>B</sub>&sup2; = &frac12; m (2gx) = mgx</code><br/>
+        Potential Energy: <code>E<sub>pB</sub> = mg(h &minus; x) = mgh &minus; mgx</code><br/>
+        <strong>Total Energy E<sub>B</sub> = E<sub>kB</sub> + E<sub>pB</sub> = mgx + (mgh &minus; mgx) = mgh</strong> &emsp; &mdash; (Equation 2)</span>
+      </div>
+      <div class="step">
+        <span><strong>At Position C (Just Before Striking Ground, Fallen Distance = h, Height = 0):</strong><br/>
+        Using kinematic equation v<sub>C</sub>&sup2; = u&sup2; + 2gh = 0 + 2gh = 2gh.<br/>
+        Kinetic Energy: <code>E<sub>kC</sub> = &frac12; m v<sub>C</sub>&sup2; = &frac12; m (2gh) = mgh</code><br/>
+        Potential Energy: <code>E<sub>pC</sub> = mg(0) = 0</code><br/>
+        <strong>Total Energy E<sub>C</sub> = E<sub>kC</sub> + E<sub>pC</sub> = mgh + 0 = mgh</strong> &emsp; &mdash; (Equation 3)</span>
+      </div>
+    </div>
+
+    <p>Since <code>E<sub>A</sub> = E<sub>B</sub> = E<sub>C</sub> = mgh = Constant</code>, the total mechanical energy is strictly conserved at all points of the trajectory.</p>
+
+    <!-- Interactive-look SVG: Energy vs Height Plot -->
+    <div class="diagram-box">
+      <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" class="diagram">
+        <defs>
+          <marker id="ch5-arr2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/>
+          </marker>
+        </defs>
+        <rect width="700" height="280" rx="12" fill="#090d16" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        
+        <!-- Axes -->
+        <line x1="90" y1="230" x2="640" y2="230" stroke="#64748b" stroke-width="2" marker-end="url(#ch5-arr2)"/>
+        <line x1="90" y1="230" x2="90" y2="30" stroke="#64748b" stroke-width="2" marker-end="url(#ch5-arr2)"/>
+        <text x="645" y="235" fill="#94a3b8" font-size="13" font-weight="600">Height y above ground (m)</text>
+        <text x="30" y="35" fill="#94a3b8" font-size="13" font-weight="600">Energy (Joules)</text>
+
+        <!-- Total Energy Line E = mgh -->
+        <line x1="90" y1="70" x2="580" y2="70" stroke="#e2e8f0" stroke-width="3" stroke-dasharray="6,6"/>
+        <text x="590" y="75" fill="#e2e8f0" font-size="13" font-weight="bold">Total E = mgh</text>
+
+        <!-- PE Line (Linear rising with height) -->
+        <line x1="90" y1="230" x2="580" y2="70" stroke="#ef4444" stroke-width="3.5" stroke-linecap="round"/>
+        <text x="420" y="110" fill="#ef4444" font-size="13" font-weight="bold">PE = mgy</text>
+
+        <!-- KE Line (Linear dropping with height) -->
+        <line x1="90" y1="70" x2="580" y2="230" stroke="#10b981" stroke-width="3.5" stroke-linecap="round"/>
+        <text x="210" y="110" fill="#10b981" font-size="13" font-weight="bold">KE = mg(h&minus;y)</text>
+
+        <!-- Intersection point at y = h/2 -->
+        <circle cx="335" cy="150" r="6" fill="#fb923c" stroke="#ffffff" stroke-width="2"/>
+        <line x1="335" y1="150" x2="335" y2="230" stroke="#fb923c" stroke-width="1.5" stroke-dasharray="3,3"/>
+        <text x="300" y="250" fill="#fb923c" font-size="12" font-weight="bold">y = h/2 (PE = KE)</text>
+        <text x="345" y="150" fill="#fb923c" font-size="12" font-weight="bold">E/2</text>
+      </svg>
+      <div class="diagram-caption">
+        <span class="tag">Symmetry Curve</span>
+        Mechanical Energy Partitioning vs Height: Linear trade-off between PE and KE. At midpoint y = h/2, exact equipartition occurs (PE = KE = &frac12; mgh).
+      </div>
+    </div>
+
+    <h3>5.2 Motion in a Vertical Circle (High-Yield NEB Board Derivation)</h3>
+    <p>A mass m tied to a light inextensible string of radius r revolves in a vertical circle under gravity. Energy conservation combined with centripetal force yields critical velocity and tension thresholds:</p>
+
+    <div class="formula-box">
+      <span class="formula-label">Vertical Loop Critical Velocities &amp; String Tensions</span>
+      <strong>Top Position (H):</strong> Minimum speed to complete loop (T<sub>top</sub> &ge; 0): <code>v<sub>top</sub> = &radic;(gr)</code><br/>
+      <strong>Bottom Position (L):</strong> Minimum required speed: <code>v<sub>bottom</sub> = &radic;(5gr)</code><br/>
+      <strong>Mid/Horizontal Position (M):</strong> Minimum speed: <code>v<sub>mid</sub> = &radic;(3gr)</code><br/>
+      <strong>Tension Difference:</strong> <code>T<sub>bottom</sub> &minus; T<sub>top</sub> = 6mg</code> (Always invariant of radius!)
+    </div>
+
+    <h2>6. Conservative vs Non-Conservative Forces</h2>
+    <div class="diagram-box">
+      <img src="../public/images/notes/physics/ch5/fig-5-9-conservative-force-path.webp" alt="Work done along different paths between initial and final points" loading="lazy" />
+      <div class="diagram-caption">
+        <span class="tag">Textbook Fig 5.9</span>
+        Path Independence: In a conservative field, work done along Path 1, Path 2, or Path 3 depends solely on initial point A and final point B: W₁ = W₂ = W₃.
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Criterion</th>
+          <th>Conservative Force</th>
+          <th>Non-Conservative (Dissipative) Force</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Path Dependence</strong></td>
+          <td>Work done is strictly <strong>independent of path</strong> followed; depends only on end points.</td>
+          <td>Work done is strictly <strong>dependent on trajectory path</strong> followed.</td>
+        </tr>
+        <tr>
+          <td><strong>Closed-Loop Work</strong></td>
+          <td>Work done over any closed cycle is zero: <code>&oint; &vec;F &middot; d&vec;r = 0</code>.</td>
+          <td>Work done over a closed loop is non-zero: <code>&oint; &vec;F &middot; d&vec;r &ne; 0</code> (always dissipated).</td>
+        </tr>
+        <tr>
+          <td><strong>Energy Conversion</strong></td>
+          <td>Reversible conversion between Kinetic and Potential energy; Mechanical energy conserved.</td>
+          <td>Irreversible dissipation of mechanical energy into heat, sound, light, or internal deformation.</td>
+        </tr>
+        <tr>
+          <td><strong>Potential Energy Concept</strong></td>
+          <td>Potential energy function U(&vec;r) exists such that <code>&vec;F = &minus;&nabla;U</code>.</td>
+          <td>No potential energy function can ever be defined.</td>
+        </tr>
+        <tr>
+          <td><strong>Curriculum Examples</strong></td>
+          <td>Gravitational force, Electrostatic force, Elastic spring force, Magnetic force.</td>
+          <td>Kinetic &amp; static friction, Viscous drag, Air drag, Damping resistance.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>7. Collisions: One-Dimensional Elastic &amp; Inelastic Impacts</h2>
+    <p>A <strong>collision</strong> is an intense physical interaction between two or more bodies occurring over a short time interval, resulting in substantial exchange of momentum and energy through internal impulsive forces.</p>
+
+    <h3>7.1 Classification of Collisions &amp; Coefficient of Restitution</h3>
+    <p>The <strong>Coefficient of Restitution (e)</strong> measures the elasticity of impact, defined as the ratio of the relative speed of separation after collision to the relative speed of approach before collision:</p>
+
+    <div class="formula-box">
+      <span class="formula-label">Coefficient of Restitution</span>
+      e = (Relative Speed of Separation) / (Relative Speed of Approach) = (v<sub>2</sub> &minus; v<sub>1</sub>) / (u<sub>1</sub> &minus; u<sub>2</sub>)
+    </div>
+
+    <ul>
+      <li><strong>Perfectly Elastic Collision (e = 1):</strong> Linear momentum conserved; Kinetic energy conserved; Mechanical energy fully retained (e.g. atomic particle collisions, billiard balls approx).</li>
+      <li><strong>Inelastic Collision (0 &lt; e &lt; 1):</strong> Linear momentum conserved; Kinetic energy is <em>not</em> conserved (partially converted to heat/sound/deformation).</li>
+      <li><strong>Perfectly Inelastic Collision (e = 0):</strong> Bodies stick together and move with a single common composite velocity V<sub>com</sub>; Maximum kinetic energy dissipation (e.g. bullet embedding into target, clay dropping to floor).</li>
+    </ul>
+
+    <div class="diagram-box">
+      <img src="../public/images/notes/physics/ch5/fig-5-16-inelastic-collision.webp" alt="Car crash illustrating inelastic impact with deformation" loading="lazy" />
+      <div class="diagram-caption">
+        <span class="tag">Textbook Fig 5.16</span>
+        Inelastic Collision: Automobile impact where kinetic energy is permanently dissipated through plastic deformation and acoustic waves.
+      </div>
+    </div>
+
+    <h3>7.2 One-Dimensional Elastic Collision: Step-by-Step Velocity Derivation</h3>
+    <p>Consider two smooth spherical masses m<sub>1</sub> and m<sub>2</sub> travelling along a straight line with initial velocities u<sub>1</sub> and u<sub>2</sub> (with u<sub>1</sub> &gt; u<sub>2</sub>). After head-on collision, their final velocities are v<sub>1</sub> and v<sub>2</sub>.</p>
+
+    <div class="diagram-box">
+      <img src="../public/images/notes/physics/ch5/fig-5-17-elastic-collision-1d.webp" alt="One dimensional elastic collision before and after impact" loading="lazy" />
+      <div class="diagram-caption">
+        <span class="tag">Textbook Fig 5.17</span>
+        Head-on One-Dimensional Elastic Collision: State before impact (u₁, u₂), during collision, and after separation (v₁, v₂).
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-title">Comprehensive Derivation of Final Velocities v₁ and v₂</div>
+      <div class="step">
+        <span><strong>1. Conservation of Linear Momentum:</strong><br/>
+        <code>m<sub>1</sub>u<sub>1</sub> + m<sub>2</sub>u<sub>2</sub> = m<sub>1</sub>v<sub>1</sub> + m<sub>2</sub>v<sub>2</sub></code><br/>
+        Rearranging: <code>m<sub>1</sub>(u<sub>1</sub> &minus; v<sub>1</sub>) = m<sub>2</sub>(v<sub>2</sub> &minus; u<sub>2</sub>)</code> &emsp; &mdash; (Eq. 1)</span>
+      </div>
+      <div class="step">
+        <span><strong>2. Conservation of Kinetic Energy:</strong><br/>
+        <code>&frac12; m<sub>1</sub>u<sub>1</sub>&sup2; + &frac12; m<sub>2</sub>u<sub>2</sub>&sup2; = &frac12; m<sub>1</sub>v<sub>1</sub>&sup2; + &frac12; m<sub>2</sub>v<sub>2</sub>&sup2;</code><br/>
+        <code>m<sub>1</sub>(u<sub>1</sub>&sup2; &minus; v<sub>1</sub>&sup2;) = m<sub>2</sub>(v<sub>2</sub>&sup2; &minus; u<sub>2</sub>&sup2;)</code><br/>
+        Factoring difference of squares: <code>m<sub>1</sub>(u<sub>1</sub> &minus; v<sub>1</sub>)(u<sub>1</sub> + v<sub>1</sub>) = m<sub>2</sub>(v<sub>2</sub> &minus; u<sub>2</sub>)(v<sub>2</sub> + u<sub>2</sub>)</code> &emsp; &mdash; (Eq. 2)</span>
+      </div>
+      <div class="step">
+        <span><strong>3. Dividing Eq. 2 by Eq. 1:</strong><br/>
+        <code>u<sub>1</sub> + v<sub>1</sub> = v<sub>2</sub> + u<sub>2</sub></code> &rArr; <strong>u<sub>1</sub> &minus; u<sub>2</sub> = v<sub>2</sub> &minus; v<sub>1</sub></strong> &emsp; &mdash; (Eq. 3)<br/>
+        <em>Fundamental Theorem:</em> In a 1D elastic collision, the relative speed of approach equals the relative speed of separation (e = 1).</span>
+      </div>
+      <div class="step">
+        <span><strong>4. Substituting v₂ into Momentum Equation to find v₁:</strong><br/>
+        From Eq. 3: <code>v<sub>2</sub> = u<sub>1</sub> &minus; u<sub>2</sub> + v<sub>1</sub></code>. Substituting into Eq. 1:<br/>
+        <code>m<sub>1</sub>u<sub>1</sub> + m<sub>2</sub>u<sub>2</sub> = m<sub>1</sub>v<sub>1</sub> + m<sub>2</sub>(u<sub>1</sub> &minus; u<sub>2</sub> + v<sub>1</sub>)</code><br/>
+        <code>(m<sub>1</sub> &minus; m<sub>2</sub>)u<sub>1</sub> + 2m<sub>2</sub>u<sub>2</sub> = (m<sub>1</sub> + m<sub>2</sub>)v<sub>1</sub></code></span>
+      </div>
+    </div>
+
+    <div class="formula-box">
+      <span class="formula-label">Master 1D Elastic Collision Velocity Formulas</span>
+      v<sub>1</sub> = [ (m<sub>1</sub> &minus; m<sub>2</sub>) / (m<sub>1</sub> + m<sub>2</sub>) ] u<sub>1</sub> + [ 2m<sub>2</sub> / (m<sub>1</sub> + m<sub>2</sub>) ] u<sub>2</sub><br/>
+      v<sub>2</sub> = [ 2m<sub>1</sub> / (m<sub>1</sub> + m<sub>2</sub>) ] u<sub>1</sub> + [ (m<sub>2</sub> &minus; m<sub>1</sub>) / (m<sub>1</sub> + m<sub>2</sub>) ] u<sub>2</sub>
+    </div>
+
+    <h3>7.3 Crucial Special Cases Analyzed in NEB Exams</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Physical Case Condition</th>
+          <th>Resulting Velocities</th>
+          <th>Physical Consequence &amp; Practical Application</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Equal Masses (m₁ = m₂)</strong></td>
+          <td><code>v₁ = u₂</code> and <code>v₂ = u₁</code></td>
+          <td><strong>Complete Velocity Exchange:</strong> The bodies directly swap velocities upon impact (e.g. billiard balls).</td>
+        </tr>
+        <tr>
+          <td><strong>Equal Masses with Target at Rest (m₁ = m₂, u₂ = 0)</strong></td>
+          <td><code>v₁ = 0</code> and <code>v₂ = u₁</code></td>
+          <td>Projectile comes to dead stop; target departs with full incoming projectile speed (Neutron moderation in nuclear reactors by paraffin/heavy water).</td>
+        </tr>
+        <tr>
+          <td><strong>Massive Projectile hits Light Target (m₁ &gg; m₂, u₂ = 0)</strong></td>
+          <td><code>v₁ &approx; u₁</code> and <code>v₂ &approx; 2u₁</code></td>
+          <td>Heavy body continues essentially unaffected; light target recoils forward with <strong>double the projectile's incoming speed</strong>.</td>
+        </tr>
+        <tr>
+          <td><strong>Light Projectile hits Massive Target (m₁ &ll; m₂, u₂ = 0)</strong></td>
+          <td><code>v₁ &approx; &minus;u₁</code> and <code>v₂ &approx; 0</code></td>
+          <td>Light body rebounds backwards with same speed (elastic ball bouncing off rigid floor/wall).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>7.4 Kinetic Energy Loss in Completely Inelastic Collision</h3>
+    <p>When mass m<sub>1</sub> moving at u<sub>1</sub> strikes stationary mass m<sub>2</sub> (u<sub>2</sub> = 0) and they fuse together into a common composite mass (m<sub>1</sub> + m<sub>2</sub>) moving at common velocity V:</p>
+
+    <div class="formula-box">
+      <span class="formula-label">Common Velocity &amp; Dissipated Energy</span>
+      <strong>Common Velocity:</strong> V = (m<sub>1</sub>u<sub>1</sub>) / (m<sub>1</sub> + m<sub>2</sub>)<br/>
+      <strong>Kinetic Energy Loss:</strong> &Delta;E<sub>k</sub> = E<sub>k, initial</sub> &minus; E<sub>k, final</sub> = <strong>&frac12; [ (m<sub>1</sub> m<sub>2</sub>) / (m<sub>1</sub> + m<sub>2</sub>) ] u<sub>1</sub>&sup2;</strong><br/>
+      <strong>Fractional Loss:</strong> &Delta;E<sub>k</sub> / E<sub>k, initial</sub> = m<sub>2</sub> / (m<sub>1</sub> + m<sub>2</sub>)
+    </div>
+
+    <h2>8. Comprehensive NEB Board Solved Numerical Bank</h2>
+
+    <div class="example-box">
+      <div class="example-title">NEB Numerical 1: Work Done by a Variable Force</div>
+      <p><strong>Problem:</strong> A force F = (3x&sup2; &minus; 2x + 7) N acts on an object of mass 2 kg, displacing it rectilinearly from position x = 1 m to x = 4 m. Calculate the total work performed.</p>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Given:</strong> F(x) = 3x&sup2; &minus; 2x + 7; Limits: x<sub>1</sub> = 1 m, x<sub>2</sub> = 4 m.</div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Formula:</strong> <code>W = &int;<sub>x₁</sub><sup>x₂</sup> F(x) dx</code></div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Integration:</strong> <code>W = &int;₁⁴ (3x&sup2; &minus; 2x + 7) dx = [ x&sup3; &minus; x&sup2; + 7x ]₁⁴</code></div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Evaluation:</strong> Upper limit = 4&sup3; &minus; 4&sup2; + 7(4) = 64 &minus; 16 + 28 = 76 J.<br/>Lower limit = 1&sup3; &minus; 1&sup2; + 7(1) = 7 J.<br/>W = 76 &minus; 7 = <strong>69 Joules</strong>.</div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Final Answer:</strong> <code>W = 69 J</code></div></div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-title">NEB Numerical 2: Power and Electricity Billing of a Water Pump</div>
+      <p><strong>Problem:</strong> An electric motor-driven pump raises 1200 liters of water per minute from a well of depth 25 m and ejects it with a speed of 10 ms<sup>&minus;1</sup>. If the pump's efficiency is 75%, calculate: (a) Output power, (b) Input electrical power, (c) Electrical units consumed in 3 hours of operation. (Take g = 9.8 ms<sup>&minus;2</sup>, density of water &rho; = 1000 kg/m&sup3;).</p>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Given:</strong> Volume rate V/t = 1200 L/min = 1.2 m&sup3;/60 s = 0.02 m&sup3;/s &rArr; Mass flow rate dm/dt = 20 kg/s; Depth h = 25 m; Exit speed v = 10 ms<sup>&minus;1</sup>; &eta; = 75% = 0.75.</div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Output Power Calculation:</strong><br/>
+      P<sub>out</sub> = (mgh + &frac12; mv&sup2;) / t = (dm/dt)[ gh + &frac12; v&sup2; ]<br/>
+      P<sub>out</sub> = 20 &times; [ (9.8 &times; 25) + &frac12; (10)&sup2; ] = 20 &times; [ 245 + 50 ] = 20 &times; 295 = <strong>5900 W = 5.9 kW</strong>.</div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Input Power:</strong> P<sub>in</sub> = P<sub>out</sub> / &eta; = 5900 / 0.75 = <strong>7866.67 W &approx; 7.87 kW</strong>.</div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Electrical Energy:</strong> Energy = P<sub>in</sub> (kW) &times; time (hours) = 7.867 kW &times; 3 h = <strong>23.6 kWh (Units)</strong>.</div></div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-title">NEB Numerical 3: Momentum and Kinetic Energy Percentage Variations</div>
+      <p><strong>Problem:</strong> (a) If the linear momentum of a projectile is increased by 40%, find the percentage increase in its kinetic energy. (b) If the kinetic energy of a particle increases by 300%, find the percentage increase in its momentum.</p>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Part (a):</strong> Initial KE: E = p&sup2;/(2m). New momentum p' = p + 0.4p = 1.4p.<br/>
+      New KE: E' = (1.4p)&sup2; / (2m) = 1.96 [p&sup2;/(2m)] = 1.96 E.<br/>
+      &Delta;E / E = (1.96 E &minus; E) / E = 0.96 &times; 100% = <strong>96% increase</strong>.</div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Part (b):</strong> New KE: E' = E + 3.0E = 4.0E.<br/>
+      Initial p = &radic;(2mE). New p' = &radic;(2m &times; 4E) = 2 &radic;(2mE) = 2p.<br/>
+      &Delta;p / p = (2p &minus; p) / p = 1.0 &times; 100% = <strong>100% increase</strong> (Momentum doubles).</div></div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-title">NEB Numerical 4: Bullet Penetrating a Wooden Target (Work-Energy Theorem)</div>
+      <p><strong>Problem:</strong> A 25 g bullet travelling horizontally at 400 ms<sup>&minus;1</sup> penetrates 10 cm into a fixed wooden plank before coming to rest. Determine: (a) The average resistive force exerted by the wood, (b) The velocity of the bullet if the plank had a thickness of only 6 cm.</p>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Given:</strong> m = 0.025 kg; u = 400 ms<sup>&minus;1</sup>; s = 0.10 m; v = 0.</div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Work-Energy Theorem:</strong> W<sub>net</sub> = &Delta;KE &rArr; &minus;F<sub>avg</sub> &middot; s = 0 &minus; &frac12; m u&sup2;<br/>
+      F<sub>avg</sub> &times; 0.10 = &frac12; &times; 0.025 &times; (400)&sup2; = 0.5 &times; 0.025 &times; 160,000 = 2000 J.<br/>
+      <code>F<sub>avg</sub> = 2000 / 0.10 = <strong>20,000 N = 20 kN</strong></code>.</div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Exit Speed for 6 cm Plank:</strong><br/>
+      &minus;F<sub>avg</sub> &middot; s' = &frac12; m v'&sup2; &minus; &frac12; m u&sup2;<br/>
+      &minus;20,000 &times; 0.06 = &frac12; &times; 0.025 &times; v'&sup2; &minus; 2000<br/>
+      &minus;1200 = 0.0125 v'&sup2; &minus; 2000 &rArr; 0.0125 v'&sup2; = 800<br/>
+      v'&sup2; = 64,000 &rArr; <code>v' = &radic;64000 &approx; <strong>252.98 ms<sup>&minus;1</sup></strong></code>.</div></div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-title">NEB Numerical 5: Spring Compression &amp; Incline Energy Balance</div>
+      <p><strong>Problem:</strong> A block of mass 3 kg is released from rest at the top of a smooth incline of height h = 4 m. At the bottom of the incline, it slides along a frictionless horizontal track and collides with a horizontal buffer spring of force constant k = 1200 N/m. Find the maximum compression of the spring. (Take g = 9.8 ms<sup>&minus;2</sup>).</p>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Energy Conservation:</strong> Initial Gravitational PE at top = Elastic Potential Energy at max compression x<sub>max</sub>.<br/>
+      <code>mgh = &frac12; k x<sub>max</sub>&sup2;</code></div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Calculation:</strong><br/>
+      3 &times; 9.8 &times; 4 = &frac12; &times; 1200 &times; x<sub>max</sub>&sup2;<br/>
+      117.6 = 600 &times; x<sub>max</sub>&sup2; &rArr; x<sub>max</sub>&sup2; = 117.6 / 600 = 0.196<br/>
+      <code>x<sub>max</sub> = &radic;0.196 &approx; <strong>0.443 m = 44.3 cm</strong></code>.</div></div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-title">NEB Numerical 6: One-Dimensional Elastic Collision of Two Balls</div>
+      <p><strong>Problem:</strong> A 0.5 kg steel sphere moving at 6 ms<sup>&minus;1</sup> undergoes a head-on elastic collision with a stationary 1.5 kg sphere. Find the velocities of both spheres after collision, and determine the fraction of kinetic energy transferred to the target sphere.</p>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Given:</strong> m<sub>1</sub> = 0.5 kg, u<sub>1</sub> = 6 ms<sup>&minus;1</sup>; m<sub>2</sub> = 1.5 kg, u<sub>2</sub> = 0.</div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Velocity of Sphere 1:</strong><br/>
+      v<sub>1</sub> = [ (m<sub>1</sub> &minus; m<sub>2</sub>) / (m<sub>1</sub> + m<sub>2</sub>) ] u<sub>1</sub> = [ (0.5 &minus; 1.5) / (0.5 + 1.5) ] &times; 6 = [&minus;1 / 2] &times; 6 = <strong>&minus;3.0 ms<sup>&minus;1</sup></strong> (Rebounds backwards).</div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Velocity of Sphere 2:</strong><br/>
+      v<sub>2</sub> = [ 2m<sub>1</sub> / (m<sub>1</sub> + m<sub>2</sub>) ] u<sub>1</sub> = [ (2 &times; 0.5) / 2.0 ] &times; 6 = [ 1 / 2 ] &times; 6 = <strong>+3.0 ms<sup>&minus;1</sup></strong> (Moves forwards).</div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Fractional KE Transferred:</strong><br/>
+      Initial KE = &frac12; m<sub>1</sub> u<sub>1</sub>&sup2; = 0.5 &times; 0.5 &times; 36 = 9.0 J.<br/>
+      Target KE = &frac12; m<sub>2</sub> v<sub>2</sub>&sup2; = 0.5 &times; 1.5 &times; 9 = 6.75 J.<br/>
+      Fraction = 6.75 / 9.0 = <strong>0.75 = 75%</strong>.</div></div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-title">NEB Numerical 7: Ballistic Pendulum (Perfectly Inelastic Impact)</div>
+      <p><strong>Problem:</strong> A bullet of mass 20 g is fired horizontally with speed v into a wooden block of mass 1.98 kg suspended by a light string of length 1.5 m. The bullet embeds into the block and the combined system swings upward through an arc of angle &theta; = 60&deg;. Calculate the initial speed v of the bullet. (Take g = 9.8 ms<sup>&minus;2</sup>).</p>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Vertical Rise Height:</strong> h = L(1 &minus; cos&theta;) = 1.5 &times; (1 &minus; cos 60&deg;) = 1.5 &times; 0.5 = 0.75 m.</div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Velocity of Combined System immediately after impact:</strong><br/>
+      Using conservation of energy for swing: &frac12; (m+M) V&sup2; = (m+M)gh &rArr; <code>V = &radic;(2gh) = &radic;(2 &times; 9.8 &times; 0.75) = &radic;14.7 &approx; 3.834 ms<sup>&minus;1</sup></code>.</div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Linear Momentum Conservation:</strong><br/>
+      m &middot; v = (m + M) V &rArr; 0.020 &times; v = (0.020 + 1.980) &times; 3.834 = 2.000 &times; 3.834 = 7.668<br/>
+      <code>v = 7.668 / 0.020 = <strong>383.4 ms<sup>&minus;1</sup></strong></code>.</div></div>
+    </div>
+
+    <div class="example-box">
+      <div class="example-title">NEB Numerical 8: Mass Whirled in a Vertical Circle</div>
+      <p><strong>Problem:</strong> A 0.4 kg stone is attached to a string of length 0.8 m and rotated in a vertical circle. If the maximum tension that the string can withstand without snapping is 35 N, determine the maximum safe angular speed of the stone at the bottom of the loop.</p>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Tension at Bottom:</strong> Maximum tension occurs at the lowest point: <code>T<sub>max</sub> = mg + (m v<sub>b</sub>&sup2;) / r = 35 N</code>.</div></div>
+      <div class="step-line"><span class="step-arrow">▸</span><div><strong>Calculation:</strong><br/>
+      (0.4 &times; 9.8) + (0.4 &times; v<sub>b</sub>&sup2;) / 0.8 = 35<br/>
+      3.92 + 0.5 v<sub>b</sub>&sup2; = 35 &rArr; 0.5 v<sub>b</sub>&sup2; = 31.08 &rArr; v<sub>b</sub>&sup2; = 62.16<br/>
+      <code>v<sub>b</sub> = &radic;62.16 &approx; <strong>7.884 ms<sup>&minus;1</sup></strong></code><br/>
+      Angular velocity: <code>&omega; = v<sub>b</sub> / r = 7.884 / 0.8 = <strong>9.855 rad/s</strong></code>.</div></div>
+    </div>
+
+    <h2>9. Master Formulas Blueprint &amp; Examiner Traps</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Topic</th>
+          <th>Master Formula</th>
+          <th>Key Variable Definitions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Work by Constant Force</strong></td>
+          <td><code>W = &vec;F &middot; &vec;s = F s cos&theta;</code></td>
+          <td>&theta; = angle between &vec;F and &vec;s</td>
+        </tr>
+        <tr>
+          <td><strong>Work by Variable Force</strong></td>
+          <td><code>W = &int; F(x) dx = Area under F&ndash;x curve</code></td>
+          <td>Area above x-axis is +W; below is &minus;W</td>
+        </tr>
+        <tr>
+          <td><strong>Spring Elastic Potential</strong></td>
+          <td><code>U<sub>s</sub> = &frac12; k x&sup2;</code></td>
+          <td>k = spring stiffness constant (N/m), x = extension</td>
+        </tr>
+        <tr>
+          <td><strong>Power</strong></td>
+          <td><code>P = dW/dt = &vec;F &middot; &vec;v</code></td>
+          <td>1 hp = 746 W &bull; 1 kWh = 3.6 &times; 10<sup>6</sup> J</td>
+        </tr>
+        <tr>
+          <td><strong>Work-Energy Theorem</strong></td>
+          <td><code>W<sub>net</sub> = &Delta;KE = &frac12; mv&sup2; &minus; &frac12; mu&sup2;</code></td>
+          <td>Applies to all forces (internal + external)</td>
+        </tr>
+        <tr>
+          <td><strong>KE &ndash; Momentum Link</strong></td>
+          <td><code>E<sub>k</sub> = p&sup2; / (2m) &bull; p = &radic;(2m E<sub>k</sub>)</code></td>
+          <td>Light body has greater KE for same momentum</td>
+        </tr>
+        <tr>
+          <td><strong>Conservative Force Gradient</strong></td>
+          <td><code>F = &minus; dU/dx</code></td>
+          <td>Negative slope of potential curve = force</td>
+        </tr>
+        <tr>
+          <td><strong>Free Fall Critical Speeds</strong></td>
+          <td><code>v = &radic;(2gh)</code></td>
+          <td>At ground level; independent of falling mass</td>
+        </tr>
+        <tr>
+          <td><strong>Vertical Loop Speeds</strong></td>
+          <td><code>v<sub>top</sub> = &radic;(gr) &bull; v<sub>bottom</sub> = &radic;(5gr)</code></td>
+          <td>Tension difference: T<sub>bottom</sub> &minus; T<sub>top</sub> = 6mg</td>
+        </tr>
+        <tr>
+          <td><strong>Coefficient of Restitution</strong></td>
+          <td><code>e = (v₂ &minus; v₁) / (u₁ &minus; u₂)</code></td>
+          <td>e = 1 (elastic), 0 &lt; e &lt; 1 (inelastic), e = 0 (perfect inelastic)</td>
+        </tr>
+        <tr>
+          <td><strong>1D Elastic Collision Velocities</strong></td>
+          <td><code>v₁ = [(m₁&minus;m₂)/(m₁+m₂)]u₁ + [2m₂/(m₁+m₂)]u₂</code></td>
+          <td>Velocities swap completely if m₁ = m₂</td>
+        </tr>
+        <tr>
+          <td><strong>Inelastic KE Dissipation</strong></td>
+          <td><code>&Delta;E<sub>loss</sub> = &frac12; [(m₁m₂)/(m₁+m₂)] (u₁ &minus; u₂)&sup2; (1 &minus; e&sup2;)</code></td>
+          <td>Dissipated into heat, deformation, sound</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="exam-callout">
+      <div class="exam-title">🔥 Classic NEB Board Traps &amp; Pitfalls to Avoid</div>
+      <p>&bull; <strong>Pitfall 1: Normal Force Doing Work:</strong> When an elevator goes upward, does normal reaction perform work on the passenger? YES! Normal reaction acts upwards and displacement is upwards (&theta; = 0&deg;), so W = N &middot; h &gt; 0. Don't confuse this with horizontal walking where &theta; = 90&deg;.<br/>
+      &bull; <strong>Pitfall 2: Kinetic Energy cannot be Negative:</strong> Unlike work, velocity, and potential energy (which can be positive, negative, or zero), kinetic energy <code>E<sub>k</sub> = &frac12; mv&sup2; &ge; 0</code> is strictly non-negative.<br/>
+      &bull; <strong>Pitfall 3: Linear Momentum vs Kinetic Energy Conservation in Inelastic Collisions:</strong> In ANY collision (elastic or inelastic), total linear momentum is ALWAYS conserved because external force is zero. Only kinetic energy is lost in inelastic collisions.<br/>
+      &bull; <strong>Pitfall 4: Spring Cut in Halves:</strong> If a spring of stiffness k is cut into two equal halves, the spring constant of each half becomes <strong>2k</strong> (doubled), NOT k/2!<br/>
+      &bull; <strong>Pitfall 5: Tension at Top of Vertical Circle:</strong> For a string, critical speed requires <strong>T &ge; 0</strong> (so v<sub>top</sub> = &radic;gr). But for a light rigid rod rotating in a vertical circle, the rod can support compression, so velocity at top can be <strong>zero</strong> (v<sub>top</sub> = 0, so v<sub>bottom</sub> = &radic;4gr = 2&radic;gr).</p>
+    </div>
+    `,
   }
 ];
+
+// Automatically merge Class 12 Math Notes if available
+if (typeof window !== 'undefined' && typeof window.registerMathNotes === 'function') {
+  window.registerMathNotes();
+} else if (typeof window !== 'undefined' && Array.isArray(window.math12Notes)) {
+  window.math12Notes.forEach(mNote => {
+    const idx = window.staticNotes.findIndex(n => n && n.id === mNote.id);
+    if (idx >= 0) {
+      window.staticNotes[idx] = mNote;
+    } else {
+      window.staticNotes.push(mNote);
+    }
+  });
+}
+
+// Automatically merge Class 11 Math Notes if available
+if (typeof window !== 'undefined' && Array.isArray(window.math11Notes)) {
+  window.math11Notes.forEach(mNote => {
+    const idx = window.staticNotes.findIndex(n => n && n.id === mNote.id);
+    if (idx >= 0) {
+      window.staticNotes[idx] = mNote;
+    } else {
+      window.staticNotes.push(mNote);
+    }
+  });
+}

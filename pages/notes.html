@@ -20,6 +20,8 @@
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
     <script src="../js/utils.js"></script>
+    <script src="../js/math11-notes.js"></script>
+    <script src="../js/math12-notes.js"></script>
     <script src="../js/static-notes.js"></script>
     <link rel="stylesheet" href="/css/design-system.css" />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -302,10 +304,10 @@
                 ...doc.data(),
               }));
             }
-            // Merge: always include all staticNotes that aren't already in Firestore
-            const firestoreIds = new Set(firestoreNotes.map((n) => n.id));
-            const localOnly = (staticNotes || []).filter((n) => !firestoreIds.has(n.id));
-            allNotes = [...firestoreNotes, ...localOnly];
+            // Merge: Prefer staticNotes (curated inline Question-Solution notes) over stale placeholders
+            const staticIds = new Set((staticNotes || []).map((n) => n.id));
+            const firestoreOnly = firestoreNotes.filter((n) => !staticIds.has(n.id));
+            allNotes = [...(staticNotes || []), ...firestoreOnly];
             if (allNotes.length === 0) allNotes = staticNotes || [];
             renderNotes(allNotes);
           })

@@ -15,6 +15,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -1406,6 +1409,154 @@
       background: rgba(240, 244, 250, 0.95)
     }
 
+    /* ─── QUESTION-SOLUTION FIRST DESIGN SYSTEM ─── */
+    .note-content .q-card {
+      position: relative;
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-left: 4px solid var(--accent);
+      border-radius: 14px;
+      padding: 1.35rem 1.5rem;
+      margin: 1.75rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    html.light .note-content .q-card {
+      background: #ffffff;
+      border-color: #e2e8f0;
+      border-left: 4px solid #ea580c;
+      box-shadow: 0 4px 18px rgba(15, 28, 63, 0.05);
+    }
+    .note-content .q-card:hover {
+      border-color: rgba(249, 115, 22, 0.4);
+      box-shadow: 0 8px 30px rgba(249, 115, 22, 0.12);
+    }
+    .note-content .q-meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+    .note-content .badge-freq {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.725rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      background: rgba(220, 38, 38, 0.15);
+      border: 1px solid rgba(220, 38, 38, 0.35);
+      color: #f87171;
+      letter-spacing: 0.02em;
+    }
+    html.light .note-content .badge-freq {
+      background: #fef2f2;
+      border-color: #fecaca;
+      color: #dc2626;
+    }
+    .note-content .badge-marks {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.725rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      background: rgba(249, 115, 22, 0.14);
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      color: #fb923c;
+    }
+    html.light .note-content .badge-marks {
+      background: #fff7ed;
+      border-color: #fed7aa;
+      color: #ea580c;
+    }
+    .note-content .badge-type {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.725rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      color: #60a5fa;
+    }
+    html.light .note-content .badge-type {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      color: #2563eb;
+    }
+    .note-content .q-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+    .note-content .q-solution {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    }
+    html.light .note-content .q-solution {
+      border-top-color: #e2e8f0;
+    }
+    .note-content .sol-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #38bdf8;
+      margin-bottom: 0.75rem;
+    }
+    html.light .note-content .sol-heading {
+      color: #0284c7;
+    }
+    .note-content .step-block {
+      margin-bottom: 0.85rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+    html.light .note-content .step-block {
+      background: #f8fafc;
+      border-color: #e2e8f0;
+    }
+    .note-content .step-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #f59e0b;
+      margin-bottom: 0.35rem;
+    }
+    html.light .note-content .step-tag {
+      color: #d97706;
+    }
+    .note-content .final-box {
+      margin-top: 0.85rem;
+      padding: 0.85rem 1.15rem;
+      border-radius: 8px;
+      background: rgba(34, 197, 94, 0.08);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #86efac;
+      font-weight: 600;
+    }
+    html.light .note-content .final-box {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+      color: #15803d;
+    }
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.35rem 0;
+    }
+
     @media print {
 
       .bg-grid,
@@ -1441,6 +1592,8 @@
   </style>
   <script src="../js/utils.js"></script>
   <script src="../js/theme.js"></script>
+  <script src="../js/math11-notes.js"></script>
+  <script src="../js/math12-notes.js"></script>
   <script src="../js/static-notes.js"></script>
   <!-- Google AdSense Auto Ads -->
   <meta name="google-adsense-account" content="ca-pub-3896962422851508">
@@ -1675,7 +1828,6 @@
   <!-- Scroll to top -->
   <button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script>
     // ─── THEME — managed by ../js/theme.js ───
 
@@ -2021,6 +2173,7 @@
           `;
         // Wrap every table in a scroll container so only tables scroll on mobile
         wrapNoteTables(document.getElementById('noteContent'));
+        renderMathIfAvailable();
 
         // ── CASE 4: Nothing available ──
       } else {
@@ -2031,6 +2184,42 @@
               <button onclick="goBack()" class="btn btn-primary mt-6">Back to Notes</button>
             </div>
           `;
+      }
+    }
+
+    function renderMathIfAvailable() {
+      const container = document.getElementById('noteContent');
+      if (!container) return;
+      if (window.renderMathInElement) {
+        try {
+          renderMathInElement(container, {
+            delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false
+          });
+        } catch(e) {
+          console.warn('KaTeX render error:', e);
+        }
+      } else {
+        setTimeout(() => {
+          if (window.renderMathInElement && container) {
+            try {
+              renderMathInElement(container, {
+                delimiters: [
+                  {left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  {left: '\\(', right: '\\)', display: false},
+                  {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError: false
+              });
+            } catch(e) {}
+          }
+        }, 500);
       }
     }
 
