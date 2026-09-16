@@ -1,4 +1,1334 @@
 window.staticNotes = [
+  {
+    id: "chem11-fundamentals-of-chemistry",
+    class: "11",
+    subject: "Chemistry",
+    chapter: "Fundamentals of Chemistry",
+    title: "Fundamentals of Chemistry — Class 11 Chemistry",
+    icon: "🧪",
+    summary:
+      "Complete NEB Class 11 guide for Unit 1: Divisions and scope of chemistry, classification of matter, atomic & molecular mass, criss-cross formula writing, percentage composition of fertilizers, and step-by-step empirical & molecular formula calculations.",
+    tags: [
+      "Fundamentals of Chemistry",
+      "Matter",
+      "Atomic Mass",
+      "Molecular Formula",
+      "Empirical Formula",
+      "Percentage Composition",
+      "Class 11",
+      "Chemistry",
+      "NEB",
+    ],
+    content: `<div class="formula-box">
+  <span class="formula-label">Key Formula Reference: Unit 1 Fundamentals of Chemistry</span>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-top: 8px;">
+    <div>
+      <strong>Unified Atomic Mass Unit:</strong><br/>
+      1 u = 1 amu = (1/12) &times; mass of one ¹²C atom = 1.6605 &times; 10⁻²⁴ g<br/>
+      Average Atomic Mass = &Sigma; (fᵢ &times; Aᵢ)
+    </div>
+    <div>
+      <strong>Percentage Composition:</strong><br/>
+      % Element = [(Atoms in formula &times; Atomic Mass) / Molar Mass of Compound] &times; 100%
+    </div>
+    <div>
+      <strong>Empirical &amp; Molecular Formula:</strong><br/>
+      Molecular Formula = (Empirical Formula)ₙ<br/>
+      n = Molecular Mass / Empirical Formula Mass = (2 &times; Vapor Density) / Empirical Formula Mass
+    </div>
+  </div>
+</div>
+
+<h2>1. Introduction &amp; Historical Evolution of Chemistry</h2>
+<p>Chemistry is the central branch of physical science that investigates the <strong>composition, structure, properties, and transformations of matter</strong> at the atomic and molecular scale. Everything in the physical universe—from interstellar gas clouds to the metabolic processes sustaining living organisms—is governed by chemical principles.</p>
+
+<p>The history of human civilization is intimately tied to the mastery of chemical materials. Anthropologists identify major human epochs by the materials mastered by humankind:</p>
+
+<ul>
+  <li><strong>The Stone Age:</strong> Primitive human ancestors utilized naturally occurring minerals and stones without altering their intrinsic chemical identity.</li>
+  <li><strong>The Bronze Age (~3300–1200 BCE):</strong> The discovery of smelting copper ores and alloying copper with tin to produce bronze marked humanity's first deliberate metallurgical synthesis.</li>
+  <li><strong>The Iron Age (~1200 BCE onward):</strong> Mastery of higher-temperature blast smelting allowed large-scale extraction of elemental iron from haematite and magnetite.</li>
+  <li><strong>The Carbon &amp; Silicon Age (Modern Era):</strong> Civilization today relies on synthetic organic polymers (carbon-based plastics, pharmaceuticals, and synthetic fibers) and ultra-pure crystalline semiconductors (silicon microchips) powering modern computation and telecommunications.</li>
+</ul>
+
+<div class="note-box">
+  <strong>Did You Know? Modern Smartphone Chemistry:</strong> A typical smartphone incorporates over <strong>35 different chemical elements</strong>. The screen utilizes aluminosilicate glass treated with molten potassium salts to exchange sodium ions for larger potassium ions (creating compressive surface strength). Indium tin oxide (ITO) forms the transparent conductive touch grid, while lithium cobalt oxide (LiCoO₂) powers the rechargeable battery.
+</div>
+
+---
+
+<h2>2. Major Divisions &amp; Interdisciplinary Branches of Chemistry</h2>
+<p>Because chemistry intersects physics, biology, geology, and engineering, it is structured into classical foundational disciplines and specialized applied branches:</p>
+
+<div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Branch</th>
+        <th>Primary Domain of Investigation</th>
+        <th>Real-World &amp; Industrial Applications</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Organic Chemistry</strong></td>
+        <td>Study of compounds primarily composed of covalently bonded carbon and hydrogen (hydrocarbons) and their derivatives.</td>
+        <td>Petrochemicals, synthetic polymers, pharmaceuticals, agrochemicals, dyes.</td>
+      </tr>
+      <tr>
+        <td><strong>Inorganic Chemistry</strong></td>
+        <td>Study of all non-carbon elements, minerals, metals, organometallic complexes, and coordination compounds.</td>
+        <td>Metallurgy, industrial acids/bases, semiconductors, catalysts, ceramics.</td>
+      </tr>
+      <tr>
+        <td><strong>Physical Chemistry</strong></td>
+        <td>Application of the principles and laws of physics (thermodynamics, quantum mechanics, chemical kinetics) to chemical systems.</td>
+        <td>Reaction rate optimization, battery design, spectroscopic analysis, molecular modeling.</td>
+      </tr>
+      <tr>
+        <td><strong>Biochemistry</strong></td>
+        <td>Chemical substances and metabolic processes occurring within living organisms (proteins, DNA/RNA, carbohydrates, enzymes).</td>
+        <td>Genetic engineering, clinical pathology, vaccine development, agricultural biotechnology.</td>
+      </tr>
+      <tr>
+        <td><strong>Analytical Chemistry</strong></td>
+        <td>Qualitative identification (what is present) and quantitative estimation (how much is present) of chemical species.</td>
+        <td>Quality assurance in food/pharmaceuticals, water testing, chromatography, titration.</td>
+      </tr>
+      <tr>
+        <td><strong>Environmental Chemistry</strong></td>
+        <td>Occurrence, transport, reactions, and effects of chemical species in the air, water, and soil environments.</td>
+        <td>Air pollution control (smog, acid rain), effluent treatment plants, greenhouse gas mitigation.</td>
+      </tr>
+      <tr>
+        <td><strong>Forensic Chemistry</strong></td>
+        <td>Application of analytical chemistry to criminal investigations and legal evidentiary analysis.</td>
+        <td>Toxicological screening, arson accelerant identification, narcotics testing by CIB Nepal.</td>
+      </tr>
+      <tr>
+        <td><strong>Nuclear Chemistry</strong></td>
+        <td>Study of atomic nuclei, nuclear fission, nuclear fusion, and radioactive decay mechanisms.</td>
+        <td>Nuclear power generation, radioisotopes in cancer radiotherapy (Co-60, I-131).</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+<h2>3. Classification of Matter</h2>
+<p><strong>Matter</strong> is defined as anything that possesses mass and occupies physical volume. Macroscopically, matter is organized according to its chemical homogeneity and composition:</p>
+
+<!-- SVG Diagram: Classification of Matter -->
+<div class="diagram-wrap" style="text-align:center; margin: 1.75rem 0;">
+  <svg class="diagram" viewBox="0 0 740 320" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto;">
+    <style>
+      .tree-node-root { fill: rgba(249, 115, 22, 0.12); stroke: #f97316; stroke-width: 2; rx: 8px; }
+      .tree-node-p1 { fill: rgba(52, 211, 153, 0.12); stroke: #10b981; stroke-width: 1.8; rx: 8px; }
+      .tree-node-p2 { fill: rgba(251, 191, 36, 0.12); stroke: #f59e0b; stroke-width: 1.8; rx: 8px; }
+      .tree-node-leaf { fill: rgba(148, 163, 184, 0.08); stroke: rgba(148, 163, 184, 0.35); stroke-width: 1.2; rx: 8px; }
+      .tree-line { fill: none; stroke: rgba(148, 163, 184, 0.5); stroke-width: 1.6; }
+      .tree-text-title { font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; text-anchor: middle; fill: var(--text-heading, #f8fafc); }
+      .tree-text-leaf { font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; text-anchor: middle; fill: var(--text-heading, #f8fafc); }
+      .tree-text-sub { font-family: 'Sora', sans-serif; font-size: 11px; text-anchor: middle; fill: var(--text-muted, #94a3b8); }
+      html.light .tree-text-title, html.light .tree-text-leaf { fill: #0f172a; }
+      html.light .tree-text-sub { fill: #64748b; }
+      html.light .tree-line { stroke: #cbd5e1; }
+      html.light .tree-node-leaf { fill: #f8fafc; stroke: #cbd5e1; }
+    </style>
+    <!-- Root -->
+    <rect x="295" y="15" width="150" height="42" class="tree-node-root"/>
+    <text x="370" y="41" class="tree-text-title" style="fill:#f97316;">MATTER</text>
+    
+    <!-- Connector Lines Level 1 -->
+    <path d="M 370 57 L 370 85 L 180 85 L 180 110" class="tree-line"/>
+    <path d="M 370 85 L 560 85 L 560 110" class="tree-line"/>
+
+    <!-- Level 1 Nodes -->
+    <rect x="95" y="110" width="170" height="42" class="tree-node-p1"/>
+    <text x="180" y="136" class="tree-text-title" style="fill:#10b981;">Pure Substances</text>
+    
+    <rect x="475" y="110" width="170" height="42" class="tree-node-p2"/>
+    <text x="560" y="136" class="tree-text-title" style="fill:#f59e0b;">Mixtures</text>
+
+    <!-- Connector Lines Level 2 Left -->
+    <path d="M 180 152 L 180 180 L 95 180 L 95 205" class="tree-line"/>
+    <path d="M 180 180 L 265 180 L 265 205" class="tree-line"/>
+
+    <!-- Connector Lines Level 2 Right -->
+    <path d="M 560 152 L 560 180 L 475 180 L 475 205" class="tree-line"/>
+    <path d="M 560 180 L 645 180 L 645 205" class="tree-line"/>
+
+    <!-- Level 2 Nodes -->
+    <rect x="20" y="205" width="150" height="60" class="tree-node-leaf"/>
+    <text x="95" y="230" class="tree-text-leaf">Elements</text>
+    <text x="95" y="250" class="tree-text-sub">Cu, Fe, O₂, P₄, S₈</text>
+
+    <rect x="190" y="205" width="150" height="60" class="tree-node-leaf"/>
+    <text x="265" y="230" class="tree-text-leaf">Compounds</text>
+    <text x="265" y="250" class="tree-text-sub">H₂O, NaCl, CO₂</text>
+
+    <rect x="400" y="205" width="150" height="60" class="tree-node-leaf"/>
+    <text x="475" y="230" class="tree-text-leaf">Homogeneous</text>
+    <text x="475" y="250" class="tree-text-sub">Air, Salt Solution, Brass</text>
+
+    <rect x="570" y="205" width="150" height="60" class="tree-node-leaf"/>
+    <text x="645" y="230" class="tree-text-leaf">Heterogeneous</text>
+    <text x="645" y="250" class="tree-text-sub">Muddy Water, Smoke</text>
+  </svg>
+  <div style="font-size:0.8rem; color:var(--text-muted, #94a3b8); margin-top:6px;">Figure 1.1: Macroscopic Hierarchy of Matter.</div>
+</div>
+
+<h3>3.1 Pure Substances vs. Mixtures</h3>
+<ol>
+  <li><strong>Pure Substances:</strong> Possess uniform and invariant chemical composition, sharp melting and boiling points, and cannot be separated into simpler substances by ordinary mechanical or physical methods.
+    <ul>
+      <li><strong>Elements:</strong> The simplest chemical substances composed of identical atoms possessing the same nuclear atomic number (Z). They cannot be broken down chemically. Elements exist as <em>metals</em> (electropositive, ductile, good conductors like Cu, Al), <em>non-metals</em> (electronegative, insulators like C, O, N), and <em>metalloids</em> (intermediate semi-conducting properties like Si, Ge, As).</li>
+      <li><strong>Compounds:</strong> Substances formed by the chemical combination of two or more distinct elements in a <strong>fixed, definite proportion by mass</strong>. Their properties are entirely distinct from their constituent elements (e.g., sodium is a violent metal and chlorine is a toxic gas, but their compound NaCl is table salt).</li>
+    </ul>
+  </li>
+  <li><strong>Mixtures:</strong> Consist of two or more pure substances physically combined in arbitrary ratios without chemical bonding. The individual constituents retain their characteristic chemical identities.
+    <ul>
+      <li><strong>Homogeneous Mixtures (Solutions):</strong> Possess uniform composition and properties throughout (single phase). Examples: atmospheric air, sugar dissolved in water, brass alloy (Cu + Zn).</li>
+      <li><strong>Heterogeneous Mixtures:</strong> Do not exhibit uniform composition, containing distinct observable boundaries between phases. Examples: oil in water, soil, chalk suspension.</li>
+    </ul>
+  </li>
+</ol>
+
+---
+
+<h2>4. Atoms, Molecules &amp; Chemical Atomicity</h2>
+
+<div class="key-stmt">
+  An <strong>atom</strong> is the smallest constituent particle of an element that can participate in a chemical combination. A <strong>molecule</strong> is the smallest electrically neutral entity of a substance capable of independent, stable existence while retaining the complete chemical properties of that substance.
+</div>
+
+<p>Molecules are categorized based on their elemental constitution and their <strong>atomicity</strong> (the total number of constituent atoms present in a single molecule):</p>
+
+<ul>
+  <li><strong>Homoatomic Molecules:</strong> Composed of atoms of only one element.
+    <ul>
+      <li><em>Monoatomic:</em> Noble gases that exist as single atoms (He, Ne, Ar). Atomicity = 1.</li>
+      <li><em>Diatomic:</em> H₂, N₂, O₂, F₂, Cl₂. Atomicity = 2.</li>
+      <li><em>Triatomic:</em> Ozone (O₃). Atomicity = 3.</li>
+      <li><em>Tetra-atomic:</em> White phosphorus (P₄). Atomicity = 4.</li>
+      <li><em>Octa-atomic / Polyatomic:</em> Rhombic sulphur (S₈). Atomicity = 8.</li>
+    </ul>
+  </li>
+  <li><strong>Heteroatomic Molecules:</strong> Composed of atoms of two or more distinct elements.
+    <ul>
+      <li><em>Diatomic:</em> CO, HCl, NO. Atomicity = 2.</li>
+      <li><em>Triatomic:</em> H₂O, CO₂, SO₂. Atomicity = 3.</li>
+      <li><em>Tetra-atomic:</em> Ammonia (NH₃). Atomicity = 4.</li>
+      <li><em>Polyatomic:</em> Methane (CH₄, atomicity = 5), Glucose (C₆H₁₂O₆, atomicity = 24).</li>
+    </ul>
+  </li>
+</ul>
+
+---
+
+<h2>5. Atomic, Molecular, and Formula Unit Mass</h2>
+
+<h3>5.1 The Unified Atomic Mass Unit (u)</h3>
+<p>Because the absolute mass of an individual atom is extraordinarily miniscule (e.g., a single hydrogen atom weighs 1.67 &times; 10⁻²⁴ g), atomic masses are defined relative to an international standard.</p>
+
+<div class="formula-box">
+  <span class="formula-label">Definition of Unified Atomic Mass Unit</span>
+  1 u = 1 amu = (1/12) &times; Mass of one atom of Carbon-12 (¹²C) = 1.660539 &times; 10⁻²⁴ g
+</div>
+
+<p>The <strong>relative atomic mass</strong> (Aᵣ) of an element is the ratio of the average mass of one atom of that element compared to 1/12 the mass of an atom of carbon-12. Being a ratio, relative atomic mass is dimensionless.</p>
+
+<h3>5.2 Average Atomic Mass of Isotopes</h3>
+<p>Most elements exist in nature as a mixture of stable isotopes with varying isotopic abundances. The fractional abundance-weighted average determines the value listed on the periodic table:</p>
+
+<div class="formula-box">
+  <span class="formula-label">Average Atomic Mass Equation</span>
+  A<sub>avg</sub> = &Sigma; (fᵢ &times; Aᵢ) = [(P₁ &times; A₁) + (P₂ &times; A₂) + ... + (Pₙ &times; Aₙ)] / 100
+</div>
+
+<div class="example-box">
+  <strong>Worked Example 1.1: Calculating Average Atomic Mass</strong><br/>
+  Naturally occurring chlorine consists of two stable isotopes: ³⁵Cl (atomic mass 34.969 u) with a natural abundance of 75.77%, and ³⁷Cl (atomic mass 36.966 u) with an abundance of 24.23%. Calculate the average atomic mass of chlorine.<br/><br/>
+  <strong>Solution:</strong><br/>
+  A<sub>avg</sub> = [(75.77 &times; 34.969) + (24.23 &times; 36.966)] / 100<br/>
+  = (2649.60 + 895.69) / 100 = 3545.29 / 100 = <strong>35.45 u</strong>
+</div>
+
+<h3>5.3 Molecular Mass vs. Formula Unit Mass</h3>
+<ul>
+  <li><strong>Molecular Mass:</strong> The sum of the atomic masses of all atoms present in a covalent molecule (e.g., for glucose C₆H₁₂O₆: (6 &times; 12.011) + (12 &times; 1.008) + (6 &times; 15.999) = 180.16 u).</li>
+  <li><strong>Formula Unit Mass:</strong> For crystalline ionic substances (such as NaCl, CaCO₃), discrete individual molecules do not exist; instead, cations and anions form an infinite three-dimensional crystal lattice. The mass of the simplest empirical formula unit is termed the <em>formula unit mass</em> (e.g., for NaCl: 22.99 + 35.45 = 58.44 u).</li>
+</ul>
+
+---
+
+<h2>6. Radicals, Ions, and Chemical Formula Derivation</h2>
+
+<h3>6.1 Cations (Basic Radicals) and Anions (Acid Radicals)</h3>
+<p>An <strong>ion</strong> or <strong>radical</strong> is an atom or bonded group of atoms bearing an electrical charge:</p>
+<ul>
+  <li><strong>Cations (Basic Radicals):</strong> Positively charged species formed when an atom loses valence electrons (e.g., Na⁺, Ca²⁺, Al³⁺, NH₄⁺).</li>
+  <li><strong>Anions (Acid Radicals):</strong> Negatively charged species formed when an atom or polyatomic group gains electrons (e.g., Cl⁻, O²⁻, NO₃⁻, SO₄²⁻).</li>
+  <li><strong>Variable Valency:</strong> Transition metals and heavier p-block elements often exhibit more than one oxidation state. In classical nomenclature, the lower valency carries the suffix <em>-ous</em> and the higher valency carries <em>-ic</em> (or Roman numerals in IUPAC Stock notation):
+    <ul>
+      <li>Cu⁺: Cuprous / Copper(I) vs. Cu²⁺: Cupric / Copper(II)</li>
+      <li>Fe²⁺: Ferrous / Iron(II) vs. Fe³⁺: Ferric / Iron(III)</li>
+      <li>Sn²⁺: Stannous / Tin(II) vs. Sn⁴⁺: Stannic / Tin(IV)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>6.2 The Criss-Cross Method for Writing Formulas</h3>
+<p>To determine the neutral chemical formula of an ionic compound:</p>
+<ol>
+  <li>Write the positive radical (cation) symbol on the left and negative radical (anion) symbol on the right.</li>
+  <li>Write their numerical valencies (charges without signs) below each symbol.</li>
+  <li>Divide by any common factor to obtain the simplest whole-number ratio.</li>
+  <li>Criss-cross the valency numbers to become subscripts for the opposing radical. If a polyatomic radical takes a subscript &gt; 1, enclose it in parentheses.</li>
+</ol>
+
+<div class="example-box">
+  <strong>Formula Writing Examples:</strong>
+  <ul>
+    <li><strong>Aluminium Sulphate:</strong> Cation = Al³⁺ (valency 3), Anion = SO₄²⁻ (valency 2). Cross valencies &rarr; <strong>Al₂(SO₄)₃</strong>.</li>
+    <li><strong>Calcium Phosphate:</strong> Cation = Ca²⁺ (valency 2), Anion = PO₄³⁻ (valency 3). Cross valencies &rarr; <strong>Ca₃(PO₄)₂</strong>.</li>
+    <li><strong>Magnesium Nitride:</strong> Cation = Mg²⁺ (valency 2), Anion = N³⁻ (valency 3). Cross valencies &rarr; <strong>Mg₃N₂</strong>.</li>
+  </ul>
+</div>
+
+<h3>6.3 High-Yield Everyday Chemicals &amp; Common Names</h3>
+<p>The NEB Class 11 examination frequently tests the systematic names and formulas of common household and commercial compounds:</p>
+
+<div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Common Name</th>
+        <th>IUPAC / Systematic Chemical Name</th>
+        <th>Molecular / Formula Unit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Baking Soda</strong></td><td>Sodium hydrogen carbonate (Sodium bicarbonate)</td><td>NaHCO₃</td></tr>
+      <tr><td><strong>Washing Soda</strong></td><td>Sodium carbonate decahydrate</td><td>Na₂CO₃·10H₂O</td></tr>
+      <tr><td><strong>Bleaching Powder</strong></td><td>Calcium hypochlorite / chlorohypochlorite</td><td>CaOCl₂</td></tr>
+      <tr><td><strong>Plaster of Paris</strong></td><td>Calcium sulphate hemihydrate</td><td>CaSO₄·½H₂O</td></tr>
+      <tr><td><strong>Gypsum</strong></td><td>Calcium sulphate dihydrate</td><td>CaSO₄·2H₂O</td></tr>
+      <tr><td><strong>Epsom Salt</strong></td><td>Magnesium sulphate heptahydrate</td><td>MgSO₄·7H₂O</td></tr>
+      <tr><td><strong>Milk of Magnesia</strong></td><td>Magnesium hydroxide (antacid suspension)</td><td>Mg(OH)₂</td></tr>
+      <tr><td><strong>Muriatic Acid</strong></td><td>Hydrochloric acid</td><td>HCl</td></tr>
+      <tr><td><strong>Saltpetre (Chile Saltpetre)</strong></td><td>Potassium nitrate (Sodium nitrate)</td><td>KNO₃ (NaNO₃)</td></tr>
+      <tr><td><strong>Vinegar</strong></td><td>Dilute ethanoic (acetic) acid (~5%)</td><td>CH₃COOH</td></tr>
+      <tr><td><strong>Borax</strong></td><td>Sodium tetraborate decahydrate</td><td>Na₂B₄O₇·10H₂O</td></tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+<h2>7. Percentage Composition of Elements in Compounds</h2>
+<p>The <strong>percentage composition</strong> of a compound is the mass of each individual element contained within 100 parts by mass of that compound. It is governed directly by the <em>Law of Definite / Constant Proportions</em>.</p>
+
+<div class="formula-box">
+  <span class="formula-label">Mass Percentage Formula</span>
+  Mass % of Element X = [(Number of atoms of X in formula &times; Atomic Mass of X) / Molar Mass of Compound] &times; 100%
+</div>
+
+<div class="example-box">
+  <strong>Worked Example 1.2: Comparative Fertilizer Analysis (High-Yield Exam Numerical)</strong><br/>
+  A farmer in the Terai region of Nepal wants to maximize the nitrogen content delivered per kilogram of chemical fertilizer purchased. The two fertilizers available at the local cooperative are:
+  <ol type="a">
+    <li><strong>Urea:</strong> NH₂CONH₂</li>
+    <li><strong>Ammonium Nitrate:</strong> NH₄NO₃</li>
+  </ol>
+  Calculate the percentage composition of nitrogen in both fertilizers and determine which provides more nitrogen by mass.<br/><br/>
+  <strong>Solution:</strong><br/>
+  <em>Atomic masses:</em> N = 14.0 u, H = 1.0 u, C = 12.0 u, O = 16.0 u.<br/><br/>
+  <strong>Part (a) Urea (CH₄N₂O):</strong><br/>
+  Molar Mass = 12.0 + (4 &times; 1.0) + (2 &times; 14.0) + 16.0 = 12.0 + 4.0 + 28.0 + 16.0 = 60.0 g/mol<br/>
+  % N in Urea = (28.0 g / 60.0 g) &times; 100% = <strong>46.67%</strong><br/><br/>
+  
+  <strong>Part (b) Ammonium Nitrate (N₂H₄O₃):</strong><br/>
+  Molar Mass = (2 &times; 14.0) + (4 &times; 1.0) + (3 &times; 16.0) = 28.0 + 4.0 + 48.0 = 80.0 g/mol<br/>
+  % N in Ammonium Nitrate = (28.0 g / 80.0 g) &times; 100% = <strong>35.00%</strong><br/><br/>
+
+  <p><strong>Conclusion:</strong> Urea provides <strong>46.67%</strong> nitrogen compared to 35.00% in ammonium nitrate. Therefore, urea provides higher active nitrogen per unit mass and is the more cost-effective nitrogenous fertilizer.</p>
+</div>
+
+---
+
+<h2>8. Empirical Formula vs. Molecular Formula</h2>
+
+<div class="key-stmt">
+  The <strong>empirical formula</strong> represents the simplest whole-number ratio of the atoms of each element present in a compound. The <strong>molecular formula</strong> expresses the exact, actual number of atoms of each element present in one molecule of that compound.
+</div>
+
+<p>For example, hydrogen peroxide has the molecular formula H₂O₂; its simplest whole-number ratio of hydrogen to oxygen is 1:1, so its empirical formula is simply HO.</p>
+
+<div class="formula-box">
+  <span class="formula-label">Relationship Between Molecular and Empirical Formula</span>
+  Molecular Formula = (Empirical Formula)ₙ
+</div>
+
+<p>Here, n is an integer (n = 1, 2, 3, ...) determined by the ratio of the molar masses:</p>
+
+<div class="formula-box">
+  <span class="formula-label">Calculation of Integer Factor n</span>
+  n = Molecular Mass / Empirical Formula Mass = (2 &times; Vapor Density) / Empirical Formula Mass
+</div>
+
+<div class="note-box">
+  <strong>Vapor Density Rule:</strong> For volatile substances in the gaseous phase, Avogadro's hypothesis establishes that:
+  Molecular Mass = 2 &times; Vapor Density (V.D.)
+</div>
+
+---
+
+<h2>9. Step-by-Step Algorithm for Determining Empirical &amp; Molecular Formulas</h2>
+<p>To determine empirical and molecular formulas from analytical experimental data, construct a 6-column systematic table:</p>
+
+<ol>
+  <li><strong>Step 1:</strong> List the percentage by mass of each element. If given in grams, verify that the sum equals 100% (if oxygen is not listed and the sum is &lt; 100%, the remainder is oxygen).</li>
+  <li><strong>Step 2:</strong> Divide the mass percentage of each element by its atomic mass to find the <strong>relative number of moles</strong> (moles = % / A).</li>
+  <li><strong>Step 3:</strong> Divide all the calculated mole values by the <strong>smallest mole value</strong> among them to determine the <em>simplest molar ratio</em>.</li>
+  <li><strong>Step 4:</strong> If the resulting ratios are not integers (e.g., 1.33, 1.5, 2.25), multiply all ratios by the smallest integer (e.g., 2 or 3) to obtain the <strong>simplest whole-number ratio</strong>.</li>
+  <li><strong>Step 5:</strong> Write the empirical formula using these whole-number subscripts. Calculate the <em>Empirical Formula Mass</em>.</li>
+  <li><strong>Step 6:</strong> Find n = Molecular Mass / Empirical Mass and multiply the subscripts of the empirical formula by n to obtain the final <em>Molecular Formula</em>.</li>
+</ol>
+
+<div class="example-box">
+  <strong>Worked Example 1.3: Standard NEB Long-Question Board Numerical</strong><br/>
+  An organic compound containing carbon, hydrogen, and oxygen was subjected to elemental combustion analysis. It was found to contain <strong>40.00% Carbon</strong>, <strong>6.67% Hydrogen</strong>, and the remainder Oxygen. Its vapor density is measured to be <strong>90</strong>. Determine:
+  <ol type="a">
+    <li>The empirical formula of the compound.</li>
+    <li>The molecular formula of the compound.</li>
+  </ol>
+  <br/>
+  <strong>Step-by-Step Solution:</strong><br/>
+  % Oxygen = 100% - (40.00% + 6.67%) = 100% - 46.67% = 53.33%<br/><br/>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Element</th>
+          <th>% by Mass</th>
+          <th>Atomic Mass</th>
+          <th>Relative Moles (% / A)</th>
+          <th>Simplest Molar Ratio</th>
+          <th>Whole-No. Ratio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>C</strong></td>
+          <td>40.00</td>
+          <td>12.0</td>
+          <td>40.00 / 12 = 3.333</td>
+          <td>3.333 / 3.333 = 1</td>
+          <td><strong>1</strong></td>
+        </tr>
+        <tr>
+          <td><strong>H</strong></td>
+          <td>6.67</td>
+          <td>1.0</td>
+          <td>6.67 / 1.0 = 6.670</td>
+          <td>6.670 / 3.333 = 2.001 &approx; 2</td>
+          <td><strong>2</strong></td>
+        </tr>
+        <tr>
+          <td><strong>O</strong></td>
+          <td>53.33</td>
+          <td>16.0</td>
+          <td>53.33 / 16 = 3.333</td>
+          <td>3.333 / 3.333 = 1</td>
+          <td><strong>1</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>(a) Empirical Formula:</strong> <strong>CH₂O</strong></p>
+  <p>Empirical Formula Mass = 12.0 + (2 &times; 1.0) + 16.0 = 30.0 g/mol</p>
+
+  <p><strong>(b) Molecular Mass &amp; Molecular Formula:</strong></p>
+  Molecular Mass = 2 &times; Vapor Density = 2 &times; 90 = 180 g/mol<br/>
+  n = Molecular Mass / Empirical Formula Mass = 180 / 30 = 6<br/>
+  Molecular Formula = (CH₂O)₆ = <strong>C₆H₁₂O₆</strong> (Glucose / Fructose)
+</div>
+
+<div class="example-box">
+  <strong>Worked Example 1.4: Fractional Ratio Conversion Case</strong><br/>
+  An oxide of iron contains 69.94% iron and 30.06% oxygen by mass. Its molecular weight is determined to be 159.7 g/mol. Determine its empirical and molecular formula (Fe = 55.85 u, O = 16.00 u).<br/><br/>
+  <strong>Solution:</strong>
+  <ul>
+    <li>Relative moles of Fe = 69.94 / 55.85 = 1.252</li>
+    <li>Relative moles of O = 30.06 / 16.00 = 1.879</li>
+  </ul>
+  Divide by smallest value (1.252):<br/>
+  Ratio for Fe = 1.252 / 1.252 = 1.00<br/>
+  Ratio for O = 1.879 / 1.252 = 1.50<br/><br/>
+  Since the ratio contains a fraction (1.5 = 3/2), multiply both numbers by <strong>2</strong> to obtain the simplest whole-number integers:<br/>
+  Fe = 1 &times; 2 = 2, O = 1.5 &times; 2 = 3<br/><br/>
+  <p><strong>Empirical Formula:</strong> <strong>Fe₂O₃</strong> (Haematite / Ferric oxide)</p>
+  Empirical Mass = (2 &times; 55.85) + (3 &times; 16.00) = 111.7 + 48.0 = 159.7 g/mol<br/>
+  n = 159.7 / 159.7 = 1<br/>
+  <p><strong>Molecular Formula:</strong> (Fe₂O₃)₁ = <strong>Fe₂O₃</strong></p>
+</div>
+
+---
+
+<h2>10. NEB Board Exam Practice Questions</h2>
+
+<h3>A. Multiple Choice Questions (MCQs)</h3>
+<ol>
+  <li><strong>Which of the following molecules possesses an atomicity of 4?</strong>
+    <ul>
+      <li>(A) Ozone (O₃)</li>
+      <li>(B) Ammonia (NH₃)</li>
+      <li>(C) Sulphur dioxide (SO₂)</li>
+      <li>(D) Carbon dioxide (CO₂)</li>
+    </ul>
+    <em>Correct Answer:</em> <strong>(B)</strong> Ammonia has 1 N + 3 H = 4 atoms per molecule.
+  </li>
+  <li><strong>The active nitrogen percentage is highest in which of the following agricultural fertilizers?</strong>
+    <ul>
+      <li>(A) Ammonium Nitrate (NH₄NO₃)</li>
+      <li>(B) Ammonium Sulphate ((NH₄)₂SO₄)</li>
+      <li>(C) Urea (NH₂CONH₂)</li>
+      <li>(D) Potassium Nitrate (KNO₃)</li>
+    </ul>
+    <em>Correct Answer:</em> <strong>(C)</strong> Urea has 46.67% nitrogen by mass.
+  </li>
+  <li><strong>A compound has an empirical formula of CH₂ and a molecular mass of 70 g/mol. Its molecular formula is:</strong>
+    <ul>
+      <li>(A) C₃H₆</li>
+      <li>(B) C₄H₈</li>
+      <li>(C) C₅H₁₀</li>
+      <li>(D) C₆H₁₂</li>
+    </ul>
+    <em>Correct Answer:</em> <strong>(C)</strong> Empirical mass = 12 + 2 = 14; n = 70 / 14 = 5 &rarr; C₅H₁₀.
+  </li>
+  <li><strong>Plaster of Paris has the chemical formula:</strong>
+    <ul>
+      <li>(A) CaSO₄·2H₂O</li>
+      <li>(B) CaSO₄·½H₂O</li>
+      <li>(C) MgSO₄·7H₂O</li>
+      <li>(D) CaOCl₂</li>
+    </ul>
+    <em>Correct Answer:</em> <strong>(B)</strong> Calcium sulphate hemihydrate.
+  </li>
+</ol>
+
+<h3>B. Short Answer Questions (2 Marks Each)</h3>
+<ol>
+  <li><strong>Define unified atomic mass unit (u). Why was Carbon-12 chosen as the universal atomic mass standard?</strong><br/>
+    <em>Model Answer:</em> One unified atomic mass unit (1 u) is defined as exactly 1/12 the mass of an unbound carbon-12 atom in its nuclear and electronic ground state (1 u &approx; 1.6605 &times; 10⁻²⁴ g). Carbon-12 was adopted in 1961 by IUPAC because: (i) it is a stable, non-toxic, and abundantly available solid, (ii) it allows highly precise mass spectrometric measurements, and (iii) it avoids fractional mass anomalies previously seen with oxygen and hydrogen isotope standards.
+  </li>
+  <li><strong>Differentiate between Empirical Formula and Molecular Formula with an illustrative example.</strong><br/>
+    <em>Model Answer:</em>
+    <ul>
+      <li><strong>Empirical Formula:</strong> Shows the simplest whole-number ratio of atoms of each element in a compound (e.g., for benzene, CH).</li>
+      <li><strong>Molecular Formula:</strong> Shows the actual number of atoms of each element present in one molecule of the compound (e.g., for benzene, C₆H₆).</li>
+      <li>They are related by: Molecular Formula = (Empirical Formula)ₙ, where n = Molecular Mass / Empirical Mass = 78 / 13 = 6.</li>
+    </ul>
+  </li>
+  <li><strong>Explain why formula unit mass is used instead of molecular mass for sodium chloride (NaCl).</strong><br/>
+    <em>Model Answer:</em> Sodium chloride is an ionic compound. In solid NaCl, discrete, independent NaCl molecules do not exist. Instead, each sodium cation (Na⁺) is octahedrally surrounded by six chloride anions (Cl⁻), and each chloride anion is surrounded by six sodium cations in a continuous three-dimensional crystal lattice. Therefore, the term <em>molecular mass</em> is strictly inaccurate, and <em>formula unit mass</em> (representing the mass of the simplest stoichiometric unit NaCl = 58.5 u) is employed.
+  </li>
+</ol>
+
+<h3>C. Long Numerical Problem (4 Marks)</h3>
+<p><strong>Question:</strong> An organic compound found in tobacco smoke (Nicotine) consists of 74.02% Carbon, 8.70% Hydrogen, and 17.28% Nitrogen by mass. The molecular weight of the compound is experimentally determined to be 162.2 g/mol. Determine the empirical formula and the molecular formula of nicotine.</p>
+
+<p><strong>Step-by-Step Solution:</strong></p>
+<ol>
+  <li><strong>Relative number of moles:</strong><br/>
+    Moles of C = 74.02 / 12.01 = 6.163<br/>
+    Moles of H = 8.70 / 1.008 = 8.631<br/>
+    Moles of N = 17.28 / 14.01 = 1.233
+  </li>
+  <li><strong>Simplest molar ratio (divide by smallest value, 1.233):</strong><br/>
+    Ratio C = 6.163 / 1.233 = 4.998 &approx; 5<br/>
+    Ratio H = 8.631 / 1.233 = 7.000 = 7<br/>
+    Ratio N = 1.233 / 1.233 = 1.000 = 1
+  </li>
+  <li><strong>Empirical Formula:</strong> <strong>C₅H₇N</strong><br/>
+    Empirical Mass = (5 &times; 12.01) + (7 &times; 1.008) + 14.01 = 60.05 + 7.056 + 14.01 = 81.12 g/mol
+  </li>
+  <li><strong>Calculation of integer multiplier n:</strong><br/>
+    n = Molecular Mass / Empirical Formula Mass = 162.2 / 81.12 = 2
+  </li>
+  <li><strong>Molecular Formula:</strong><br/>
+    Molecular Formula = (C₅H₇N)₂ = <strong>C₁₀H₁₄N₂</strong>
+  </li>
+</ol>
+    `,
+  },
+  {
+    id: "chem11-stoichiometry",
+    class: "11",
+    subject: "Chemistry",
+    chapter: "Stoichiometry",
+    title: "Stoichiometry — Class 11 Chemistry",
+    icon: "⚗️",
+    summary:
+      "Complete NEB Class 11 guide for Unit 2: Dalton’s atomic theory, five laws of stoichiometry, Avogadro’s law and its deductions, the mole concept (mass/volume/particles), quantitative calculations from equations, limiting & excess reactants, percentage yield, and empirical/molecular formula from percentage composition.",
+    tags: [
+      "Stoichiometry",
+      "Mole Concept",
+      "Dalton's Atomic Theory",
+      "Laws of Stoichiometry",
+      "Avogadro's Law",
+      "Limiting Reactant",
+      "Percentage Yield",
+      "Empirical Formula",
+      "Class 11",
+      "Chemistry",
+      "NEB",
+    ],
+    content: `<div class="formula-box">
+  <span class="formula-label">Key Formula Reference: Unit 2 Stoichiometry</span>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-top: 8px;">
+    <div>
+      <strong>Mole Relations:</strong><br/>
+      No. of moles = Given mass (g) / Molar mass<br/>
+      No. of moles = Given volume of gas (L) / 22.4 (at STP)<br/>
+      No. of moles = No. of particles / 6.022 &times; 10<sup>23</sup>
+    </div>
+    <div>
+      <strong>Vapour Density &amp; Molecular Mass:</strong><br/>
+      Molecular mass = 2 &times; Vapour density
+    </div>
+    <div>
+      <strong>Percentage Yield:</strong><br/>
+      % Yield = (Experimental yield / Theoretical yield) &times; 100%
+    </div>
+    <div>
+      <strong>Empirical &amp; Molecular Formula:</strong><br/>
+      n = Molecular mass / Empirical formula mass<br/>
+      Molecular formula = (Empirical formula)<sub>n</sub>
+    </div>
+  </div>
+</div>
+
+<h2>1. Dalton's Atomic Theory</h2>
+<p>In 1808, John Dalton published a landmark theory based on experimental evidence known at the time. His <strong>atomic theory</strong> consists of four key postulates:</p>
+<ul>
+  <li><strong>Postulate 1 — Atomicity of matter:</strong> All matter is composed of tiny, indivisible particles called <strong>atoms</strong>. The atom is the smallest structural unit of an element.</li>
+  <li><strong>Postulate 2 — Identity of atoms:</strong> Atoms of the <em>same</em> element are identical in mass and chemical properties; atoms of <em>different</em> elements differ in these properties.</li>
+  <li><strong>Postulate 3 — Whole-number combination:</strong> Atoms combine chemically in simple, whole-number ratios to form molecules (compounds).</li>
+  <li><strong>Postulate 4 — Conservation of atoms:</strong> During a chemical reaction, atoms retain their identity — they simply rearrange and reunite to form new substances. No atom is created or destroyed.</li>
+</ul>
+
+<div class="note-box">
+  <strong>Limitations of Dalton's Atomic Theory:</strong>
+  <ul>
+    <li>Atoms are <em>not</em> truly indivisible — they contain electrons, protons, and neutrons.</li>
+    <li>Atoms of the same element can have different masses (isotopes — e.g., &#185;&#178;C and &#185;&#8308;C).</li>
+    <li>It does not account for allotropes (e.g., diamond and graphite are both pure carbon but differ in properties).</li>
+    <li>It does not explain the nature of chemical bonding or why atoms combine.</li>
+    <li>The theory applies poorly to non-stoichiometric compounds (e.g., w&#252;stite, Fe<sub>x</sub>O, where x varies).</li>
+  </ul>
+</div>
+
+<hr/>
+
+<h2>2. Laws of Stoichiometry</h2>
+<p>The word <em>stoichiometry</em> comes from Greek: <em>stoikhein</em> (element) + <em>metron</em> (measure). It is the quantitative study of the mass and volume relationships among reactants and products in chemical reactions. Five classical laws form its foundation.</p>
+
+<h3>2.1 Law of Conservation of Mass</h3>
+<p>Proposed by <strong>Antoine Lavoisier</strong> (1785). It states:</p>
+<blockquote>"In a closed system, the total mass of reactants equals the total mass of products. Mass can neither be created nor destroyed during a chemical reaction."</blockquote>
+<p>This is also called the <strong>Law of Indestructibility of Matter</strong>. Because mass is conserved, every chemical equation must be balanced.</p>
+
+<div class="example-box">
+  <span class="example-label">Verification Example</span>
+  <p>2C<sub>2</sub>H<sub>6</sub> + 7O<sub>2</sub> &rarr; 4CO<sub>2</sub> + 6H<sub>2</sub>O</p>
+  <p>Reactant mass: (2 &times; 30) + (7 &times; 32) = 60 + 224 = <strong>284 g</strong></p>
+  <p>Product mass: (4 &times; 44) + (6 &times; 18) = 176 + 108 = <strong>284 g</strong> &#10003;</p>
+</div>
+
+<h3>2.2 Law of Definite Proportion</h3>
+<p>Formulated by <strong>Joseph Proust</strong> (late 18th century). It states:</p>
+<blockquote>"Regardless of source or method of preparation, the ratio of masses of elements in a pure chemical compound is always constant."</blockquote>
+<p>For example, water (H<sub>2</sub>O) always contains hydrogen and oxygen in the mass ratio <strong>1 : 8</strong>, whether obtained from a river, a tap, or by electrolysis.</p>
+
+<div class="note-box">
+  <strong>Limitations:</strong>
+  <ul>
+    <li>Does not apply to non-stoichiometric (Berthollide) compounds, e.g., w&#252;stite (FeO where Fe:O ratio varies from 0.83 to 0.95).</li>
+    <li>Does not account for isotopic variations that slightly alter mass ratios.</li>
+  </ul>
+</div>
+
+<h3>2.3 Law of Multiple Proportions</h3>
+<p>Proposed by <strong>John Dalton</strong> (early 19th century). It states:</p>
+<blockquote>"When two elements combine to form more than one compound, the masses of one element that combine with a fixed mass of the other element are in simple, whole-number ratios."</blockquote>
+
+<div class="example-box">
+  <span class="example-label">Classic Example &mdash; Oxides of Nitrogen</span>
+  <p>Keeping mass of nitrogen fixed at 14 g:</p>
+  <table>
+    <thead><tr><th>Compound</th><th>Mass of N (g)</th><th>Mass of O (g)</th></tr></thead>
+    <tbody>
+      <tr><td>N<sub>2</sub>O</td><td>14</td><td>8</td></tr>
+      <tr><td>NO</td><td>14</td><td>16</td></tr>
+      <tr><td>N<sub>2</sub>O<sub>3</sub></td><td>14</td><td>24</td></tr>
+      <tr><td>NO<sub>2</sub></td><td>14</td><td>32</td></tr>
+    </tbody>
+  </table>
+  <p>Ratio of oxygen masses: 8 : 16 : 24 : 32 = <strong>1 : 2 : 3 : 4</strong> &#10003;</p>
+</div>
+
+<h3>2.4 Law of Reciprocal Proportions</h3>
+<p>Proposed by <strong>Jeremias Richter</strong> (1792). It states:</p>
+<blockquote>"If two different elements each combine separately with the same weight of a third element, the ratio of the masses in which they do so is either the same as, or a simple multiple of, the mass ratio in which they combine with each other."</blockquote>
+<p>Also called the <strong>Law of Equivalent Proportions</strong>.</p>
+
+<div class="example-box">
+  <span class="example-label">Example &mdash; Copper, Sulphur and Oxygen</span>
+  <p>CuS: Cu : S = 63.5 : 32 &nbsp;|&nbsp; CuO: Cu : O = 63.5 : 16</p>
+  <p>Ratio of S and O combining with fixed Cu (63.5 g): <strong>32 : 16 = 2 : 1</strong></p>
+  <p>Ratio of S and O in SO<sub>3</sub>: <strong>32 : 48 = 2 : 3</strong></p>
+  <p>2 : 1 and 2 : 3 are simple multiples of each other. &#10003;</p>
+</div>
+
+<h3>2.5 Gay-Lussac's Law of Gaseous Volumes</h3>
+<p>Stated by <strong>Joseph Louis Gay-Lussac</strong>. It applies to reactions involving gaseous substances:</p>
+<blockquote>"The volumes of gases involved in a chemical reaction, measured under the same conditions of temperature and pressure, are in simple whole-number ratios."</blockquote>
+<p>The volume ratio equals the molar (stoichiometric coefficient) ratio.</p>
+
+<div class="example-box">
+  <span class="example-label">Example &mdash; Formation of Water Vapour</span>
+  <p>2H<sub>2</sub>(g) + O<sub>2</sub>(g) &rarr; 2H<sub>2</sub>O(g)</p>
+  <p>Volume ratio H<sub>2</sub> : O<sub>2</sub> : H<sub>2</sub>O = <strong>2 : 1 : 2</strong> &#10003;</p>
+  <p>If 100 mL H<sub>2</sub> reacts with excess O<sub>2</sub>, water vapour formed = 100 mL.</p>
+</div>
+
+<hr/>
+
+<h2>3. Avogadro's Law and Its Deductions</h2>
+<p><strong>Amedeo Avogadro</strong> (early 19th century) established:</p>
+<blockquote>"Under similar conditions of temperature and pressure, equal volumes of all gases contain an equal number of molecules."</blockquote>
+<p>Mathematically: V &prop; N (at constant T and P).</p>
+
+<div class="note-box">
+  <strong>Standard Conditions:</strong><br/>
+  <strong>STP/NTP:</strong> 0&#176;C (273 K), 1 atm &mdash; 1 mol gas occupies <strong>22.4 L</strong><br/>
+  <strong>RTP:</strong> 25&#176;C (298 K), 1 atm &mdash; 1 mol gas occupies <strong>24.0 L</strong>
+</div>
+
+<h3>Deduction 1 &mdash; Molecular Mass and Vapour Density</h3>
+<p><strong>Vapour density (V.D.)</strong> = density of gas / density of H<sub>2</sub> at same conditions. Since equal volumes contain equal molecules:</p>
+<p style="text-align:center;"><strong>Molecular mass = 2 &times; Vapour density</strong></p>
+<p>(Factor of 2 because H<sub>2</sub> is diatomic.)</p>
+
+<h3>Deduction 2 &mdash; Molar Mass and Molar Volume</h3>
+<p>Combining with the vapour density relation:</p>
+<p style="text-align:center;"><strong>Molecular mass = mass of 22.4 L of the gas at STP</strong></p>
+
+<h3>Deduction 3 &mdash; Atomicity of Gas Molecules</h3>
+<p>Gay-Lussac's volume ratios require gas molecules to be polyatomic. For example, 1 vol H<sub>2</sub> + 1 vol Cl<sub>2</sub> &rarr; 2 vol HCl only works if H<sub>2</sub> and Cl<sub>2</sub> each contain 2 atoms (they are <strong>diatomic</strong>). Similarly O<sub>2</sub>, N<sub>2</sub>, F<sub>2</sub>, Br<sub>2</sub>, I<sub>2</sub> are diatomic; noble gases are monatomic.</p>
+
+<h3>Deduction 4 &mdash; Molecular Formula from V.D. and Volumetric Composition</h3>
+<div class="example-box">
+  <span class="example-label">Worked Example</span>
+  <p>An oxide of nitrogen contains the same volume of nitrogen as the oxide. Vapour density = 38. Find its molecular formula.</p>
+  <p><strong>Step 1:</strong> Equal volumes &rarr; equal molecules &rarr; 2 N atoms per molecule of oxide. Formula: N<sub>2</sub>O<sub>y</sub></p>
+  <p><strong>Step 2:</strong> M = 2 &times; 38 = 76</p>
+  <p><strong>Step 3:</strong> (2 &times; 14) + 16y = 76 &rArr; y = 3</p>
+  <p><strong>Answer: N<sub>2</sub>O<sub>3</sub></strong></p>
+</div>
+
+<hr/>
+
+<h2>4. The Mole Concept</h2>
+<p>Chemists use the <strong>mole (mol)</strong> as a counting unit for atoms, ions, and molecules, analogous to "a dozen" but calibrated to atomic scale.</p>
+
+<div class="note-box">
+  <strong>Definition:</strong> 1 mole = number of atoms in exactly 12 g of &#185;&#178;C = <strong>6.022 &times; 10<sup>23</sup></strong> (Avogadro's number, N<sub>A</sub>).
+</div>
+
+<h3>4.1 Mole &mdash; Number Relationship</h3>
+<p style="text-align:center;">No. of moles = Number of particles / 6.022 &times; 10<sup>23</sup></p>
+
+<div class="example-box">
+  <span class="example-label">Worked Example &mdash; Moles to Particles</span>
+  <p>Find molecules, atoms, and electrons in 0.5 mol H<sub>2</sub>O.</p>
+  <p>Molecules = 0.5 &times; 6.022 &times; 10<sup>23</sup> = <strong>3.011 &times; 10<sup>23</sup></strong></p>
+  <p>Atoms (3 per molecule) = 3.011 &times; 10<sup>23</sup> &times; 3 = <strong>9.033 &times; 10<sup>23</sup></strong></p>
+  <p>Electrons (10 per molecule) = 3.011 &times; 10<sup>23</sup> &times; 10 = <strong>3.011 &times; 10<sup>24</sup></strong></p>
+</div>
+
+<h3>4.2 Mole &mdash; Mass Relationship</h3>
+<p>1 mol of a substance = its molar mass in grams.</p>
+<ul>
+  <li>1 mol C = 12 g &nbsp;|&nbsp; 1 mol Cu = 63.5 g &nbsp;|&nbsp; 1 mol CO<sub>2</sub> = 44 g &nbsp;|&nbsp; 1 mol H<sub>2</sub>O = 18 g</li>
+</ul>
+<p style="text-align:center;">No. of moles = Given mass (g) / Molar mass</p>
+<p>Using atomic mass gives <strong>gram-atoms</strong>; using molecular mass gives <strong>gram-molecules</strong>.</p>
+
+<div class="example-box">
+  <span class="example-label">Worked Example &mdash; Mass to Moles</span>
+  <p>An oxygen cylinder contains 0.16 kg of O<sub>2</sub>. Find gram-atoms of O, gram-molecules of O<sub>2</sub>, and moles of O<sub>2</sub>.</p>
+  <p>Mass = 160 g; Atomic mass O = 16; Molecular mass O<sub>2</sub> = 32</p>
+  <p>Gram-atoms of O = 160 / 16 = <strong>10</strong></p>
+  <p>Gram-molecules of O<sub>2</sub> = 160 / 32 = <strong>5</strong></p>
+  <p>Moles of O<sub>2</sub> = <strong>5 mol</strong></p>
+</div>
+
+<h3>4.3 Mole &mdash; Volume Relationship (Gases)</h3>
+<p style="text-align:center;">No. of moles = Given volume (L) / 22.4 (at STP)</p>
+<p>At STP: 1 mol gas = 22.4 L. At RTP: 1 mol gas = 24.0 L.</p>
+
+<h3>4.4 The Central Mole Triangle</h3>
+<div style="border:1px solid var(--eb-border, #444); border-radius:8px; padding:16px; margin:12px 0; text-align:center;">
+  <p><strong>No. of moles = Given mass (g) / Molar mass</strong></p>
+  <p><strong>= Given volume (L) / 22.4 (at STP)</strong></p>
+  <p><strong>= No. of particles / 6.022 &times; 10<sup>23</sup></strong></p>
+</div>
+
+<hr/>
+
+<h2>5. Quantitative Calculations from Chemical Equations</h2>
+<p>A <strong>balanced chemical equation</strong> gives the molar ratios of reactants and products. These ratios allow calculation of mass, volume, or particle count for any substance when the amount of one is known.</p>
+<p><strong>Method:</strong> Convert known &rarr; moles &rarr; apply mole ratio &rarr; convert to required unit.</p>
+
+<div class="example-box">
+  <span class="example-label">Worked Example &mdash; Mass and Volume Calculation</span>
+  <p>3.2 kg of CH<sub>4</sub>. Find: (a) mass of O<sub>2</sub> needed, (b) volume of CO<sub>2</sub> at STP.</p>
+  <p>CH<sub>4</sub> + 2O<sub>2</sub> &rarr; CO<sub>2</sub> + 2H<sub>2</sub>O</p>
+  <p>Moles of CH<sub>4</sub> = 3200 / 16 = 200 mol</p>
+  <p>(a) Moles O<sub>2</sub> = 200 &times; 2 = 400 mol; Mass = 400 &times; 32 = <strong>12,800 g = 12.8 kg</strong></p>
+  <p>(b) Moles CO<sub>2</sub> = 200 mol; Volume = 200 &times; 22.4 = <strong>4,480 L</strong></p>
+</div>
+
+<hr/>
+
+<h2>6. Limiting Reactant and Excess Reactant</h2>
+<p>The <strong>limiting reactant</strong> is the one completely consumed first, limiting how much product can form. The <strong>excess reactant</strong> is the one left over after the reaction ends.</p>
+
+<p><strong>To identify the limiting reactant:</strong></p>
+<ol>
+  <li>Convert all reactant quantities to moles.</li>
+  <li>Divide each reactant's moles by its stoichiometric coefficient.</li>
+  <li>The reactant with the <strong>smallest</strong> result is the limiting reactant.</li>
+</ol>
+
+<div class="example-box">
+  <span class="example-label">Worked Example 1 &mdash; Ammonia Synthesis</span>
+  <p>4 mol N<sub>2</sub> + 9 mol H<sub>2</sub>. Find limiting reactant, mass of NH<sub>3</sub>, and excess N<sub>2</sub> remaining.</p>
+  <p>N<sub>2</sub>(g) + 3H<sub>2</sub>(g) &rarr; 2NH<sub>3</sub>(g)</p>
+  <p>N<sub>2</sub>: 4/1 = 4.0 &nbsp;&nbsp;|&nbsp;&nbsp; H<sub>2</sub>: 9/3 = 3.0 &rarr; <strong>H<sub>2</sub> is limiting</strong></p>
+  <p>NH<sub>3</sub> produced: 9 &times; (2/3) = 6 mol; Mass = 6 &times; 17 = <strong>102 g</strong></p>
+  <p>N<sub>2</sub> consumed: 9/3 = 3 mol; N<sub>2</sub> remaining: 4 &minus; 3 = 1 mol = <strong>28 g</strong></p>
+</div>
+
+<div class="example-box">
+  <span class="example-label">Worked Example 2 &mdash; Rebreathing Mask</span>
+  <p>0.150 mol KO<sub>2</sub> + 0.100 mol H<sub>2</sub>O. What mass of O<sub>2</sub> is produced?</p>
+  <p>4KO<sub>2</sub>(s) + 2H<sub>2</sub>O(l) &rarr; 4KOH(s) + 3O<sub>2</sub>(g)</p>
+  <p>KO<sub>2</sub>: 0.150/4 = 0.0375 &nbsp;&nbsp;|&nbsp;&nbsp; H<sub>2</sub>O: 0.100/2 = 0.0500 &rarr; <strong>KO<sub>2</sub> is limiting</strong></p>
+  <p>Moles O<sub>2</sub> = 0.150 &times; (3/4) = 0.1125 mol; Mass = 0.1125 &times; 32 = <strong>3.6 g</strong></p>
+</div>
+
+<hr/>
+
+<h2>7. Theoretical Yield, Experimental Yield, and Percentage Yield</h2>
+<p><strong>Theoretical yield:</strong> Maximum product from stoichiometry (100% conversion assumed).</p>
+<p><strong>Experimental yield:</strong> Product actually obtained. Almost always less than theoretical yield due to incomplete reactions, losses in handling, side reactions, or impurities.</p>
+<p style="text-align:center;"><strong>% Yield = (Experimental yield / Theoretical yield) &times; 100%</strong></p>
+
+<div class="example-box">
+  <span class="example-label">Worked Example &mdash; Limestone Decomposition</span>
+  <p>CaCO<sub>3</sub>(s) &rarr; CaO(s) + CO<sub>2</sub>(g)</p>
+  <p>From 1,000 g CaCO<sub>3</sub>: Theoretical CaO = (1000/100) &times; 56 = <strong>560 g</strong></p>
+  <p>Actual yield = 500 g</p>
+  <p>% Yield = (500/560) &times; 100 = <strong>89.3%</strong></p>
+</div>
+
+<div class="example-box">
+  <span class="example-label">Worked Example &mdash; Back-Calculation from % Yield</span>
+  <p>0.1234 g AgCl precipitates. Assuming 98.7% yield, find grams of Ag<sup>+</sup> originally present.</p>
+  <p>Ag<sup>+</sup> + Cl<sup>&minus;</sup> &rarr; AgCl &nbsp;|&nbsp; M(Ag) = 108, M(AgCl) = 143.5</p>
+  <p>Experimental yield of Ag<sup>+</sup> = 0.1234 &times; (108/143.5) = 0.0928 g</p>
+  <p>Theoretical yield = 0.0928 / 0.987 = <strong>0.094 g</strong></p>
+</div>
+
+<hr/>
+
+<h2>8. Empirical and Molecular Formula from Percentage Composition</h2>
+<p>Given percentage composition by mass, derive the <strong>empirical formula</strong> (simplest whole-number atom ratio) and then the <strong>molecular formula</strong> (actual atom count).</p>
+
+<h3>Step-by-Step Method</h3>
+<ol>
+  <li>Assume 100 g &rarr; % values become grams directly.</li>
+  <li>Convert grams to moles: moles = mass / atomic mass.</li>
+  <li>Divide all mole values by the <em>smallest</em> value.</li>
+  <li>Round to nearest whole number (multiply all by 2 if ~x.5; by 3 if ~x.33).</li>
+  <li>Write the empirical formula.</li>
+  <li>Calculate empirical formula mass.</li>
+  <li>Find n = Molecular mass / Empirical formula mass &nbsp;(M = 2 &times; V.D. if V.D. given).</li>
+  <li>Molecular formula = (Empirical formula)<sub>n</sub>.</li>
+</ol>
+
+<div class="example-box">
+  <span class="example-label">Worked Example &mdash; Molecular Formula from % Composition</span>
+  <p>Compound: C = 40%, H = 6.7%, O = 53.3%. Vapour density = 90.</p>
+  <p>Moles in 100 g: C = 40/12 = 3.33 &nbsp;|&nbsp; H = 6.7/1 = 6.7 &nbsp;|&nbsp; O = 53.3/16 = 3.33</p>
+  <p>Divide by smallest (3.33): C = 1, H &asymp; 2, O = 1 &rarr; Empirical formula: <strong>CH<sub>2</sub>O</strong></p>
+  <p>Empirical mass = 12 + 2 + 16 = 30 g/mol</p>
+  <p>Molecular mass = 2 &times; 90 = 180 g/mol; n = 180/30 = 6</p>
+  <p>Molecular formula: <strong>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></strong> (glucose, MW = 180 &#10003;)</p>
+</div>
+
+<hr/>
+
+<div class="note-box">
+  <strong>NEB Exam Focus &mdash; Unit 2 Stoichiometry</strong>
+  <p>High-priority areas based on the Unit 2 exercise set:</p>
+  <ul>
+    <li><strong>Laws of Stoichiometry:</strong> State + verify numerically. Multiple proportion and reciprocal proportion calculations appear most often. For reciprocal proportion: compute both ratios and show they are simple multiples of each other.</li>
+    <li><strong>Avogadro's deductions:</strong> Deriving M = 2 &times; V.D. is a classic 2-mark derivation. Atomicity from volume ratios is a common short answer. Finding molecular formula from V.D. + volumetric composition is a reliable long-answer pattern.</li>
+    <li><strong>Mole calculations:</strong> Interconvert mass &harr; moles &harr; particles &harr; volume at STP. MCQ trap: gram-atom vs. gram-molecule vs. mole &mdash; know which denominator to use.</li>
+    <li><strong>Stoichiometric calculations:</strong> Convert to moles &rarr; apply mole ratio &rarr; convert to required unit. NEB often provides mass of one substance and asks for mass + volume of another.</li>
+    <li><strong>Limiting reactant:</strong> Identify using the moles/coefficient method. Calculate product mass AND excess reactant remaining &mdash; both parts usually required for full marks.</li>
+    <li><strong>Percentage yield:</strong> Short-answer staple. Know all three terms precisely. Haber process (N<sub>2</sub> + H<sub>2</sub> &rarr; NH<sub>3</sub>) is the most common real-world context. Back-calculation also appears.</li>
+    <li><strong>Empirical/molecular formula:</strong> High-mark long-answer. Show all steps. Combustion analysis (from CO<sub>2</sub> + H<sub>2</sub>O masses, find C/H/O composition) also appears in the exercise set.</li>
+  </ul>
+</div>`,
+  },
+  {
+    id: "chem11-atomic-structure",
+    class: "11",
+    subject: "Chemistry",
+    chapter: "Atomic Structure",
+    title: "Atomic Structure — Class 11 Chemistry",
+    icon: "⚛️",
+    summary:
+      "Complete NEB Class 11 guide for Unit 3: Rutherford’s nuclear model and its limitations, Bohr’s atomic model and hydrogen spectrum, quantum mechanical model (de Broglie dual nature, Heisenberg uncertainty principle), probability and orbitals, four quantum numbers, orbital shapes, Pauli’s exclusion principle, Aufbau principle, Hund’s rule, and electronic configurations including Cr and Cu anomalies.",
+    tags: [
+      "Atomic Structure",
+      "Rutherford Model",
+      "Bohr Model",
+      "Hydrogen Spectrum",
+      "Quantum Numbers",
+      "de Broglie",
+      "Heisenberg",
+      "Electronic Configuration",
+      "Aufbau Principle",
+      "Hund's Rule",
+      "Class 11",
+      "Chemistry",
+      "NEB",
+    ],
+    content: `<div class="formula-box">
+  <span class="formula-label">Key Formula Reference: Unit 3 Atomic Structure</span>
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 12px; margin-top: 8px;">
+    <div>
+      <strong>Bohr Energy Transition:</strong><br/>
+      ΔE = E<sub>2</sub> &minus; E<sub>1</sub> = hν<br/>
+      <strong>Angular Momentum Quantization:</strong><br/>
+      mvr = n &times; h / 2π
+    </div>
+    <div>
+      <strong>Rydberg Formula (Hydrogen Spectrum):</strong><br/>
+      1/λ = R<sub>H</sub> &times; (1/n<sub>1</sub><sup>2</sup> &minus; 1/n<sub>2</sub><sup>2</sup>)<br/>
+      R<sub>H</sub> = 1.09 &times; 10<sup>7</sup> m<sup>&minus;1</sup>
+    </div>
+    <div>
+      <strong>de Broglie Wave Equation:</strong><br/>
+      λ = h / mv = h / p<br/>
+      h = 6.626 &times; 10<sup>&minus;34</sup> J&middot;s
+    </div>
+    <div>
+      <strong>Heisenberg Uncertainty Principle:</strong><br/>
+      Δx &times; Δp &ge; h / 4π<br/>
+      <strong>Max electrons per shell:</strong> 2n<sup>2</sup><br/>
+      <strong>Max electrons per subshell:</strong> 2(2l+1)
+    </div>
+  </div>
+</div>
+
+<h2>1. Discovery of Subatomic Particles</h2>
+<p>The modern picture of the atom was built over decades of experiment. Three key discoveries established the subatomic picture:</p>
+<ul>
+  <li><strong>1897 — J.J. Thomson</strong> discovered the <strong>electron</strong> (negatively charged) using cathode ray tube experiments.</li>
+  <li><strong>1911 — Ernest Rutherford</strong> identified the <strong>proton</strong> (positively charged nucleus) through his alpha-scattering experiment.</li>
+  <li><strong>1932 — James Chadwick</strong> discovered the <strong>neutron</strong> (neutral, mass similar to proton) inside the nucleus.</li>
+</ul>
+
+<hr/>
+
+<h2>2. Rutherford's Alpha-Scattering Experiment</h2>
+<p>In 1909, Hans Geiger and Ernest Marsden, working under Rutherford's guidance, bombarded a thin gold foil with a beam of positively charged <strong>alpha particles</strong> (helium nuclei, He<sup>2+</sup>) and observed the deflections on a zinc sulfide (ZnS) fluorescent screen.</p>
+
+<h3>Observations</h3>
+<ul>
+  <li>The vast majority of alpha particles (~99%) passed straight through the foil with little or no deflection.</li>
+  <li>A small fraction of particles were deflected at small angles.</li>
+  <li>A very few particles (roughly 1 in 20,000) were deflected at very large angles, some bouncing almost straight back (nearly 180&deg;).</li>
+</ul>
+
+<h3>Conclusions — Rutherford's Nuclear (Planetary) Model</h3>
+<ul>
+  <li>Because most particles passed through undeflected, the atom is <strong>mostly empty space</strong>.</li>
+  <li>The small-angle deflections indicated a concentrated region of positive charge inside the atom.</li>
+  <li>The rare near-180&deg; rebounds confirmed that almost all the atom's mass is packed into a tiny, extremely dense, positively charged core called the <strong>nucleus</strong>.</li>
+  <li>Electrons occupy the vast empty space surrounding the nucleus, orbiting it much like planets orbit the Sun — hence called the <strong>planetary model</strong>.</li>
+</ul>
+
+<hr/>
+
+<h2>3. Limitations of Rutherford's Model</h2>
+<p>Rutherford's model established the nuclear atom but could not explain a fundamental problem: <strong>atomic stability</strong>.</p>
+<p>According to classical electrodynamics, a charged particle moving in a circular path is undergoing continuous centripetal acceleration. An accelerating charged particle <em>must</em> continuously radiate electromagnetic energy. An orbiting electron should therefore steadily lose energy, spiral inward along a shrinking orbit, and ultimately collapse into the nucleus within a fraction of a second. Atoms would not be stable — yet they clearly are.</p>
+<p>Rutherford's model also offered no explanation for why atoms emit light only at specific, discrete wavelengths (the observed line spectra) rather than a continuous spectrum.</p>
+
+<hr/>
+
+<h2>4. Bohr's Atomic Model</h2>
+<p>In 1913, Danish physicist Niels Bohr combined classical mechanics with the emerging quantum theory to propose a new atomic model. His four key postulates are:</p>
+
+<ol>
+  <li><strong>Quantized orbits (shells):</strong> Electrons revolve around the nucleus in fixed, well-defined circular paths called <strong>orbits</strong> or <strong>shells</strong>. Each orbit corresponds to a specific, fixed energy — so orbits are also called <strong>stationary energy levels</strong> (K, L, M, N... for n = 1, 2, 3, 4...).</li>
+  <li><strong>No radiation in orbit:</strong> As long as an electron stays in a particular orbit, it neither absorbs nor emits energy. The stability problem of Rutherford's model is resolved by this postulate. Energy increases with distance: E<sub>1</sub> &lt; E<sub>2</sub> &lt; E<sub>3</sub> &lt; E<sub>4</sub>.</li>
+  <li><strong>Quantum jumps:</strong> An electron can move between orbits only by absorbing or emitting energy exactly equal to the difference between the two energy levels:<br/>
+    <span style="display:block; text-align:center; margin:8px 0;">ΔE = E<sub>2</sub> &minus; E<sub>1</sub> = hν</span>
+    where h is Planck's constant and ν is the frequency of radiation emitted or absorbed. Electrons absorb energy to jump to a higher level (excitation) and release energy as a photon when falling to a lower level (emission).
+  </li>
+  <li><strong>Angular momentum quantization:</strong> The angular momentum of an electron in a given orbit is an integer multiple of h/2π:<br/>
+    <span style="display:block; text-align:center; margin:8px 0;">mvr = n &times; h / 2π &nbsp;&nbsp;(n = 1, 2, 3, ...)</span>
+    where m = mass of electron, v = orbital velocity, r = orbital radius, and n = principal quantum number.
+  </li>
+</ol>
+
+<hr/>
+
+<h2>5. Hydrogen Spectrum and Spectral Series</h2>
+<p>When a high voltage is applied across hydrogen gas in a discharge tube, electrons are excited to higher energy levels. As they cascade back down to lower levels, they emit photons of specific frequencies. The resulting pattern of discrete bright lines is the <strong>hydrogen emission spectrum</strong>.</p>
+<p>The wavelength of each spectral line is given by the <strong>Rydberg formula</strong>:</p>
+<div style="text-align:center; margin:12px 0; font-size:1.05em;">
+  1/λ = R<sub>H</sub> &times; (1/n<sub>1</sub><sup>2</sup> &minus; 1/n<sub>2</sub><sup>2</sup>)
+</div>
+<p>where n<sub>1</sub> is the lower energy level (where the electron lands), n<sub>2</sub> is the higher energy level (where it starts), and R<sub>H</sub> = 1.09 &times; 10<sup>7</sup> m<sup>&minus;1</sup> is the Rydberg constant.</p>
+
+<h3>Spectral Series of Hydrogen</h3>
+<table>
+  <thead>
+    <tr><th>Series</th><th>n<sub>1</sub> (lower level)</th><th>n<sub>2</sub> (upper levels)</th><th>Region</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Lyman</td><td>1</td><td>2, 3, 4, ...</td><td>Ultraviolet (UV)</td></tr>
+    <tr><td>Balmer</td><td>2</td><td>3, 4, 5, ...</td><td>Visible</td></tr>
+    <tr><td>Paschen</td><td>3</td><td>4, 5, 6, ...</td><td>Infrared (IR)</td></tr>
+    <tr><td>Brackett</td><td>4</td><td>5, 6, 7, ...</td><td>Infrared (IR)</td></tr>
+    <tr><td>Pfund</td><td>5</td><td>6, 7, 8, ...</td><td>Infrared (IR)</td></tr>
+  </tbody>
+</table>
+
+<div class="example-box">
+  <span class="example-label">Worked Example — Balmer Series Wavelength</span>
+  <p>Calculate the wavelength of the spectral line produced when an electron in a hydrogen atom transitions from n<sub>2</sub> = 4 to n<sub>1</sub> = 2 (Balmer series).</p>
+  <p><strong>Given:</strong> R<sub>H</sub> = 1.09 &times; 10<sup>7</sup> m<sup>&minus;1</sup>, n<sub>1</sub> = 2, n<sub>2</sub> = 4</p>
+  <p><strong>Step 1:</strong> Apply the Rydberg formula:<br/>
+  1/λ = 1.09 &times; 10<sup>7</sup> &times; (1/2<sup>2</sup> &minus; 1/4<sup>2</sup>)</p>
+  <p><strong>Step 2:</strong> Calculate the bracket:<br/>
+  1/4 &minus; 1/16 = 4/16 &minus; 1/16 = 3/16 = 0.1875</p>
+  <p><strong>Step 3:</strong> 1/λ = 1.09 &times; 10<sup>7</sup> &times; 0.1875 = 2.044 &times; 10<sup>6</sup> m<sup>&minus;1</sup></p>
+  <p><strong>Step 4:</strong> λ = 1 / (2.044 &times; 10<sup>6</sup>) = <strong>4.89 &times; 10<sup>&minus;7</sup> m = 489 nm</strong></p>
+  <p>This falls in the <strong>visible (blue-green) region</strong>, confirming it belongs to the Balmer series. &#10003;</p>
+</div>
+
+<div class="note-box">
+  <strong>Why multiple spectral series from one electron?</strong><br/>
+  Although hydrogen has only one electron, a sample of hydrogen gas contains enormous numbers of atoms with electrons excited to many different energy levels simultaneously. Each possible downward transition (e.g., 5&rarr;1, 4&rarr;1, 3&rarr;2, 5&rarr;3 ...) produces a distinct spectral line. The full spectrum is the superposition of all these transitions.
+</div>
+
+<hr/>
+
+<h2>6. Limitations of Bohr's Theory</h2>
+<ul>
+  <li>It successfully explains only the spectrum of hydrogen (single-electron atoms). It cannot account for the spectra of multi-electron atoms like helium, lithium ions, etc.</li>
+  <li>It cannot explain the <strong>Zeeman effect</strong> (splitting of spectral lines in a magnetic field) or the <strong>Stark effect</strong> (splitting in an electric field).</li>
+  <li>It contradicts the later-established <strong>wave-particle duality</strong> of electrons by treating them as particles in fixed orbits with precisely defined paths and momenta.</li>
+  <li>It provides no theoretical justification for <em>why</em> angular momentum should be quantized in integer multiples of h/2π.</li>
+</ul>
+
+<hr/>
+
+<h2>7. Quantum Mechanical Model</h2>
+<p>The failure of Bohr's model for multi-electron systems led to the development of quantum mechanics in the 1920s, built on two foundational ideas:</p>
+
+<h3>Planck's Quantum Theory</h3>
+<p>In 1900, Max Planck showed that light (electromagnetic radiation) is emitted and absorbed in discrete packets of energy called <strong>quanta</strong>. The energy of one quantum is:</p>
+<p style="text-align:center;">E = hν</p>
+<p>where h = 6.626 &times; 10<sup>&minus;34</sup> J&middot;s (Planck's constant) and ν is the frequency of radiation.</p>
+
+<h3>de Broglie's Wave-Particle Duality</h3>
+<p>In 1924, French physicist Louis de Broglie proposed that <strong>all matter in motion possesses wave character</strong> — not just light. Combining Planck's quantum (E = hν) with Einstein's mass-energy equivalence (E = mc<sup>2</sup>) and using ν = c/λ, de Broglie derived:</p>
+<p style="text-align:center;"><strong>λ = h / mv = h / p</strong></p>
+<p>where λ is the de Broglie wavelength, m is the particle's mass, v is its velocity, and p = mv is its momentum.</p>
+<p>This wavelength is only measurable for <strong>microscopic particles</strong> (electrons, atoms) because their momentum is tiny. For macroscopic objects (a cricket ball, a planet), the momentum is so large that the resulting wavelength is negligibly small — making the wave character undetectable.</p>
+
+<div class="example-box">
+  <span class="example-label">Worked Example — de Broglie Wavelength of an Electron</span>
+  <p>Calculate the de Broglie wavelength of an electron moving at a velocity of 2.0 &times; 10<sup>6</sup> m/s. (Mass of electron = 9.11 &times; 10<sup>&minus;31</sup> kg)</p>
+  <p><strong>Given:</strong> h = 6.626 &times; 10<sup>&minus;34</sup> J&middot;s, m = 9.11 &times; 10<sup>&minus;31</sup> kg, v = 2.0 &times; 10<sup>6</sup> m/s</p>
+  <p><strong>Step 1:</strong> Momentum p = mv = 9.11 &times; 10<sup>&minus;31</sup> &times; 2.0 &times; 10<sup>6</sup> = 1.822 &times; 10<sup>&minus;24</sup> kg&middot;m/s</p>
+  <p><strong>Step 2:</strong> λ = h / p = (6.626 &times; 10<sup>&minus;34</sup>) / (1.822 &times; 10<sup>&minus;24</sup>)</p>
+  <p><strong>Step 3:</strong> λ = (6.626 / 1.822) &times; 10<sup>&minus;34+24</sup> = 3.637 &times; 10<sup>&minus;10</sup> m</p>
+  <p><strong>Answer: λ &asymp; 3.64 &times; 10<sup>&minus;10</sup> m = 0.364 nm</strong></p>
+  <p>This is comparable to atomic bond lengths, confirming that electron wavelengths are physically significant. &#10003;</p>
+</div>
+
+<hr/>
+
+<h2>8. Heisenberg's Uncertainty Principle</h2>
+<div class="note-box">
+  <strong>Statement:</strong> It is impossible to simultaneously determine both the exact position and the exact momentum of a microscopic particle (such as an electron) with arbitrary precision.<br/><br/>
+  <strong>Mathematical form:</strong><br/>
+  Δx &times; Δp &ge; h / 4π<br/><br/>
+  where Δx = uncertainty in position, Δp = uncertainty in momentum, and h = Planck's constant.
+</div>
+<p>The more precisely we pin down an electron's position, the less precisely we can know its momentum — and vice versa. This is not a limitation of instruments; it is a fundamental property of nature at the quantum scale.</p>
+<p><strong>Physical reasoning:</strong> To detect an electron's position, we need to bounce a photon off it (just as we see objects by reflected light). But a photon carries enough momentum that the act of observation itself disturbs the electron's momentum unpredictably. The more energetic the photon (for better position resolution), the larger the momentum kick it delivers.</p>
+<p>This principle makes it fundamentally impossible to define electron <em>orbits</em> (fixed paths with precise position AND velocity at every point). It directly invalidates Bohr's orbital picture and necessitates the probabilistic quantum mechanical description.</p>
+<p>The principle applies only to microscopic particles — for macroscopic objects the uncertainties are negligibly small compared to the objects' size and momentum.</p>
+
+<hr/>
+
+<h2>9. Probability, Wave Functions, and Atomic Orbitals</h2>
+<p>In quantum mechanics, the state of an electron is described by a mathematical function called the <strong>wave function (Ψ)</strong>. The wave function itself has no direct physical meaning, but its square, <strong>Ψ<sup>2</sup></strong>, gives the <strong>probability density</strong> — the probability of finding the electron at a particular point in space.</p>
+<p>An <strong>atomic orbital</strong> is the three-dimensional region of space around the nucleus where the probability of finding an electron is highest (conventionally, the region enclosing ~90% of the electron probability).</p>
+<p>Key features of the probability picture:</p>
+<ul>
+  <li>A <strong>node</strong> is a region where the probability of finding the electron is exactly zero (Ψ<sup>2</sup> = 0).</li>
+  <li>For the 1s orbital, probability is highest at the nucleus and decreases outward. The 2s orbital has a spherical node (a shell of zero probability) between two regions of high probability. The 3s orbital has two such nodes.</li>
+  <li>Electron density becomes more spread out (more diffuse) as the principal quantum number n increases.</li>
+</ul>
+
+<hr/>
+
+<h2>10. The Four Quantum Numbers</h2>
+<p>Each electron in an atom is completely described by a unique set of four quantum numbers. Together, these numbers specify the shell, subshell, orbital, and spin of the electron.</p>
+
+<h3>Principal Quantum Number (n)</h3>
+<ul>
+  <li>Introduced by Wolfgang Pauli, further developed by Bohr.</li>
+  <li>Represents the <strong>main energy level (shell)</strong>. Values: n = 1, 2, 3, 4, ... (positive integers only).</li>
+  <li>As n increases, both the <strong>energy</strong> of the electron and its <strong>average distance</strong> from the nucleus increase.</li>
+  <li>Maximum electrons per shell = <strong>2n<sup>2</sup></strong>. For n=1: 2 electrons; n=2: 8 electrons; n=3: 18 electrons.</li>
+  <li>Shells are labelled K(n=1), L(n=2), M(n=3), N(n=4)...</li>
+  <li>Elements in the same period share the same value of n. Atomic size increases down a group as n increases.</li>
+</ul>
+
+<h3>Azimuthal (Angular Momentum) Quantum Number (l)</h3>
+<ul>
+  <li>Proposed by Arnold Sommerfeld (1915). Determines the <strong>shape of the orbital (subshell)</strong>.</li>
+  <li>Values: l = 0, 1, 2, ... up to (n&minus;1). So for n=3, l can be 0, 1, or 2.</li>
+  <li>Maximum electrons per subshell = <strong>2(2l+1)</strong>.</li>
+</ul>
+<table>
+  <thead><tr><th>l value</th><th>Subshell</th><th>Shape</th><th>Max electrons</th></tr></thead>
+  <tbody>
+    <tr><td>0</td><td>s</td><td>Spherical</td><td>2</td></tr>
+    <tr><td>1</td><td>p</td><td>Dumbbell</td><td>6</td></tr>
+    <tr><td>2</td><td>d</td><td>Complex (double dumbbell)</td><td>10</td></tr>
+    <tr><td>3</td><td>f</td><td>Complex</td><td>14</td></tr>
+  </tbody>
+</table>
+
+<h3>Magnetic Quantum Number (m<sub>l</sub>)</h3>
+<ul>
+  <li>Also proposed by Sommerfeld. Determines the <strong>orientation of the orbital</strong> in space.</li>
+  <li>Values: &minus;l, ..., &minus;1, 0, +1, ..., +l. Total number of allowed orientations (orbitals) per subshell = <strong>2l+1</strong>.</li>
+</ul>
+<table>
+  <thead><tr><th>Subshell</th><th>l</th><th>m<sub>l</sub> values</th><th>No. of orbitals</th></tr></thead>
+  <tbody>
+    <tr><td>s</td><td>0</td><td>0</td><td>1</td></tr>
+    <tr><td>p</td><td>1</td><td>&minus;1, 0, +1</td><td>3</td></tr>
+    <tr><td>d</td><td>2</td><td>&minus;2, &minus;1, 0, +1, +2</td><td>5</td></tr>
+    <tr><td>f</td><td>3</td><td>&minus;3, &minus;2, &minus;1, 0, +1, +2, +3</td><td>7</td></tr>
+  </tbody>
+</table>
+<p>The single m<sub>l</sub> value (0) for the s-subshell means the electron cloud is uniformly distributed in all directions — no preferred orientation. The three values for p give three mutually perpendicular orbitals (p<sub>x</sub>, p<sub>y</sub>, p<sub>z</sub>).</p>
+
+<h3>Spin Quantum Number (m<sub>s</sub>)</h3>
+<ul>
+  <li>Proposed by George Uhlenbeck and Samuel Goudsmit (1925). Describes the intrinsic spin of the electron.</li>
+  <li>Only two possible values: <strong>+&frac12;</strong> (clockwise spin, represented by &uarr;) and <strong>&minus;&frac12;</strong> (anticlockwise spin, represented by &darr;).</li>
+  <li>Only two values means each orbital can hold a maximum of <strong>2 electrons</strong>, and they must have opposite spins.</li>
+  <li><strong>Diamagnetic:</strong> all electrons are paired (opposite spins cancel) — substance is weakly repelled by magnetic fields.</li>
+  <li><strong>Paramagnetic:</strong> one or more unpaired electrons — substance is attracted by magnetic fields.</li>
+</ul>
+
+<div class="example-box">
+  <span class="example-label">Solved Problem — Orbitals for n = 3</span>
+  <p>Find the total number of orbitals for principal quantum number n = 3.</p>
+  <p>For n = 3: l = 0, 1, 2</p>
+  <table>
+    <thead><tr><th>Subshell</th><th>l</th><th>m<sub>l</sub> values</th><th>No. of orbitals</th></tr></thead>
+    <tbody>
+      <tr><td>3s</td><td>0</td><td>0</td><td>1</td></tr>
+      <tr><td>3p</td><td>1</td><td>&minus;1, 0, +1</td><td>3</td></tr>
+      <tr><td>3d</td><td>2</td><td>&minus;2, &minus;1, 0, +1, +2</td><td>5</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Total orbitals = 1 + 3 + 5 = 9</strong> (also = n<sup>2</sup> = 3<sup>2</sup> = 9 &#10003;)</p>
+</div>
+
+<hr/>
+
+<h2>11. Shapes of Atomic Orbitals</h2>
+<p>The shape of an orbital is the three-dimensional boundary surface enclosing the region where the probability of finding the electron is high.</p>
+
+<h3>s Orbitals</h3>
+<p>The s orbital is <strong>spherically symmetric</strong> — the probability of finding the electron is the same in all directions at a given distance from the nucleus. The 1s orbital is a single sphere centered on the nucleus. The 2s orbital is a larger sphere (higher energy, greater average distance) with one spherical node — a shell at a specific radius where the probability drops to zero before rising again. The 3s orbital has two nodes. In general, the number of radial nodes = n &minus; l &minus; 1.</p>
+
+<h3>p Orbitals</h3>
+<p>For l = 1, there are three p orbitals, each pointing along one of the three Cartesian axes: <strong>p<sub>x</sub></strong> (along x-axis), <strong>p<sub>y</sub></strong> (along y-axis), and <strong>p<sub>z</sub></strong> (along z-axis). Each p orbital has a <strong>dumbbell shape</strong> — two lobes of electron density on opposite sides of the nucleus, connected at a point of zero probability (a nodal plane) at the nucleus itself. The three p orbitals are mutually perpendicular and have exactly the same energy — they are <strong>degenerate orbitals</strong>. Degeneracy means electrons in p<sub>x</sub>, p<sub>y</sub>, and p<sub>z</sub> all have the same potential energy despite occupying different regions of space.</p>
+<p><em>Origin of orbital names:</em> Scientists categorized hydrogen spectral lines as sharp (s), principal (p), diffuse (d), and fundamental (f) — these labels became the subshell designations.</p>
+
+<hr/>
+
+<h2>12. Pauli's Exclusion Principle</h2>
+<p>Austrian physicist Wolfgang Pauli proposed in 1925:</p>
+<div class="note-box">
+  <strong>Pauli's Exclusion Principle:</strong> No two electrons in the same atom can have the same set of all four quantum numbers (n, l, m<sub>l</sub>, m<sub>s</sub>).
+</div>
+<p>In practice: two electrons in the same orbital share the same n, l, and m<sub>l</sub>, so they <em>must</em> differ in m<sub>s</sub> — one must have m<sub>s</sub> = +&frac12; and the other m<sub>s</sub> = &minus;&frac12;. Each orbital therefore holds a maximum of <strong>two electrons with opposite spins</strong>.</p>
+
+<div class="example-box">
+  <span class="example-label">Example — Quantum Numbers for Helium (He, Z=2)</span>
+  <p>Both electrons of helium occupy the 1s orbital. Their quantum number sets are:</p>
+  <table>
+    <thead><tr><th>Electron</th><th>n</th><th>l</th><th>m<sub>l</sub></th><th>m<sub>s</sub></th></tr></thead>
+    <tbody>
+      <tr><td>1st</td><td>1</td><td>0</td><td>0</td><td>+&frac12;</td></tr>
+      <tr><td>2nd</td><td>1</td><td>0</td><td>0</td><td>&minus;&frac12;</td></tr>
+    </tbody>
+  </table>
+  <p>The sets differ only in m<sub>s</sub> — satisfying Pauli's exclusion principle. &#10003;</p>
+</div>
+
+<hr/>
+
+<h2>13. Aufbau Principle and the (n+l) Rule</h2>
+<p>The <strong>Aufbau principle</strong> (German: "building up") states:</p>
+<div class="note-box">
+  Electrons are added to atomic orbitals in order of increasing orbital energy. Lower-energy orbitals are filled before higher-energy ones.
+</div>
+<p>The energy of an orbital is determined using the <strong>(n+l) rule</strong>:</p>
+<ul>
+  <li><strong>Rule 1:</strong> An orbital with a lower (n+l) sum has lower energy.</li>
+  <li><strong>Rule 2:</strong> If two orbitals have the same (n+l) sum, the one with the lower value of n has lower energy.</li>
+</ul>
+
+<table>
+  <thead><tr><th>Orbital</th><th>n</th><th>l</th><th>(n+l)</th><th>Relative energy</th></tr></thead>
+  <tbody>
+    <tr><td>1s</td><td>1</td><td>0</td><td>1</td><td>Lowest</td></tr>
+    <tr><td>2s</td><td>2</td><td>0</td><td>2</td><td>&uarr;</td></tr>
+    <tr><td>2p</td><td>2</td><td>1</td><td>3</td><td>&uarr;</td></tr>
+    <tr><td>3s</td><td>3</td><td>0</td><td>3</td><td>Same (n+l)=3 as 2p, but n=3&gt;2, so 3s &gt; 2p</td></tr>
+    <tr><td>3p</td><td>3</td><td>1</td><td>4</td><td>&uarr;</td></tr>
+    <tr><td>4s</td><td>4</td><td>0</td><td>4</td><td>Same (n+l)=4 as 3p, but n=4&gt;3, so 4s &gt; 3p</td></tr>
+    <tr><td>3d</td><td>3</td><td>2</td><td>5</td><td>Same (n+l)=5 as 4p, but n=3&lt;4, so 3d &lt; 4p</td></tr>
+    <tr><td>4p</td><td>4</td><td>1</td><td>5</td><td>&uarr;</td></tr>
+  </tbody>
+</table>
+<p><strong>Filling order:</strong> 1s &lt; 2s &lt; 2p &lt; 3s &lt; 3p &lt; 4s &lt; 3d &lt; 4p &lt; 5s &lt; 4d &lt; 5p ...</p>
+
+<hr/>
+
+<h2>14. Hund's Rule and Electronic Configurations</h2>
+<p>The Aufbau principle tells us which subshell to fill next, but within a subshell containing multiple degenerate orbitals, we need Hund's rule.</p>
+
+<div class="note-box">
+  <strong>Hund's Rule of Maximum Multiplicity:</strong> When electrons are distributed among orbitals of equal energy (degenerate orbitals), each orbital is occupied by one electron first before any orbital gets a second electron. All singly occupied orbitals have electrons with parallel spins.
+</div>
+<p>This maximizes the number of unpaired electrons (called <strong>multiplicity</strong>), which minimizes electron-electron repulsion and increases atomic stability.</p>
+
+<h3>Electronic Configuration — Notation</h3>
+<p>Electronic configuration lists each occupied subshell with the number of electrons as a superscript. <strong>Noble gas notation</strong> (condensed form) replaces the inner-shell electrons with the symbol of the preceding noble gas in square brackets.</p>
+
+<table>
+  <thead><tr><th>Element (Z)</th><th>Full Configuration</th><th>Noble Gas Notation</th></tr></thead>
+  <tbody>
+    <tr><td>H (1)</td><td>1s<sup>1</sup></td><td>1s<sup>1</sup></td></tr>
+    <tr><td>He (2)</td><td>1s<sup>2</sup></td><td>1s<sup>2</sup></td></tr>
+    <tr><td>Li (3)</td><td>1s<sup>2</sup> 2s<sup>1</sup></td><td>[He] 2s<sup>1</sup></td></tr>
+    <tr><td>C (6)</td><td>1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>2</sup></td><td>[He] 2s<sup>2</sup> 2p<sup>2</sup></td></tr>
+    <tr><td>N (7)</td><td>1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>3</sup></td><td>[He] 2s<sup>2</sup> 2p<sup>3</sup></td></tr>
+    <tr><td>O (8)</td><td>1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>4</sup></td><td>[He] 2s<sup>2</sup> 2p<sup>4</sup></td></tr>
+    <tr><td>Ne (10)</td><td>1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup></td><td>[He] 2s<sup>2</sup> 2p<sup>6</sup></td></tr>
+    <tr><td>Na (11)</td><td>1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>1</sup></td><td>[Ne] 3s<sup>1</sup></td></tr>
+    <tr><td>Fe (26)</td><td>1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>6</sup> 4s<sup>2</sup> 3d<sup>6</sup></td><td>[Ar] 4s<sup>2</sup> 3d<sup>6</sup></td></tr>
+  </tbody>
+</table>
+
+<h3>Anomalous Configurations: Chromium and Copper</h3>
+<p>Two d-block elements do not follow the expected Aufbau filling. The reason is that <strong>half-filled and fully-filled d subshells have extra stability</strong> due to their higher symmetry and lower inter-electron repulsion.</p>
+
+<table>
+  <thead><tr><th>Element</th><th>Expected (Aufbau)</th><th>Actual</th><th>Reason</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Chromium (Cr, Z=24)</strong></td>
+      <td>[Ar] 4s<sup>2</sup> 3d<sup>4</sup></td>
+      <td>[Ar] 4s<sup>1</sup> 3d<sup>5</sup></td>
+      <td>Half-filled 3d<sup>5</sup> (5 unpaired electrons) is extra stable. One 4s electron is promoted to 3d.</td>
+    </tr>
+    <tr>
+      <td><strong>Copper (Cu, Z=29)</strong></td>
+      <td>[Ar] 4s<sup>2</sup> 3d<sup>9</sup></td>
+      <td>[Ar] 4s<sup>1</sup> 3d<sup>10</sup></td>
+      <td>Fully-filled 3d<sup>10</sup> is extra stable. One 4s electron is promoted to 3d.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Electronic Configuration of Ions</h3>
+<p>When an atom forms a cation (loses electrons), electrons are always removed from the <strong>highest energy subshell first</strong>. Crucially, for transition metals, 4s electrons are removed before 3d electrons (even though 4s fills before 3d), because 4s electrons have lower ionization energy once the atom is charged.</p>
+<table>
+  <thead><tr><th>Species</th><th>Configuration</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td>Na (11)</td><td>[Ne] 3s<sup>1</sup></td><td>Neutral atom</td></tr>
+    <tr><td>Na<sup>+</sup></td><td>[Ne] = 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup></td><td>3s<sup>1</sup> electron removed</td></tr>
+    <tr><td>Cl (17)</td><td>[Ne] 3s<sup>2</sup> 3p<sup>5</sup></td><td>Neutral atom</td></tr>
+    <tr><td>Cl<sup>&minus;</sup></td><td>[Ne] 3s<sup>2</sup> 3p<sup>6</sup> = [Ar]</td><td>One electron added to 3p</td></tr>
+    <tr><td>Cu (29)</td><td>[Ar] 4s<sup>1</sup> 3d<sup>10</sup></td><td>Anomalous neutral</td></tr>
+    <tr><td>Cu<sup>+</sup></td><td>[Ar] 3d<sup>10</sup></td><td>4s<sup>1</sup> removed first</td></tr>
+    <tr><td>Cu<sup>2+</sup></td><td>[Ar] 3d<sup>9</sup></td><td>4s removed, then one 3d</td></tr>
+    <tr><td>Cr (24)</td><td>[Ar] 4s<sup>1</sup> 3d<sup>5</sup></td><td>Anomalous neutral</td></tr>
+    <tr><td>Cr<sup>3+</sup></td><td>[Ar] 3d<sup>3</sup></td><td>4s<sup>1</sup> + two 3d removed</td></tr>
+  </tbody>
+</table>
+
+<hr/>
+
+<div class="note-box">
+  <strong>NEB Exam Focus — Unit 3 Atomic Structure</strong>
+  <p>Based on the Unit 3 exercise set, these are the highest-priority topics:</p>
+  <ul>
+    <li><strong>Rutherford's experiment:</strong> Classic short-answer — name, observations (3 points), and conclusions (3 points). Common question: "Why does Rutherford's model fail to explain atomic stability?" Answer must mention classical EM radiation from an accelerating charge, energy loss, and orbital collapse.</li>
+    <li><strong>Bohr's model:</strong> Write the 4 postulates clearly. Distinguish "orbit" from "orbital." Explain how quantized orbits resolve the stability problem. Frequently asked: compare Rutherford and Bohr (similarities and differences).</li>
+    <li><strong>Hydrogen spectra:</strong> Name all 5 series with their terminating shell (n<sub>1</sub>) and the electromagnetic region (Lyman/UV, Balmer/Visible, Paschen+/IR). Rydberg equation calculation — expect at least one wavelength numerical.</li>
+    <li><strong>de Broglie equation:</strong> State the dual nature hypothesis, write λ = h/mv, explain why macroscopic objects don't show wave behavior. Numerical — calculate wavelength given mass and velocity. MCQ: among equal-velocity particles, the lightest one (smallest m) has the longest λ.</li>
+    <li><strong>Heisenberg's Uncertainty Principle:</strong> State it, write the mathematical form, explain the physical reasoning (observation disturbs the system). Common reason question: "Why is Bohr's model against the uncertainty principle?"</li>
+    <li><strong>Four quantum numbers:</strong> Define each, state allowed values, describe what each represents. High-frequency MCQ: identify the orbital from a given set (n=3, l=2 → 3d). Find total orbitals for a given n. Write all four quantum numbers for a specific electron.</li>
+    <li><strong>Orbital shapes:</strong> Differentiate s (spherical) and p (dumbbell) shape and orientation. Explain degeneracy of p<sub>x</sub>, p<sub>y</sub>, p<sub>z</sub>. Draw shapes when asked (3 mutually perpendicular p-orbitals).</li>
+    <li><strong>Electronic configuration:</strong> The highest-mark long-answer topic. Write full and noble-gas configurations. State and apply Aufbau, Hund's rule, and Pauli's exclusion. Write the Cr and Cu anomalous configurations and justify them (half-filled / fully-filled stability). Find unpaired electrons (critical for MCQs on diamagnetic/paramagnetic nature and multiplicity). Write ion configurations — remember: 4s electrons are removed before 3d for transition metal cations.</li>
+    <li><strong>Pauli's Exclusion Principle:</strong> State it, apply it — example: write all four quantum numbers for each electron in He. Know that it limits orbital occupancy to 2 electrons with opposite spins.</li>
+  </ul>
+</div>`,
+  },
+
+
         {
           id: "chem12-ionic",
           class: "12",
