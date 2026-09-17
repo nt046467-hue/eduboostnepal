@@ -1999,6 +1999,28 @@
       return url && !isGoogleDriveUrl(url) && (url.startsWith('http://') || url.startsWith('https://'));
     }
 
+    function getNoteReadTime(note) {
+      if (!note) return "5 min read";
+      if (note.readTime) {
+        return String(note.readTime).toLowerCase().includes("min")
+          ? String(note.readTime)
+          : `${note.readTime} min read`;
+      }
+      const isExternal = Boolean(note.externalUrl || note.driveUrl);
+      if (isExternal) {
+        if (note.id === "top50-neb-class12") return "25 min read";
+        if (note.subject === "Biology") return "15 min read";
+        if ((note.externalUrl || note.driveUrl || "").includes("drive.google.com")) return "15 min read";
+        return "14 min read";
+      }
+      const content = note.content || note.summary || "";
+      const cleanText = content.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+      const wordCount = cleanText ? cleanText.split(" ").filter(Boolean).length : 0;
+      if (wordCount < 100) return "2 min read";
+      const minutes = Math.max(1, Math.round(wordCount / 180));
+      return `${minutes} min read`;
+    }
+
     // ─── DISPLAY NOTE ───
     function displayNote(note) {
       // Update page title
@@ -2020,6 +2042,7 @@
                   ${note.subject ? `<span class="meta-pill"><span class="dot"></span>${note.subject}</span>` : ''}
                   ${note.chapter ? `<span class="meta-pill"><span class="dot"></span>${note.chapter}</span>` : ''}
                   ${note.class ? `<span class="meta-pill"><span class="dot"></span>Class ${note.class}</span>` : ''}
+                  <span class="meta-pill"><span class="dot"></span>⏱ ${getNoteReadTime(note)}</span>
                 </div>
                 <!-- Title -->
                 <h1 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-3" style="color:var(--text-heading); font-family:'DM Serif Display',serif;">

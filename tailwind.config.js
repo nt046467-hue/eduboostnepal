@@ -32,4 +32,13 @@ module.exports = {
     },
   },
   plugins: [],
+  // ── Safelist: dynamic classes that Tailwind's JIT scanner can't detect ──
+  // showToast() in js/utils.js builds the bg class at runtime from a lookup
+  // object, so the literal strings never appear in source — safelist them here.
+  safelist: [
+    "bg-green-500",  // showToast type="success"
+    "bg-red-500",    // showToast type="error"
+    "bg-blue-500",   // showToast type="info"
+    "bg-yellow-500", // showToast type="warning"
+  ],
 };

@@ -1336,6 +1336,7 @@ window.staticNotes = [
           chapter: "Ionic Equilibrium",
           title: "Ionic Equilibrium — Chapter 2",
           icon: "🧪",
+          readTime: "15 min read",
           summary:
             "NEB Class 12 Ionic Equilibrium PDF for acids, bases, pH, buffers, and solubility product.",
           tags: ["Ionic Equilibrium", "Chemistry", "Class 12", "Equilibrium"],
@@ -1354,6 +1355,7 @@ window.staticNotes = [
           chapter: "Volumetric Analysis",
           title: "Volumetric Analysis — NEB Class 12",
           icon: "📘",
+          readTime: "15 min read",
           summary:
             "Volumetric Analysis NEB Class 12 PDF for titration concepts, formulas, and solved examples.",
           tags: ["Volumetric Analysis", "Chemistry", "Class 12", "Titration"],
@@ -1372,6 +1374,7 @@ window.staticNotes = [
           chapter: "Chemical Kinetics",
           title: "Chemical Kinetics — NEB Class 12",
           icon: "🔥",
+          readTime: "15 min read",
           summary:
             "NEB Class 12 Chemical Kinetics PDF covering reaction rates, order, molecularity, and integrated rate laws.",
           tags: ["Chemical Kinetics", "Chemistry", "Class 12", "Kinetics"],
@@ -1390,6 +1393,7 @@ window.staticNotes = [
           chapter: "Electrochemistry",
           title: "Electrochemistry — NEB Class 12",
           icon: "⚡",
+          readTime: "15 min read",
           summary:
             "NEB Class 12 Electrochemistry PDF covering redox reactions, galvanic cells, electrolysis, and the Nernst equation.",
           tags: ["Electrochemistry", "Chemistry", "Class 12", "Redox"],
@@ -1408,6 +1412,7 @@ window.staticNotes = [
           chapter: "Thermodynamics",
           title: "Thermodynamics — NEB Class 12",
           icon: "♨️",
+          readTime: "15 min read",
           summary:
             "NEB Class 12 Thermodynamics PDF covering heat, work, internal energy, enthalpy, entropy, and Gibbs free energy.",
           tags: ["Thermodynamics", "Chemistry", "Class 12", "Energy"],
@@ -1426,6 +1431,7 @@ window.staticNotes = [
           chapter: "Plant Anatomy",
           title: "Plant Anatomy — Diagrams & Notes",
           icon: "🌿",
+          readTime: "15 min read",
           summary:
             "Comprehensive plant anatomy diagrams and notes for NEB Class 11 Biology. Includes tissue systems, meristems, and anatomical structures with detailed illustrations.",
           tags: ["Plant Anatomy", "Biology", "Class 11", "Diagrams", "Tissues"],
@@ -1444,6 +1450,7 @@ window.staticNotes = [
           chapter: "Rotational Dynamics",
           title: "Rotational Dynamics — NEB Class 12",
           icon: "🌀",
+          readTime: "18 min read",
           summary:
             "NEB Class 12 Physics Chapter 1 Rotational Dynamics PDF with formulas, examples, and practice problems.",
           tags: ["Rotational Dynamics", "Physics", "Class 12", "Chapter 1"],
@@ -1462,6 +1469,7 @@ window.staticNotes = [
           chapter: "Periodic Motion",
           title: "Periodic Motion — Class 12 Physics",
           icon: "🔄",
+          readTime: "15 min read",
           summary:
             "Class 12 Physics Periodic Motion notes covering SHM, oscillations, and motion equations.",
           tags: ["Periodic Motion", "Physics", "Class 12", "Oscillations"],
@@ -1480,6 +1488,7 @@ window.staticNotes = [
           chapter: "Fluid Statics",
           title: "Fluid Statics — Class 12 Physics",
           icon: "💧",
+          readTime: "14 min read",
           summary:
             "Class 12 Physics Fluid Statics notes covering pressure, buoyancy, and fluid equilibrium.",
           tags: ["Fluid Statics", "Physics", "Class 12", "Fluids"],
@@ -1497,6 +1506,7 @@ window.staticNotes = [
           chapter: "1st Law of Thermodynamics",
           title: "1st Law of Thermodynamics — Class 12 Physics",
           icon: "🔥",
+          readTime: "15 min read",
           summary:
             "Class 12 Physics notes for the 1st Law of Thermodynamics with energy, heat, work, and internal energy concepts.",
           tags: ["Thermodynamics", "Physics", "Class 12", "1st Law"],
@@ -1515,6 +1525,7 @@ window.staticNotes = [
           chapter: "2nd Law of Thermodynamics",
           title: "2nd Law of Thermodynamics — Class 12 Physics",
           icon: "❄️",
+          readTime: "15 min read",
           summary:
             "Class 12 Physics notes for the 2nd Law of Thermodynamics covering entropy, irreversibility, and heat engines.",
           tags: ["Thermodynamics", "Physics", "Class 12", "2nd Law"],
@@ -1533,6 +1544,7 @@ window.staticNotes = [
           chapter: "Current Electricity",
           title: "Current Electricity — NEB Class 12",
           icon: "⚡",
+          readTime: "16 min read",
           summary:
             "Class 12 Physics Chapter 9 Current Electricity notes with theory, derivations, numericals, and exam preparation guidance.",
           tags: ["Current Electricity", "Physics", "Class 12", "Chapter 9"],
@@ -1550,6 +1562,7 @@ window.staticNotes = [
           chapter: "Mechanical Wave",
           title: "Mechanical Wave — Class 12 Physics",
           icon: "🌊",
+          readTime: "14 min read",
           summary:
             "Class 12 Physics Mechanical Wave notes with wave motion, speed, and energy transfer concepts.",
           tags: ["Mechanical Wave", "Physics", "Class 12", "Waves"],
@@ -1567,6 +1580,7 @@ window.staticNotes = [
           chapter: "Wave Motion",
           title: "Wave Motion — Class 12 Physics",
           icon: "🌊",
+          readTime: "14 min read",
           summary:
             "Class 12 Physics Wave Motion notes covering transverse and longitudinal waves, wave speed, and periodic motion.",
           tags: ["Wave Motion", "Physics", "Class 12", "Waves"],
@@ -1584,6 +1598,7 @@ window.staticNotes = [
           chapter: "Waves in Pipes and Strings",
           title: "Waves in Pipes and Strings — Class 12 Physics",
           icon: "🎻",
+          readTime: "15 min read",
           summary:
             "Class 12 Physics notes on waves in pipes and strings, resonance, harmonics, and standing waves.",
           tags: ["Waves", "Pipes", "Strings", "Physics", "Class 12"],
@@ -1602,6 +1617,7 @@ window.staticNotes = [
           chapter: "Acoustic Phenomena",
           title: "Acoustic Phenomena — Class 12 Physics",
           icon: "🔊",
+          readTime: "12 min read",
           summary:
             "Class 12 Physics Acoustic Phenomena notes covering sound waves, resonance, and acoustics in media.",
           tags: ["Acoustics", "Physics", "Class 12", "Sound"],
@@ -1619,6 +1635,7 @@ window.staticNotes = [
           chapter: "Nature and Propagation of Light",
           title: "Nature and Propagation of Light — Class 12 Physics",
           icon: "💡",
+          readTime: "16 min read",
           summary:
             "Class 12 Physics notes for Nature and Propagation of Light with ray optics, reflection, refraction, and lens formulas.",
           tags: ["Optics", "Physics", "Class 12", "Light"],
@@ -1637,6 +1654,7 @@ window.staticNotes = [
           chapter: "Top 50 Questions",
           title: "Top 50 Most Important Questions for NEB Class 12",
           icon: "📌",
+          readTime: "25 min read",
           summary:
             "A curated list of the Top 50 NEB Class 12 questions every student should master, with quick access to the full guide.",
           tags: ["NEB", "Class 12", "Top 50", "Exam Strategy"],
@@ -1654,6 +1672,7 @@ window.staticNotes = [
           chapter: "Database Systems",
           title: "DBMS — Class 12 Computer Science",
           icon: "💾",
+          readTime: "15 min read",
           summary:
             "NEB Class 12 Computer Science DBMS PDF covering database concepts, ER diagrams, SQL, and normalization.",
           tags: ["DBMS", "Computer Science", "Class 12", "Database"],
@@ -1672,6 +1691,7 @@ window.staticNotes = [
           chapter: "Data Communication and Networking",
           title: "Data Communication and Networking — Class 12",
           icon: "📡",
+          readTime: "15 min read",
           summary:
             "Class 12 DCN notes for data communication, networking models, protocols, and network devices.",
           tags: [
@@ -1695,6 +1715,7 @@ window.staticNotes = [
           chapter: "Web Technology II",
           title: "Web Technology II Notes — Class 12",
           icon: "🌐",
+          readTime: "14 min read",
           summary:
             "Class 12 Web Technology II notes with chapters, examples, and practice material hosted on Netlify.",
           tags: ["Web Technology II", "Computer Science", "Class 12", "Web"],
@@ -1712,6 +1733,7 @@ window.staticNotes = [
           chapter: "C Programming",
           title: "C Programming — Class 12",
           icon: "💻",
+          readTime: "2 min read",
           summary:
             "Class 12 C Programming notes for Chapter 4C with syntax, examples, and important concepts.",
           tags: ["C Programming", "Computer Science", "Class 12", "Chapter 4C"],
@@ -1728,6 +1750,7 @@ window.staticNotes = [
           chapter: "Object-Oriented Programming",
           title: "Object-Oriented Programming — Class 12",
           icon: "🧠",
+          readTime: "14 min read",
           summary:
             "Class 12 OOP notes for chapter 5 with classes, objects, inheritance, and polymorphism.",
           tags: [

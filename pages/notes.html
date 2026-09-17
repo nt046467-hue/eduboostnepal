@@ -65,11 +65,33 @@
       }
       .filter-btn {
         transition: all 0.2s;
+        outline: none;
+        scroll-snap-align: start;
+      }
+      .filter-btn:focus:not(:focus-visible) {
+        outline: none !important;
+        box-shadow: none;
+      }
+      .filter-btn:focus-visible {
+        outline: 2px solid var(--eb-crimson, #B91C2C);
+        outline-offset: 2px;
       }
       .filter-btn.active {
         background-color: var(--eb-crimson);
         color: white !important;
         border-color: var(--eb-crimson);
+      }
+      /* Prevent focus rings from being clipped by overflow scroll */
+      #subjectFilters {
+        scroll-padding-inline: 0.5rem;
+        padding: 0.35rem 0.5rem;
+        margin: 0;
+        overflow-x: auto;
+        overflow-y: visible;
+        scrollbar-width: none;
+      }
+      #subjectFilters::-webkit-scrollbar {
+        display: none;
       }
     </style>
     <!-- Google AdSense Auto Ads -->
@@ -194,6 +216,19 @@
               Class 12
             </button>
           </div>
+
+          <!-- Bookmarked Notes Toggle (only shown when logged in) -->
+          <div id="bookmarkFilterWrap" style="display:none">
+            <button
+              id="bookmarkFilterBtn"
+              onclick="toggleBookmarkFilter()"
+              class="filter-btn text-xs font-semibold px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-transparent text-slate-700 dark:text-slate-300 flex items-center gap-1.5"
+              title="Show only your bookmarked notes"
+            >
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              My Bookmarks
+            </button>
+          </div>
         </div>
       </div>
 
@@ -201,9 +236,8 @@
       <div class="mb-6">
         <div class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-3">Filter by Subject</div>
         <div
-          class="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1"
           id="subjectFilters"
-          style="scrollbar-width: none"
+          class="flex gap-2"
         >
           <button
             onclick="setSubjectFilter('all', this)"
@@ -314,6 +348,7 @@
         const mobLogin = document.getElementById("mob-login-link");
         const mobSignup = document.getElementById("mob-signup-link");
         const mobDashboard = document.getElementById("mob-dashboard-link");
+        const bookmarkWrap = document.getElementById("bookmarkFilterWrap");
 
         if (currentUser) {
           if (navLogin) navLogin.style.display = "none";
@@ -322,6 +357,7 @@
           if (mobLogin) mobLogin.style.display = "none";
           if (mobSignup) mobSignup.style.display = "none";
           if (mobDashboard) mobDashboard.style.display = "block";
+          if (bookmarkWrap) bookmarkWrap.style.display = "block";
         } else {
           if (navLogin) navLogin.style.display = "inline-block";
           if (navSignup) navSignup.style.display = "inline-block";
@@ -329,6 +365,9 @@
           if (mobLogin) mobLogin.style.display = "block";
           if (mobSignup) mobSignup.style.display = "block";
           if (mobDashboard) mobDashboard.style.display = "none";
+          if (bookmarkWrap) bookmarkWrap.style.display = "none";
+          // Reset bookmark filter when logged out
+          showBookmarkedOnly = false;
         }
       }
 
@@ -372,6 +411,7 @@
       let allNotes = [];
       let activeClassFilter = "all";
       let activeSubjectFilter = "all";
+      let showBookmarkedOnly = false;
 
       // ── RENDER ────────────────────────────────────────────────────────────
       const subjectIconMap = {
@@ -383,6 +423,31 @@
       };
       function getSubjectIcon(subject) {
         return subjectIconMap[subject] || "book-text";
+      }
+
+      function getNoteReadTime(note) {
+        if (window.getNoteReadTime && window.getNoteReadTime !== getNoteReadTime) {
+          return window.getNoteReadTime(note);
+        }
+        if (!note) return "5 min read";
+        if (note.readTime) {
+          return String(note.readTime).toLowerCase().includes("min")
+            ? String(note.readTime)
+            : `${note.readTime} min read`;
+        }
+        const isExternal = Boolean(note.externalUrl || note.driveUrl);
+        if (isExternal) {
+          if (note.id === "top50-neb-class12") return "25 min read";
+          if (note.subject === "Biology") return "15 min read";
+          if ((note.externalUrl || note.driveUrl || "").includes("drive.google.com")) return "15 min read";
+          return "14 min read";
+        }
+        const content = note.content || note.summary || "";
+        const cleanText = content.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+        const wordCount = cleanText ? cleanText.split(" ").filter(Boolean).length : 0;
+        if (wordCount < 100) return "2 min read";
+        const minutes = Math.max(1, Math.round(wordCount / 180));
+        return `${minutes} min read`;
       }
 
       function renderNotes(notes) {
@@ -419,7 +484,7 @@
               </div>
               <div class="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-red-700 dark:text-red-500 font-bold uppercase tracking-wider">
                 <span>Read Notes →</span>
-                <span class="text-[10px] text-slate-400 font-normal normal-case">5 min read</span>
+                <span class="text-[10px] text-slate-400 font-normal normal-case flex items-center gap-1">⏱ ${getNoteReadTime(note)}</span>
               </div>
             </div>
             `;
@@ -476,9 +541,20 @@
             note.subject.toLowerCase().includes(search) ||
             note.chapter.toLowerCase().includes(search) ||
             (note.tags || []).some((t) => t.toLowerCase().includes(search));
-          return matchClass && matchSubject && matchSearch;
+          const matchBookmark =
+            !showBookmarkedOnly || bookmarkedIds.includes(note.id);
+          return matchClass && matchSubject && matchSearch && matchBookmark;
         });
         renderNotes(filtered);
+      }
+
+      function toggleBookmarkFilter() {
+        showBookmarkedOnly = !showBookmarkedOnly;
+        const btn = document.getElementById("bookmarkFilterBtn");
+        if (btn) {
+          btn.classList.toggle("active", showBookmarkedOnly);
+        }
+        applyFilters();
       }
 
       // ── MODAL & ACTIONS ───────────────────────────────────────────────────

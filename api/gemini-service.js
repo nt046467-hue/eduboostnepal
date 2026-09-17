@@ -896,7 +896,8 @@ exports.handler = async function (event, context) {
       msg.includes("quota") ||
       msg.includes("not found") ||
       msg.includes("not supported") ||
-      msg.includes("deprecated")
+      msg.includes("deprecated") ||
+      msg.includes("no longer available")
     );
   }
 
@@ -969,19 +970,19 @@ exports.handler = async function (event, context) {
 
   // ─────────────────────────────────────────────────────────────────
   // GROQ CALLER — last-resort fallback
-  // Current valid free-tier models (April 2025):
-  //   1. llama-3.3-70b-versatile        — best quality, 500k tokens/day
-  //   2. llama-3.1-8b-instant           — fastest, highest quota
-  //   3. meta-llama/llama-4-scout-17b-16e-instruct — preview, solid
-  //   4. qwen/qwen-3-32b                — preview, strong reasoning
+  // Current valid free-tier models:
+  //   1. openai/gpt-oss-120b            — flagship open model, top quality
+  //   2. openai/gpt-oss-20b             — fast, balanced
+  //   3. qwen/qwen3.8-27b               — ultra-fast reasoning
+  //   4. groq/compound                  — compound system
   // Groq free tier max_tokens cap: 6000 per request to stay safe
   // ─────────────────────────────────────────────────────────────────
   async function tryGroq(groqApiKey) {
     const GROQ_MODELS = [
-      "llama-3.3-70b-versatile", // Production — best quality
-      "llama-3.1-8b-instant", // Production — highest quota
-      "meta-llama/llama-4-scout-17b-16e-instruct", // Preview — strong & fast
-      "qwen/qwen-3-32b", // Preview — great reasoning
+      "openai/gpt-oss-120b",
+      "openai/gpt-oss-20b",
+      "qwen/qwen3.8-27b",
+      "groq/compound",
     ];
 
     // Groq free tier: cap at 6000 to avoid request-level token errors
@@ -1051,9 +1052,10 @@ exports.handler = async function (event, context) {
 
   // Best free-tier Gemini models ordered by quality
   const GEMINI_MODELS = [
-    "gemini-2.0-flash", // Most stable — try first
-    "gemini-2.0-flash-lite", // Fast fallback
-    "gemini-2.5-flash-preview-04-17", // Preview — last resort (unstable)
+    "gemini-3.6-flash", // Latest stable high quality — try first
+    "gemini-3.5-flash", // Robust fallback
+    "gemini-3.5-flash-lite", // Fast lightweight fallback
+    "gemini-2.5-flash", // Stable previous generation
   ];
 
   let lastError = "Unknown error";

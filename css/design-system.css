@@ -1133,3 +1133,27 @@ html.light .fn-inp {
   .socials { gap: 0.4rem; }
 }
 
+/* ── Global Focus & Scroll Clipping Fix ── */
+/* Prevents clipped browser focus rings on mouse/pointer clicks across the site */
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible),
+[role="button"]:focus:not(:focus-visible),
+.filter-btn:focus:not(:focus-visible),
+.tab-btn:focus:not(:focus-visible),
+.fpill:focus:not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none;
+}
+
+/* Accessible focus ring for keyboard navigation */
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible,
+.filter-btn:focus-visible,
+.tab-btn:focus-visible,
+.fpill:focus-visible {
+  outline: 2px solid var(--eb-crimson, #B91C2C) !important;
+  outline-offset: 2px;
+}
+
+

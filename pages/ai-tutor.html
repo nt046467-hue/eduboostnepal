@@ -1019,17 +1019,20 @@
     }
 
     .m-ul li {
-      padding: 0.15rem 0 0.15rem 0;
+      position: relative;
+      padding: 0.15rem 0 0.15rem 1.25rem;
       line-height: 1.6;
-      display: flex;
-      gap: 0.4rem;
+      word-break: break-word;
     }
 
     .m-ul li::before {
       content: "→";
+      position: absolute;
+      left: 0;
+      top: 0.15rem;
       color: var(--accent);
       font-weight: 700;
-      flex-shrink: 0;
+      line-height: 1.6;
     }
 
     .msg.user .m-ul li::before {
@@ -2008,50 +2011,334 @@
     html,
     body {
       overflow-x: hidden;
-      max-width: 100%;
-    }
-
-    img,
-    video,
-    iframe,
-    embed,
-    object {
-      max-width: 100%;
-      height: auto;
-    }
-
-    table {
+      max-width: 100vw;
       width: 100%;
-      overflow-x: auto;
-      display: block;
     }
 
-    pre,
-    code {
-      overflow-x: auto;
-      white-space: pre-wrap;
-      word-break: break-word;
+    #page-body,
+    .main-sec,
+    .main-wrap,
+    .chat-grid,
+    .chat-box {
+      max-width: 100%;
+      box-sizing: border-box;
+      min-width: 0;
     }
 
-    @media (max-width: 640px) {
-      h1 {
-        font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+    /* ── Mobile Layout (< 640px) ── */
+    @media (max-width: 639px) {
+      .main-sec {
+        padding: 0.5rem 0.5rem 1rem !important;
+        overflow-x: hidden;
       }
 
-      h2 {
-        font-size: clamp(1.1rem, 4vw, 1.8rem) !important;
+      .main-wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
       }
 
-      .text-4xl {
-        font-size: clamp(1.5rem, 6vw, 2.25rem) !important;
+      /* 3-Mode Tabs Bar */
+      .mode-tabs-bar {
+        display: flex !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scrollbar-width: none !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding: 0.25rem !important;
+        gap: 0.35rem !important;
+        margin-bottom: 0.65rem !important;
+        border-radius: var(--radius-sm) !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .mode-tabs-bar::-webkit-scrollbar {
+        display: none !important;
+      }
+      .mode-tab-btn {
+        flex: 0 0 auto !important;
+        padding: 0.45rem 0.65rem !important;
+        font-size: 0.78rem !important;
+        min-height: 38px !important;
+        gap: 0.3rem !important;
+        white-space: nowrap !important;
+        border-radius: var(--radius-xs) !important;
+      }
+      .tab-badge {
+        font-size: 0.58rem !important;
+        padding: 0.1rem 0.35rem !important;
       }
 
-      .text-5xl {
-        font-size: clamp(1.8rem, 7vw, 3rem) !important;
+      /* Subject Bar (horizontal filter) */
+      .subj-bar {
+        padding: 0.1rem 0 0.35rem !important;
+        gap: 0.3rem !important;
+        margin-bottom: 0.65rem !important;
+      }
+      .subj-pill {
+        padding: 0.3rem 0.65rem !important;
+        font-size: 0.72rem !important;
+        min-height: 32px !important;
       }
 
-      .text-6xl {
-        font-size: clamp(2rem, 8vw, 3.75rem) !important;
+      /* Chat Header */
+      .chat-hdr {
+        padding: 0.6rem 0.75rem !important;
+        gap: 0.45rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        min-width: 0 !important;
+      }
+      .hdr-left {
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.45rem !important;
+        overflow: hidden !important;
+      }
+      .hdr-left > div:last-child {
+        min-width: 0 !important;
+        flex: 1 !important;
+        overflow: hidden !important;
+      }
+      .hdr-name {
+        font-size: 0.82rem !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-width: 100% !important;
+      }
+      .hdr-status {
+        font-size: 0.64rem !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-width: 100% !important;
+      }
+      .hdr-actions {
+        flex-shrink: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.3rem !important;
+      }
+      .hdr-btn {
+        padding: 0.28rem 0.5rem !important;
+        font-size: 0.68rem !important;
+        min-height: 30px !important;
+        white-space: nowrap !important;
+        border-radius: var(--radius-xs) !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 0.2rem !important;
+      }
+
+      /* Mode Config Bar (Marks, Types, Grade) */
+      .mode-config-bar {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 0.4rem 0.5rem !important;
+        padding: 0.45rem 0.65rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .cfg-section {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.3rem !important;
+        flex-wrap: wrap !important;
+        min-width: 0 !important;
+      }
+      .config-label {
+        font-size: 0.68rem !important;
+        letter-spacing: 0.04em !important;
+      }
+      .config-pill-group {
+        display: flex !important;
+        gap: 0.25rem !important;
+        flex-wrap: wrap !important;
+      }
+      .cfg-pill {
+        padding: 0.22rem 0.5rem !important;
+        font-size: 0.72rem !important;
+        min-height: 28px !important;
+        border-radius: 6px !important;
+      }
+      .cfg-section-right {
+        margin-left: 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        border-top: 1px dashed var(--border) !important;
+        padding-top: 0.35rem !important;
+        margin-top: 0.15rem !important;
+      }
+      .cfg-input {
+        min-width: 85px !important;
+        max-width: 130px !important;
+        padding: 0.25rem 1.6rem 0.25rem 0.55rem !important;
+        font-size: 0.74rem !important;
+        min-height: 28px !important;
+      }
+
+      /* Messages Area */
+      .chat-msgs {
+        height: calc(100dvh - 340px) !important;
+        min-height: 250px !important;
+        max-height: calc(100dvh - 290px) !important;
+        padding: 0.7rem 0.6rem !important;
+        gap: 0.75rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .msg {
+        max-width: 100% !important;
+        gap: 0.45rem !important;
+      }
+      .msg-av {
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 0.72rem !important;
+        margin-top: 2px !important;
+        flex-shrink: 0 !important;
+      }
+      .msg-bbl {
+        font-size: 0.83rem !important;
+        padding: 0.6rem 0.75rem !important;
+        line-height: 1.62 !important;
+        min-width: 0 !important;
+        max-width: calc(100% - 32px) !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        box-sizing: border-box !important;
+      }
+      .m-h {
+        font-size: 0.82rem !important;
+        margin: 0.45rem 0 0.2rem !important;
+      }
+      .m-ul {
+        margin: 0.2rem 0 !important;
+      }
+      .m-ul li {
+        display: block !important;
+        position: relative !important;
+        padding: 0.12rem 0 0.12rem 1.15rem !important;
+        line-height: 1.55 !important;
+        word-break: break-word !important;
+      }
+      .m-ul li::before {
+        content: "→" !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0.12rem !important;
+        color: var(--accent) !important;
+        font-weight: 700 !important;
+      }
+      .m-ol {
+        padding-left: 1.2rem !important;
+      }
+      .m-table-wrap {
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        margin: 0.45rem 0 !important;
+        border-radius: var(--radius-xs) !important;
+      }
+      .m-table {
+        min-width: 220px !important;
+        font-size: 0.72rem !important;
+      }
+      .m-table th, .m-table td {
+        padding: 0.35rem 0.45rem !important;
+        word-break: break-word !important;
+      }
+      .m-pre {
+        font-size: 0.68rem !important;
+        padding: 0.55rem 0.65rem !important;
+        max-width: 100% !important;
+        white-space: pre !important;
+        overflow-x: auto !important;
+      }
+
+      /* Input Area */
+      .chat-inp-area {
+        padding: 0.55rem 0.65rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .inp-row {
+        display: flex !important;
+        gap: 0.35rem !important;
+        align-items: flex-end !important;
+        width: 100% !important;
+      }
+      .chat-textarea {
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+        padding: 0.55rem 0.75rem !important;
+        font-size: 16px !important;
+        min-height: 42px !important;
+        border-radius: var(--radius-xs) !important;
+      }
+      .send-btn {
+        width: 42px !important;
+        height: 42px !important;
+        border-radius: var(--radius-xs) !important;
+        flex-shrink: 0 !important;
+      }
+      .quick-wrap {
+        grid-template-columns: 1fr !important;
+        gap: 0.35rem !important;
+        margin-bottom: 0.45rem !important;
+      }
+      .qp {
+        padding: 0.45rem 0.65rem !important;
+        min-height: 36px !important;
+        font-size: 0.74rem !important;
+      }
+    }
+
+    /* ── Extra Narrow Screens (< 380px) ── */
+    @media (max-width: 380px) {
+      .main-sec {
+        padding: 0.35rem 0.35rem 0.85rem !important;
+      }
+      .chat-hdr {
+        padding: 0.5rem 0.55rem !important;
+        gap: 0.35rem !important;
+      }
+      .hdr-name {
+        font-size: 0.76rem !important;
+        max-width: 115px !important;
+      }
+      .hdr-status {
+        font-size: 0.6rem !important;
+        max-width: 115px !important;
+      }
+      .hdr-btn {
+        padding: 0.25rem 0.45rem !important;
+        font-size: 0.64rem !important;
+        min-height: 26px !important;
+        gap: 0.15rem !important;
+      }
+      .cfg-pill {
+        padding: 0.2rem 0.42rem !important;
+        font-size: 0.68rem !important;
+      }
+      .msg-bbl {
+        padding: 0.55rem 0.65rem !important;
+        font-size: 0.8rem !important;
+        max-width: calc(100% - 28px) !important;
+      }
+      .send-btn {
+        width: 38px !important;
+        height: 38px !important;
       }
     }
   </style>
@@ -2144,8 +2431,7 @@
           Your Personal <span class="gt">AI Tutor</span>
         </h1>
         <p class="hero-sub">
-          Ask anything about NEB Class 11 &amp; 12 — concepts, numericals,
-          derivations, exam tips. Built for Nepal students. 🇳🇵
+          Concepts, numericals &amp; derivations for NEB Class 11 &amp; 12. 🇳🇵
         </p>
         <div class="hero-tags">
           <span class="htag o">💬 Live Chat</span>
@@ -2334,26 +2620,7 @@
               </div>
 
               <!-- Messages -->
-              <div class="chat-msgs" id="chat-msgs" aria-live="polite" aria-label="Chat messages">
-                <div class="msg ai">
-                  <div class="msg-av">🤖</div>
-                  <div class="msg-bbl">
-                    <p>
-                      Namaste! 🇳🇵 I'm your
-                      <strong>EduBoost AI Tutor</strong> — built specifically
-                      for NEB Class 11 &amp; 12.
-                    </p>
-                    <p>
-                      Ask me anything — concepts, numericals, derivations,
-                      definitions, exam tips, or just "explain this simply."
-                    </p>
-                    <p>
-                      Physics · Chemistry · Biology · Maths · Computer ·
-                      English · Economics — I've got you covered. 📚
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <div class="chat-msgs" id="chat-msgs" aria-live="polite" aria-label="Chat messages"></div>
 
               <!-- Input -->
               <div class="chat-inp-area">
@@ -2363,7 +2630,7 @@
                   <span class="subj-tag-pill">📌 <span id="active-subj-label"></span> Mode</span>
                 </div>
                 <div class="inp-row">
-                  <textarea class="chat-textarea" id="chat-inp" rows="1" placeholder="Ask anything..."
+                  <textarea class="chat-textarea" id="chat-inp" rows="1" placeholder="Ask a question..."
                     aria-label="Type your question"></textarea>
                   <button class="send-btn" id="send-btn" onclick="sendChat()" aria-label="Send message">
                     <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -2709,8 +2976,32 @@
         },
       };
 
-      window.switchAiMode = function (mode) {
+      function getModeGreeting(mode) {
+        if (mode === "question-gen") {
+          return (
+            "<p>Namaste! 🇳🇵 I'm your <strong>NEB Question Paper Setter</strong> — specialized in board examination patterns for Class 11 &amp; 12.</p>" +
+            "<p>Name any chapter or syllabus topic (e.g., <em>Wave Optics</em>, <em>Chemical Kinetics</em>, or <em>Calculus</em>), and I will draft authentic exam-style questions with accurate marks allocation (MCQ 1M, Short 4M, Long 8M).</p>" +
+            "<p>Configure question type, count, and grade level using the controls above to customize your exam practice. 📋</p>"
+          );
+        } else if (mode === "answer-gen") {
+          return (
+            "<p>Namaste! 🇳🇵 I'm your <strong>Senior Board Examiner</strong> — evaluating and crafting model answers according to official NEB marking schemes.</p>" +
+            "<p>Paste any exam question or problem here, and I'll deliver a structured, high-scoring model answer calibrated precisely to your selected marks (" + (selectedMarks || 5) + " Marks).</p>" +
+            "<p>Complete with key definitions, step-by-step derivations, diagrams, and examiner marking criteria. ✍️</p>"
+          );
+        } else {
+          return (
+            "<p>Namaste! 🇳🇵 I'm your <strong>EduBoost AI Tutor</strong> — built specifically for NEB Class 11 &amp; 12.</p>" +
+            "<p>Ask me anything — concepts, numericals, derivations, definitions, exam tips, or just \"explain this simply.\"</p>" +
+            "<p>Physics · Chemistry · Biology · Maths · Computer · English · Economics — I've got you covered. 📚</p>"
+          );
+        }
+      }
+
+      window.switchAiMode = function (mode, force) {
+        if (!force && activeMode === mode) return;
         activeMode = mode;
+
         // Tab buttons
         document.querySelectorAll(".mode-tab-btn").forEach(function (btn) {
           btn.classList.remove("active");
@@ -2745,21 +3036,38 @@
         var hdrStatusText = document.getElementById("hdr-status-text");
         var chatInp = document.getElementById("chat-inp");
 
+        var modeAv = "🤖";
         if (mode === "question-gen") {
+          modeAv = "📋";
           if (hdrTitle) hdrTitle.textContent = "NEB Question Paper Setter";
-          if (hdrAvatar) hdrAvatar.textContent = "📋";
+          if (hdrAvatar) hdrAvatar.textContent = modeAv;
           if (hdrStatusText) hdrStatusText.textContent = "Board Exam Setter · Grounded in Notes";
           if (chatInp) chatInp.placeholder = "Enter chapter or syllabus topic (e.g. Wave Optics, Le Chatelier's Principle)...";
         } else if (mode === "answer-gen") {
+          modeAv = "✍️";
           if (hdrTitle) hdrTitle.textContent = "NEB Board Examiner (" + selectedMarks + " Marks)";
-          if (hdrAvatar) hdrAvatar.textContent = "✍️";
+          if (hdrAvatar) hdrAvatar.textContent = modeAv;
           if (hdrStatusText) hdrStatusText.textContent = "Senior Board Examiner · " + selectedMarks + "-Mark Depth";
           if (chatInp) chatInp.placeholder = "Enter NEB exam question to get " + selectedMarks + "-mark model answer...";
         } else {
+          modeAv = "🤖";
           if (hdrTitle) hdrTitle.textContent = "EduBoost AI Tutor";
-          if (hdrAvatar) hdrAvatar.textContent = "🤖";
+          if (hdrAvatar) hdrAvatar.textContent = modeAv;
           if (hdrStatusText) hdrStatusText.textContent = "Online · Experienced NEB Teacher";
-          if (chatInp) chatInp.placeholder = "Ask anything about NEB Class 11 & 12...";
+          if (chatInp) chatInp.placeholder = "Ask anything...";
+        }
+
+        // Reset/clear chat history on tab switch and display mode-appropriate greeting
+        history = [];
+        latestGeneratedAI = "";
+        msgCount = 0;
+        var statMsgs = document.getElementById("stat-msgs");
+        if (statMsgs) statMsgs.textContent = "0";
+
+        var chatMsgs = document.getElementById("chat-msgs");
+        if (chatMsgs) {
+          chatMsgs.innerHTML = "";
+          appendMsg("ai", getModeGreeting(mode), modeAv);
         }
 
         promptsHidden = false;
@@ -3199,7 +3507,60 @@
         return bold ? "<strong>" + span + "</strong>" : span;
       }
 
+
       function inlineFmt(text) {
+        // ── LaTeX safety-net: catch stray LaTeX that slips past the system prompt ──
+        // \boxed{expr} → styled orange highlighted span
+        text = text.replace(
+          /\\boxed\{([^}]*)\}/g,
+          '<span style="display:inline-block;background:rgba(249,115,22,0.18);border:1.5px solid rgba(249,115,22,0.55);border-radius:6px;padding:2px 8px;font-weight:700;color:#fb923c;">$1</span>',
+        );
+        // \text{...} → plain text content
+        text = text.replace(/\\text\{([^}]*)\}/g, "$1");
+        // ^{n} → <sup>, _{n} → <sub>
+        text = text.replace(/\^\{([^}]{1,20})\}/g, "<sup>$1</sup>");
+        text = text.replace(/\_\{([^}]{1,20})\}/g, "<sub>$1</sub>");
+        // Simple ^n (single ASCII char) → <sup>
+        text = text.replace(/\^([0-9a-zA-Z])/g, "<sup>$1</sup>");
+        // \( ... \) and \[ ... \] — strip delimiters, keep content
+        text = text.replace(/\\\(([^\\]*(?:\\(?!\))[^\\]*)*)\\\)/g, "$1");
+        text = text.replace(/\\\[([^\]]*)\\\]/g, "$1");
+        // \frac{a}{b} → (a/b)
+        text = text.replace(/\\frac\{([^}]*)\}\{([^}]*)\}/g, "($1/$2)");
+        // \sqrt{x} → √x
+        text = text.replace(/\\sqrt\{([^}]*)\}/g, "√$1");
+        text = text.replace(/\\sqrt\s+([^\s{])/g, "√$1");
+        // Greek letter commands → Unicode
+        var _gMap = {
+          "\\alpha":"α","\\beta":"β","\\gamma":"γ","\\delta":"δ",
+          "\\epsilon":"ε","\\varepsilon":"ε","\\zeta":"ζ","\\eta":"η",
+          "\\theta":"θ","\\vartheta":"θ","\\iota":"ι","\\kappa":"κ",
+          "\\lambda":"λ","\\mu":"μ","\\nu":"ν","\\xi":"ξ",
+          "\\pi":"π","\\varpi":"π","\\rho":"ρ","\\sigma":"σ",
+          "\\tau":"τ","\\upsilon":"υ","\\phi":"φ","\\varphi":"φ",
+          "\\chi":"χ","\\psi":"ψ","\\omega":"ω",
+          "\\Gamma":"Γ","\\Delta":"Δ","\\Theta":"Θ","\\Lambda":"Λ",
+          "\\Xi":"Ξ","\\Pi":"Π","\\Sigma":"Σ","\\Upsilon":"Υ",
+          "\\Phi":"Φ","\\Psi":"Ψ","\\Omega":"Ω",
+        };
+        Object.keys(_gMap).forEach(function(k) {
+          text = text.replace(new RegExp(k.replace(/\\/g,"\\\\") + "(?![a-zA-Z])", "g"), _gMap[k]);
+        });
+        // Common math operators
+        text = text.replace(/\\times/g, "×");
+        text = text.replace(/\\cdot/g, "·");
+        text = text.replace(/\\rightarrow/g, "→");
+        text = text.replace(/\\leftarrow/g, "←");
+        text = text.replace(/\\approx/g, "≈");
+        text = text.replace(/\\neq/g, "≠");
+        text = text.replace(/\\leq/g, "≤");
+        text = text.replace(/\\geq/g, "≥");
+        text = text.replace(/\\pm/g, "±");
+        text = text.replace(/\\infty/g, "∞");
+        text = text.replace(/\\vec\{([^}]{1,10})\}/g, "$1\u20d7");
+        // Strip any remaining unknown \command sequences
+        text = text.replace(/\\([a-zA-Z]+)/g, "$1");
+
         // Vector notation — bold wrapped: **AB⃗** or **a⃗**
         text = text.replace(
           /\*\*([A-Za-z0-9]{1,5})[\u20d7\u20e1]\*\*/g,
@@ -3233,16 +3594,29 @@
         return text;
       }
 
+
       /* ── CHAT ── */
       var history = [];
+      var latestGeneratedAI = "";
 
-      function appendMsg(role, html) {
+      function appendMsg(role, html, customAv) {
         var msgs = document.getElementById("chat-msgs");
         var wrap = document.createElement("div");
         wrap.className = "msg " + role;
         var av = document.createElement("div");
         av.className = "msg-av";
-        av.textContent = role === "ai" ? "🤖" : "👤";
+        if (customAv) {
+          av.textContent = customAv;
+        } else if (role === "ai") {
+          av.textContent =
+            activeMode === "question-gen"
+              ? "📋"
+              : activeMode === "answer-gen"
+                ? "✍️"
+                : "🤖";
+        } else {
+          av.textContent = "👤";
+        }
         var bbl = document.createElement("div");
         bbl.className = "msg-bbl";
         bbl.innerHTML = html;
@@ -3361,19 +3735,19 @@
                   return;
                 }
                 typingDiv.remove();
-                var rawReply =
-                  data && data.text
-                    ? data.text
-                    : data && data.error
+                if (data && data.text && !data.error) {
+                  var reply = data.text.trim();
+                  latestGeneratedAI = reply;
+                  history.push({ role: "assistant", content: reply });
+                  if (history.length > 28) history = history.slice(-28);
+                  appendMsg("ai", renderResponse(reply));
+                } else {
+                  var errMsg =
+                    data && data.error
                       ? "⚠️ " + data.error
                       : "Sorry, couldn't get a response. Please try again!";
-                var reply = rawReply.trim();
-                if (!reply)
-                  reply =
-                    "I'm here! Go ahead and ask me anything about NEB Class 11 & 12. 😊";
-                history.push({ role: "assistant", content: reply });
-                if (history.length > 28) history = history.slice(-28);
-                appendMsg("ai", renderResponse(reply));
+                  appendMsg("ai", "<p>" + esc(errMsg) + "</p>");
+                }
                 sendBtn.disabled = false;
               })
               .catch(function (err) {
@@ -3398,6 +3772,7 @@
 
       window.clearChat = function () {
         history = [];
+        latestGeneratedAI = "";
         msgCount = 0;
         var statEl = document.getElementById("stat-msgs");
         if (statEl) statEl.textContent = "0";
@@ -3408,39 +3783,83 @@
             : activeMode === "answer-gen"
               ? "<p>Session cleared! ✍️ Ready to craft board model answers for " + selectedMarks + " marks.</p>"
               : "<p>Chat cleared! 🧹 Ask me anything about NEB Class 11 &amp; 12.</p>";
-        appendMsg("ai", clearMsg);
+        var modeAv =
+          activeMode === "question-gen"
+            ? "📋"
+            : activeMode === "answer-gen"
+              ? "✍️"
+              : "🤖";
+        appendMsg("ai", clearMsg, modeAv);
         showToast("Cleared", "🗑️");
       };
 
+      function formatAiForCopy(text) {
+        if (!text) return "";
+        var clean = text;
+        // Strip svg-diagram blocks while keeping ascii-fallback if present
+        clean = clean.replace(
+          /<svg-diagram>[\s\S]*?<\/svg-diagram>(?:[\s\S]*?<ascii-fallback>([\s\S]*?)<\/ascii-fallback>)?/gi,
+          function (_, ascii) {
+            return ascii ? "\n" + ascii.trim() + "\n" : "";
+          }
+        );
+        clean = clean.replace(/<ascii-fallback>([\s\S]*?)<\/ascii-fallback>/gi, function (_, ascii) {
+          return "\n" + ascii.trim() + "\n";
+        });
+        clean = clean.replace(/<svg[\s\S]*?<\/svg>/gi, "");
+        clean = clean.replace(/\n{3,}/g, "\n\n").trim();
+        return clean;
+      }
+
+      function fallbackCopyText(text, successCb) {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.top = "-9999px";
+        ta.style.left = "-9999px";
+        ta.setAttribute("readonly", "");
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          var ok = document.execCommand("copy");
+          if (ok && successCb) successCb();
+          else if (!ok) showToast("Failed to copy", "⚠️");
+        } catch (err) {
+          showToast("Failed to copy", "⚠️");
+        }
+        document.body.removeChild(ta);
+      }
+
       window.copyLastAI = function () {
-        // Use raw AI text from history for clean, note-ready copy
-        var lastAI = null;
-        for (var i = history.length - 1; i >= 0; i--) {
-          if (history[i].role === "assistant") {
-            lastAI = history[i].content;
-            break;
+        var rawText = latestGeneratedAI;
+        if (!rawText && history && history.length) {
+          for (var i = history.length - 1; i >= 0; i--) {
+            if (history[i].role === "assistant" && history[i].content) {
+              rawText = history[i].content;
+              break;
+            }
           }
         }
-        var textToCopy = lastAI;
+        if (!rawText) {
+          showToast("No AI response generated yet! Ask a question first 🤖", "⚠️");
+          return;
+        }
+        var textToCopy = formatAiForCopy(rawText);
         if (!textToCopy) {
-          // Fallback to innerText
-          var bubbles = document.querySelectorAll(
-            "#chat-msgs .msg.ai .msg-bbl",
-          );
-          if (!bubbles.length) {
-            showToast("No response to copy", "⚠️");
-            return;
-          }
-          textToCopy = bubbles[bubbles.length - 1].innerText;
+          showToast("No AI response generated yet! Ask a question first 🤖", "⚠️");
+          return;
         }
-        // Clean up for notes: remove excess blank lines
-        textToCopy = textToCopy.replace(/\n{3,}/g, "\n\n").trim();
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(textToCopy).then(function () {
-            showToast("Copied! Paste into your notes 📒", "📋");
+
+        function reportSuccess() {
+          showToast("Copied latest response! 📒", "📋");
+        }
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(textToCopy).then(reportSuccess).catch(function () {
+            fallbackCopyText(textToCopy, reportSuccess);
           });
         } else {
-          showToast("Copied!", "📋");
+          fallbackCopyText(textToCopy, reportSuccess);
         }
       };
 
@@ -3460,16 +3879,15 @@
       /* ── INIT ── */
       buildPrompts();
 
-      // Check URL parameters for initial mode (e.g. ?mode=answer-gen or ?mode=question-gen)
+      // Check URL parameters for initial mode; always call switchAiMode so
+      // the JS-rendered greeting replaces the (now-empty) static placeholder.
       try {
         var urlParams = new URLSearchParams(window.location.search);
         var initialMode = urlParams.get("mode") || urlParams.get("tab");
-        if (initialMode) {
-          if (initialMode === "question-gen" || initialMode === "questions") switchAiMode("question-gen");
-          else if (initialMode === "answer-gen" || initialMode === "answers") switchAiMode("answer-gen");
-          else if (initialMode === "tutor" || initialMode === "chat") switchAiMode("tutor");
-        }
-      } catch (err) { }
+        if (initialMode === "question-gen" || initialMode === "questions") switchAiMode("question-gen", true);
+        else if (initialMode === "answer-gen" || initialMode === "answers") switchAiMode("answer-gen", true);
+        else switchAiMode("tutor", true); // default — always renders the correct greeting
+      } catch (err) { switchAiMode("tutor", true); }
     })();
   </script>
 

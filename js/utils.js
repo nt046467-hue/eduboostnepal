@@ -24,7 +24,7 @@ async function getSavedContent(userId,type=null){try{let query=firebase.firestor
 const snap=await query.get();return snap.docs.map((d)=>({id:d.id,...d.data()}));}catch(e){console.error("Fetch saved error:",e);if(e.code==="failed-precondition"){console.warn("Firestore missing index. Visit:\n"+
 "https://console.firebase.google.com/project/eduboost-f611f/firestore/indexes",);}
 return[];}}
-function showToast(message,type="success"){const colors={success:"bg-green-500",error:"bg-red-500",info:"bg-blue-500",warning:"bg-yellow-500",};const toast=document.createElement("div");toast.className=`fixed bottom-6 right-6 ${colors[type]||colors.info}text-white px-6 py-3 rounded-xl shadow-2xl z-[9999]text-sm font-medium transform translate-y-4 opacity-0 transition-all duration-300`;toast.textContent=message;document.body.appendChild(toast);setTimeout(()=>{toast.style.transform="translateY(0)";toast.style.opacity="1";},10);setTimeout(()=>{toast.style.transform="translateY(4px)";toast.style.opacity="0";setTimeout(()=>toast.remove(),300);},3000);}
+function showToast(message,type="success"){const colors={success:"bg-green-500",error:"bg-red-500",info:"bg-blue-500",warning:"bg-yellow-500",};const toast=document.createElement("div");toast.className=`fixed bottom-6 right-6 ${colors[type]||colors.info} text-white px-6 py-3 rounded-xl shadow-2xl z-[9999] text-sm font-medium transform translate-y-4 opacity-0 transition-all duration-300`;toast.textContent=message;document.body.appendChild(toast);setTimeout(()=>{toast.style.transform="translateY(0)";toast.style.opacity="1";},10);setTimeout(()=>{toast.style.transform="translateY(4px)";toast.style.opacity="0";setTimeout(()=>toast.remove(),300);},3000);}
 async function copyToClipboard(text,btnEl=null){try{await navigator.clipboard.writeText(text);if(btnEl){const original=btnEl.textContent;btnEl.textContent="✓ Copied!";btnEl.classList.add("text-green-400");setTimeout(()=>{btnEl.textContent=original;btnEl.classList.remove("text-green-400");},2000);}
 showToast("Copied to clipboard!");return true;}catch(e){showToast("Failed to copy","error");return false;}}
 function formatAIResponse(text){if(!text)return"";let html=text;html=html.replace(/✅\s*\*\*Correct Answer:\s*\(([A-D])\)\*\*\s*[—–-]\s*(.+)/g,`<div class="neb-correct-answer"><span class="neb-correct-badge">✅ Correct Answer</span><span class="neb-correct-option">($1)</span><span class="neb-correct-text">$2</span></div>`,);html=html.replace(/💡\s*\*\*Explanation:\*\*\s*(.+)/g,`<div class="neb-explanation"><span class="neb-explanation-icon">💡</span><span class="neb-explanation-text"><strong>Explanation:</strong>$1</span></div>`,);html=html.replace(/🔴\s*\*\*Very Important\*\*/g,`<span class="neb-tag neb-tag-red">🔴 Very Important</span>`,);html=html.replace(/🟡\s*\*\*Important\*\*/g,`<span class="neb-tag neb-tag-yellow">🟡 Important</span>`,);html=html.replace(/🟢\s*\*\*Good to Know\*\*/g,`<span class="neb-tag neb-tag-green">🟢 Good to Know</span>`,);html=html.replace(/🔴(?!\s*\*\*)/g,`<span class="neb-tag neb-tag-red">🔴 Very Important</span>`,);html=html.replace(/🟡(?!\s*\*\*)/g,`<span class="neb-tag neb-tag-yellow">🟡 Important</span>`,);html=html.replace(/🟢(?!\s*\*\*)/g,`<span class="neb-tag neb-tag-green">🟢 Good to Know</span>`,);html=html.replace(/^#### (.+)$/gm,`<h4 class="neb-h4">$1</h4>`);html=html.replace(/^### (.+)$/gm,`<h3 class="neb-h3">$1</h3>`);html=html.replace(/^## (.+)$/gm,`<h2 class="neb-h2">$1</h2>`);html=html.replace(/^# (.+)$/gm,`<h1 class="neb-h1">$1</h1>`);html=html.replace(/^---+$/gm,`<hr class="neb-divider"/>`);html=html.replace(/^━+$/gm,`<hr class="neb-divider neb-divider-thick"/>`);html=html.replace(/((?:^\|.+\|\n?)+)/gm,(tableBlock)=>{const rows=tableBlock.trim().split("\n");if(rows.length<2)return tableBlock;let tableHtml=`<div class="neb-table-wrap"><table class="neb-table">`;rows.forEach((row,i)=>{if(/^\|[\s\-:]+\|/.test(row))return;const cells=row.split("|").filter((_,idx,arr)=>idx>0&&idx<arr.length-1);const tag=i===0?"th":"td";const trClass=i===0?' class="neb-table-head"':i%2===0?' class="neb-table-row-alt"':"";tableHtml+=`<tr${trClass}>`;cells.forEach((cell)=>{tableHtml+=`<${tag}class="neb-table-cell">${cell.trim()}</${tag}>`;});tableHtml+=`</tr>`;});tableHtml+=`</table></div>`;return tableHtml;});html=html.replace(/`([^`]+)`/g,`<code class="neb-code">$1</code>`);html=html.replace(/→\s*Formula:\s*(.+)/g,`<div class="neb-formula">📐<strong>Formula:</strong><span class="neb-formula-text">$1</span></div>`,);html=html.replace(/\[DIAGRAM:\s*([^\]]+)\]/g,`<div class="neb-diagram-box"><span class="neb-diagram-icon">📊</span><span class="neb-diagram-label">Draw diagram:<em>$1</em></span></div>`,);html=html.replace(/\*\*\*(.+?)\*\*\*/g,`<strong><em class="text-orange-300">$1</em></strong>`,);html=html.replace(/\*\*(.+?)\*\*/g,`<strong class="neb-bold">$1</strong>`);html=html.replace(/\*(.+?)\*/g,`<em class="neb-italic">$1</em>`);html=html.replace(/\[(\d+)\s*marks?\]/gi,`<span class="neb-marks-badge">$1 marks</span>`,);html=html.replace(/^[-*]\s*\(([A-D])\)\s*(.+)$/gm,`<div class="neb-mcq-option"><span class="neb-option-letter">($1)</span><span class="neb-option-text">$2</span></div>`,);html=html.replace(/((?:^\d+\.\s+.+$\n?)+)/gm,(block)=>{const items=block.trim().split("\n").map((line)=>{const content=line.replace(/^\d+\.\s+/,"");return`<li class="neb-ol-item">${content}</li>`;}).join("");return`<ol class="neb-ol">${items}</ol>`;});html=html.replace(/((?:^[-*•]\s+.+$\n?)+)/gm,(block)=>{const items=block.trim().split("\n").map((line)=>{const content=line.replace(/^[-*•]\s+/,"");return`<li class="neb-li">${content}</li>`;}).join("");return`<ul class="neb-ul">${items}</ul>`;});html=html.replace(/^→\s+(.+)$/gm,`<div class="neb-subpoint"><span class="neb-arrow">→</span>$1</div>`,);const blockTags=/^<(h[1-4]|ul|ol|div|hr|table|pre)/;html=html.split(/\n\n+/).map((chunk)=>{chunk=chunk.trim();if(!chunk)return"";if(blockTags.test(chunk))return chunk;return`<p class="neb-p">${chunk.replace(/\n/g,"<br/>")}</p>`;}).join("\n");html=html.replace(/(?<!<br\/>)\n(?!<)/g,"<br/>");return`<div class="neb-response">${html}</div>`;}
@@ -121,3 +121,31 @@ window.closeAuthModal = function() {
     setTimeout(() => overlay.remove(), 250);
   }
 };
+
+/**
+ * Calculates realistic reading time for a note based on content word count,
+ * explicit readTime metadata, or resource type.
+ */
+function getNoteReadTime(note) {
+  if (!note) return "5 min read";
+  if (note.readTime) {
+    return String(note.readTime).toLowerCase().includes("min")
+      ? String(note.readTime)
+      : `${note.readTime} min read`;
+  }
+  const isExternal = Boolean(note.externalUrl || note.driveUrl);
+  if (isExternal) {
+    if (note.id === "top50-neb-class12") return "25 min read";
+    if (note.subject === "Biology") return "15 min read";
+    if ((note.externalUrl || note.driveUrl || "").includes("drive.google.com")) return "15 min read";
+    return "14 min read";
+  }
+  const content = note.content || note.summary || "";
+  const cleanText = content.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+  const wordCount = cleanText ? cleanText.split(" ").filter(Boolean).length : 0;
+  if (wordCount < 100) return "2 min read";
+  // Technical/formula reading rate: ~180 words/min
+  const minutes = Math.max(1, Math.round(wordCount / 180));
+  return `${minutes} min read`;
+}
+window.getNoteReadTime = getNoteReadTime;
