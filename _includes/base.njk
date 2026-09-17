@@ -133,13 +133,16 @@
           <div class="eb-nav-links">
             <a href="/index.html#features" class="eb-nav-link">Features</a>
             <a href="/index.html#subjects" class="eb-nav-link">Subjects</a>
-            <a href="/pages/ai-tutor.html" class="eb-nav-link" style="color: #fb923c; font-weight: 600">🤖 AI Tutor</a>
+            <a href="/pages/ai-tutor.html" class="eb-nav-link" style="color: #fb923c; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM4 11a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7z"/><circle cx="9" cy="15" r="1" fill="currentColor"/><circle cx="15" cy="15" r="1" fill="currentColor"/></svg><span>AI Tutor</span></a>
             <a href="/pages/blog.html" class="eb-nav-link">Blog</a>
             <a href="/pages/downloads.html" class="eb-nav-link">Downloads</a>
             <a href="/pages/about.html" class="eb-nav-link">About</a>
             <a href="/pages/contact.html" class="eb-nav-link">Contact</a>
           </div>
           <div class="eb-nav-cta">
+            <button onclick="toggleDarkMode()" class="eb-nav-ghost" style="padding: 0.5rem 0.85rem; font-size: 0.82rem; display: inline-flex; align-items: center; gap: 0.35rem; cursor: pointer;" data-theme-toggle-btn title="Toggle Theme" aria-label="Toggle Theme">
+              <span data-theme-icon>🌙</span> <span data-theme-label>Theme</span>
+            </button>
             <a href="/pages/login.html" id="nav-login-link" class="eb-nav-ghost">Log in</a>
             <a href="/pages/signup.html" id="nav-signup-link" class="btn-p" style="font-size: 0.875rem; padding: 0.6rem 1.25rem; border-radius: 1rem;">Get Started →</a>
             <a href="/pages/dashboard.html" id="nav-dashboard-link" class="btn-p" style="font-size: 0.875rem; padding: 0.6rem 1.25rem; border-radius: 1rem; display: none;">Dashboard</a>
@@ -160,7 +163,7 @@
           <div class="eb-mob-links">
             <a href="/index.html#features" onclick="toggleMenu()" class="eb-mob-link">✨ Features</a>
             <a href="/index.html#subjects" onclick="toggleMenu()" class="eb-mob-link">📚 Subjects</a>
-            <a href="/pages/ai-tutor.html" class="eb-mob-link" style="color: #fb923c; font-weight: 600">🤖 AI Tutor</a>
+            <a href="/pages/ai-tutor.html" class="eb-mob-link" style="color: #fb923c; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM4 11a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7z"/><circle cx="9" cy="15" r="1" fill="currentColor"/><circle cx="15" cy="15" r="1" fill="currentColor"/></svg><span>AI Tutor</span></a>
             <a href="/pages/blog.html" class="eb-mob-link">✍️ Blog</a>
             <a href="/pages/downloads.html" class="eb-mob-link">📥 Downloads</a>
             <a href="/pages/about.html" class="eb-mob-link">ℹ️ About Us</a>
@@ -188,7 +191,37 @@
       {{ content | safe }}
     </main>
 
-    {% if not hideFooter %}
+    {% if minimalFooter %}
+    <!-- MINIMAL TOOL FOOTER -->
+    <footer class="eb-footer eb-footer-min" aria-label="Tool footer">
+      <div class="fmin-wrap">
+        <div class="fmin-brand">
+          <a href="/index.html" class="fb" aria-label="EduBoost Nepal home">
+            <img src="/public/favicon.png" alt="EduBoost Nepal" width="28" height="28" loading="lazy" />
+            <span>EduBoost <span class="gt">Nepal</span></span>
+          </a>
+          <p class="fmin-tag">
+            Nepal's first AI-powered exam preparation companion for NEB Class 11 &amp; 12.
+          </p>
+        </div>
+        <div class="fbot">
+          <div class="fbot-copy">© 2026 EduBoost Nepal. All rights reserved. 🇳🇵</div>
+          <div class="fbot-lks">
+            <a href="/pages/terms.html">Terms</a>
+            <a href="/pages/privacy.html">Privacy</a>
+            <a href="/pages/about.html">About</a>
+            <a href="/pages/contact.html">Contact</a>
+          </div>
+          <div class="fbot-status">
+            <span class="footer-status-pill">
+              <span class="footer-status-dot"></span>
+              <span>All systems operational</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    {% elif not hideFooter %}
     <!-- CANONICAL FOOTER -->
     <footer class="eb-footer">
       <div class="ft">
@@ -278,13 +311,18 @@
       </div>
 
       <div class="fbot">
-        <div>© 2026 EduBoost Nepal. All rights reserved. 🇳🇵 Made with ❤️ in Nepal</div>
+        <div class="fbot-copy">© 2026 EduBoost Nepal. All rights reserved. 🇳🇵 Made with ❤️ in Nepal</div>
         <div class="fbot-lks">
           <a href="/pages/terms.html">Terms</a>
           <a href="/pages/privacy.html">Privacy</a>
           <a href="/pages/about.html">About</a>
           <a href="/pages/contact.html">Contact</a>
-          <span class="status-dot">All systems operational</span>
+        </div>
+        <div class="fbot-status">
+          <span class="footer-status-pill">
+            <span class="footer-status-dot"></span>
+            <span>All systems operational</span>
+          </span>
         </div>
       </div>
     </footer>
