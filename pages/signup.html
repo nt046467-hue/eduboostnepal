@@ -1,74 +1,52 @@
-<!doctype html>
-<html lang="en" class="dark">
-  <head>
-    <link rel="icon" href="../public/favicon.png" type="image/png" />
-    <meta charset="UTF-8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Sign up for EduBoost Nepal — free AI tools for NEB Class 11 & 12 exam preparation."
-    />
-    <title>Sign Up — EduBoost Nepal</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/tailwind.min.css" />
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-    <script src="../js/firebase-config.js"></script>
-    <script src="../js/utils.js"></script>
-    <style>
-      .role-card {
-        cursor: pointer;
-        transition: all 0.25s ease;
-        border: 2px solid rgba(255, 255, 255, 0.1);
-        border-radius: 14px;
-        padding: 16px 12px;
-        text-align: center;
-        -webkit-tap-highlight-color: transparent;
-      }
-      .role-card.selected {
-        border-color: var(--eb-crimson, #B91C2C);
-        background: var(--eb-crimson-soft, rgba(185, 28, 44, 0.1));
-      }
-      .role-card:hover {
-        border-color: rgba(185, 28, 44, 0.5);
-      }
-      .role-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-      }
-      html.light .role-card {
-        border-color: var(--eb-border-light, #cbd5e1);
-      }
-      html.light .role-card.selected {
-        border-color: var(--eb-crimson, #B91C2C);
-        background: rgba(185, 28, 44, 0.08);
-      }
-    </style>
-    <script src="../js/theme.js"></script>
-    <!-- Google AdSense Auto Ads -->
-    <meta name="google-adsense-account" content="ca-pub-3896962422851508" />
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3896962422851508"
-      crossorigin="anonymous"
-    ></script>
-    <style>*,*::before,*::after{box-sizing:border-box}html,body{overflow-x:hidden;max-width:100%}img,video,iframe,embed,object{max-width:100%;height:auto}table{width:100%;overflow-x:auto;display:block}pre,code{overflow-x:auto;white-space:pre-wrap;word-break:break-word}@media (max-width:640px){h1{font-size:clamp(1.5rem,5vw,2.5rem)!important}h2{font-size:clamp(1.1rem,4vw,1.8rem)!important}.text-4xl{font-size:clamp(1.5rem,6vw,2.25rem)!important}.text-5xl{font-size:clamp(1.8rem,7vw,3rem)!important}.text-6xl{font-size:clamp(2rem,8vw,3.75rem)!important}}</style>
-    <link rel="stylesheet" href="/css/design-system.css" />
-    <link rel="stylesheet" href="/css/auth.css" />
-  </head>
-  <body
-    class="bg-slate-950 text-white font-sans"
-  >
-    <div class="page-wrapper">
-      <div class="nepal-stripe"></div>
+﻿---
+layout: base.njk
+title: "Sign Up — EduBoost Nepal"
+description: "Sign up for EduBoost Nepal — free AI tools for NEB Class 11 & 12 exam preparation."
+robots: "noindex, nofollow"
+canonical: "https://eduboostnepal.nabint.com.np/pages/signup.html"
+permalink: "/pages/signup.html"
+pageStyles: |
+  <link rel="stylesheet" href="/css/auth.css" />
+---
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="/js/firebase-config.js"></script>
+<script src="/js/utils.js"></script>
+
+<style>
+  .role-card {
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 16px 12px;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .role-card.selected {
+    border-color: var(--eb-crimson, #B91C2C);
+    background: var(--eb-crimson-soft, rgba(185, 28, 44, 0.1));
+  }
+  .role-card:hover {
+    border-color: rgba(185, 28, 44, 0.5);
+  }
+  .role-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  html.light .role-card {
+    border-color: var(--eb-border-light, #cbd5e1);
+  }
+  html.light .role-card.selected {
+    border-color: var(--eb-crimson, #B91C2C);
+    background: rgba(185, 28, 44, 0.08);
+  }
+</style>
+
+<div class="page-wrapper" style="min-height: auto; padding-top: 3rem; padding-bottom: 4rem;">
 
       <!-- Theme toggle -->
 
@@ -79,7 +57,7 @@
             <a href="../index.html">
               <img
                 loading="lazy"
-                src="../public/favicon.png"
+                src="/public/favicon.png"
                 alt="EduBoost Nepal"
                 style="
                   width: 48px;
@@ -483,5 +461,3 @@
         }
       }
     </script>
-  </body>
-</html>

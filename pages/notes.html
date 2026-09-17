@@ -1,30 +1,21 @@
-<!doctype html>
-<html lang="en" class="dark">
-  <head>
-    <link rel="icon" href="../public/favicon.png" type="image/png" />
-    <meta charset="UTF-8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <meta name="robots" content="index, follow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Free NEB study notes for Class 11 & 12 — Physics, Chemistry, Biology, Maths, Computer Science and more." />
-    <title>Notes — EduBoost Nepal</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/tailwind.min.css" />
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-    <script src="../js/firebase-config.js"></script>
-    <script src="../js/utils.js"></script>
-    <script src="../js/math11-notes.js"></script>
-    <script src="../js/math12-notes.js"></script>
-    <script src="../js/static-notes.js"></script>
-    <link rel="stylesheet" href="/css/design-system.css" />
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <script src="../js/theme.js"></script>
+---
+layout: base.njk
+title: "Notes — EduBoost Nepal"
+description: "Free NEB study notes for Class 11 & 12 — Physics, Chemistry, Biology, Maths, Computer Science and more."
+canonical: "https://eduboostnepal.nabint.com.np/pages/notes.html"
+permalink: "/pages/notes.html"
+---
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="/js/firebase-config.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/math11-notes.js"></script>
+<script src="/js/math12-notes.js"></script>
+<script src="/js/static-notes.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
     <style>
       body {
         visibility: hidden;
@@ -94,65 +85,7 @@
         display: none;
       }
     </style>
-    <!-- Google AdSense Auto Ads -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3896962422851508"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body class="bg-[#F8FAFC] dark:bg-[#0B1220] text-slate-700 dark:text-slate-300 min-h-screen">
-    <div class="nepal-stripe" aria-hidden="true"></div>
 
-    <!-- NAVBAR -->
-    <nav class="eb-header" aria-label="Main navigation">
-      <div class="eb-header-inner">
-        <div class="eb-header-bar glass">
-          <a href="../index.html" class="eb-nav-logo" aria-label="EduBoost Nepal home">
-            <img src="../public/favicon.png" alt="EduBoost Nepal" width="34" height="34" loading="eager" />
-            <span>EduBoost <span style="color:#B91C2C">Nepal</span></span>
-          </a>
-          <div class="eb-nav-links">
-            <a href="notes.html" class="eb-nav-link active">Notes</a>
-            <a href="downloads.html" class="eb-nav-link">Downloads</a>
-            <a href="ai-tutor.html" class="eb-nav-link">🤖 AI Tutor</a>
-            <a href="blog.html" class="eb-nav-link">Blog</a>
-            <a href="about.html" class="eb-nav-link">About</a>
-            <a href="contact.html" class="eb-nav-link">Contact</a>
-          </div>
-          <div class="eb-nav-cta">
-            <a href="login.html" id="nav-login-link" class="eb-nav-ghost">Log in</a>
-            <a href="signup.html" id="nav-signup-link" class="btn-primary" style="font-size:0.8rem;padding:0.5rem 1.1rem;border-radius:0.875rem;">Get Started →</a>
-            <a href="dashboard.html" id="nav-dashboard-link" class="btn-primary" style="font-size:0.8rem;padding:0.5rem 1.1rem;border-radius:0.875rem;display:none;">Dashboard</a>
-          </div>
-          <div class="eb-nav-mob">
-            <button id="hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false" class="eb-hbg">
-              <svg id="ham-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-              <svg id="close-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display:none">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div id="mobile-menu" class="eb-mobile-menu glass">
-          <div class="eb-mob-links">
-            <a href="notes.html" class="eb-mob-link active">📚 Notes</a>
-            <a href="downloads.html" class="eb-mob-link">📥 Downloads</a>
-            <a href="ai-tutor.html" class="eb-mob-link">🤖 AI Tutor</a>
-            <a href="blog.html" class="eb-mob-link">✍️ Blog</a>
-            <a href="about.html" class="eb-mob-link">ℹ️ About Us</a>
-            <a href="contact.html" class="eb-mob-link">📬 Contact</a>
-            <div class="eb-mob-divider">
-              <a href="login.html" id="mob-login-link" onclick="toggleMenu()" class="eb-mob-link">🔑 Log in</a>
-              <a href="signup.html" id="mob-signup-link" class="eb-mob-cta btn-primary" style="border-radius:0.875rem;">Get Started Free →</a>
-              <a href="dashboard.html" id="mob-dashboard-link" onclick="toggleMenu()" class="eb-mob-cta btn-primary" style="border-radius:0.875rem;display:none;text-align:center;">📊 Dashboard</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <!-- layout spacer: accounts for the fixed nav height -->
     <div style="height:76px" aria-hidden="true"></div>
 
@@ -632,5 +565,3 @@
         if (closeIcon) closeIcon.style.display = isOpen ? "block" : "none";
       };
     </script>
-  </body>
-</html>

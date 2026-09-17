@@ -1,94 +1,31 @@
-<!doctype html>
-<html lang="en" class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Free NEB question papers, notes and study materials for Class 11 & 12 students."
-    />
-    <meta name="robots" content="index, follow" />
-    <title>Downloads — EduBoost Nepal</title>
-    <link rel="icon" href="../public/favicon.png" type="image/png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/tailwind.min.css" />
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-    <script src="../js/utils.js"></script>
-    <link rel="stylesheet" href="/css/design-system.css" />
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <style>.glass{background:rgba(17,24,39,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1)}html.light .glass{background:rgba(255,255,255,0.92);border-color:#e2e8f0}.gradient-text{background:linear-gradient(135deg,#fb923c,#f97316,#dc2626);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;word-break:break-word;overflow-wrap:anywhere}.btn-primary{background:linear-gradient(135deg,#f97316,#dc2626)}.download-card{transition:transform 0.3s,box-shadow 0.3s}.download-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(249,115,22,0.15)}.progress-bar{background:linear-gradient(90deg,#f97316,#dc2626);height:4px;border-radius:2px;transition:width 0.3s}.nepal-stripe{background:linear-gradient(90deg,#003893 50%,#dc143c 50%);height:3px;position:fixed;top:0;left:0;right:0;z-index:51}.file-type-pdf{background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.3);color:#fca5a5}.file-type-doc{background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.3);color:#93c5fd}.filter-btn:focus:not(:focus-visible){outline:none!important;box-shadow:none}.filter-btn:focus-visible{outline:2px solid #f97316!important;outline-offset:2px}.filter-btn.active{background:linear-gradient(135deg,#f97316,#dc2626);color:white}html.light body{background-color:#f1f5f9;color:#0f172a}html.light .bg-slate-950{background-color:#f1f5f9}html.light .bg-slate-900{background-color:#f8fafc}html.light .bg-slate-800{background-color:#e2e8f0}html.light .border-slate-800{border-color:#cbd5e1}html.light .border-slate-700{border-color:#cbd5e1}html.light .text-white{color:#0f172a}html.light .text-slate-300{color:#334155}html.light .text-slate-400{color:#64748b}html.light .text-slate-500{color:#94a3b8}html.light .text-slate-600{color:#94a3b8}html.light .hover\:bg-slate-800:hover{background-color:#e2e8f0}html.light .bg-white\/5{background-color:rgba(0,0,0,0.04)}html.light .border-white\/10{border-color:rgba(0,0,0,0.1)}body{visibility:hidden}body.auth-ready{visibility:visible}.eb-theme-toggle{display:inline-flex;align-items:center;gap:8px;cursor:pointer;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:5px 12px 5px 7px;transition:border-color 0.2s,background 0.2s;user-select:none;vertical-align:middle}html.light .eb-theme-toggle{background:rgba(0,0,0,0.04);border-color:rgba(0,0,0,0.12)}.eb-theme-toggle:hover{border-color:#6366f1;background:rgba(99,102,241,0.1)}.eb-theme-toggle-track{width:34px;height:19px;background:rgba(255,255,255,0.18);border-radius:100px;position:relative;transition:background 0.3s;flex-shrink:0}html.light .eb-theme-toggle-track{background:#6366f1}.eb-theme-toggle-thumb{position:absolute;top:2px;left:2px;width:15px;height:15px;background:#fff;border-radius:50%;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 1px 4px rgba(0,0,0,0.25)}html.light .eb-theme-toggle-thumb{transform:translateX(15px)}.eb-theme-toggle-icon{font-size:12px;line-height:1}.eb-theme-toggle-lbl{font-size:0.7rem;color:rgba(255,255,255,0.55);letter-spacing:0.03em;white-space:nowrap}html.light .eb-theme-toggle-lbl{color:rgba(0,0,0,0.45)}</style>
-    <script src="../js/theme.js"></script>
-    <!-- Google AdSense Auto Ads -->
-    <meta name="google-adsense-account" content="ca-pub-3896962422851508" />
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3896962422851508"
-      crossorigin="anonymous"
-    ></script>
-    <style>*,*::before,*::after{box-sizing:border-box}html,body{overflow-x:hidden;max-width:100%}img,video,iframe,embed,object{max-width:100%;height:auto}table{width:100%;overflow-x:auto;display:block}pre,code{overflow-x:auto;white-space:pre-wrap;word-break:break-word}@media (max-width:640px){h1{font-size:clamp(1.5rem,5vw,2.5rem)!important}h2{font-size:clamp(1.1rem,4vw,1.8rem)!important}.text-4xl{font-size:clamp(1.5rem,6vw,2.25rem)!important}.text-5xl{font-size:clamp(1.8rem,7vw,3rem)!important}.text-6xl{font-size:clamp(2rem,8vw,3.75rem)!important}}</style>
-    <link rel="canonical" href="https://eduboostnepal.nabint.com.np/pages/downloads.html" />
-  </head>
-  <body class="bg-[#F8FAFC] dark:bg-[#0B1220] text-slate-700 dark:text-slate-300 min-h-screen">
-    <div class="nepal-stripe" aria-hidden="true"></div>
+---
+layout: base.njk
+title: "Downloads — EduBoost Nepal"
+description: "Free NEB question papers, notes and study materials for Class 11 & 12 students."
+canonical: "https://eduboostnepal.nabint.com.np/pages/downloads.html"
+permalink: "/pages/downloads.html"
+---
 
-    <!-- NAVBAR -->
-    <nav class="eb-header" aria-label="Main navigation">
-      <div class="eb-header-inner">
-        <div class="eb-header-bar glass">
-          <a href="../index.html" class="eb-nav-logo" aria-label="EduBoost Nepal home">
-            <img src="../public/favicon.png" alt="EduBoost Nepal" width="34" height="34" loading="eager" />
-            <span>EduBoost <span style="color:#B91C2C">Nepal</span></span>
-          </a>
-          <div class="eb-nav-links">
-            <a href="notes.html" class="eb-nav-link">Notes</a>
-            <a href="downloads.html" class="eb-nav-link active">Downloads</a>
-            <a href="ai-tutor.html" class="eb-nav-link">🤖 AI Tutor</a>
-            <a href="blog.html" class="eb-nav-link">Blog</a>
-            <a href="about.html" class="eb-nav-link">About</a>
-            <a href="contact.html" class="eb-nav-link">Contact</a>
-          </div>
-          <div class="eb-nav-cta">
-            <a href="login.html" id="nav-login-link" class="eb-nav-ghost">Log in</a>
-            <a href="signup.html" id="nav-signup-link" class="btn-primary" style="font-size:0.8rem;padding:0.5rem 1.1rem;border-radius:0.875rem;">Get Started →</a>
-            <a href="dashboard.html" id="nav-dashboard-link" class="btn-primary" style="font-size:0.8rem;padding:0.5rem 1.1rem;border-radius:0.875rem;display:none;">Dashboard</a>
-          </div>
-          <div class="eb-nav-mob">
-            <button id="hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false" class="eb-hbg">
-              <svg id="ham-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-              <svg id="close-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display:none">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div id="mobile-menu" class="eb-mobile-menu glass">
-          <div class="eb-mob-links">
-            <a href="notes.html" class="eb-mob-link">📚 Notes</a>
-            <a href="downloads.html" class="eb-mob-link active">📥 Downloads</a>
-            <a href="ai-tutor.html" class="eb-mob-link">🤖 AI Tutor</a>
-            <a href="blog.html" class="eb-mob-link">✍️ Blog</a>
-            <a href="about.html" class="eb-mob-link">ℹ️ About Us</a>
-            <a href="contact.html" class="eb-mob-link">📬 Contact</a>
-            <div class="eb-mob-divider">
-              <a href="login.html" id="mob-login-link" onclick="toggleMenu()" class="eb-mob-link">🔑 Log in</a>
-              <a href="signup.html" id="mob-signup-link" class="eb-mob-cta btn-primary" style="border-radius:0.875rem;">Get Started Free →</a>
-              <a href="dashboard.html" id="mob-dashboard-link" onclick="toggleMenu()" class="eb-mob-cta btn-primary" style="border-radius:0.875rem;display:none;text-align:center;">📊 Dashboard</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <!-- layout spacer: accounts for the fixed nav height -->
-    <div style="height:76px" aria-hidden="true"></div>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="/js/firebase-config.js"></script>
+<script src="/js/utils.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+<style>
+  .download-card{transition:transform 0.3s,box-shadow 0.3s}
+  .download-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(249,115,22,0.15)}
+  .progress-bar{background:linear-gradient(90deg,#f97316,#dc2626);height:4px;border-radius:2px;transition:width 0.3s}
+  .file-type-pdf{background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.3);color:#fca5a5}
+  .file-type-doc{background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.3);color:#93c5fd}
+  .filter-btn:focus:not(:focus-visible){outline:none!important;box-shadow:none}
+  .filter-btn:focus-visible{outline:2px solid #f97316!important;outline-offset:2px}
+  .filter-btn.active{background:linear-gradient(135deg,#f97316,#dc2626);color:white}
+</style>
+
+<!-- layout spacer: accounts for the fixed nav height -->
+<div style="height:76px" aria-hidden="true"></div>
 
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       
@@ -830,5 +767,3 @@
         }, 200);
       }
     </script>
-  </body>
-</html>

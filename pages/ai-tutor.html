@@ -1,43 +1,16 @@
-<!doctype html>
-<html lang="en" class="scroll-smooth">
+﻿---
+layout: base.njk
+title: "AI Tutor — EduBoost Nepal | NEB Class 11 & 12 Smart Study"
+description: "Chat with your personal AI Tutor for NEB Class 11 & 12. Get board-style answers, exam tips, and study smarter — built for Nepal students."
+canonical: "https://eduboostnepal.nabint.com.np/pages/ai-tutor.html"
+permalink: "/pages/ai-tutor.html"
+---
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#080d1a" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="format-detection" content="telephone=no" />
-  <title>AI Tutor — EduBoost Nepal | NEB Class 11 &amp; 12 Smart Study</title>
-  <meta name="description"
-    content="Chat with your personal AI Tutor for NEB Class 11 &amp; 12. Get board-style answers, exam tips, and study smarter — built for Nepal students." />
-  <meta name="robots" content="index, follow" />
-  <link rel="icon" type="image/png" href="../public/favicon.png" />
-  <link rel="apple-touch-icon" href="../public/favicon.png" />
-  <link rel="canonical" href="https://eduboostnepal.nabint.com.np/pages/ai-tutor.html" />
-  <meta name="google-adsense-account" content="ca-pub-3896962422851508" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+Math&display=swap"
-    rel="stylesheet" media="print" onload="this.media = 'all'" />
-  <noscript>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+Math&display=swap"
-      rel="stylesheet" />
-  </noscript>
-
-  <!-- Design System -->
-  <link rel="stylesheet" href="/css/design-system.css" />
-  <link rel="stylesheet" href="../css/design-system.css" />
-
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-  <script src="../js/firebase-config.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="/js/firebase-config.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+Math&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 
   <style>
     *,
@@ -2001,6 +1974,7 @@
       padding-top: calc(var(--nav-h) + var(--safe-top) + 12px);
     }
   </style>
+
   <style>
     *,
     *::before,
@@ -2342,79 +2316,9 @@
       }
     }
   </style>
-</head>
 
-<body>
-  <div id="toast"></div>
-  <div class="nepal-stripe" aria-hidden="true"></div>
-
-  <!-- NAVBAR -->
-  <nav class="eb-header" aria-label="Main navigation">
-    <div class="eb-header-inner">
-      <div class="eb-header-bar glass">
-        <a href="../index.html" class="eb-nav-logo" aria-label="EduBoost Nepal home">
-          <img src="../public/favicon.png" alt="EduBoost Nepal" width="34" height="34" loading="eager" />
-          <span>EduBoost <span class="gt">Nepal</span></span>
-        </a>
-        <div class="eb-nav-links">
-          <a href="notes.html" class="eb-nav-link">Notes</a>
-          <a href="downloads.html" class="eb-nav-link">Downloads</a>
-          <a href="ai-tutor.html" class="eb-nav-link active">🤖 AI Tutor</a>
-          <a href="blog.html" class="eb-nav-link">Blog</a>
-          <a href="about.html" class="eb-nav-link">About</a>
-          <a href="contact.html" class="eb-nav-link">Contact</a>
-        </div>
-        <div class="eb-nav-cta">
-          <a href="login.html" id="nav-login-link" class="eb-nav-ghost">Log in</a>
-          <a href="signup.html" id="nav-signup-link" class="btn-primary" style="
-                font-size: 0.8rem;
-                padding: 0.5rem 1.1rem;
-                border-radius: 0.875rem;
-              ">Get Started →</a>
-          <a href="dashboard.html" id="nav-dashboard-link" class="btn-primary" style="
-                font-size: 0.8rem;
-                padding: 0.5rem 1.1rem;
-                border-radius: 0.875rem;
-                display: none;
-              ">Dashboard</a>
-        </div>
-        <div class="eb-nav-mob">
-
-          <button id="hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false" class="eb-hbg">
-            <svg id="ham-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <svg id="close-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
-              viewBox="0 0 24 24" style="display: none">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div id="mobile-menu" class="eb-mobile-menu glass">
-        <div class="eb-mob-links">
-          <a href="notes.html" class="eb-mob-link">📚 Notes</a>
-          <a href="downloads.html" class="eb-mob-link">📥 Downloads</a>
-          <a href="ai-tutor.html" class="eb-mob-link active">🤖 AI Tutor</a>
-          <a href="blog.html" class="eb-mob-link">✍️ Blog</a>
-          <a href="about.html" class="eb-mob-link">ℹ️ About Us</a>
-          <a href="contact.html" class="eb-mob-link">📬 Contact</a>
-          <div class="eb-mob-divider">
-            <a href="login.html" id="mob-login-link" onclick="toggleMenu()" class="eb-mob-link">🔑 Log in</a>
-            <a href="signup.html" id="mob-signup-link" class="eb-mob-cta btn-primary"
-              style="border-radius: 0.875rem">Get Started Free →</a>
-            <a href="dashboard.html" id="mob-dashboard-link" onclick="toggleMenu()" class="eb-mob-cta btn-primary"
-              style="
-                  border-radius: 0.875rem;
-                  display: none;
-                  text-align: center;
-                ">📊 Dashboard</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
+<!-- layout spacer: accounts for the fixed nav height -->
+<div style="height:76px" aria-hidden="true"></div>
 
   <!-- PAGE BODY -->
   <div id="page-body">
@@ -2674,8 +2578,8 @@
   </script>
 
   <!-- THEME -->
-  <script src="../js/utils.js"></script>
-  <script src="../js/theme.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/theme.js"></script>
 
   <!-- MAIN SCRIPT -->
   <script>
@@ -3906,5 +3810,3 @@
     })();
   </script>
 </body>
-
-</html>

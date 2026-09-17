@@ -1,32 +1,17 @@
-<!doctype html>
-<html lang="en" class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Your EduBoost Nepal dashboard — generate NEB questions, answers, and track your study progress for Class 11 & 12."
-    />
-    <title>Dashboard — EduBoost Nepal</title>
-    <link rel="icon" href="../public/favicon.png" type="image/png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/tailwind.min.css" />
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-    <script src="../js/firebase-config.js"></script>
-    <link rel="stylesheet" href="/css/design-system.css" />
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+﻿---
+layout: base.njk
+title: "Dashboard — EduBoost Nepal"
+description: "Your EduBoost Nepal dashboard — generate NEB questions, answers, and track your study progress for Class 11 & 12."
+permalink: "/pages/dashboard.html"
+robots: "noindex, nofollow"
+---
 
-    <!-- ================================================================
-         INLINED UTILS (replaces ../js/utils.js)
-    ================================================================ -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="/js/firebase-config.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
     <script>
       // ── Gemini AI Call (via Netlify serverless function) ────────────
       async function callGeminiAI(prompt, options = {}) {
@@ -253,9 +238,6 @@
         </div>`;
       }
     </script>
-
-    <!-- EduBoost Unified Theme Manager -->
-    <script src="../js/theme.js"></script>
 
     <style>
       .input-field {
@@ -1008,17 +990,10 @@
       html.light .ascii-toggle-btn { color: #94a3b8; border-color: rgba(0, 0, 0, 0.15); }
       html.light .ascii-toggle-btn:hover { color: var(--eb-crimson, #B91C2C); border-color: rgba(185, 28, 44, 0.35); }
     </style>
-    <!-- Google AdSense Auto Ads -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3896962422851508"
-      crossorigin="anonymous"
-    ></script>
+
     <style>#accountModal>div{max-height:calc(100vh - 2rem);overflow-y:auto;-webkit-overflow-scrolling:touch}@media (max-width:480px){#accountModal{padding:0.75rem;align-items:flex-start}#accountModal>div{max-height:calc(100svh - 1.5rem);border-radius:1rem;padding:1rem;margin-top:0.5rem}#accountModal .w-14{width:3rem;height:3rem}#deleteConfirmSection input{font-size:16px!important}}</style>
     <style>*,*::before,*::after{box-sizing:border-box}html,body{overflow-x:hidden;max-width:100%}img,video,iframe,embed,object{max-width:100%;height:auto}table{width:100%;overflow-x:auto;display:block}pre,code{overflow-x:auto;white-space:pre-wrap;word-break:break-word}@media (max-width:640px){h1{font-size:clamp(1.5rem,5vw,2.5rem)!important}h2{font-size:clamp(1.1rem,4vw,1.8rem)!important}.text-4xl{font-size:clamp(1.5rem,6vw,2.25rem)!important}.text-5xl{font-size:clamp(1.8rem,7vw,3rem)!important}.text-6xl{font-size:clamp(2rem,8vw,3.75rem)!important}}</style>
-</head>
 
-  <body class="bg-slate-950 text-white font-sans">
     <!-- Auth loading overlay — hides once Firebase confirms user -->
     <div id="authOverlay">
       <div class="spinner"></div>
@@ -1040,7 +1015,7 @@
           <a href="dashboard.html" class="flex items-center gap-3">
             <img
               loading="lazy"
-              src="../public/favicon.png"
+              src="/public/favicon.png"
               alt="EduBoost Nepal"
               class="w-9 h-9 rounded-xl object-cover"
               onerror="this.style.display = 'none'"
@@ -1159,7 +1134,7 @@
         <a href="dashboard.html" class="flex items-center gap-2">
           <img
             loading="lazy"
-            src="../public/favicon.png"
+            src="/public/favicon.png"
             alt="EduBoost Nepal"
             class="w-8 h-8 rounded-lg object-cover"
             onerror="this.style.display = 'none'"
@@ -3609,6 +3584,3 @@ FORMAT: ${formatInstruction}`;
         }
       }
     </script>
-
-  </body>
-</html>
