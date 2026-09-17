@@ -1,7 +1,7 @@
 // EduBoost Nepal — Central Firebase Configuration
 // Single source of truth for Firebase initialization across all pages
 
-const FIREBASE_CONFIG = {
+var FIREBASE_CONFIG = window.FIREBASE_CONFIG || {
   apiKey: "AIzaSyCbVzplSn0UL2KRB3B45SCByJSm2FXPByw",
   authDomain: "eduboost-f611f.firebaseapp.com",
   projectId: "eduboost-f611f",

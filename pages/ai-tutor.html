@@ -29,6 +29,10 @@
       rel="stylesheet" />
   </noscript>
 
+  <!-- Design System -->
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="../css/design-system.css" />
+
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
@@ -183,230 +187,268 @@
       transform: scale(0.97);
     }
 
-    nav {
+    /* ── EduBoost Standard Responsive Header ── */
+    .eb-header {
       position: fixed;
       top: calc(4px + var(--safe-top));
       left: 0;
       right: 0;
-      z-index: 90;
+      z-index: 50;
     }
 
-    .nav-inner {
+    .eb-header-inner {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0.4rem 1rem;
+      padding: 0 1rem;
     }
 
-    .nav-bar {
+    .eb-header-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 0.5rem;
       padding: 0.6rem 1.1rem;
-      border-radius: var(--radius);
+      border-radius: 1.25rem;
+      margin-top: 0.35rem;
+      background: rgba(11, 18, 32, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
     }
 
-    .nav-logo {
-      display: flex;
+    html.light .eb-header-bar {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .eb-nav-logo {
+      display: inline-flex;
       align-items: center;
       gap: 0.55rem;
       font-weight: 800;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      color: #FFFFFF;
+      text-decoration: none;
       flex-shrink: 0;
+      letter-spacing: -0.02em;
     }
 
-    .nav-logo img {
+    html.light .eb-nav-logo {
+      color: #0f172a;
+    }
+
+    .eb-nav-logo img {
       width: 34px;
       height: 34px;
       border-radius: 10px;
       object-fit: cover;
     }
 
-    .nav-links {
+    .eb-nav-links {
       display: none;
-      gap: 1.5rem;
+      align-items: center;
+      gap: 1.4rem;
       font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .nav-links a.active {
-      color: var(--accent2);
       font-weight: 600;
+      color: #94a3b8;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
-    .nav-right {
+    html.light .eb-nav-links {
+      color: #64748b;
+    }
+
+    .eb-nav-link {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .eb-nav-link:hover {
+      color: #f8fafc;
+    }
+
+    html.light .eb-nav-link:hover {
+      color: #0f172a;
+    }
+
+    .eb-nav-link.active {
+      color: #fb923c !important;
+      font-weight: 700;
+    }
+
+    .eb-nav-cta {
       display: none;
       align-items: center;
       gap: 0.6rem;
+      flex-shrink: 0;
     }
 
-    .nav-mob {
+    .eb-nav-ghost {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      padding: 0.45rem 0.9rem;
+      border-radius: 0.875rem;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+    }
+
+    .eb-nav-ghost:hover {
+      color: #ffffff;
+      border-color: rgba(249, 115, 22, 0.5);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    html.light .eb-nav-ghost {
+      color: #334155;
+      border-color: rgba(0, 0, 0, 0.12);
+      background: rgba(0, 0, 0, 0.03);
+    }
+
+    html.light .eb-nav-ghost:hover {
+      color: #0f172a;
+      border-color: #f97316;
+    }
+
+    .eb-nav-mob {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
 
-    .nav-ghost {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--muted);
-      padding: 0.4rem 0.85rem;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border2);
-      transition:
-        color 0.2s,
-        border-color 0.2s;
-    }
-
-    .nav-ghost:hover {
-      color: var(--text);
-      border-color: var(--accent);
-    }
-
-    .hbg {
+    .eb-hbg {
       padding: 0.45rem;
-      border-radius: var(--radius-sm);
-      color: var(--muted);
-      transition: color 0.2s;
+      border-radius: 0.75rem;
+      color: #cbd5e1;
+      transition: color 0.2s ease, background-color 0.2s ease;
       min-height: 44px;
       min-width: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .hbg:hover {
-      color: var(--text);
+    .eb-hbg:hover {
+      color: #ffffff;
+      border-color: rgba(249, 115, 22, 0.5);
     }
 
-    #mobile-menu {
+    html.light .eb-hbg {
+      color: #334155;
+      background: rgba(0, 0, 0, 0.04);
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .eb-mobile-menu {
       display: none;
-      border-radius: var(--radius);
-      margin-top: 0.3rem;
+      border-radius: 1.25rem;
+      margin-top: 0.4rem;
       overflow: hidden;
+      background: rgba(11, 18, 32, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6);
     }
 
-    #mobile-menu.open {
+    html.light .eb-mobile-menu {
+      background: rgba(255, 255, 255, 0.96);
+      border-color: rgba(0, 0, 0, 0.1);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+    }
+
+    .eb-mobile-menu.open {
       display: block;
-      animation: slideDown 0.2s ease;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+      animation: slideDown 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .mob-links {
-      padding: 0.875rem;
+    .eb-mob-links {
+      padding: 0.85rem;
       display: flex;
       flex-direction: column;
-      gap: 0.1rem;
+      gap: 0.2rem;
     }
 
-    .mob-lk {
+    .eb-mob-link {
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      padding: 0.75rem 0.875rem;
-      border-radius: var(--radius-sm);
-      font-size: 0.875rem;
-      color: var(--muted);
-      transition:
-        background 0.2s,
-        color 0.2s;
-      min-height: 48px;
-    }
-
-    .mob-lk:hover,
-    .mob-lk.active {
-      color: var(--text);
-      background: var(--surface2);
-    }
-
-    .mob-lk.active {
-      color: var(--accent2);
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      font-size: 0.9rem;
       font-weight: 600;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      min-height: 44px;
     }
 
-    .mob-div {
-      border-top: 1px solid var(--border);
-      margin: 0.5rem 0;
-      padding-top: 0.5rem;
+    .eb-mob-link:hover,
+    .eb-mob-link.active {
+      color: #fb923c;
+      background: rgba(249, 115, 22, 0.12);
+    }
+
+    html.light .eb-mob-link {
+      color: #334155;
+    }
+
+    .eb-mob-divider {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 0.5rem;
+      padding-top: 0.6rem;
       display: flex;
       flex-direction: column;
-      gap: 0.35rem;
+      gap: 0.4rem;
     }
 
-    .mob-su {
+    html.light .eb-mob-divider {
+      border-top-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .eb-mob-cta {
       display: block;
       text-align: center;
       font-weight: 700;
-      font-size: 0.875rem;
+      font-size: 0.88rem;
       padding: 0.75rem 1rem;
-      border-radius: var(--radius-sm);
+      border-radius: 0.875rem;
+      text-decoration: none;
     }
 
-    .mob-tr {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.5rem 0.875rem;
-    }
+    @media (min-width: 860px) {
+      .eb-nav-links {
+        display: flex;
+      }
 
-    .tgl {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      cursor: pointer;
-      background: var(--surface2);
-      border: 1px solid var(--border2);
-      border-radius: 100px;
-      padding: 4px 10px 4px 6px;
-      transition: border-color 0.2s;
-      user-select: none;
-      min-height: 36px;
-    }
+      .eb-nav-cta {
+        display: flex;
+      }
 
-    .tgl:hover {
-      border-color: var(--accent);
-    }
+      .eb-nav-mob {
+        display: none;
+      }
 
-    .tgl-track {
-      width: 30px;
-      height: 17px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 100px;
-      position: relative;
-      transition: background 0.3s;
-      flex-shrink: 0;
-    }
-
-    html.light .tgl-track {
-      background: var(--accent);
-    }
-
-    .tgl-thumb {
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      width: 13px;
-      height: 13px;
-      background: #fff;
-      border-radius: 50%;
-      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    html.light .tgl-thumb {
-      transform: translateX(13px);
-    }
-
-    .tgl-lbl {
-      font-size: 0.68rem;
-      color: var(--muted);
-      letter-spacing: 0.03em;
-      white-space: nowrap;
+      .eb-header-bar {
+        padding: 0.6rem 1.4rem;
+      }
     }
 
     .hero {
@@ -1388,14 +1430,14 @@
     /* ── Suggestion cards (ChatGPT/Gemini style) ── */
     .quick-wrap {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.5rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.55rem;
       margin-bottom: 0.75rem;
-      /* Fade-out on first type/send */
       transition: opacity 0.18s ease, max-height 0.22s ease;
       overflow: hidden;
-      max-height: 200px;
+      max-height: 240px;
       opacity: 1;
+      width: 100%;
     }
 
     .quick-wrap.qp-hidden {
@@ -1407,9 +1449,9 @@
     .qp {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.6rem 0.75rem;
-      border-radius: 0.75rem;
+      gap: 0.55rem;
+      padding: 0.65rem 0.85rem;
+      border-radius: 0.875rem;
       border: 1px solid var(--border2);
       background: var(--surface);
       color: var(--muted2);
@@ -1417,9 +1459,12 @@
       font-weight: 500;
       cursor: pointer;
       text-align: left;
-      transition: border-color 0.15s, background 0.15s, color 0.15s;
-      min-height: 0;
-      line-height: 1.35;
+      transition: border-color 0.18s, background 0.18s, color 0.18s, transform 0.15s;
+      min-height: 42px;
+      line-height: 1.4;
+      min-width: 0;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .qp-icon {
@@ -1433,12 +1478,13 @@
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+      min-width: 0;
     }
 
     .qp-arrow {
       flex-shrink: 0;
-      opacity: 0.35;
-      font-size: 0.7rem;
+      opacity: 0.45;
+      font-size: 0.75rem;
       transition: opacity 0.15s, transform 0.15s;
     }
 
@@ -1446,32 +1492,39 @@
       border-color: rgba(249, 115, 22, 0.45);
       background: var(--surface2);
       color: var(--text);
+      transform: translateY(-1px);
     }
 
     .qp:hover .qp-arrow {
-      opacity: 0.8;
+      opacity: 0.9;
       transform: translate(2px, -2px);
     }
 
     .qp:active {
-      transform: scale(0.97);
+      transform: scale(0.98);
     }
 
     html.light .qp {
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.85);
       border-color: rgba(0, 0, 0, 0.1);
       color: #4a5a70;
     }
 
     html.light .qp:hover {
       background: #fff;
-      border-color: rgba(249, 115, 22, 0.4);
+      border-color: rgba(249, 115, 22, 0.5);
       color: #0f1829;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 680px) {
       .quick-wrap {
         grid-template-columns: 1fr;
+        gap: 0.45rem;
+      }
+
+      .qp {
+        padding: 0.55rem 0.75rem;
+        min-height: 38px;
       }
     }
 
@@ -1575,49 +1628,78 @@
       transform: none;
     }
 
-    @media (min-width: 768px) {
-      .nav-links {
-        display: flex;
-      }
-
-      .nav-right {
-        display: flex;
-      }
-
-      .nav-mob {
-        display: none;
-      }
-    }
-
     @media (max-width: 639px) {
       .hero {
-        padding: 0.75rem 1rem 0.75rem;
+        padding: 0.6rem 0.85rem 0.6rem;
+      }
+
+      .hero-badge {
+        font-size: 0.72rem;
+        padding: 0.25rem 0.65rem;
       }
 
       .hero-title {
-        margin-bottom: 0.4rem;
-        font-size: clamp(1.5rem, 6vw, 2rem);
+        margin-bottom: 0.35rem;
+        font-size: clamp(1.4rem, 6vw, 1.85rem);
       }
 
       .hero-sub {
-        margin-bottom: 0.6rem;
-        font-size: 0.8rem;
         display: none;
       }
 
       .hero-tags {
         gap: 0.25rem;
+        margin-top: 0.25rem;
+      }
+
+      .htag {
+        font-size: 0.68rem;
+        padding: 0.2rem 0.5rem;
       }
 
       .main-sec {
-        padding: 0.625rem 0.75rem 1rem;
+        padding: 0.5rem 0.65rem 1rem;
+      }
+
+      .mode-tabs-bar {
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        padding: 0.3rem;
+        gap: 0.35rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .mode-tabs-bar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .mode-tab-btn {
+        flex: 1 0 auto;
+        padding: 0.55rem 0.75rem;
+        font-size: 0.8rem;
+        min-height: 40px;
+        white-space: nowrap;
+      }
+
+      .tab-badge {
+        font-size: 0.62rem;
+        padding: 0.1rem 0.35rem;
+      }
+
+      .mode-config-bar {
+        padding: 0.5rem 0.7rem;
+        gap: 0.45rem 0.65rem;
+      }
+
+      .cfg-section-right {
+        margin-left: 0;
       }
 
       .chat-msgs {
-        height: calc(100vh - 440px);
-        min-height: 220px;
-        max-height: calc(100vh - 360px);
-        padding: 0.875rem;
+        height: calc(100dvh - 360px);
+        min-height: 240px;
+        padding: 0.75rem;
       }
 
       .msg {
@@ -1625,26 +1707,31 @@
       }
 
       .msg-bbl {
-        font-size: 0.875rem;
-        padding: 0.7rem 0.875rem;
+        font-size: 0.85rem;
+        padding: 0.65rem 0.8rem;
       }
 
       .msg-av {
-        width: 27px;
-        height: 27px;
+        width: 26px;
+        height: 26px;
         font-size: 0.75rem;
       }
 
       .chat-hdr {
-        padding: 0.75rem 0.875rem;
+        padding: 0.65rem 0.8rem;
+        gap: 0.5rem;
       }
 
       .hdr-name {
-        font-size: 0.875rem;
+        font-size: 0.82rem;
+      }
+
+      .hdr-status {
+        font-size: 0.66rem;
       }
 
       .chat-inp-area {
-        padding: 0.75rem 0.875rem;
+        padding: 0.65rem 0.75rem;
       }
     }
 
@@ -1706,97 +1793,133 @@
     .mode-tabs-bar {
       display: flex;
       gap: 0.5rem;
-      padding: 0.4rem;
+      padding: 0.35rem;
       border-radius: var(--radius);
-      margin-bottom: 1.25rem;
-      background: rgba(14, 21, 37, 0.7);
+      margin-bottom: 1.1rem;
+      background: rgba(14, 21, 37, 0.75);
       backdrop-filter: var(--blur);
       -webkit-backdrop-filter: var(--blur);
       border: 1px solid var(--border);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
+
     html.light .mode-tabs-bar {
       background: rgba(255, 255, 255, 0.85);
       border-color: var(--border);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
     }
+
     .mode-tab-btn {
       flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      padding: 0.75rem 0.9rem;
+      padding: 0.7rem 0.95rem;
       border-radius: var(--radius-sm);
       color: var(--muted2);
       font-weight: 700;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       transition: all 0.2s ease;
       position: relative;
       cursor: pointer;
       text-align: center;
       border: 1px solid transparent;
+      white-space: nowrap;
+      min-height: 44px;
+      user-select: none;
     }
+
     .mode-tab-btn:hover {
       color: var(--text);
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.05);
     }
+
     html.light .mode-tab-btn:hover {
       background: rgba(0, 0, 0, 0.04);
     }
+
     .mode-tab-btn.active {
       color: #fff;
-      background: linear-gradient(135deg, rgba(249, 115, 22, 0.22), rgba(220, 38, 38, 0.16));
-      border: 1px solid rgba(249, 115, 22, 0.45);
-      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.15);
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.25), rgba(220, 38, 38, 0.18));
+      border: 1px solid rgba(249, 115, 22, 0.5);
+      box-shadow: 0 4px 16px rgba(249, 115, 22, 0.2);
     }
+
     html.light .mode-tab-btn.active {
       color: #c2410c;
-      background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(220, 38, 38, 0.08));
-      border-color: rgba(249, 115, 22, 0.35);
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.14), rgba(220, 38, 38, 0.09));
+      border-color: rgba(249, 115, 22, 0.4);
     }
+
     .tab-badge {
       font-size: 0.68rem;
-      padding: 0.15rem 0.45rem;
+      padding: 0.15rem 0.5rem;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.08);
-      color: var(--muted);
+      color: var(--muted2);
       font-weight: 600;
+      letter-spacing: 0.02em;
     }
+
     .mode-tab-btn.active .tab-badge {
-      background: rgba(249, 115, 22, 0.25);
+      background: rgba(249, 115, 22, 0.28);
       color: #fed7aa;
     }
+
     html.light .mode-tab-btn.active .tab-badge {
-      color: #ea580c;
+      color: #c2410c;
+      background: rgba(249, 115, 22, 0.18);
     }
-    /* Mode Config Bar (Marks, Types, Chapters) */
+
+    /* Mode Config Bar (Marks, Types, Grade) */
     .mode-config-bar {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 0.6rem;
-      padding: 0.65rem 0.95rem;
+      justify-content: space-between;
+      gap: 0.6rem 0.9rem;
+      padding: 0.65rem 1rem;
       background: rgba(255, 255, 255, 0.035);
       border-bottom: 1px solid var(--border);
       font-size: 0.82rem;
+      min-width: 0;
     }
+
     html.light .mode-config-bar {
       background: rgba(0, 0, 0, 0.025);
     }
+
+    .cfg-section {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    .cfg-section-right {
+      margin-left: auto;
+    }
+
     .config-label {
       color: var(--muted2);
       font-weight: 700;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
+      flex-shrink: 0;
     }
+
     .config-pill-group {
       display: flex;
       gap: 0.35rem;
       align-items: center;
       flex-wrap: wrap;
     }
+
     .cfg-pill {
-      padding: 0.3rem 0.65rem;
+      padding: 0.32rem 0.72rem;
       border-radius: var(--radius-xs);
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border);
@@ -1804,38 +1927,75 @@
       font-size: 0.78rem;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.15s;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+      min-height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
     }
+
     .cfg-pill:hover {
       color: var(--text);
       border-color: var(--border2);
+      background: rgba(255, 255, 255, 0.09);
     }
-    .cfg-pill.active {
-      background: linear-gradient(135deg, #f97316, #dc2626);
-      border-color: #f97316;
-      color: #fff;
-      font-weight: 700;
+
+    html.light .cfg-pill {
+      background: rgba(0, 0, 0, 0.04);
+      border-color: rgba(0, 0, 0, 0.1);
+      color: #4a5a70;
     }
-    .cfg-input {
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-xs);
-      padding: 0.3rem 0.65rem;
-      color: var(--text);
-      font-size: 0.78rem;
-      outline: none;
-      min-width: 110px;
-    }
-    html.light .cfg-input {
-      background: #fff;
+
+    html.light .cfg-pill:hover {
+      background: rgba(0, 0, 0, 0.08);
       color: #0f1829;
     }
-    .cfg-input:focus {
+
+    .cfg-pill.active {
+      background: linear-gradient(135deg, #f97316, #dc2626) !important;
+      border-color: #f97316 !important;
+      color: #fff !important;
+      font-weight: 700;
+      box-shadow: 0 2px 10px rgba(249, 115, 22, 0.3);
+    }
+
+    .cfg-input {
+      background: rgba(14, 21, 37, 0.9);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius-xs);
+      padding: 0.35rem 1.8rem 0.35rem 0.7rem;
+      color: var(--text);
+      font-size: 0.78rem;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+      min-width: 105px;
+      max-width: 125px;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%239bacc0' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.5rem center;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    html.light .cfg-input {
+      background-color: #ffffff;
+      color: #0f1829;
+      border-color: rgba(0, 0, 0, 0.14);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%234a5a70' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    }
+
+    .cfg-input:focus,
+    .cfg-input:hover {
       border-color: var(--accent);
     }
 
     #page-body {
-      padding-top: calc(var(--nav-h) + var(--safe-top) + 4px);
+      padding-top: calc(var(--nav-h) + var(--safe-top) + 12px);
     }
   </style>
   <style>
@@ -1910,9 +2070,10 @@
           <span>EduBoost <span class="gt">Nepal</span></span>
         </a>
         <div class="eb-nav-links">
+          <a href="notes.html" class="eb-nav-link">Notes</a>
+          <a href="downloads.html" class="eb-nav-link">Downloads</a>
           <a href="ai-tutor.html" class="eb-nav-link active">🤖 AI Tutor</a>
           <a href="blog.html" class="eb-nav-link">Blog</a>
-          <a href="downloads.html" class="eb-nav-link">Downloads</a>
           <a href="about.html" class="eb-nav-link">About</a>
           <a href="contact.html" class="eb-nav-link">Contact</a>
         </div>
@@ -1931,6 +2092,7 @@
               ">Dashboard</a>
         </div>
         <div class="eb-nav-mob">
+
           <button id="hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false" class="eb-hbg">
             <svg id="ham-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
               viewBox="0 0 24 24">
@@ -1945,9 +2107,10 @@
       </div>
       <div id="mobile-menu" class="eb-mobile-menu glass">
         <div class="eb-mob-links">
+          <a href="notes.html" class="eb-mob-link">📚 Notes</a>
+          <a href="downloads.html" class="eb-mob-link">📥 Downloads</a>
           <a href="ai-tutor.html" class="eb-mob-link active">🤖 AI Tutor</a>
           <a href="blog.html" class="eb-mob-link">✍️ Blog</a>
-          <a href="downloads.html" class="eb-mob-link">📥 Downloads</a>
           <a href="about.html" class="eb-mob-link">ℹ️ About Us</a>
           <a href="contact.html" class="eb-mob-link">📬 Contact</a>
           <div class="eb-mob-divider">
@@ -1960,10 +2123,6 @@
                   display: none;
                   text-align: center;
                 ">📊 Dashboard</a>
-
-            <div class="eb-mob-theme-row">
-              <span>Theme</span>
-            </div>
           </div>
         </div>
       </div>
@@ -2002,17 +2161,20 @@
       <div class="main-wrap">
         <!-- 3-MODE TAB BAR -->
         <div class="mode-tabs-bar glass anim" role="tablist" aria-label="AI Backend Study Modes">
-          <button class="mode-tab-btn active" id="tab-tutor" onclick="switchAiMode('tutor')" role="tab" aria-selected="true">
+          <button class="mode-tab-btn active" id="tab-tutor" onclick="switchAiMode('tutor')" role="tab"
+            aria-selected="true">
             <span class="tab-icon">💬</span>
             <span class="tab-label">AI Tutor</span>
             <span class="tab-badge">Teacher</span>
           </button>
-          <button class="mode-tab-btn" id="tab-question-gen" onclick="switchAiMode('question-gen')" role="tab" aria-selected="false">
+          <button class="mode-tab-btn" id="tab-question-gen" onclick="switchAiMode('question-gen')" role="tab"
+            aria-selected="false">
             <span class="tab-icon">⚡</span>
             <span class="tab-label">Question Generator</span>
             <span class="tab-badge">Exam Setter</span>
           </button>
-          <button class="mode-tab-btn" id="tab-answer-gen" onclick="switchAiMode('answer-gen')" role="tab" aria-selected="false">
+          <button class="mode-tab-btn" id="tab-answer-gen" onclick="switchAiMode('answer-gen')" role="tab"
+            aria-selected="false">
             <span class="tab-icon">📝</span>
             <span class="tab-label">Answer Generator</span>
             <span class="tab-badge">Examiner</span>
@@ -2083,7 +2245,8 @@
             <div class="sidebar-card glass stats-card">
               <div class="sidebar-label">Session</div>
               <div class="stat-row">
-                <span>Mode</span><span class="stat-val" id="stat-mode" style="color:var(--accent2);font-weight:700;">AI Tutor</span>
+                <span>Mode</span><span class="stat-val" id="stat-mode" style="color:var(--accent2);font-weight:700;">AI
+                  Tutor</span>
               </div>
               <div class="stat-row">
                 <span>Messages</span><span class="stat-val" id="stat-msgs">0</span>
@@ -2124,40 +2287,50 @@
 
               <!-- Mode Configuration Bar (Answer Gen) -->
               <div class="mode-config-bar" id="mode-config-answer" style="display: none;">
-                <span class="config-label">Marks:</span>
-                <div class="config-pill-group">
-                  <button class="cfg-pill" onclick="setAnswerMarks(2, this)">2 Marks</button>
-                  <button class="cfg-pill" onclick="setAnswerMarks(4, this)">4 Marks</button>
-                  <button class="cfg-pill active" onclick="setAnswerMarks(5, this)">5 Marks</button>
-                  <button class="cfg-pill" onclick="setAnswerMarks(8, this)">8 Marks</button>
+                <div class="cfg-section">
+                  <span class="config-label">Marks:</span>
+                  <div class="config-pill-group">
+                    <button class="cfg-pill" onclick="setAnswerMarks(2, this)">2 Marks</button>
+                    <button class="cfg-pill" onclick="setAnswerMarks(4, this)">4 Marks</button>
+                    <button class="cfg-pill active" onclick="setAnswerMarks(5, this)">5 Marks</button>
+                    <button class="cfg-pill" onclick="setAnswerMarks(8, this)">8 Marks</button>
+                  </div>
                 </div>
-                <span class="config-label" style="margin-left: auto;">Grade:</span>
-                <select class="cfg-input" style="max-width: 105px;" id="cfg-grade-answer" onchange="setGrade(this.value)">
-                  <option value="Grade 12" selected>Class 12</option>
-                  <option value="Grade 11">Class 11</option>
-                </select>
+                <div class="cfg-section cfg-section-right">
+                  <span class="config-label">Grade:</span>
+                  <select class="cfg-input" id="cfg-grade-answer" onchange="setGrade(this.value)">
+                    <option value="Grade 12" selected>Class 12</option>
+                    <option value="Grade 11">Class 11</option>
+                  </select>
+                </div>
               </div>
 
               <!-- Mode Configuration Bar (Question Gen) -->
               <div class="mode-config-bar" id="mode-config-question" style="display: none;">
-                <span class="config-label">Type:</span>
-                <div class="config-pill-group">
-                  <button class="cfg-pill active" onclick="setQuestionType('Mixed', this)">Mixed</button>
-                  <button class="cfg-pill" onclick="setQuestionType('Short Answer', this)">Short (4M)</button>
-                  <button class="cfg-pill" onclick="setQuestionType('Long Answer', this)">Long (8M)</button>
-                  <button class="cfg-pill" onclick="setQuestionType('MCQ', this)">MCQ (1M)</button>
+                <div class="cfg-section">
+                  <span class="config-label">Type:</span>
+                  <div class="config-pill-group">
+                    <button class="cfg-pill active" onclick="setQuestionType('Mixed', this)">Mixed</button>
+                    <button class="cfg-pill" onclick="setQuestionType('Short Answer', this)">Short (4M)</button>
+                    <button class="cfg-pill" onclick="setQuestionType('Long Answer', this)">Long (8M)</button>
+                    <button class="cfg-pill" onclick="setQuestionType('MCQ', this)">MCQ (1M)</button>
+                  </div>
                 </div>
-                <span class="config-label" style="margin-left: 0.4rem;">Count:</span>
-                <div class="config-pill-group">
-                  <button class="cfg-pill" onclick="setQuestionCount(3, this)">3</button>
-                  <button class="cfg-pill active" onclick="setQuestionCount(5, this)">5</button>
-                  <button class="cfg-pill" onclick="setQuestionCount(10, this)">10</button>
+                <div class="cfg-section">
+                  <span class="config-label">Count:</span>
+                  <div class="config-pill-group">
+                    <button class="cfg-pill" onclick="setQuestionCount(3, this)">3</button>
+                    <button class="cfg-pill active" onclick="setQuestionCount(5, this)">5</button>
+                    <button class="cfg-pill" onclick="setQuestionCount(10, this)">10</button>
+                  </div>
                 </div>
-                <span class="config-label" style="margin-left: auto;">Grade:</span>
-                <select class="cfg-input" style="max-width: 105px;" id="cfg-grade-question" onchange="setGrade(this.value)">
-                  <option value="Grade 12" selected>Class 12</option>
-                  <option value="Grade 11">Class 11</option>
-                </select>
+                <div class="cfg-section cfg-section-right">
+                  <span class="config-label">Grade:</span>
+                  <select class="cfg-input" id="cfg-grade-question" onchange="setGrade(this.value)">
+                    <option value="Grade 12" selected>Class 12</option>
+                    <option value="Grade 11">Class 11</option>
+                  </select>
+                </div>
               </div>
 
               <!-- Messages -->
@@ -2268,16 +2441,25 @@
       }
 
       /* ── NAV ── */
-      window.toggleMenu = function () {
+      window.toggleMenu = window.toggleMobileMenu = function () {
         var menu = document.getElementById("mobile-menu");
         var btn = document.getElementById("hamburger");
         var hamIco = document.getElementById("ham-icon");
         var closeIco = document.getElementById("close-icon");
+        if (!menu) return;
         var open = menu.classList.toggle("open");
-        btn.setAttribute("aria-expanded", String(open));
-        hamIco.style.display = open ? "none" : "";
-        closeIco.style.display = open ? "" : "none";
+        if (btn) btn.setAttribute("aria-expanded", String(open));
+        if (hamIco) hamIco.style.display = open ? "none" : "";
+        if (closeIco) closeIco.style.display = open ? "" : "none";
       };
+
+      document.addEventListener("click", function (e) {
+        var menu = document.getElementById("mobile-menu");
+        var btn = document.getElementById("hamburger");
+        if (menu && menu.classList.contains("open") && !menu.contains(e.target) && btn && !btn.contains(e.target)) {
+          window.toggleMenu();
+        }
+      });
 
       /* ── SCROLL REVEAL ── */
       var obs = new IntersectionObserver(
@@ -2553,8 +2735,8 @@
             mode === "tutor"
               ? "AI Tutor"
               : mode === "question-gen"
-              ? "Question Gen"
-              : "Answer Gen (" + selectedMarks + "M)";
+                ? "Question Gen"
+                : "Answer Gen (" + selectedMarks + "M)";
         }
 
         // Chat Header
@@ -2699,6 +2881,7 @@
           var btn = document.createElement("button");
           btn.className = "qp";
           btn.setAttribute("aria-label", "Ask: " + item.text);
+          btn.setAttribute("title", item.text);
           btn.innerHTML =
             '<span class="qp-icon">' + item.icon + '</span>' +
             '<span class="qp-text">' + item.text + '</span>' +
@@ -3223,8 +3406,8 @@
           activeMode === "question-gen"
             ? "<p>Session cleared! 📋 Ready to generate fresh NEB board questions grounded in our notes.</p>"
             : activeMode === "answer-gen"
-            ? "<p>Session cleared! ✍️ Ready to craft board model answers for " + selectedMarks + " marks.</p>"
-            : "<p>Chat cleared! 🧹 Ask me anything about NEB Class 11 &amp; 12.</p>";
+              ? "<p>Session cleared! ✍️ Ready to craft board model answers for " + selectedMarks + " marks.</p>"
+              : "<p>Chat cleared! 🧹 Ask me anything about NEB Class 11 &amp; 12.</p>";
         appendMsg("ai", clearMsg);
         showToast("Cleared", "🗑️");
       };
@@ -3286,7 +3469,7 @@
           else if (initialMode === "answer-gen" || initialMode === "answers") switchAiMode("answer-gen");
           else if (initialMode === "tutor" || initialMode === "chat") switchAiMode("tutor");
         }
-      } catch (err) {}
+      } catch (err) { }
     })();
   </script>
 
