@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.gstatic.com" />
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -18,48 +16,13 @@
       href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/tailwind.min.css" />
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="../js/firebase-config.js"></script>
     <link rel="stylesheet" href="/css/design-system.css" />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Sora", "sans-serif"],
-              serif: ["DM Serif Display", "serif"],
-            },
-          },
-        },
-      };
-    </script>
-
-    <!-- ================================================================
-         🔥 FIREBASE CONFIG — REPLACE WITH YOUR OWN VALUES
-         Get these from Firebase Console → Project Settings → Your Apps
-    ================================================================ -->
-    <script>
-      const FIREBASE_CONFIG = {
-        apiKey: "AIzaSyCbVzplSn0UL2KRB3B45SCByJSm2FXPByw",
-        authDomain: "eduboost-f611f.firebaseapp.com",
-        projectId: "eduboost-f611f",
-        storageBucket: "eduboost-f611f.firebasestorage.app",
-        messagingSenderId: "121788124993",
-        appId: "1:121788124993:web:4df0ec72b1e187e76c1bc0",
-        measurementId: "G-1SDQZYXSKS",
-      };
-
-      // ================================================================
-      // 🤖 GEMINI API KEY — REPLACE WITH YOUR KEY
-      // Get from: https://aistudio.google.com/app/apikey
-      // ================================================================
-      const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY";
-    </script>
 
     <!-- ================================================================
          INLINED UTILS (replaces ../js/utils.js)

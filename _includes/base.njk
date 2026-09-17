@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="preconnect" href="https://www.gstatic.com" />
+    <link rel="dns-prefetch" href="https://www.gstatic.com" />
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f1f5f9" media="(prefers-color-scheme: light)" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <title>{{ title | default("EduBoost Nepal — NEB Exam Prep Platform") }}</title>
+    <meta name="description" content="{{ description | default("AI-powered exam preparation for NEB Class 11-12 students and teachers in Nepal.") }}" />
+    <meta name="robots" content="{{ robots | default("index, follow") }}" />
+    <link rel="canonical" href="{{ canonical | default("https://eduboostnepal.nabint.com.np" + page.url) }}" />
+    <link rel="icon" type="image/png" href="/public/favicon.png" />
+    <link rel="apple-touch-icon" href="/public/favicon.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Google AdSense -->
+    <meta name="google-adsense-account" content="ca-pub-3896962422851508" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3896962422851508" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/design-system.css" />
+    <link rel="stylesheet" href="/css/tailwind.min.css" />
+
+    <!-- Service Worker Eviction: unregisters any stale SW that blocks fonts/Firebase -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function (regs) {
+          regs.forEach(function (r) { r.unregister(); });
+        });
+        caches.keys().then(function (keys) {
+          keys.forEach(function (k) { caches.delete(k); });
+        });
+      }
+    </script>
+
+    <!-- Early Theme Init (prevents flash) -->
+    <script>
+      (function () {
+        var saved = localStorage.getItem("eduboost-theme") || localStorage.getItem("eb-theme") || localStorage.getItem("theme") || "dark";
+        document.documentElement.classList.remove("light", "dark");
+        document.documentElement.classList.add(saved);
+      })();
+    </script>
+
+    <!-- Firebase SDK & Config -->
+    <script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script defer src="/js/firebase-config.js"></script>
+    <script defer src="/js/theme.js"></script>
+
+    <!-- Global Nav Auth State Controller -->
+    <script>
+      window.addEventListener("load", function () {
+        if (typeof firebase !== "undefined" && firebase.auth) {
+          firebase.auth().onAuthStateChanged(function (user) {
+            var isIndex = window.location.pathname === "/" || window.location.pathname === "/index.html";
+            if (user && isIndex) {
+              window.location.replace("/pages/dashboard.html");
+              return;
+            }
+            var navLogin = document.getElementById("nav-login-link");
+            var navSignup = document.getElementById("nav-signup-link");
+            var navDash = document.getElementById("nav-dashboard-link");
+            var navLogout = document.getElementById("nav-logout-btn");
+            var mobLogin = document.getElementById("mob-login-link");
+            var mobSignup = document.getElementById("mob-signup-link");
+            var mobDash = document.getElementById("mob-dashboard-link");
+            var mobLogout = document.getElementById("mob-logout-btn");
+
+            if (user) {
+              if (navLogin) navLogin.style.display = "none";
+              if (navSignup) navSignup.style.display = "none";
+              if (navDash) navDash.style.display = "";
+              if (navLogout) navLogout.style.display = "";
+              if (mobLogin) mobLogin.style.display = "none";
+              if (mobSignup) mobSignup.style.display = "none";
+              if (mobDash) mobDash.style.display = "";
+              if (mobLogout) mobLogout.style.display = "";
+            } else {
+              if (navLogin) navLogin.style.display = "";
+              if (navSignup) navSignup.style.display = "";
+              if (navDash) navDash.style.display = "none";
+              if (navLogout) navLogout.style.display = "none";
+              if (mobLogin) mobLogin.style.display = "";
+              if (mobSignup) mobSignup.style.display = "";
+              if (mobDash) mobDash.style.display = "none";
+              if (mobLogout) mobLogout.style.display = "none";
+            }
+          });
+        }
+        window.doLogout = function () {
+          if (typeof firebase !== "undefined" && firebase.auth) {
+            firebase.auth().signOut().then(function () {
+              window.location.reload();
+            });
+          }
+        };
+      });
+    </script>
+
+    {% if pageStyles %}{{ pageStyles | safe }}{% endif %}
+  </head>
+  <body class="bg-d text-white font-sans min-h-screen">
+    <div id="toast" class="glass"></div>
+    <div class="nepal-stripe" aria-hidden="true"></div>
+
+    <!-- CANONICAL NAVBAR -->
+    <nav class="eb-header" aria-label="Main navigation">
+      <div class="eb-header-inner">
+        <div class="eb-header-bar glass">
+          <a href="/index.html" class="eb-nav-logo" aria-label="EduBoost Nepal home">
+            <img src="/public/favicon.png" alt="EduBoost Nepal" width="36" height="36" loading="eager" />
+            <span>EduBoost <span class="gt">Nepal</span></span>
+          </a>
+          <div class="eb-nav-links">
+            <a href="/index.html#features" class="eb-nav-link">Features</a>
+            <a href="/index.html#subjects" class="eb-nav-link">Subjects</a>
+            <a href="/pages/ai-tutor.html" class="eb-nav-link" style="color: #fb923c; font-weight: 600">🤖 AI Tutor</a>
+            <a href="/pages/blog.html" class="eb-nav-link">Blog</a>
+            <a href="/pages/downloads.html" class="eb-nav-link">Downloads</a>
+            <a href="/pages/about.html" class="eb-nav-link">About</a>
+            <a href="/pages/contact.html" class="eb-nav-link">Contact</a>
+          </div>
+          <div class="eb-nav-cta">
+            <a href="/pages/login.html" id="nav-login-link" class="eb-nav-ghost">Log in</a>
+            <a href="/pages/signup.html" id="nav-signup-link" class="btn-p" style="font-size: 0.875rem; padding: 0.6rem 1.25rem; border-radius: 1rem;">Get Started →</a>
+            <a href="/pages/dashboard.html" id="nav-dashboard-link" class="btn-p" style="font-size: 0.875rem; padding: 0.6rem 1.25rem; border-radius: 1rem; display: none;">Dashboard</a>
+            <button id="nav-logout-btn" onclick="doLogout()" class="eb-nav-ghost" style="display: none;">Sign Out</button>
+          </div>
+          <div class="eb-nav-mob">
+            <button id="hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false" class="eb-hbg glass">
+              <svg id="ham-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <svg id="close-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="display: none">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="mobile-menu" class="eb-mobile-menu glass">
+          <div class="eb-mob-links">
+            <a href="/index.html#features" onclick="toggleMenu()" class="eb-mob-link">✨ Features</a>
+            <a href="/index.html#subjects" onclick="toggleMenu()" class="eb-mob-link">📚 Subjects</a>
+            <a href="/pages/ai-tutor.html" class="eb-mob-link" style="color: #fb923c; font-weight: 600">🤖 AI Tutor</a>
+            <a href="/pages/blog.html" class="eb-mob-link">✍️ Blog</a>
+            <a href="/pages/downloads.html" class="eb-mob-link">📥 Downloads</a>
+            <a href="/pages/about.html" class="eb-mob-link">ℹ️ About Us</a>
+            <a href="/pages/contact.html" class="eb-mob-link">📬 Contact</a>
+            <div class="eb-mob-divider">
+              <a href="/pages/login.html" id="mob-login-link" onclick="toggleMenu()" class="eb-mob-link">🔑 Log in</a>
+              <a href="/pages/signup.html" id="mob-signup-link" class="eb-mob-cta btn-p">Get Started Free →</a>
+              <a href="/pages/dashboard.html" id="mob-dashboard-link" class="eb-mob-cta btn-p" style="display: none;">Go to Dashboard</a>
+              <button id="mob-logout-btn" onclick="doLogout()" class="eb-mob-cta eb-nav-ghost" style="display: none;">Sign Out</button>
+              <div class="eb-mob-theme-row">
+                <span>Theme</span>
+                <button onclick="toggleDarkMode()" class="eb-nav-ghost" style="padding: 4px 10px; font-size: 0.75rem;" data-theme-toggle-btn>
+                  <span data-theme-icon>🌙</span> <span data-theme-label>Theme</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN PAGE CONTENT -->
+    <main id="main-content">
+      {{ content | safe }}
+    </main>
+
+    <!-- CANONICAL FOOTER -->
+    <footer class="eb-footer">
+      <div class="ft">
+        <div>
+          <div class="fb">
+            <img src="/public/favicon.png" alt="EduBoost Nepal" width="36" height="36" loading="eager" fetchpriority="high" />
+            <span>EduBoost <span class="gt">Nepal</span></span>
+          </div>
+          <p class="ftag">
+            Nepal's first AI-powered exam preparation platform built specifically for NEB Class 11 &amp; 12 students and teachers. Study smarter, score higher.
+          </p>
+          <div class="socials">
+            <a href="#" class="soc glass" aria-label="Facebook">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
+              </svg>
+            </a>
+            <a href="#" class="soc glass" aria-label="Instagram">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+              </svg>
+            </a>
+            <a href="#" class="soc glass" aria-label="YouTube">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a href="#" class="soc glass" aria-label="Telegram">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-17.5 7.363a2.224 2.224 0 0 0 .064 4.127l3.997 1.378 1.316 4.007a1.113 1.113 0 0 0 1.898.371l2.03-2.03 3.996 2.94a2.236 2.236 0 0 0 3.467-1.461l2.532-15.5a2.244 2.244 0 0 0-2.778-2.41zm-11.1 12.32-.826 3.095-1.003-3.054 8.425-7.17-6.596 7.129z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="fct">Platform</div>
+          <div class="flks">
+            <a href="/pages/dashboard.html"><span>🏠</span> Dashboard</a>
+            <a href="/pages/ai-tutor.html"><span>🤖</span> AI Tutor</a>
+            <a href="/pages/notes.html"><span>📚</span> Notes</a>
+            <a href="/pages/blog.html"><span>✍️</span> Blog</a>
+            <a href="/pages/downloads.html"><span>📥</span> Downloads</a>
+          </div>
+        </div>
+        <div>
+          <div class="fct">Subjects</div>
+          <div class="flks">
+            <a href="/pages/notes.html">⚛️ Physics</a>
+            <a href="/pages/notes.html">🧪 Chemistry</a>
+            <a href="/pages/notes.html">🧬 Biology</a>
+            <a href="/pages/notes.html">📐 Mathematics</a>
+            <a href="/pages/notes.html">💻 Computer Sc.</a>
+          </div>
+        </div>
+        <div>
+          <div class="fct">Account</div>
+          <div class="flks" style="margin-bottom: 1.5rem">
+            <a href="/pages/login.html">Login</a>
+            <a href="/pages/signup.html">Sign Up — Free</a>
+          </div>
+          <div class="fct">Legal</div>
+          <div class="flks">
+            <a href="/pages/terms.html">Terms of Service</a>
+            <a href="/pages/privacy.html">Privacy Policy</a>
+            <a href="/pages/about.html">About Us</a>
+            <a href="/pages/contact.html">Contact Us</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="fn">
+        <div class="fn-box glass">
+          <div class="fn-in">
+            <div>
+              <div class="fn-t">📬 Stay updated with study tips &amp; exam news</div>
+              <div class="fn-s">Free NEB exam prep resources. No spam, ever.</div>
+            </div>
+            <div class="fn-form">
+              <input id="nl-name" type="text" placeholder="Your name" class="fn-inp" autocomplete="name" />
+              <input id="nl-email" type="email" placeholder="your@email.com" class="fn-inp" autocomplete="email" />
+              <button id="nl-btn" onclick="handleSubscribe()" class="fn-btn btn-p">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fbot">
+        <div>© 2026 EduBoost Nepal. All rights reserved. 🇳🇵 Made with ❤️ in Nepal</div>
+        <div class="fbot-lks">
+          <a href="/pages/terms.html">Terms</a>
+          <a href="/pages/privacy.html">Privacy</a>
+          <a href="/pages/about.html">About</a>
+          <a href="/pages/contact.html">Contact</a>
+          <span class="status-dot">All systems operational</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SHARED GLOBAL SCRIPTS -->
+    <script>
+      function toggleMenu() {
+        var m = document.getElementById("mobile-menu"),
+          h = document.getElementById("ham-icon"),
+          c = document.getElementById("close-icon"),
+          b = document.getElementById("hamburger");
+        if (!m) return;
+        var o = m.classList.toggle("open");
+        if (h) h.style.display = o ? "none" : "";
+        if (c) c.style.display = o ? "" : "none";
+        if (b) b.setAttribute("aria-expanded", o);
+        document.body.style.overflow = o ? "hidden" : "";
+      }
+
+      document.addEventListener("click", function (e) {
+        var b = document.getElementById("hamburger"),
+          m = document.getElementById("mobile-menu");
+        if (m && m.classList.contains("open") && b && !b.contains(e.target) && !m.contains(e.target)) {
+          toggleMenu();
+        }
+      });
+
+      var mm = document.getElementById("mobile-menu");
+      if (mm) {
+        mm.addEventListener("click", function (e) {
+          if (e.target.tagName === "A") {
+            setTimeout(function () {
+              if (mm.classList.contains("open")) toggleMenu();
+            }, 50);
+          }
+        });
+      }
+
+      function showToast(msg, emoji) {
+        var t = document.getElementById("toast");
+        if (!t) return;
+        t.innerHTML = "<span>" + (emoji || "ℹ️") + "</span><span>" + msg + "</span>";
+        t.classList.add("show");
+        setTimeout(function () {
+          t.classList.remove("show");
+        }, 3800);
+      }
+
+      var SHEET_URL = "/api/subscribe";
+      function getDeviceType() {
+        var ua = navigator.userAgent;
+        if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) return "Tablet";
+        if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) return "Mobile";
+        return "Desktop";
+      }
+      function getBrowser() {
+        var ua = navigator.userAgent;
+        if (ua.indexOf("Chrome") > -1 && ua.indexOf("Edg") === -1 && ua.indexOf("OPR") === -1) return "Chrome";
+        if (ua.indexOf("Safari") > -1 && ua.indexOf("Chrome") === -1) return "Safari";
+        if (ua.indexOf("Firefox") > -1) return "Firefox";
+        if (ua.indexOf("Edg") > -1) return "Edge";
+        if (ua.indexOf("OPR") > -1 || ua.indexOf("Opera") > -1) return "Opera";
+        return "Other";
+      }
+      function getOS() {
+        var ua = navigator.userAgent;
+        if (ua.indexOf("Win") > -1) return "Windows";
+        if (ua.indexOf("Mac") > -1) return "MacOS";
+        if (ua.indexOf("Android") > -1) return "Android";
+        if (ua.indexOf("iPhone") || ua.indexOf("iPad") > -1) return "iOS";
+        if (ua.indexOf("Linux") > -1) return "Linux";
+        return "Other";
+      }
+
+      function handleSubscribe() {
+        var n = document.getElementById("nl-name"),
+          i = document.getElementById("nl-email"),
+          b = document.getElementById("nl-btn");
+        if (!n || !i) return;
+        var name = n.value.trim(),
+          e = i.value.trim(),
+          r = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!name) {
+          showToast("Please enter your name.", "⚠️");
+          n.focus();
+          return;
+        }
+        if (!e || !r.test(e)) {
+          showToast("Enter a valid email.", "⚠️");
+          i.focus();
+          return;
+        }
+        if (b) {
+          b.disabled = true;
+          b.textContent = "Checking...";
+        }
+
+        function doSubscribePost() {
+          if (b) b.textContent = "Subscribing...";
+          fetch(SHEET_URL, {
+            method: "POST",
+            headers: { "Content-Type": "text/plain" },
+            body: JSON.stringify({
+              name: name,
+              email: e,
+              date: new Date().toLocaleString("en-NP", { timeZone: "Asia/Kathmandu" }),
+              device: getDeviceType(),
+              browser: getBrowser(),
+              os: getOS(),
+            }),
+          })
+            .then(function () {
+              n.value = "";
+              i.value = "";
+              if (b) {
+                b.textContent = "✓ Subscribed!";
+                setTimeout(function () {
+                  b.disabled = false;
+                  b.textContent = "Subscribe";
+                }, 4000);
+              }
+              showToast("Welcome " + name + "! You are subscribed 🎉", "📬");
+            })
+            .catch(function () {
+              if (b) {
+                b.disabled = false;
+                b.textContent = "Subscribe";
+              }
+              showToast("Something went wrong. Try again!", "⚠️");
+            });
+        }
+
+        fetch(SHEET_URL + "?email=" + encodeURIComponent(e))
+          .then(function (res) { return res.text(); })
+          .then(function (txt) {
+            var data = {};
+            try { data = JSON.parse(txt); } catch (err) {}
+            if (data.status === "duplicate") {
+              if (b) {
+                b.disabled = false;
+                b.textContent = "Subscribe";
+              }
+              showToast("This email is already subscribed! 😊", "✅");
+              return;
+            }
+            doSubscribePost();
+          })
+          .catch(function () {
+            doSubscribePost();
+          });
+      }
+
+      var nlInput = document.getElementById("nl-email");
+      if (nlInput) {
+        nlInput.addEventListener("keydown", function (e) {
+          if (e.key === "Enter") handleSubscribe();
+        });
+      }
+    </script>
+
+    {% if pageScripts %}{{ pageScripts | safe }}{% endif %}
+  </body>
+</html>

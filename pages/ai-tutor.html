@@ -33,6 +33,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="../js/firebase-config.js"></script>
 
   <style>
     *,
@@ -1701,6 +1702,138 @@
       border-radius: 4px;
     }
 
+    /* ── 3-Mode Tabs Bar ── */
+    .mode-tabs-bar {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.4rem;
+      border-radius: var(--radius);
+      margin-bottom: 1.25rem;
+      background: rgba(14, 21, 37, 0.7);
+      backdrop-filter: var(--blur);
+      -webkit-backdrop-filter: var(--blur);
+      border: 1px solid var(--border);
+    }
+    html.light .mode-tabs-bar {
+      background: rgba(255, 255, 255, 0.85);
+      border-color: var(--border);
+    }
+    .mode-tab-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      color: var(--muted2);
+      font-weight: 700;
+      font-size: 0.88rem;
+      transition: all 0.2s ease;
+      position: relative;
+      cursor: pointer;
+      text-align: center;
+      border: 1px solid transparent;
+    }
+    .mode-tab-btn:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    html.light .mode-tab-btn:hover {
+      background: rgba(0, 0, 0, 0.04);
+    }
+    .mode-tab-btn.active {
+      color: #fff;
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.22), rgba(220, 38, 38, 0.16));
+      border: 1px solid rgba(249, 115, 22, 0.45);
+      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.15);
+    }
+    html.light .mode-tab-btn.active {
+      color: #c2410c;
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(220, 38, 38, 0.08));
+      border-color: rgba(249, 115, 22, 0.35);
+    }
+    .tab-badge {
+      font-size: 0.68rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .mode-tab-btn.active .tab-badge {
+      background: rgba(249, 115, 22, 0.25);
+      color: #fed7aa;
+    }
+    html.light .mode-tab-btn.active .tab-badge {
+      color: #ea580c;
+    }
+    /* Mode Config Bar (Marks, Types, Chapters) */
+    .mode-config-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.65rem 0.95rem;
+      background: rgba(255, 255, 255, 0.035);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.82rem;
+    }
+    html.light .mode-config-bar {
+      background: rgba(0, 0, 0, 0.025);
+    }
+    .config-label {
+      color: var(--muted2);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .config-pill-group {
+      display: flex;
+      gap: 0.35rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .cfg-pill {
+      padding: 0.3rem 0.65rem;
+      border-radius: var(--radius-xs);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--muted2);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .cfg-pill:hover {
+      color: var(--text);
+      border-color: var(--border2);
+    }
+    .cfg-pill.active {
+      background: linear-gradient(135deg, #f97316, #dc2626);
+      border-color: #f97316;
+      color: #fff;
+      font-weight: 700;
+    }
+    .cfg-input {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xs);
+      padding: 0.3rem 0.65rem;
+      color: var(--text);
+      font-size: 0.78rem;
+      outline: none;
+      min-width: 110px;
+    }
+    html.light .cfg-input {
+      background: #fff;
+      color: #0f1829;
+    }
+    .cfg-input:focus {
+      border-color: var(--accent);
+    }
+
     #page-body {
       padding-top: calc(var(--nav-h) + var(--safe-top) + 4px);
     }
@@ -1867,6 +2000,25 @@
     <!-- MAIN -->
     <section class="main-sec">
       <div class="main-wrap">
+        <!-- 3-MODE TAB BAR -->
+        <div class="mode-tabs-bar glass anim" role="tablist" aria-label="AI Backend Study Modes">
+          <button class="mode-tab-btn active" id="tab-tutor" onclick="switchAiMode('tutor')" role="tab" aria-selected="true">
+            <span class="tab-icon">💬</span>
+            <span class="tab-label">AI Tutor</span>
+            <span class="tab-badge">Teacher</span>
+          </button>
+          <button class="mode-tab-btn" id="tab-question-gen" onclick="switchAiMode('question-gen')" role="tab" aria-selected="false">
+            <span class="tab-icon">⚡</span>
+            <span class="tab-label">Question Generator</span>
+            <span class="tab-badge">Exam Setter</span>
+          </button>
+          <button class="mode-tab-btn" id="tab-answer-gen" onclick="switchAiMode('answer-gen')" role="tab" aria-selected="false">
+            <span class="tab-icon">📝</span>
+            <span class="tab-label">Answer Generator</span>
+            <span class="tab-badge">Examiner</span>
+          </button>
+        </div>
+
         <!-- Subject quick-filter bar (mobile) -->
         <div class="subj-bar anim" role="group" aria-label="Filter by subject">
           <button class="subj-pill active" onclick="setSubject(this, '')">
@@ -1931,13 +2083,16 @@
             <div class="sidebar-card glass stats-card">
               <div class="sidebar-label">Session</div>
               <div class="stat-row">
+                <span>Mode</span><span class="stat-val" id="stat-mode" style="color:var(--accent2);font-weight:700;">AI Tutor</span>
+              </div>
+              <div class="stat-row">
                 <span>Messages</span><span class="stat-val" id="stat-msgs">0</span>
               </div>
               <div class="stat-row">
                 <span>Subject</span><span class="stat-val" id="stat-subj">All</span>
               </div>
               <div class="stat-row">
-                <span>Model</span><span class="stat-val">EduBoost AI</span>
+                <span>Model</span><span class="stat-val">EduBoost NEB</span>
               </div>
             </div>
           </div>
@@ -1948,12 +2103,12 @@
               <!-- Header -->
               <div class="chat-hdr">
                 <div class="hdr-left">
-                  <div class="ai-av">🤖</div>
+                  <div class="ai-av" id="hdr-avatar">🤖</div>
                   <div>
-                    <div class="hdr-name">EduBoost AI Tutor</div>
-                    <div class="hdr-status">
+                    <div class="hdr-name" id="hdr-title">EduBoost AI Tutor</div>
+                    <div class="hdr-status" id="hdr-status">
                       <span class="status-dot"></span>
-                      Online · NEB Expert
+                      <span id="hdr-status-text">Online · NEB Teacher</span>
                     </div>
                   </div>
                 </div>
@@ -1965,6 +2120,44 @@
                     📋 Copy
                   </button>
                 </div>
+              </div>
+
+              <!-- Mode Configuration Bar (Answer Gen) -->
+              <div class="mode-config-bar" id="mode-config-answer" style="display: none;">
+                <span class="config-label">Marks:</span>
+                <div class="config-pill-group">
+                  <button class="cfg-pill" onclick="setAnswerMarks(2, this)">2 Marks</button>
+                  <button class="cfg-pill" onclick="setAnswerMarks(4, this)">4 Marks</button>
+                  <button class="cfg-pill active" onclick="setAnswerMarks(5, this)">5 Marks</button>
+                  <button class="cfg-pill" onclick="setAnswerMarks(8, this)">8 Marks</button>
+                </div>
+                <span class="config-label" style="margin-left: auto;">Grade:</span>
+                <select class="cfg-input" style="max-width: 105px;" id="cfg-grade-answer" onchange="setGrade(this.value)">
+                  <option value="Grade 12" selected>Class 12</option>
+                  <option value="Grade 11">Class 11</option>
+                </select>
+              </div>
+
+              <!-- Mode Configuration Bar (Question Gen) -->
+              <div class="mode-config-bar" id="mode-config-question" style="display: none;">
+                <span class="config-label">Type:</span>
+                <div class="config-pill-group">
+                  <button class="cfg-pill active" onclick="setQuestionType('Mixed', this)">Mixed</button>
+                  <button class="cfg-pill" onclick="setQuestionType('Short Answer', this)">Short (4M)</button>
+                  <button class="cfg-pill" onclick="setQuestionType('Long Answer', this)">Long (8M)</button>
+                  <button class="cfg-pill" onclick="setQuestionType('MCQ', this)">MCQ (1M)</button>
+                </div>
+                <span class="config-label" style="margin-left: 0.4rem;">Count:</span>
+                <div class="config-pill-group">
+                  <button class="cfg-pill" onclick="setQuestionCount(3, this)">3</button>
+                  <button class="cfg-pill active" onclick="setQuestionCount(5, this)">5</button>
+                  <button class="cfg-pill" onclick="setQuestionCount(10, this)">10</button>
+                </div>
+                <span class="config-label" style="margin-left: auto;">Grade:</span>
+                <select class="cfg-input" style="max-width: 105px;" id="cfg-grade-question" onchange="setGrade(this.value)">
+                  <option value="Grade 12" selected>Class 12</option>
+                  <option value="Grade 11">Class 11</option>
+                </select>
               </div>
 
               <!-- Messages -->
@@ -2019,17 +2212,6 @@
   <!-- FIREBASE -->
   <script>
     (function () {
-      var cfg = {
-        apiKey: "AIzaSyCbVzplSn0UL2KRB3B45SCByJSm2FXPByw",
-        authDomain: "eduboost-f611f.firebaseapp.com",
-        projectId: "eduboost-f611f",
-        storageBucket: "eduboost-f611f.firebasestorage.app",
-        messagingSenderId: "121788124993",
-        appId: "1:121788124993:web:4df0ec72b1e187e76c1bc0",
-      };
-      try {
-        if (!firebase.apps.length) firebase.initializeApp(cfg);
-      } catch (e) { }
 
       firebase.auth().onAuthStateChanged(function (user) {
         var guestIds = [
@@ -2183,56 +2365,263 @@
           .join("\n");
       }
 
-      // Suggestion cards — icon + text, max 4 shown
-      var PROMPTS = {
-        "": [
-          { icon: "⚡", text: "Explain Newton's Laws of Motion" },
-          { icon: "🧬", text: "How does DNA replication work?" },
-          { icon: "🎯", text: "NEB exam tips for Class 12" },
-          { icon: "🌿", text: "Explain photosynthesis" },
-        ],
-        Physics: [
-          { icon: "⚡", text: "Explain Newton's Laws of Motion" },
-          { icon: "📐", text: "Derive v = u + at" },
-          { icon: "🌊", text: "What is Bernoulli's theorem?" },
-          { icon: "🔄", text: "Define SHM with examples" },
-        ],
-        Chemistry: [
-          { icon: "⚖️", text: "Explain Le Chatelier's Principle" },
-          { icon: "🔗", text: "What is hybridization?" },
-          { icon: "⚗️", text: "Explain electrolysis" },
-          { icon: "🔢", text: "What is the mole concept?" },
-        ],
-        Biology: [
-          { icon: "🧬", text: "How does DNA replication work?" },
-          { icon: "🌿", text: "Explain Mendelian genetics" },
-          { icon: "🔁", text: "What is the Krebs cycle?" },
-          { icon: "🛡️", text: "Types of immunity" },
-        ],
-        Mathematics: [
-          { icon: "📈", text: "Differentiate y = x³ + 2x" },
-          { icon: "∫", text: "Solve: ∫(2x+3) dx" },
-          { icon: "📊", text: "What is the Binomial Theorem?" },
-          { icon: "🎯", text: "What is a limit in calculus?" },
-        ],
-        "Computer Science": [
-          { icon: "🌐", text: "Explain OSI model layers" },
-          { icon: "💾", text: "Difference between RAM and ROM" },
-          { icon: "🧱", text: "Explain OOP concepts" },
-          { icon: "🔌", text: "Types of network topology" },
-        ],
-        English: [
-          { icon: "✍️", text: "How to write a good essay?" },
-          { icon: "💬", text: "Explain figures of speech" },
-          { icon: "🔄", text: "Active vs Passive voice" },
-          { icon: "📄", text: "How to write a formal letter?" },
-        ],
-        Economics: [
-          { icon: "📉", text: "What is elasticity of demand?" },
-          { icon: "📊", text: "How is GDP calculated?" },
-          { icon: "🏪", text: "Types of market structures" },
-          { icon: "💡", text: "What is opportunity cost?" },
-        ],
+      /* ── 3-MODE STATE & CONFIG ── */
+      var activeMode = "tutor"; // "tutor", "question-gen", "answer-gen"
+      var selectedMarks = 5;
+      var selectedQType = "Mixed";
+      var selectedQCount = 5;
+      var activeGrade = "Grade 12";
+      var activeChapter = "";
+
+      // Mode-specific prompt presets
+      var MODE_PROMPTS = {
+        "tutor": {
+          "": [
+            { icon: "⚡", text: "Explain Newton's Laws with a practical Nepal analogy" },
+            { icon: "📐", text: "Derive root mean square speed of gas molecules" },
+            { icon: "⚖️", text: "How does pressure change affect Le Chatelier's equilibrium?" },
+            { icon: "🧬", text: "Explain DNA replication step-by-step" },
+          ],
+          Physics: [
+            { icon: "⚡", text: "Explain Newton's Laws of Motion with a Sajha Yatayat example" },
+            { icon: "📐", text: "Derive expression for drift velocity of electrons" },
+            { icon: "🌊", text: "Derive Bernoulli's theorem with assumptions" },
+            { icon: "🔄", text: "Explain simple harmonic motion with energy conservation" },
+          ],
+          Chemistry: [
+            { icon: "⚖️", text: "Explain Le Chatelier's Principle for Haber ammonia synthesis" },
+            { icon: "🔗", text: "What is hybridization? Explain sp, sp², sp³" },
+            { icon: "⚗️", text: "Explain Daniel cell and deduce Nernst equation" },
+            { icon: "🧪", text: "How to distinguish 1°, 2°, 3° alcohols using Victor Meyer's test?" },
+          ],
+          Biology: [
+            { icon: "🧬", text: "How does semi-conservative DNA replication work?" },
+            { icon: "🌿", text: "Explain Mendel's law of independent assortment" },
+            { icon: "🔁", text: "Explain the Krebs cycle and its ATP yield" },
+            { icon: "🛡️", text: "Differentiate between innate and acquired immunity" },
+          ],
+          Mathematics: [
+            { icon: "📈", text: "A 5m ladder slides down a wall at 2m/s. Find rate of bottom sliding" },
+            { icon: "∫", text: "Derive standard integral ∫ 1/√(a²-x²) dx" },
+            { icon: "📊", text: "State and prove Rolle's theorem with geometric meaning" },
+            { icon: "🎯", text: "Prove continuity condition for piecewise functions" },
+          ],
+          "Computer Science": [
+            { icon: "🌐", text: "Explain OSI 7-layer model with functions of each layer" },
+            { icon: "🧱", text: "Explain 4 pillars of OOP with C++ examples" },
+            { icon: "🔌", text: "Compare Star, Bus and Ring network topologies" },
+            { icon: "💾", text: "Explain 1NF, 2NF, 3NF database normalization" },
+          ],
+          English: [
+            { icon: "✍️", text: "How to structure an A+ essay for NEB Class 12 board" },
+            { icon: "📄", text: "Formal letter format and sample for NEB exam" },
+            { icon: "💬", text: "Explain metaphor vs simile with examples" },
+            { icon: "🔄", text: "Rules for active to passive voice transformation" },
+          ],
+          Economics: [
+            { icon: "📉", text: "Explain price elasticity of demand with types" },
+            { icon: "📊", text: "How is GDP calculated using expenditure method?" },
+            { icon: "🏪", text: "Compare perfect competition vs monopoly market" },
+            { icon: "💡", text: "Explain Law of Diminishing Marginal Utility" },
+          ],
+        },
+        "question-gen": {
+          "": [
+            { icon: "📋", text: "Set 5 mixed board questions for Class 12 Wave Optics" },
+            { icon: "⚡", text: "Generate 5 short 4-mark questions from Chemical Kinetics" },
+            { icon: "📐", text: "Set 3 long 8-mark questions from Rotational Dynamics" },
+            { icon: "🎯", text: "Generate 10 board MCQs for Class 11 Stoichiometry" },
+          ],
+          Physics: [
+            { icon: "📋", text: "Set 5 mixed questions for Class 12 Wave Optics with marking scheme" },
+            { icon: "⚡", text: "Generate 5 short 4-mark questions for Electric Circuits" },
+            { icon: "📐", text: "Set Group C 8-mark questions for Potentiometer & Kirchhoff's laws" },
+            { icon: "🎯", text: "Generate 10 board exam MCQs for Modern Physics" },
+          ],
+          Chemistry: [
+            { icon: "📋", text: "Set 5 mixed questions for Electrochemistry with marks" },
+            { icon: "⚡", text: "Generate 5 short questions for Ionic Equilibrium" },
+            { icon: "🧪", text: "Set organic conversion questions for Benzene & Diazonium salts" },
+            { icon: "🎯", text: "Generate 10 MCQs for Volumetric Analysis" },
+          ],
+          Biology: [
+            { icon: "🧬", text: "Set 5 short questions for Genetics and DNA replication" },
+            { icon: "🌿", text: "Set 3 long questions for Photosynthesis & Respiration" },
+            { icon: "🔁", text: "Generate 10 board MCQs for Human Physiology" },
+            { icon: "🛡️", text: "Set 5 questions for Plant Anatomy with diagram requirements" },
+          ],
+          Mathematics: [
+            { icon: "📈", text: "Set 5 short 4-mark questions for Related Rates and Derivatives" },
+            { icon: "∫", text: "Set 5 questions for Integration by parts and definite integrals" },
+            { icon: "📊", text: "Set 3 long questions for Vectors & 3D Geometry" },
+            { icon: "🎯", text: "Set 10 MCQs for Class 12 Differential Equations" },
+          ],
+          "Computer Science": [
+            { icon: "🌐", text: "Set 5 short questions for Networking and OSI Model" },
+            { icon: "🧱", text: "Generate 3 long programming questions in C" },
+            { icon: "🔌", text: "Set 5 questions for DBMS and Normalization" },
+            { icon: "🎯", text: "Generate 10 MCQs for Class 12 Computer Science" },
+          ],
+          English: [
+            { icon: "✍️", text: "Set 5 free writing & grammar questions for Class 12 English" },
+            { icon: "📖", text: "Generate reading comprehension questions with scoring key" },
+            { icon: "💬", text: "Set critical thinking questions from prescribed literature" },
+            { icon: "🎯", text: "Generate 10 grammar MCQs for board exam" },
+          ],
+          Economics: [
+            { icon: "📉", text: "Set 5 short questions for Microeconomics & Market structures" },
+            { icon: "📊", text: "Set 3 long 8-mark questions for Macroeconomics and National Income" },
+            { icon: "🏪", text: "Set 5 analytical questions on Nepal's economic development" },
+            { icon: "🎯", text: "Generate 10 MCQs for Economics" },
+          ],
+        },
+        "answer-gen": {
+          "": [
+            { icon: "✍️", text: "Why is a voltmeter connected in parallel across a circuit? [2 marks]" },
+            { icon: "📝", text: "Differentiate between order and molecularity of a reaction. [4 marks]" },
+            { icon: "📐", text: "Derive mirror formula for a concave spherical mirror. [5 marks]" },
+            { icon: "🎯", text: "State potentiometer principle and derive internal resistance formula with diagram. [8 marks]" },
+          ],
+          Physics: [
+            { icon: "✍️", text: "Why is a voltmeter connected in parallel across a component? [2 marks]" },
+            { icon: "📝", text: "State and prove work-energy theorem. [4 marks]" },
+            { icon: "📐", text: "Derive expression for fringe width in Young's double slit experiment. [5 marks]" },
+            { icon: "🎯", text: "State potentiometer principle and derive internal resistance formula with diagram. [8 marks]" },
+          ],
+          Chemistry: [
+            { icon: "✍️", text: "Why does rate of reaction increase with temperature? [2 marks]" },
+            { icon: "📝", text: "Differentiate between order and molecularity with 4 points. [4 marks]" },
+            { icon: "🧪", text: "Explain chlorination of benzene with complete EAS mechanism and diagram. [5 marks]" },
+            { icon: "🎯", text: "Describe Haber process for ammonia with industrial flowsheet and conditions. [8 marks]" },
+          ],
+          Biology: [
+            { icon: "✍️", text: "What is the function of RuBisCO enzyme in Calvin cycle? [2 marks]" },
+            { icon: "📝", text: "Differentiate between Mitosis and Meiosis with comparison table. [4 marks]" },
+            { icon: "🧬", text: "Describe Watson and Crick model of DNA with labeled diagram. [5 marks]" },
+            { icon: "🎯", text: "Explain human nephron structure and mechanism of urine formation. [8 marks]" },
+          ],
+          Mathematics: [
+            { icon: "✍️", text: "State the condition for three vectors to be coplanar. [2 marks]" },
+            { icon: "📝", text: "Find the angle between vectors a⃗ = 2î + ĵ - k̂ and b⃗ = î - ĵ + 2k̂. [4 marks]" },
+            { icon: "📐", text: "A 5m ladder leans against a wall. Top slides at 2m/s. Find rate of bottom sliding when foot is 3m from wall. [5 marks]" },
+            { icon: "🎯", text: "Solve system of linear equations by Cramer's rule: 2x+y-z=1, x-y+z=2, 3x+2y-2z=3. [8 marks]" },
+          ],
+          "Computer Science": [
+            { icon: "✍️", text: "What is a primary key in database? Give one example. [2 marks]" },
+            { icon: "📝", text: "Differentiate between call by value and call by reference in C. [4 marks]" },
+            { icon: "🌐", text: "Explain 7 layers of OSI model with functions. [5 marks]" },
+            { icon: "🎯", text: "Write a complete C program to multiply two 3x3 matrices with user input. [8 marks]" },
+          ],
+          English: [
+            { icon: "✍️", text: "State two features of a formal report. [2 marks]" },
+            { icon: "📝", text: "Write a job application cover letter for a secondary school teacher. [4 marks]" },
+            { icon: "📄", text: "Write an essay on 'Impact of Digital Education in Nepal'. [5 marks]" },
+            { icon: "🎯", text: "Write a comprehensive analytical essay with introduction, body arguments and conclusion. [8 marks]" },
+          ],
+          Economics: [
+            { icon: "✍️", text: "Define opportunity cost with a suitable example. [2 marks]" },
+            { icon: "📝", text: "Explain any four determinants of supply. [4 marks]" },
+            { icon: "📊", text: "Explain the circular flow of income in a two-sector economy with diagram. [5 marks]" },
+            { icon: "🎯", text: "Explain the Keynesian theory of employment with effective demand diagram. [8 marks]" },
+          ],
+        },
+      };
+
+      window.switchAiMode = function (mode) {
+        activeMode = mode;
+        // Tab buttons
+        document.querySelectorAll(".mode-tab-btn").forEach(function (btn) {
+          btn.classList.remove("active");
+          btn.setAttribute("aria-selected", "false");
+        });
+        var activeTab = document.getElementById("tab-" + mode);
+        if (activeTab) {
+          activeTab.classList.add("active");
+          activeTab.setAttribute("aria-selected", "true");
+        }
+
+        // Mode configuration bars
+        var ansBar = document.getElementById("mode-config-answer");
+        var qBar = document.getElementById("mode-config-question");
+        if (ansBar) ansBar.style.display = mode === "answer-gen" ? "flex" : "none";
+        if (qBar) qBar.style.display = mode === "question-gen" ? "flex" : "none";
+
+        // Sidebar stat
+        var statMode = document.getElementById("stat-mode");
+        if (statMode) {
+          statMode.textContent =
+            mode === "tutor"
+              ? "AI Tutor"
+              : mode === "question-gen"
+              ? "Question Gen"
+              : "Answer Gen (" + selectedMarks + "M)";
+        }
+
+        // Chat Header
+        var hdrTitle = document.getElementById("hdr-title");
+        var hdrAvatar = document.getElementById("hdr-avatar");
+        var hdrStatusText = document.getElementById("hdr-status-text");
+        var chatInp = document.getElementById("chat-inp");
+
+        if (mode === "question-gen") {
+          if (hdrTitle) hdrTitle.textContent = "NEB Question Paper Setter";
+          if (hdrAvatar) hdrAvatar.textContent = "📋";
+          if (hdrStatusText) hdrStatusText.textContent = "Board Exam Setter · Grounded in Notes";
+          if (chatInp) chatInp.placeholder = "Enter chapter or syllabus topic (e.g. Wave Optics, Le Chatelier's Principle)...";
+        } else if (mode === "answer-gen") {
+          if (hdrTitle) hdrTitle.textContent = "NEB Board Examiner (" + selectedMarks + " Marks)";
+          if (hdrAvatar) hdrAvatar.textContent = "✍️";
+          if (hdrStatusText) hdrStatusText.textContent = "Senior Board Examiner · " + selectedMarks + "-Mark Depth";
+          if (chatInp) chatInp.placeholder = "Enter NEB exam question to get " + selectedMarks + "-mark model answer...";
+        } else {
+          if (hdrTitle) hdrTitle.textContent = "EduBoost AI Tutor";
+          if (hdrAvatar) hdrAvatar.textContent = "🤖";
+          if (hdrStatusText) hdrStatusText.textContent = "Online · Experienced NEB Teacher";
+          if (chatInp) chatInp.placeholder = "Ask anything about NEB Class 11 & 12...";
+        }
+
+        promptsHidden = false;
+        buildPrompts();
+      };
+
+      window.setAnswerMarks = function (marks, btn) {
+        selectedMarks = marks;
+        document.querySelectorAll("#mode-config-answer .cfg-pill").forEach(function (b) {
+          b.classList.remove("active");
+        });
+        if (btn) btn.classList.add("active");
+        var statMode = document.getElementById("stat-mode");
+        if (statMode && activeMode === "answer-gen") statMode.textContent = "Answer Gen (" + marks + "M)";
+        var hdrTitle = document.getElementById("hdr-title");
+        if (hdrTitle && activeMode === "answer-gen") hdrTitle.textContent = "NEB Board Examiner (" + marks + " Marks)";
+        var hdrStatusText = document.getElementById("hdr-status-text");
+        if (hdrStatusText && activeMode === "answer-gen") hdrStatusText.textContent = "Senior Board Examiner · " + marks + "-Mark Depth";
+        var chatInp = document.getElementById("chat-inp");
+        if (chatInp && activeMode === "answer-gen") chatInp.placeholder = "Enter NEB exam question to get " + marks + "-mark model answer...";
+      };
+
+      window.setQuestionType = function (type, btn) {
+        selectedQType = type;
+        document.querySelectorAll("#mode-config-question .cfg-pill").forEach(function (b) {
+          if (["Mixed", "Short Answer", "Long Answer", "MCQ"].includes(b.textContent.trim()) || b.textContent.includes(type.slice(0, 4))) {
+            b.classList.remove("active");
+          }
+        });
+        if (btn) btn.classList.add("active");
+      };
+
+      window.setQuestionCount = function (count, btn) {
+        selectedQCount = count;
+        document.querySelectorAll("#mode-config-question .cfg-pill").forEach(function (b) {
+          if (["3", "5", "10"].includes(b.textContent.trim())) {
+            b.classList.remove("active");
+          }
+        });
+        if (btn) btn.classList.add("active");
+      };
+
+      window.setGrade = function (val) {
+        activeGrade = val;
       };
 
       function syncSubjectUI() {
@@ -2302,7 +2691,10 @@
         container.innerHTML = "";
         container.style.display = "";
         container.classList.remove("qp-hidden");
-        var list = (PROMPTS[activeSubject] || PROMPTS[""]).slice(0, 4);
+
+        var modeDict = MODE_PROMPTS[activeMode] || MODE_PROMPTS["tutor"];
+        var list = (modeDict[activeSubject] || modeDict[""]).slice(0, 4);
+
         list.forEach(function (item) {
           var btn = document.createElement("button");
           btn.className = "qp";
@@ -2746,6 +3138,21 @@
           "\n"
           : "";
 
+        var payloadPrompt = msg;
+        if (activeMode === "tutor") {
+          payloadPrompt = historyText + notesContext + "\n\nTUTOR:";
+        }
+
+        var requestBody = {
+          prompt: payloadPrompt,
+          mode: activeMode,
+          subject: activeSubject || "General NEB",
+          marks: selectedMarks,
+          level: activeGrade || "Grade 12",
+          questionType: selectedQType,
+          mcqCount: selectedQCount,
+        };
+
         function attempt(retries) {
           Promise.resolve(
             firebase.auth().currentUser
@@ -2758,15 +3165,7 @@
                 "Content-Type": "application/json",
                 Authorization: "Bearer " + idToken,
               },
-              body: JSON.stringify({
-                prompt: historyText + notesContext + "\n\nTUTOR:",
-                mode: "chat",
-                subject: activeSubject || "General NEB",
-                marks: 5,
-                level: "Grade 12",
-                answerStyle:
-                  "Friendly tutoring — clear, exam-focused, encouraging",
-              }),
+              body: JSON.stringify(requestBody),
             })
               .then(function (r) {
                 return r.json();
@@ -2820,11 +3219,14 @@
         var statEl = document.getElementById("stat-msgs");
         if (statEl) statEl.textContent = "0";
         document.getElementById("chat-msgs").innerHTML = "";
-        appendMsg(
-          "ai",
-          "<p>Chat cleared! 🧹 Ask me anything about NEB Class 11 &amp; 12.</p>",
-        );
-        showToast("Chat cleared", "🗑️");
+        var clearMsg =
+          activeMode === "question-gen"
+            ? "<p>Session cleared! 📋 Ready to generate fresh NEB board questions grounded in our notes.</p>"
+            : activeMode === "answer-gen"
+            ? "<p>Session cleared! ✍️ Ready to craft board model answers for " + selectedMarks + " marks.</p>"
+            : "<p>Chat cleared! 🧹 Ask me anything about NEB Class 11 &amp; 12.</p>";
+        appendMsg("ai", clearMsg);
+        showToast("Cleared", "🗑️");
       };
 
       window.copyLastAI = function () {
@@ -2874,6 +3276,17 @@
 
       /* ── INIT ── */
       buildPrompts();
+
+      // Check URL parameters for initial mode (e.g. ?mode=answer-gen or ?mode=question-gen)
+      try {
+        var urlParams = new URLSearchParams(window.location.search);
+        var initialMode = urlParams.get("mode") || urlParams.get("tab");
+        if (initialMode) {
+          if (initialMode === "question-gen" || initialMode === "questions") switchAiMode("question-gen");
+          else if (initialMode === "answer-gen" || initialMode === "answers") switchAiMode("answer-gen");
+          else if (initialMode === "tutor" || initialMode === "chat") switchAiMode("tutor");
+        }
+      } catch (err) {}
     })();
   </script>
 

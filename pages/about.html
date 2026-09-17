@@ -1,394 +1,166 @@
-<!doctype html>
-<html lang="en" class="dark scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://www.gstatic.com" />
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Learn about EduBoost Nepal — a free AI-powered study platform for NEB Class 11 & 12 students in Nepal." />
-    <title>About Us — EduBoost Nepal | NEB Exam Prep Platform</title>
-    <meta
-      name="description"
-      content="Learn about EduBoost Nepal — Nepal's first AI-powered exam preparation platform built for NEB Class 11 & 12 students and teachers. Our mission, team, and story."
-    />
-    <link rel="canonical" href="https://eduboostnepal.nabint.com.np/pages/about.html" />
-    <link rel="icon" type="image/png" href="../public/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Sora", "sans-serif"],
-              serif: ["DM Serif Display", "serif"],
-            },
-            keyframes: {
-              fadeUp: {
-                from: { opacity: "0", transform: "translateY(24px)" },
-                to: { opacity: "1", transform: "translateY(0)" },
-              },
-            },
-            animation: {
-              "fade-up": "fadeUp 0.6s ease forwards",
-            },
-          },
-        },
-      };
-    </script>
-    <style>.glass{background:rgba(255,255,255,0.06);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.11)}.gradient-text{background:linear-gradient(135deg,#fb923c,#f97316,#dc2626);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.nepal-stripe{background:linear-gradient(90deg,#003893 50%,#dc143c 50%);height:4px}body{background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 40%,#0c1b4d 70%,#0f172a 100%);min-height:100vh}html.light body{background:linear-gradient(135deg,#f1f5f9 0%,#e8eaf6 40%,#e3e8f7 70%,#f1f5f9 100%);color:#0f172a}html.light .text-white{color:#0f172a}html.light .text-slate-300{color:#334155}html.light .text-slate-400{color:#475569}html.light .text-slate-500{color:#64748b}html.light .glass{background:rgba(255,255,255,0.65);border-color:rgba(0,0,0,0.09)}html.light nav.glass{background:rgba(255,255,255,0.85);border-color:rgba(0,0,0,0.1)}html.light .bg-slate-900{background-color:#f8fafc}html.light .border-slate-800{border-color:#cbd5e1}.eb-theme-toggle{display:inline-flex;align-items:center;gap:8px;cursor:pointer;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:5px 12px 5px 7px;transition:border-color 0.2s,background 0.2s;user-select:none;vertical-align:middle}html.light .eb-theme-toggle{background:rgba(0,0,0,0.04);border-color:rgba(0,0,0,0.12)}.eb-theme-toggle:hover{border-color:#6366f1;background:rgba(99,102,241,0.1)}.eb-theme-toggle-track{width:34px;height:19px;background:rgba(255,255,255,0.18);border-radius:100px;position:relative;transition:background 0.3s;flex-shrink:0}html.light .eb-theme-toggle-track{background:#6366f1}.eb-theme-toggle-thumb{position:absolute;top:2px;left:2px;width:15px;height:15px;background:#fff;border-radius:50%;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 1px 4px rgba(0,0,0,0.25)}html.light .eb-theme-toggle-thumb{transform:translateX(15px)}.eb-theme-toggle-icon{font-size:12px;line-height:1}.eb-theme-toggle-lbl{font-size:0.7rem;color:rgba(255,255,255,0.55);letter-spacing:0.03em;white-space:nowrap}html.light .eb-theme-toggle-lbl{color:rgba(0,0,0,0.45)}#mobile-menu{display:none;flex-direction:column;gap:2px;padding:12px 16px 16px;border-top:1px solid rgba(255,255,255,0.08)}html.light #mobile-menu{border-top-color:rgba(0,0,0,0.08)}#mobile-menu.open{display:flex}#mobile-menu a{padding:10px 12px;border-radius:10px;font-size:0.9rem;color:rgba(255,255,255,0.75);transition:background 0.2s,color 0.2s}html.light #mobile-menu a{color:#334155}#mobile-menu a:hover{background:rgba(255,255,255,0.08);color:#fff}html.light #mobile-menu a:hover{background:rgba(0,0,0,0.05);color:#0f172a}#mobile-menu a.active{color:#fb923c;font-weight:600}.bar{display:block;width:20px;height:2px;background:currentColor;border-radius:2px;transition:transform 0.3s,opacity 0.3s}#hamburger.open .bar:nth-child(1){transform:translateY(6px) rotate(45deg)}#hamburger.open .bar:nth-child(2){opacity:0}#hamburger.open .bar:nth-child(3){transform:translateY(-6px) rotate(-45deg)}.flag-np{display:inline-block;font-size:1.5rem;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}.flag-np-sm{display:inline-block;font-size:1rem;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}</style>
+---
+layout: base.njk
+title: "About Us — EduBoost Nepal | NEB Exam Prep Platform"
+description: "Learn about EduBoost Nepal — Nepal's first AI-powered exam preparation platform built for NEB Class 11 & 12 students and teachers. Our mission, team, and story."
+canonical: "https://eduboostnepal.nabint.com.np/pages/about.html"
+permalink: "/pages/about.html"
+---
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3896962422851508" crossorigin="anonymous"></script>
+<style>
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .animate-fade-up { animation: fadeUp 0.6s ease forwards; }
+  .flag-np { display: inline-block; font-size: 1.5rem; line-height: 1; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; }
+  .flag-np-sm { display: inline-block; font-size: 1rem; line-height: 1; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; }
+</style>
 
-    <!-- Theme init — run before paint to avoid flash -->
-    <script>
-      (function(){
-        var saved = localStorage.getItem("eduboost-theme") || localStorage.getItem("eb-theme") || localStorage.getItem("theme") || "dark";
-        document.documentElement.classList.remove("light","dark");
-        document.documentElement.classList.add(saved);
-      })();
-    </script>
-    <!-- Firebase Auth for nav state -->
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-    <script>
-      (function(){
-        var cfg={apiKey:"AIzaSyCbVzplSn0UL2KRB3B45SCByJSm2FXPByw",authDomain:"eduboost-f611f.firebaseapp.com",projectId:"eduboost-f611f",storageBucket:"eduboost-f611f.firebasestorage.app",messagingSenderId:"121788124993",appId:"1:121788124993:web:4df0ec72b1e187e76c1bc0"};
-        try{if(!firebase.apps.length)firebase.initializeApp(cfg);}catch(e){}
-        firebase.auth().onAuthStateChanged(function(user){
-          var navLogin=document.getElementById('nav-login-link');
-          var navSignup=document.getElementById('nav-signup-link');
-          var navDashboard=document.getElementById('nav-dashboard-link');
-          var mobLogin=document.getElementById('mob-login-link');
-          var mobSignup=document.getElementById('mob-signup-link');
-          var mobDashboard=document.getElementById('mob-dashboard-link');
-          var ctaSignup=document.getElementById('cta-signup');
-          var ctaDashboard=document.getElementById('cta-dashboard');
-          var ctaSection=document.getElementById('cta-section');
-          if(user){
-            if(navLogin)navLogin.style.display='none';
-            if(navSignup)navSignup.style.display='none';
-            if(navDashboard)navDashboard.style.display='';
-            if(mobLogin)mobLogin.style.display='none';
-            if(mobSignup)mobSignup.style.display='none';
-            if(mobDashboard)mobDashboard.style.display='';
-            if(ctaSignup)ctaSignup.style.display='none';
-            if(ctaDashboard)ctaDashboard.style.display='';
-            if(ctaSection)ctaSection.style.display='none';
-          }else{
-            if(navLogin)navLogin.style.display='';
-            if(navSignup)navSignup.style.display='';
-            if(navDashboard)navDashboard.style.display='none';
-            if(mobLogin)mobLogin.style.display='';
-            if(mobSignup)mobSignup.style.display='';
-            if(mobDashboard)mobDashboard.style.display='none';
-            if(ctaSignup)ctaSignup.style.display='';
-            if(ctaDashboard)ctaDashboard.style.display='none';
-            if(ctaSection)ctaSection.style.display='';
-          }
-        });
-      })();
-    </script>
+<!-- ── Hero ── -->
+<section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-10 sm:pb-12 text-center">
+  <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-xs text-orange-300 mb-6">
+    <span class="flag-np-sm">🇳🇵</span> Made in Nepal, for Nepal
+  </div>
+  <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 sm:mb-6 leading-tight">
+    About <span style="color:#B91C2C">EduBoost Nepal</span>
+  </h1>
+  <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+    We're on a mission to make world-class exam preparation accessible to
+    every NEB student across Nepal — from Kathmandu to Jumla.
+  </p>
+</section>
 
-    <style>*,*::before,*::after{box-sizing:border-box}html,body{overflow-x:hidden;max-width:100%}img,video,iframe,embed,object{max-width:100%;height:auto}table{width:100%;overflow-x:auto;display:block}pre,code{overflow-x:auto;white-space:pre-wrap;word-break:break-word}@media (max-width:640px){h1{font-size:clamp(1.5rem,5vw,2.5rem)!important}h2{font-size:clamp(1.1rem,4vw,1.8rem)!important}.text-4xl{font-size:clamp(1.5rem,6vw,2.25rem)!important}.text-5xl{font-size:clamp(1.8rem,7vw,3rem)!important}.text-6xl{font-size:clamp(2rem,8vw,3.75rem)!important}}</style>
-    <meta name="google-adsense-account" content="ca-pub-3896962422851508" />
-  <link rel="stylesheet" href="/css/design-system.css" />
-</head>
-
-  <body class="text-white min-h-screen font-sans">
-    <!-- Nepal stripe -->
-    <div class="nepal-stripe"></div>
-
-    <!-- ── Navbar ── -->
-    <nav class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <!-- Logo -->
-          <a href="../index.html" class="flex items-center gap-2.5 shrink-0">
-            <img width="32" height="32" loading="lazy" src="../public/favicon.png" alt="EduBoost Nepal" class="w-8 h-8 rounded-lg object-cover" />
-            <span class="font-bold text-base">EduBoost <span style="color:#B91C2C">Nepal</span></span>
-          </a>
-
-          <!-- Desktop nav links -->
-          <div class="hidden md:flex items-center gap-6 text-sm text-slate-300">
-            <a href="blog.html" class="hover:text-white transition-colors">Blog</a>
-            <a href="downloads.html" class="hover:text-white transition-colors">Downloads</a>
-            <a href="about.html" class="text-orange-400 font-semibold">About</a>
-            <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
-          </div>
-
-          <!-- Right side: theme toggle + auth + hamburger -->
-          <div class="flex items-center gap-2 sm:gap-3">
-            <!-- Theme toggle -->
-
-            <!-- Auth buttons -->
-            <a id="nav-login-link" href="login.html" class="hidden sm:inline-block text-sm px-3 py-1.5 rounded-lg glass hover:bg-white/10 transition-all">Login</a>
-            <a id="nav-signup-link" href="signup.html" class="hidden sm:inline-block text-sm px-3 py-1.5 rounded-lg bg-orange-500 hover:bg-orange-600 transition-all font-semibold">Sign Up</a>
-            <a id="nav-dashboard-link" href="dashboard.html" style="display:none" class="hidden sm:inline-block text-sm px-3 py-1.5 rounded-lg bg-orange-500 hover:bg-orange-600 transition-all font-semibold">Dashboard</a>
-
-
-            <!-- Hamburger (mobile only) -->
-            <button id="hamburger" onclick="toggleMenu()" aria-label="Menu" class="md:hidden flex flex-col gap-1.5 p-1.5 rounded-lg hover:bg-white/10 transition-colors text-white">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Mobile dropdown -->
-      <div id="mobile-menu">
-        <a href="blog.html">Blog</a>
-        <a href="downloads.html">Downloads</a>
-        <a href="about.html" class="active">About</a>
-        <a href="contact.html">Contact</a>
-        <div class="flex gap-2 mt-2 pt-2 border-t border-white/10">
-          <a id="mob-login-link" href="login.html" class="flex-1 text-center py-2 rounded-lg glass text-sm font-medium">Login</a>
-          <a id="mob-signup-link" href="signup.html" class="flex-1 text-center py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-sm font-semibold text-white transition-all">Sign Up Free</a>
-          <a id="mob-dashboard-link" href="dashboard.html" style="display:none" class="flex-1 text-center py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-sm font-semibold text-white transition-all">Dashboard</a>
-
-        </div>
-      </div>
-    </nav>
-
-    <!-- ── Hero ── -->
-    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-10 sm:pb-12 text-center">
-      <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-xs text-orange-300 mb-6">
-        <span class="flag-np-sm">🇳🇵</span> Made in Nepal, for Nepal
-      </div>
-      <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 sm:mb-6 leading-tight">
-        About <span style="color:#B91C2C">EduBoost Nepal</span>
-      </h1>
-      <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-        We're on a mission to make world-class exam preparation accessible to
-        every NEB student across Nepal — from Kathmandu to Jumla.
+<!-- ── Main content ── -->
+<section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+  <!-- Our Story -->
+  <div class="eb-card rounded-2xl p-6 sm:p-8 lg:p-10 mb-6 sm:mb-8">
+    <h2 class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-5">Our Story</h2>
+    <div class="text-slate-300 leading-relaxed space-y-4 text-sm sm:text-base">
+      <p>
+        EduBoost Nepal was founded in 2024 by a group of young Nepali
+        educators and technologists who saw a clear gap: despite the
+        high-stakes nature of NEB board exams, most students relied on
+        outdated notes, expensive private tutoring, or guesswork about exam
+        patterns.
       </p>
-    </section>
+      <p>
+        We built EduBoost Nepal to change that. By combining modern AI
+        technology with deep knowledge of the NEB curriculum, we created a
+        platform where any Class 11 or Class 12 student — regardless of
+        location or economic background — can access personalised study
+        tools, high-quality notes, and intelligent exam-preparation
+        guidance.
+      </p>
+      <p>
+        Today, EduBoost Nepal serves students across Nepal with free AI-powered study tools, chapter-wise notes, downloadable PDFs, and detailed blog guides covering every major NEB subject from Physics and Chemistry to Mathematics, Computer Science, and English.
+      </p>
+      <p>
+        What makes EduBoost Nepal different is its laser focus on the NEB curriculum specifically. Every question generated by the AI, every blog article, and every set of notes is built around the actual NEB syllabus and recent exam patterns — not generic content repurposed for a Nepali audience. The AI tutor understands NEB marking schemes and can explain concepts the way an NEB examiner would expect to see them answered.
+      </p>
+    </div>
+  </div>
 
-    <!-- ── Main content ── -->
-    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+  <!-- Mission & Vision -->
+  <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+    <div class="eb-card rounded-2xl p-5 sm:p-7">
+      <div class="text-3xl mb-3">🎯</div>
+      <h3 class="font-bold text-base sm:text-lg mb-2 sm:mb-3">Our Mission</h3>
+      <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+        To democratise quality NEB exam preparation through AI-powered tools
+        that are free, accessible, and effective for every student in Nepal.
+      </p>
+    </div>
+    <div class="eb-card rounded-2xl p-5 sm:p-7">
+      <div class="text-3xl mb-3">🌟</div>
+      <h3 class="font-bold text-base sm:text-lg mb-2 sm:mb-3">Our Vision</h3>
+      <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+        A Nepal where every student has an equal opportunity to excel in
+        their education, powered by smart technology and high-quality
+        learning resources.
+      </p>
+    </div>
+  </div>
 
-      <!-- Our Story -->
-      <div class="eb-card rounded-2xl p-6 sm:p-8 lg:p-10 mb-6 sm:mb-8">
-        <h2 class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-5">Our Story</h2>
-        <div class="text-slate-300 leading-relaxed space-y-4 text-sm sm:text-base">
-          <p>
-            EduBoost Nepal was founded in 2024 by a group of young Nepali
-            educators and technologists who saw a clear gap: despite the
-            high-stakes nature of NEB board exams, most students relied on
-            outdated notes, expensive private tutoring, or guesswork about exam
-            patterns.
-          </p>
-          <p>
-            We built EduBoost Nepal to change that. By combining modern AI
-            technology with deep knowledge of the NEB curriculum, we created a
-            platform where any Class 11 or Class 12 student — regardless of
-            location or economic background — can access personalised study
-            tools, high-quality notes, and intelligent exam-preparation
-            guidance.
-          </p>
-          <p>
-            Today, EduBoost Nepal serves students across Nepal with free AI-powered study tools, chapter-wise notes, downloadable PDFs, and detailed blog guides covering every major NEB subject from Physics and Chemistry to Mathematics, Computer Science, and English.
-          </p>
-          <p>
-            What makes EduBoost Nepal different is its laser focus on the NEB curriculum specifically. Every question generated by the AI, every blog article, and every set of notes is built around the actual NEB syllabus and recent exam patterns — not generic content repurposed for a Nepali audience. The AI tutor understands NEB marking schemes and can explain concepts the way an NEB examiner would expect to see them answered.
-          </p>
-        </div>
-      </div>
-
-      <!-- Mission & Vision -->
-      <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
-        <div class="eb-card rounded-2xl p-5 sm:p-7">
-          <div class="text-3xl mb-3">🎯</div>
-          <h3 class="font-bold text-base sm:text-lg mb-2 sm:mb-3">Our Mission</h3>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-            To democratise quality NEB exam preparation through AI-powered tools
-            that are free, accessible, and effective for every student in Nepal.
-          </p>
-        </div>
-        <div class="eb-card rounded-2xl p-5 sm:p-7">
-          <div class="text-3xl mb-3">🌟</div>
-          <h3 class="font-bold text-base sm:text-lg mb-2 sm:mb-3">Our Vision</h3>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-            A Nepal where every student has an equal opportunity to excel in
-            their education, powered by smart technology and high-quality
-            learning resources.
-          </p>
-        </div>
-      </div>
-
-      <!-- What We Offer -->
-      <div class="eb-card rounded-2xl p-6 sm:p-8 lg:p-10 mb-6 sm:mb-8">
-        <h2 class="font-serif text-xl sm:text-2xl font-bold mb-5 sm:mb-6">What We Offer</h2>
-        <div class="grid sm:grid-cols-2 gap-4 sm:gap-5">
-          <div class="flex gap-3 items-start">
-            <span class="text-xl mt-0.5 shrink-0">🤖</span>
-            <div>
-              <div class="font-semibold text-sm mb-1">AI-Powered Practice</div>
-              <p class="text-slate-400 text-xs leading-relaxed">
-                Intelligent quizzes and flashcards that adapt to your weak areas across all NEB subjects.
-              </p>
-            </div>
-          </div>
-          <div class="flex gap-3 items-start">
-            <span class="text-xl mt-0.5 shrink-0">📚</span>
-            <div>
-              <div class="font-semibold text-sm mb-1">Curated Study Notes</div>
-              <p class="text-slate-400 text-xs leading-relaxed">
-                Free downloadable notes aligned with the NEB syllabus for Class 11 and Class 12 students.
-              </p>
-            </div>
-          </div>
-          <div class="flex gap-3 items-start">
-            <span class="text-xl mt-0.5 shrink-0">📊</span>
-            <div>
-              <div class="font-semibold text-sm mb-1">Exam Pattern Analysis</div>
-              <p class="text-slate-400 text-xs leading-relaxed">
-                Detailed breakdowns of previous year question patterns to help you focus on what matters most.
-              </p>
-            </div>
-          </div>
-          <div class="flex gap-3 items-start">
-            <span class="text-xl mt-0.5 shrink-0">✍️</span>
-            <div>
-              <div class="font-semibold text-sm mb-1">Expert Blog</div>
-              <p class="text-slate-400 text-xs leading-relaxed">
-                Study guides, tips, and subject-specific articles written by experienced NEB educators.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Stats -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
-        <div class="eb-card rounded-xl p-4 sm:p-5 text-center">
-          <div class="font-bold text-xl sm:text-2xl gradient-text mb-1">10+</div>
-          <div class="text-slate-400 text-xs">Subjects Covered</div>
-        </div>
-        <div class="eb-card rounded-xl p-4 sm:p-5 text-center">
-          <div class="font-bold text-xl sm:text-2xl gradient-text mb-1">20+</div>
-          <div class="text-slate-400 text-xs">Blog Articles</div>
-        </div>
-        <div class="eb-card rounded-xl p-4 sm:p-5 text-center">
-          <div class="font-bold text-xl sm:text-2xl gradient-text mb-1">100%</div>
-          <div class="text-slate-400 text-xs">Free to Use</div>
-        </div>
-        <!-- Nepal flag stat — fixed with explicit emoji font -->
-        <div class="eb-card rounded-xl p-4 sm:p-5 text-center">
-          <div class="font-bold text-xl sm:text-2xl mb-1">
-            <span class="flag-np">🇳🇵</span>
-          </div>
-          <div class="text-slate-400 text-xs">Made in Nepal</div>
-        </div>
-      </div>
-
-      <!-- Team -->
-      <div class="eb-card rounded-2xl p-6 sm:p-8 lg:p-10 mb-6 sm:mb-8">
-        <h2 class="font-serif text-xl sm:text-2xl font-bold mb-4">Behind EduBoost Nepal</h2>
-        <div class="text-slate-300 leading-relaxed space-y-4 text-sm sm:text-base">
-          <p>
-            EduBoost Nepal is an independent project built by Nabin, a Class 12 Science graduate from Kathmandu who completed his NEB board exams at Paramount Academy. Having experienced firsthand how difficult it is to find well-organised, curriculum-aligned study resources in Nepal, he decided to build the platform he wished he had during his own exam preparation.
-          </p>
-          <p>
-            The entire platform — from the AI tutor backend and Firebase authentication to the blog system and PDF notes — is designed, built, and maintained as a solo project. Every blog article, every study guide, and every feature is created with one goal in mind: to give NEB students a genuinely useful tool that is actually aligned with the current NEB syllabus and exam patterns.
-          </p>
-          <p>
-            EduBoost Nepal uses Google Gemini AI to power the question generator and AI tutor, with a focus on producing board-exam-style answers that reflect real NEB marking criteria. The platform is free to use and will remain free, funded only by non-intrusive advertising.
-          </p>
-        </div>
-        <div class="mt-6 glass rounded-xl p-5 flex items-center gap-4">
-          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-xl font-bold shrink-0">N</div>
-          <div>
-            <div class="font-semibold text-sm">Nabin T.</div>
-            <div class="text-slate-400 text-xs mt-1">Founder & Developer — EduBoost Nepal</div>
-            <div class="text-slate-500 text-xs mt-1">NEB Science Graduate · Kathmandu, Nepal</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div id="cta-section" class="eb-card rounded-2xl p-6 sm:p-8 text-center">
-        <h3 class="font-serif text-xl sm:text-2xl font-bold mb-3">Ready to Start Learning?</h3>
-        <p class="text-slate-400 text-sm mb-5">
-          Join NEB students preparing for board exams with EduBoost Nepal.
+  <!-- Values -->
+  <div class="eb-card rounded-2xl p-6 sm:p-8 lg:p-10 mb-6 sm:mb-8">
+    <h2 class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold mb-6">What We Stand For</h2>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div>
+        <div class="text-2xl mb-2">🏔️</div>
+        <h4 class="font-bold text-sm sm:text-base mb-1">Built for Nepal</h4>
+        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+          Every feature is designed specifically for the NEB syllabus and
+          Nepali students' needs — not generic international curriculum.
         </p>
-        <div class="flex gap-3 justify-center flex-wrap" id="cta-buttons">
-          <a id="cta-signup" href="signup.html" class="px-5 sm:px-6 py-2.5 rounded-xl bg-orange-500 hover:bg-orange-600 font-semibold text-sm transition-all">Sign Up Free</a>
-          <a id="cta-dashboard" href="dashboard.html" style="display:none" class="px-5 sm:px-6 py-2.5 rounded-xl bg-orange-500 hover:bg-orange-600 font-semibold text-sm transition-all">Go to Dashboard</a>
-          <a href="contact.html" class="px-5 sm:px-6 py-2.5 rounded-xl glass hover:bg-white/10 font-semibold text-sm transition-all">Contact Us</a>
-        </div>
       </div>
-    </section>
-
-    <!-- ── Footer ── -->
-    <footer class="bg-slate-900 border-t border-slate-800 mt-4">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 sm:py-8 text-center">
-        <p class="text-slate-400 text-xs sm:text-sm">
-          © 2024–2026 EduBoost Nepal. All rights reserved. | Built with ❤️ in Nepal
+      <div>
+        <div class="text-2xl mb-2">💡</div>
+        <h4 class="font-bold text-sm sm:text-base mb-1">Free for Everyone</h4>
+        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+          Quality education is a right, not a luxury. All core study tools,
+          notes, and question generators are 100% free.
         </p>
-        <div class="flex justify-center flex-wrap gap-x-4 gap-y-2 mt-3 text-xs text-slate-500">
-          <a href="privacy.html" class="hover:text-orange-400 transition-colors">Privacy Policy</a>
-          <a href="terms.html" class="hover:text-orange-400 transition-colors">Terms of Service</a>
-          <a href="contact.html" class="hover:text-orange-400 transition-colors">Contact</a>
-          <a href="about.html" class="hover:text-orange-400 transition-colors">About</a>
-        </div>
       </div>
-    </footer>
+      <div>
+        <div class="text-2xl mb-2">⚡</div>
+        <h4 class="font-bold text-sm sm:text-base mb-1">AI with Purpose</h4>
+        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+          We use Google Gemini AI responsibly to generate accurate, syllabus-aligned
+          content with clear marking schemes.
+        </p>
+      </div>
+    </div>
+  </div>
 
-    <script>
-      /* ── Theme toggle ── */
-      function toggleDarkMode() {
-        var html = document.documentElement;
-        var isLight = html.classList.contains("light");
-        var next = isLight ? "dark" : "light";
-        html.classList.remove("light", "dark");
-        html.classList.add(next);
-        // Write all keys so every page stays in sync
-        ["eb-theme", "eduboost-theme", "theme"].forEach(function(k){ localStorage.setItem(k, next); });
-        updateToggleLabel();
-      }
+  <!-- The Team Behind EduBoost Nepal -->
+  <div class="eb-card rounded-2xl p-6 sm:p-8 lg:p-10 mb-6 sm:mb-8">
+    <h2 class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold mb-4">Behind the Project</h2>
+    <div class="text-slate-300 leading-relaxed text-sm sm:text-base space-y-3">
+      <p>
+        EduBoost Nepal was built and is maintained by <strong>Nabin T.</strong>, a Nepali software developer and educator passionate about closing the educational opportunity gap in Nepal. Having gone through the NEB examination system himself, he experienced firsthand the frustrations of fragmented study materials, unreliable answer keys, and the lack of accessible practice resources for students outside the capital.
+      </p>
+      <p>
+        EduBoost Nepal uses Google Gemini AI to power the question generator and AI tutor, with a focus on producing board-exam-style answers that reflect real NEB marking criteria. The platform is free to use and will remain free, funded only by non-intrusive advertising.
+      </p>
+    </div>
+    <div class="mt-6 glass rounded-xl p-5 flex items-center gap-4">
+      <div class="w-14 h-14 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-xl font-bold shrink-0">N</div>
+      <div>
+        <div class="font-semibold text-sm">Nabin T.</div>
+        <div class="text-slate-400 text-xs mt-1">Founder &amp; Developer — EduBoost Nepal</div>
+        <div class="text-slate-500 text-xs mt-1">NEB Science Graduate · Kathmandu, Nepal</div>
+      </div>
+    </div>
+  </div>
 
-      function updateToggleLabel() {
-        var isLight = document.documentElement.classList.contains("light");
-        document.getElementById("theme-icon").textContent = isLight ? "🌙" : "☀️";
-        document.getElementById("theme-lbl").textContent = isLight ? "Dark" : "Light";
-      }
+  <!-- CTA -->
+  <div id="cta-section" class="eb-card rounded-2xl p-6 sm:p-8 text-center">
+    <h3 class="font-serif text-xl sm:text-2xl font-bold mb-3">Ready to Start Learning?</h3>
+    <p class="text-slate-400 text-sm mb-5">
+      Join NEB students preparing for board exams with EduBoost Nepal.
+    </p>
+    <div class="flex gap-3 justify-center flex-wrap" id="cta-buttons">
+      <a id="cta-signup" href="signup.html" class="btn-p px-5 sm:px-6 py-2.5 rounded-xl font-semibold text-sm transition-all">Sign Up Free</a>
+      <a id="cta-dashboard" href="dashboard.html" style="display:none" class="btn-p px-5 sm:px-6 py-2.5 rounded-xl font-semibold text-sm transition-all">Go to Dashboard</a>
+      <a href="contact.html" class="eb-nav-ghost px-5 sm:px-6 py-2.5 rounded-xl font-semibold text-sm transition-all">Contact Us</a>
+    </div>
+  </div>
+</section>
 
-      // Init label on page load
-      updateToggleLabel();
-
-      /* ── Mobile menu ── */
-      function toggleMenu() {
-        var menu = document.getElementById("mobile-menu");
-        var btn = document.getElementById("hamburger");
-        var isOpen = menu.classList.contains("open");
-        if (isOpen) {
-          menu.classList.remove("open");
-          btn.classList.remove("open");
+<script>
+  window.addEventListener("load", function () {
+    if (typeof firebase !== "undefined" && firebase.auth) {
+      firebase.auth().onAuthStateChanged(function (user) {
+        var ctaSignup = document.getElementById("cta-signup");
+        var ctaDashboard = document.getElementById("cta-dashboard");
+        var ctaSection = document.getElementById("cta-section");
+        if (user) {
+          if (ctaSignup) ctaSignup.style.display = "none";
+          if (ctaDashboard) ctaDashboard.style.display = "";
+          if (ctaSection) ctaSection.style.display = "none";
         } else {
-          menu.classList.add("open");
-          btn.classList.add("open");
-        }
-      }
-
-      // Close menu on outside click
-      document.addEventListener("click", function (e) {
-        var menu = document.getElementById("mobile-menu");
-        var btn = document.getElementById("hamburger");
-        if (!menu.contains(e.target) && !btn.contains(e.target)) {
-          menu.classList.remove("open");
-          btn.classList.remove("open");
+          if (ctaSignup) ctaSignup.style.display = "";
+          if (ctaDashboard) ctaDashboard.style.display = "none";
+          if (ctaSection) ctaSection.style.display = "";
         }
       });
-    </script>
-  </body>
-</html>
+    }
+  });
+</script>

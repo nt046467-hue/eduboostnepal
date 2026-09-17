@@ -1,6 +1,5 @@
 // Vercel API Route — /api/contact
-// Adapter: translates Vercel (req, res) → Netlify event shape → original handler
-const { handler } = require("../netlify/functions/contact");
+const { handler } = require("./contact-service");
 
 module.exports = async function contactRoute(req, res) {
   const event = {

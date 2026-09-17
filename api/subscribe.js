@@ -1,6 +1,5 @@
 // Vercel API Route — /api/subscribe
-// Adapter: translates Vercel (req, res) → Netlify event shape → original handler
-const { handler } = require("../netlify/functions/subscribe");
+const { handler } = require("./subscribe-service");
 
 module.exports = async function subscribeRoute(req, res) {
   const event = {

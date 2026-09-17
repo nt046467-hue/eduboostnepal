@@ -4,8 +4,6 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
   <meta name="robots" content="index, follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
@@ -18,13 +16,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: { extend: { fontFamily: { sans: ["Sora", "sans-serif"], serif: ["DM Serif Display", "serif"], mono: ["JetBrains Mono", "monospace"] } } },
-    };
-  </script>
+  <script src="../js/firebase-config.js"></script>
+  <link rel="stylesheet" href="../css/tailwind.min.css" />
   <style>
     :root {
       --accent: #f97316;
@@ -1919,7 +1912,7 @@
           </div>
         `;
 
-      // FIREBASE_CONFIG is declared globally by utils.js (loaded in <head>).
+      // FIREBASE_CONFIG is provided by firebase-config.js (loaded in <head>).
       // Load Firebase SDK lazily only when needed
       function loadFirebase(callback) {
         if (window.firebase) { callback(); return; }
@@ -1939,7 +1932,7 @@
 
       loadFirebase(() => {
         try {
-          if (!firebase.apps.length) firebase.initializeApp(FIREBASE_CONFIG);
+          if (!firebase.apps.length) firebase.initializeApp(window.FIREBASE_CONFIG || FIREBASE_CONFIG);
           firebase.firestore().collection('notesData').doc(noteId).get()
             .then(doc => {
               if (doc.exists) {

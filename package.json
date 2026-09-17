@@ -4,7 +4,11 @@
   "description": "A complete, production-ready educational web app for NEB Nepal students and teachers — featuring AI question/answer generation, notes, blog, downloads, and an admin panel.",
   "main": "index.js",
   "scripts": {
-    "dev": "npx serve . -p 3000 --no-clipboard",
+    "dev": "npm run build:css && eleventy --serve --port=3000",
+    "dev:serve": "npm run build && npx serve _site -p 3000 --no-clipboard",
+    "build:css": "tailwindcss -i ./css/tailwind-input.css -o ./css/tailwind.min.css --minify",
+    "build:11ty": "eleventy",
+    "build": "npm run build:css && npm run build:11ty",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,5 +17,9 @@
   "type": "commonjs",
   "dependencies": {
     "nodemailer": "^6.9.9"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "tailwindcss": "^3.4.19"
   }
 }

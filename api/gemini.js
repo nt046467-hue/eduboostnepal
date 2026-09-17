@@ -1,6 +1,5 @@
 // Vercel API Route — /api/gemini
-// Adapter: translates Vercel (req, res) → Netlify event shape → calls original handler
-const { handler } = require("../netlify/functions/gemini");
+const { handler } = require("./gemini-service");
 
 module.exports = async function geminiRoute(req, res) {
   // Build a Netlify-compatible event object from the Vercel request
