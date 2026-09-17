@@ -57,9 +57,10 @@
     </script>
 
     <!-- Firebase SDK & Config -->
-    <script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-    <script defer src="/js/firebase-config.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="/js/firebase-config.js"></script>
     <script defer src="/js/theme.js"></script>
 
     <!-- Global Nav Auth State Controller -->
@@ -116,8 +117,11 @@
   </head>
   <body class="bg-d text-white font-sans min-h-screen">
     <div id="toast" class="glass"></div>
+    {% if not hideStripe %}
     <div class="nepal-stripe" aria-hidden="true"></div>
+    {% endif %}
 
+    {% if not hideNav %}
     <!-- CANONICAL NAVBAR -->
     <nav class="eb-header" aria-label="Main navigation">
       <div class="eb-header-inner">
@@ -177,12 +181,14 @@
         </div>
       </div>
     </nav>
+    {% endif %}
 
     <!-- MAIN PAGE CONTENT -->
     <main id="main-content">
       {{ content | safe }}
     </main>
 
+    {% if not hideFooter %}
     <!-- CANONICAL FOOTER -->
     <footer class="eb-footer">
       <div class="ft">
@@ -282,6 +288,7 @@
         </div>
       </div>
     </footer>
+    {% endif %}
 
     <!-- SHARED GLOBAL SCRIPTS -->
     <script>

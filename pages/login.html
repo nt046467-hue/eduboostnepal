@@ -1,18 +1,16 @@
-﻿---
+---
 layout: base.njk
 title: "Login — EduBoost Nepal"
 description: "Login to EduBoost Nepal — your free AI-powered NEB exam preparation platform."
 robots: "noindex, nofollow"
 canonical: "https://eduboostnepal.nabint.com.np/pages/login.html"
 permalink: "/pages/login.html"
+hideNav: true
+hideFooter: true
+hideStripe: true
 pageStyles: |
   <link rel="stylesheet" href="/css/auth.css" />
 ---
-
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-<script src="/js/firebase-config.js"></script>
 
 <!-- Auth check overlay -->
 <div id="authCheckOverlay">
@@ -22,116 +20,95 @@ pageStyles: |
   </p>
 </div>
 
-<div class="page-wrapper" style="min-height: auto; padding-top: 3rem; padding-bottom: 4rem;">
+<!-- Minimal Auth Top Bar -->
+<div class="auth-topbar">
+  <a href="/index.html" class="auth-back-link">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to Home
+  </a>
+</div>
 
-      <!-- Theme toggle -->
+<div class="page-wrapper" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 80px 16px 32px;">
 
-      <div class="form-area">
-        <div class="form-card">
-          <!-- Logo -->
-          <div class="logo-section">
-            <a href="../index.html">
-              <img
-                loading="lazy"
-                src="/public/favicon.png"
-                alt="EduBoost Nepal"
-                style="
-                  width: 48px;
-                  height: 48px;
-                  border-radius: 14px;
+  <div class="form-area" style="width: 100%; max-width: 440px; padding: 0;">
+    <div class="form-card" style="width: 100%;">
+      <!-- Logo -->
+      <div class="logo-section" style="text-align: center; margin-bottom: 24px;">
+        <a href="/index.html" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; margin-bottom: 12px;">
+          <img loading="lazy" src="/public/favicon.png" alt="EduBoost Nepal" style="
+                  width: 44px;
+                  height: 44px;
+                  border-radius: 12px;
                   object-fit: cover;
-                "
-                onerror="this.style.display = 'none'"
-              />
-              <span
-                class="logo-brand"
-                style="font-size: 1.35rem; font-weight: 700"
-                >EduBoost <span style="color:#B91C2C">Nepal</span></span
-              >
-            </a>
-            <h1 class="text-white">Welcome back!</h1>
-            <p class="text-slate-400">
-              Login to continue your exam prep journey
-            </p>
-          </div>
+                " onerror="this.style.display = 'none'" />
+          <span class="logo-brand" style="font-size: 1.4rem; font-weight: 700; color: #fff;">EduBoost <span
+              style="color:#B91C2C">Nepal</span></span>
+        </a>
+        <h1 class="text-white" style="font-size: 1.6rem; font-weight: 700; margin: 0 0 6px;">Welcome back!</h1>
+        <p class="text-slate-400" style="font-size: 0.88rem; margin: 0;">
+          Login to continue your exam prep journey
+        </p>
+      </div>
 
-          <!-- Login Card -->
-          <div class="eb-card" style="border-radius:24px">
-            <div class="card-inner">
-              <div id="authMessage"></div>
+      <!-- Login Card -->
+      <div class="eb-card glass" style="border-radius:24px; border: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="card-inner">
+          <div id="authMessage"></div>
 
-              <form
-                id="loginForm"
-                class="form-space"
-                onsubmit="handleLogin(event)"
-              >
-                <div>
-                  <label class="form-label text-slate-300">Email Address</label>
-                  <input
-                    id="loginEmail"
-                    type="email"
-                    required
-                    placeholder="your@email.com"
-                    autocomplete="email"
-                    class="input-field text-white"
-                    style="
+          <form id="loginForm" class="form-space" onsubmit="handleLogin(event)">
+            <div>
+              <label class="form-label text-slate-300">Email Address</label>
+              <input id="loginEmail" type="email" required placeholder="your@email.com" autocomplete="email"
+                class="input-field text-white" style="
                       width: 100%;
                       padding: 14px 16px;
                       border-radius: 12px;
                       color: inherit;
-                    "
-                  />
-                </div>
+                    " />
+            </div>
 
-                <div>
-                  <label class="form-label text-slate-300">Password</label>
-                  <div class="input-wrap">
-                    <input
-                      id="loginPassword"
-                      type="password"
-                      required
-                      placeholder="••••••••"
-                      autocomplete="current-password"
-                      class="input-field text-white"
-                      style="
+            <div>
+              <label class="form-label text-slate-300">Password</label>
+              <div class="input-wrap">
+                <input id="loginPassword" type="password" required placeholder="••••••••"
+                  autocomplete="current-password" class="input-field text-white" style="
                         width: 100%;
                         padding: 14px 48px 14px 16px;
                         border-radius: 12px;
                         color: inherit;
-                      "
-                    />
-                    <button
-                      type="button"
-                      id="loginPasswordToggle"
-                      onclick="togglePasswordVisibility('loginPassword','loginPasswordToggle')"
-                      class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-red-400 transition-colors p-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400/30"
-                      aria-label="Toggle password visibility"
-                    >
-                      <svg id="loginPasswordToggle-eye-open" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                      <svg id="loginPasswordToggle-eye-closed" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
-                    </button>
-                  </div>
-                </div>
+                      " />
+                <button type="button" id="loginPasswordToggle"
+                  onclick="togglePasswordVisibility('loginPassword','loginPasswordToggle')"
+                  class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-red-400 transition-colors p-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400/30"
+                  aria-label="Toggle password visibility">
+                  <svg id="loginPasswordToggle-eye-open" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                  <svg id="loginPasswordToggle-eye-closed" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
+                    <line x1="1" y1="1" x2="23" y2="23" />
+                  </svg>
+                </button>
+              </div>
+            </div>
 
-                <div class="remember-row">
-                  <label class="remember-label text-slate-400">
-                    <input type="checkbox" id="rememberMe" />
-                    Remember me
-                  </label>
-                  <button
-                    type="button"
-                    class="forgot-btn"
-                    onclick="handleForgotPassword()"
-                  >
-                    Forgot password?
-                  </button>
-                </div>
+            <div class="remember-row">
+              <label class="remember-label text-slate-400">
+                <input type="checkbox" id="rememberMe" />
+                Remember me
+              </label>
+              <button type="button" class="forgot-btn" onclick="handleForgotPassword()">
+                Forgot password?
+              </button>
+            </div>
 
-                <button
-                  type="submit"
-                  id="loginBtn"
-                  class="btn-primary text-white"
-                  style="
+            <button type="submit" id="loginBtn" class="btn-primary text-white" style="
                     width: 100%;
                     padding: 15px;
                     border-radius: 12px;
@@ -139,280 +116,277 @@ pageStyles: |
                     font-size: 0.95rem;
                     font-family: inherit;
                     transition: all 0.2s;
-                  "
-                >
-                  Sign In →
-                </button>
-              </form>
+                  ">
+              Sign In →
+            </button>
+          </form>
 
-              <div class="divider">
-                <div class="divider-line"></div>
-                <span class="divider-text">OR</span>
-                <div class="divider-line"></div>
-              </div>
+          <div class="divider">
+            <div class="divider-line"></div>
+            <span class="divider-text">OR</span>
+            <div class="divider-line"></div>
+          </div>
 
-              <!-- Google Sign In -->
-              <button class="google-btn text-white" onclick="handleGoogleLogin()">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  style="flex-shrink: 0"
-                >
-                  <path
-                    fill="#4285F4"
-                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                  />
-                  <path
-                    fill="#34A853"
-                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                  />
-                  <path
-                    fill="#FBBC05"
-                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                  />
-                  <path
-                    fill="#EA4335"
-                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                  />
-                </svg>
-                Continue with Google
-              </button>
+          <!-- Google Sign In -->
+          <button class="google-btn text-white" onclick="handleGoogleLogin()">
+            <svg width="20" height="20" viewBox="0 0 24 24" style="flex-shrink: 0">
+              <path fill="#4285F4"
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+              <path fill="#34A853"
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+              <path fill="#FBBC05"
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+              <path fill="#EA4335"
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+            </svg>
+            Continue with Google
+          </button>
 
-              <p class="bottom-link text-slate-400">
-                Don't have an account?
-                <a
-                  href="signup.html"
-                  style="
+          <p class="bottom-link text-slate-400">
+            Don't have an account?
+            <a href="signup.html" style="
                     color: var(--eb-crimson, #B91C2C);
                     font-weight: 600;
                     text-decoration: none;
                     margin-left: 4px;
-                  "
-                  >Sign up free →</a
-                >
-              </p>
-            </div>
-          </div>
+                  ">Sign up free →</a>
+          </p>
         </div>
       </div>
+
+      <!-- Minimal Clean Footer at the bottom -->
+      <div style="text-align: center; margin-top: 24px;">
+        <p style="font-size: 0.78rem; color: #64748b; margin-bottom: 8px;">
+          © 2026 EduBoost Nepal. Built for NEB Class 11 &amp; 12.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 16px; font-size: 0.8rem;">
+          <a href="/index.html" style="color: #94a3b8; text-decoration: none;">← Home</a>
+          <a href="/pages/terms.html" style="color: #94a3b8; text-decoration: none;">Terms</a>
+          <a href="/pages/privacy.html" style="color: #94a3b8; text-decoration: none;">Privacy</a>
+          <a href="/pages/contact.html" style="color: #94a3b8; text-decoration: none;">Help</a>
+        </div>
+      </div>
+
     </div>
+  </div>
+</div>
 
-    <script>
-      // ── Firebase init ─────────────────────────────────────────────
-      if (!firebase.apps.length) firebase.initializeApp(FIREBASE_CONFIG);
-      const auth = firebase.auth();
-      const db = firebase.firestore();
-      db.settings({ experimentalForceLongPolling: false, merge: true });
-      db.enableNetwork().catch(() => {});
+<script>
+  // ── Firebase init ─────────────────────────────────────────────
+  // firebase-config.js already calls initializeApp once; just grab the services
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  db.enableNetwork().catch(() => { });
 
-      // Ensure session persists across page refreshes (up to browser session)
-      auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(() => {});
+  // Ensure session persists across page refreshes (up to browser session)
+  auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(() => { });
 
-      const urlParams = new URLSearchParams(window.location.search);
-      const returnUrl = urlParams.get("returnUrl");
-      const REDIRECT_AFTER_LOGIN = returnUrl
-        ? decodeURIComponent(returnUrl)
-        : "dashboard.html";
+  const urlParams = new URLSearchParams(window.location.search);
+  const returnUrl = urlParams.get("returnUrl");
+  const REDIRECT_AFTER_LOGIN = returnUrl
+    ? decodeURIComponent(returnUrl)
+    : "dashboard.html";
 
-      // ── THE FIX ───────────────────────────────────────────────────
-      // Firebase calls onAuthStateChanged once immediately when it
-      // knows the auth state. We wait for that single call:
-      //   • If user IS logged in  → redirect to dashboard (they shouldn't be here)
-      //   • If user is NOT logged in → hide the overlay and show the form
-      //
-      // The key is `authResolved` flag so we never redirect twice, and
-      // we never redirect during the form submission flow either.
-      let authResolved = false;
-      let isRedirecting = false;
+  // ── THE FIX ───────────────────────────────────────────────────
+  // Firebase calls onAuthStateChanged once immediately when it
+  // knows the auth state. We wait for that single call:
+  //   • If user IS logged in  → redirect to dashboard (they shouldn't be here)
+  //   • If user is NOT logged in → hide the overlay and show the form
+  //
+  // The key is `authResolved` flag so we never redirect twice, and
+  // we never redirect during the form submission flow either.
+  let authResolved = false;
+  let isRedirecting = false;
 
-      // Check if we're mid-redirect from Google (don't flash the form)
-      const isReturningFromRedirect =
-        document.referrer.includes("accounts.google.com") ||
-        window.location.hash.includes("state=") ||
-        sessionStorage.getItem("googleRedirectPending") === "1";
+  // Check if we're mid-redirect from Google (don't flash the form)
+  const isReturningFromRedirect =
+    document.referrer.includes("accounts.google.com") ||
+    window.location.hash.includes("state=") ||
+    sessionStorage.getItem("googleRedirectPending") === "1";
 
-      const unsubscribe = auth.onAuthStateChanged((user) => {
-        if (authResolved) return;
-        authResolved = true;
-        unsubscribe();
+  const unsubscribe = auth.onAuthStateChanged((user) => {
+    if (authResolved) return;
+    authResolved = true;
+    unsubscribe();
 
-        if (user && !isRedirecting) {
-          // Already logged in — go straight to dashboard
-          isRedirecting = true;
-          window.location.replace(REDIRECT_AFTER_LOGIN);
-        } else if (!isRedirecting) {
-          // Not logged in — show the form (but only if we're not mid-redirect)
-          document.getElementById("authCheckOverlay").style.display = "none";
-        }
-      });
+    if (user && !isRedirecting) {
+      // Already logged in — go straight to dashboard
+      isRedirecting = true;
+      window.location.replace(REDIRECT_AFTER_LOGIN);
+    } else if (!isRedirecting) {
+      // Not logged in — show the form (but only if we're not mid-redirect)
+      document.getElementById("authCheckOverlay").style.display = "none";
+    }
+  });
 
-      // Safety fallback: if Firebase takes >6s, hide overlay anyway
-      setTimeout(() => {
-        const overlay = document.getElementById("authCheckOverlay");
-        if (overlay && overlay.style.display !== "none" && !isRedirecting) {
-          overlay.style.display = "none";
-        }
-      }, 6000);
+  // Safety fallback: if Firebase takes >6s, hide overlay anyway
+  setTimeout(() => {
+    const overlay = document.getElementById("authCheckOverlay");
+    if (overlay && overlay.style.display !== "none" && !isRedirecting) {
+      overlay.style.display = "none";
+    }
+  }, 6000);
 
-      // ── Login with email/password ─────────────────────────────────
-      async function handleLogin(e) {
-        e.preventDefault();
-        if (isRedirecting) return;
+  // ── Login with email/password ─────────────────────────────────
+  async function handleLogin(e) {
+    e.preventDefault();
+    if (isRedirecting) return;
 
-        const email = document.getElementById("loginEmail").value.trim();
-        const password = document.getElementById("loginPassword").value;
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value;
 
-        setLoading(true);
-        try {
-          await auth.signInWithEmailAndPassword(email, password);
-          showMessage("Login successful! Redirecting…");
-          isRedirecting = true;
-          setTimeout(() => window.location.replace(REDIRECT_AFTER_LOGIN), 800);
-        } catch (err) {
-          const msgs = {
-            "auth/user-not-found": "No account found with this email.",
-            "auth/wrong-password": "Incorrect password. Please try again.",
-            "auth/invalid-email": "Please enter a valid email address.",
-            "auth/invalid-credential": "Email or password is incorrect.",
-            "auth/too-many-requests":
-              "Too many attempts. Please try again later.",
-          };
-          showMessage(msgs[err.code] || err.message, true);
-          setLoading(false);
-        }
+    setLoading(true);
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      showMessage("Login successful! Redirecting…");
+      isRedirecting = true;
+      setTimeout(() => window.location.replace(REDIRECT_AFTER_LOGIN), 800);
+    } catch (err) {
+      const msgs = {
+        "auth/user-not-found": "No account found with this email.",
+        "auth/wrong-password": "Incorrect password. Please try again.",
+        "auth/invalid-email": "Please enter a valid email address.",
+        "auth/invalid-credential": "Email or password is incorrect.",
+        "auth/too-many-requests":
+          "Too many attempts. Please try again later.",
+      };
+      showMessage(msgs[err.code] || err.message, true);
+      setLoading(false);
+    }
+  }
+
+  // ── Google Sign In ────────────────────────────────────────────
+  // Called on page load to catch any redirect result (fallback path when popup was blocked)
+  auth
+    .getRedirectResult()
+    .then(async (result) => {
+      sessionStorage.removeItem("googleRedirectPending");
+      if (!result || !result.user) return;
+      showMessage("Google sign-in successful! Redirecting…");
+      await saveGoogleUserProfile(result.user);
+      isRedirecting = true;
+      window.location.replace(REDIRECT_AFTER_LOGIN);
+    })
+    .catch((err) => {
+      sessionStorage.removeItem("googleRedirectPending");
+      if (err.code && err.code !== "auth/credential-already-in-use") {
+        document.getElementById("authCheckOverlay").style.display = "none";
+        showMessage("Google sign-in failed: " + err.message, true);
       }
+    });
 
-      // ── Google Sign In ────────────────────────────────────────────
-      // Called on page load to catch any redirect result (fallback path when popup was blocked)
-      auth
-        .getRedirectResult()
-        .then(async (result) => {
-          sessionStorage.removeItem("googleRedirectPending");
-          if (!result || !result.user) return;
-          showMessage("Google sign-in successful! Redirecting…");
-          await saveGoogleUserProfile(result.user);
-          isRedirecting = true;
-          window.location.replace(REDIRECT_AFTER_LOGIN);
-        })
-        .catch((err) => {
-          sessionStorage.removeItem("googleRedirectPending");
-          if (err.code && err.code !== "auth/credential-already-in-use") {
-            document.getElementById("authCheckOverlay").style.display = "none";
-            showMessage("Google sign-in failed: " + err.message, true);
-          }
-        });
-
-      async function saveGoogleUserProfile(user) {
+  async function saveGoogleUserProfile(user) {
+    try {
+      await db.enableNetwork().catch(() => { });
+      let retries = 3;
+      while (retries > 0) {
         try {
-          await db.enableNetwork().catch(() => {});
-          let retries = 3;
-          while (retries > 0) {
-            try {
-              const userRef = db.collection("users").doc(user.uid);
-              const doc = await userRef.get();
-              if (!doc.exists) {
-                await userRef.set({
-                  name: user.displayName || "",
-                  email: user.email || "",
-                  role: "student",
-                  photoURL: user.photoURL || "",
-                  createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                  savedContent: [],
-                  activityCount: 0,
-                });
-              }
-              break;
-            } catch (fsErr) {
-              retries--;
-              if (retries === 0) {
-                console.warn("Firestore profile save failed:", fsErr.message);
-              } else {
-                await new Promise((r) => setTimeout(r, 800));
-              }
-            }
+          const userRef = db.collection("users").doc(user.uid);
+          const doc = await userRef.get();
+          if (!doc.exists) {
+            await userRef.set({
+              name: user.displayName || "",
+              email: user.email || "",
+              role: "student",
+              photoURL: user.photoURL || "",
+              createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+              savedContent: [],
+              activityCount: 0,
+            });
           }
-        } catch (e) {
-          console.warn("saveGoogleUserProfile error:", e.message);
-        }
-      }
-
-      async function handleGoogleLogin() {
-        if (isRedirecting) return;
-        const provider = new firebase.auth.GoogleAuthProvider();
-        provider.addScope("email");
-        provider.addScope("profile");
-        provider.setCustomParameters({ prompt: "select_account" });
-
-        // Use popup for ALL devices — redirect flow breaks on Netlify
-        // because Firebase redirect requires authDomain to match the hosting domain.
-        try {
-          showMessage("Opening Google sign-in…");
-          const result = await auth.signInWithPopup(provider);
-          showMessage("Google sign-in successful! Redirecting…");
-          await saveGoogleUserProfile(result.user);
-          isRedirecting = true;
-          window.location.replace(REDIRECT_AFTER_LOGIN);
-        } catch (err) {
-          if (err.code === "auth/popup-blocked") {
-            // Popup was blocked — fall back to redirect
-            try {
-              showMessage("Popup blocked, trying redirect…");
-              sessionStorage.setItem("googleRedirectPending", "1");
-              await auth.signInWithRedirect(provider);
-            } catch (redirectErr) {
-              showMessage(
-                "Google sign-in failed: " + redirectErr.message,
-                true,
-              );
-            }
-          } else if (
-            err.code !== "auth/popup-closed-by-user" &&
-            err.code !== "auth/cancelled-popup-request"
-          ) {
-            showMessage("Google sign-in failed: " + err.message, true);
+          break;
+        } catch (fsErr) {
+          retries--;
+          if (retries === 0) {
+            console.warn("Firestore profile save failed:", fsErr.message);
+          } else {
+            await new Promise((r) => setTimeout(r, 800));
           }
         }
       }
+    } catch (e) {
+      console.warn("saveGoogleUserProfile error:", e.message);
+    }
+  }
 
-      // ── Forgot password ───────────────────────────────────────────
-      async function handleForgotPassword() {
-        const email = document.getElementById("loginEmail").value.trim();
-        if (!email) {
-          showMessage("Please enter your email address first.", true);
-          return;
-        }
+  async function handleGoogleLogin() {
+    if (isRedirecting) return;
+    try {
+      showMessage("Opening Google sign-in…");
+      // Always use the page-level `auth` instance to avoid argument-error
+      const provider = new firebase.auth.GoogleAuthProvider();
+      provider.setCustomParameters({ prompt: "select_account" });
+
+      const result = await auth.signInWithPopup(provider);
+      if (!result || !result.user) return;
+      showMessage("Google sign-in successful! Redirecting…");
+      await saveGoogleUserProfile(result.user);
+      isRedirecting = true;
+      window.location.replace(REDIRECT_AFTER_LOGIN);
+    } catch (err) {
+      console.error("Google sign-in error:", err);
+      if (err.code === "auth/popup-blocked") {
         try {
-          await auth.sendPasswordResetEmail(email);
-          showMessage("Password reset email sent! Check your inbox.");
-        } catch (err) {
-          showMessage("Failed to send reset email: " + err.message, true);
+          showMessage("Popup blocked, trying redirect…");
+          sessionStorage.setItem("googleRedirectPending", "1");
+          const provider = new firebase.auth.GoogleAuthProvider();
+          await auth.signInWithRedirect(provider);
+        } catch (redirectErr) {
+          showMessage(
+            "Google sign-in failed: " + redirectErr.message,
+            true,
+          );
         }
-      }
-
-      // ── Helpers ───────────────────────────────────────────────────
-      function showMessage(msg, isError = false) {
+      } else if (
+        err.code !== "auth/popup-closed-by-user" &&
+        err.code !== "auth/cancelled-popup-request"
+      ) {
+        showMessage("Google sign-in failed: " + (err.message || err.code), true);
+      } else {
         const el = document.getElementById("authMessage");
-        el.textContent = msg;
-        el.className = isError ? "show-error" : "show-ok";
+        if (el) el.className = "";
       }
+    }
+  }
 
-      function setLoading(loading) {
-        const btn = document.getElementById("loginBtn");
-        btn.disabled = loading;
-        btn.textContent = loading ? "Signing in…" : "Sign In →";
-        btn.style.opacity = loading ? "0.7" : "1";
-      }
+  // ── Forgot password ───────────────────────────────────────────
+  async function handleForgotPassword() {
+    const email = document.getElementById("loginEmail").value.trim();
+    if (!email) {
+      showMessage("Please enter your email address first.", true);
+      return;
+    }
+    try {
+      await auth.sendPasswordResetEmail(email);
+      showMessage("Password reset email sent! Check your inbox.");
+    } catch (err) {
+      showMessage("Failed to send reset email: " + err.message, true);
+    }
+  }
 
-      function togglePasswordVisibility(inputId, btnId) {
-        const input = document.getElementById(inputId);
-        const isHidden = input.type === "password";
-        input.type = isHidden ? "text" : "password";
-        if (btnId) {
-          const openEye = document.getElementById(btnId + "-eye-open");
-          const closedEye = document.getElementById(btnId + "-eye-closed");
-          if (openEye) openEye.classList.toggle("hidden", isHidden);
-          if (closedEye) closedEye.classList.toggle("hidden", !isHidden);
-        }
-      }
-    </script>
+  // ── Helpers ───────────────────────────────────────────────────
+  function showMessage(msg, isError = false) {
+    const el = document.getElementById("authMessage");
+    el.textContent = msg;
+    el.className = isError ? "show-error" : "show-ok";
+  }
+
+  function setLoading(loading) {
+    const btn = document.getElementById("loginBtn");
+    btn.disabled = loading;
+    btn.textContent = loading ? "Signing in…" : "Sign In →";
+    btn.style.opacity = loading ? "0.7" : "1";
+  }
+
+  function togglePasswordVisibility(inputId, btnId) {
+    const input = document.getElementById(inputId);
+    const isHidden = input.type === "password";
+    input.type = isHidden ? "text" : "password";
+    if (btnId) {
+      const openEye = document.getElementById(btnId + "-eye-open");
+      const closedEye = document.getElementById(btnId + "-eye-closed");
+      if (openEye) openEye.classList.toggle("hidden", isHidden);
+      if (closedEye) closedEye.classList.toggle("hidden", !isHidden);
+    }
+  }
+</script>
